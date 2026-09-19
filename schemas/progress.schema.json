@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "progress.schema.json",
+  "type": "object",
+  "required": ["schemaVersion","startedAt","updatedAt","studiedUnits","questionAttempts","flashcardAttempts","conceptProgress","settings"],
+  "properties": {
+    "schemaVersion": {"const":"PROGRESS_SCHEMA_V1"}
+  },
+  "additionalProperties": true
+}

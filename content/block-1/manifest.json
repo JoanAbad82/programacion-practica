@@ -1,0 +1,13 @@
+{
+  "block_id": "B1",
+  "title": "Fundamentos y Comandos Básicos",
+  "canonical_version": "BLOCK1_CANONICAL_V1.0",
+  "concept_bank_version": "B1_CONCEPT_BANK_V1.0",
+  "test_bank_version": "BLOCK1_TEST_BANK_V1.0",
+  "flashcard_bank_version": "BLOCK1_FLASHCARD_BANK_V1.0",
+  "units": 12,
+  "concepts": 56,
+  "questions": 200,
+  "flashcards": 80,
+  "content_import_status": "PENDING_PHASE_2"
+}

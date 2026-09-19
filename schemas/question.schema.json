@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "question.schema.json",
+  "type": "object",
+  "required": ["id","blockId","unitId","primaryConceptId","secondaryConceptIds","type","difficulty","language","prompt","options","correctOptionId","explanation","sourceVersion","conceptBankVersion","testBankVersion","status"],
+  "properties": {
+    "id": {"type":"string","pattern":"^B[0-9]+-Q[0-9]{4}$"},
+    "difficulty": {"enum":[1,2,3]},
+    "type": {"enum":["A","B","C","D","E","F"]},
+    "options": {"type":"array","minItems":4,"maxItems":4},
+    "correctOptionId": {"type":"string","minLength":1},
+    "explanation": {"type":"string","minLength":1}
+  },
+  "additionalProperties": true
+}
