@@ -263,3 +263,91 @@ p { color: var(--muted); line-height: 1.7; }
   .quiz-session-header { flex-direction: column; }
   .quiz-question-card { border-radius: 16px; }
 }
+
+
+/* Phase 5 — Flashcards Engine */
+.flashcards-page { display: grid; gap: 24px; }
+.flashcard-setup-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 20px; align-items: start; }
+.flashcard-setup-panel, .flashcard-history-panel {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  padding: clamp(20px, 4vw, 30px);
+}
+.flashcard-setup-panel { display: grid; gap: 24px; }
+.flashcard-setup-panel h2 { margin: 6px 0 8px; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.flashcard-mode-grid { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.flashcard-mode-grid legend { font-weight: 800; margin-bottom: 10px; }
+.flashcard-mode-option { display: grid; grid-template-columns: 20px 1fr; gap: 10px; min-height: 88px; padding: 14px; border: 1px solid var(--border); border-radius: 14px; cursor: pointer; }
+.flashcard-mode-option:has(input:checked) { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+.flashcard-mode-option input { margin-top: 3px; }
+.flashcard-mode-option strong, .flashcard-mode-option small { display: block; }
+.flashcard-mode-option small { color: var(--muted); margin-top: 5px; line-height: 1.45; }
+.flashcard-filter-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.flashcard-filter-grid label { display: grid; gap: 7px; font-weight: 700; }
+.flashcard-filter-grid select { min-height: 44px; width: 100%; border: 1px solid var(--border); border-radius: 10px; background: var(--background); color: var(--text); padding: 0 12px; font: inherit; }
+.flashcard-reverse-option { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; border: 1px solid var(--border); border-radius: 14px; padding: 14px; }
+.flashcard-reverse-option input { margin-top: 3px; }
+.flashcard-reverse-option strong, .flashcard-reverse-option small { display: block; }
+.flashcard-reverse-option small { color: var(--muted); margin-top: 4px; }
+.flashcard-availability { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--background); }
+.flashcard-availability span { color: var(--muted); }
+.flashcard-message { margin: 0; font-weight: 700; }
+.flashcard-history-panel { position: sticky; top: 88px; }
+.flashcard-history-metrics { display: grid; gap: 14px; margin: 20px 0; }
+.flashcard-history-metrics div { padding-top: 12px; border-top: 1px solid var(--border); }
+.flashcard-history-metrics strong { display: block; font-size: 1.8rem; letter-spacing: -.04em; }
+.flashcard-history-metrics span { color: var(--muted); font-size: .9rem; }
+.flashcard-session-page { max-width: 900px; margin: 0 auto; }
+.flashcard-session-header { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-bottom: 22px; }
+.flashcard-session-header p { margin: 5px 0 0; font-size: .88rem; overflow-wrap: anywhere; }
+.flashcard-session-state { max-width: 760px; display: grid; gap: 16px; }
+.flashcard-session-card { display: grid; gap: 18px; }
+.flashcard-session-topline { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: .85rem; }
+.flashcard-session-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+.flashcard-session-meta span { border: 1px solid var(--border); border-radius: 999px; padding: 5px 9px; color: var(--muted); font-size: .76rem; font-weight: 700; }
+.flashcard-face {
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--surface);
+  padding: clamp(24px, 6vw, 52px);
+}
+.flashcard-face-content { font-size: clamp(1.5rem, 4vw, 2.6rem); line-height: 1.28; letter-spacing: -.025em; text-align: center; }
+.flashcard-rich-text { display: inline; white-space: pre-wrap; }
+.flashcard-rich-text code:not(.flashcard-code-block code) { border: 1px solid var(--border); border-radius: 5px; padding: 1px 5px; background: var(--background); font-size: .88em; }
+.flashcard-code-block { display: grid; text-align: left; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin: 12px 0; background: var(--background); }
+.flashcard-code-label { padding: 6px 10px; border-bottom: 1px solid var(--border); color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+.flashcard-code-block code { display: block; overflow-x: auto; padding: 14px; white-space: pre; font-size: .95rem; line-height: 1.55; }
+.flashcard-reveal-button { justify-self: center; min-width: 220px; }
+.flashcard-rating-panel { display: grid; gap: 12px; text-align: center; }
+.flashcard-rating-panel p { margin: 0; font-weight: 800; }
+.flashcard-rating-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.flashcard-rating { min-height: 50px; }
+.flashcard-rating.miss { border-color: color-mix(in srgb, #b94a48 55%, var(--border)); }
+.flashcard-rating.doubt { border-color: color-mix(in srgb, #a8781c 55%, var(--border)); }
+.flashcard-rating.know { border-color: color-mix(in srgb, #27854d 55%, var(--border)); }
+.flashcard-results-page { max-width: 900px; margin: 0 auto; }
+.flashcard-results-hero { text-align: center; padding: 24px 0 10px; }
+.flashcard-results-hero h1 { font-size: clamp(4rem, 12vw, 7rem); }
+.flashcard-results-subtitle { font-size: 1.2rem; font-weight: 800; color: var(--text); }
+.flashcard-results-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 24px 0; }
+.flashcard-results-grid .card { min-height: 130px; }
+.flashcard-results-actions { justify-content: center; margin: 20px 0 34px; }
+.flashcard-results-note { border-top: 1px solid var(--border); padding-top: 22px; }
+@media (max-width: 820px) {
+  .flashcard-setup-layout { grid-template-columns: 1fr; }
+  .flashcard-history-panel { position: static; }
+}
+@media (max-width: 620px) {
+  .flashcard-mode-grid,
+  .flashcard-filter-grid,
+  .flashcard-rating-actions,
+  .flashcard-results-grid { grid-template-columns: 1fr; }
+  .flashcard-session-header { flex-direction: column; }
+  .flashcard-face { min-height: 280px; border-radius: 16px; }
+}

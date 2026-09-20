@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "flashcard-history.schema.json",
+  "title": "FlashcardHistorySnapshot",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "sessions",
+    "cardStats"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "FLASHCARD_HISTORY_V1"
+    },
+    "sessions": {
+      "type": "object"
+    },
+    "cardStats": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
