@@ -29,10 +29,7 @@ function createRandom(seed: number) {
   };
 }
 
-export function deterministicShuffle<T>(
-  values: readonly T[],
-  seed: number,
-): T[] {
+export function deterministicShuffle<T>(values: readonly T[], seed: number): T[] {
   const output = [...values];
   const random = createRandom(seed);
 
@@ -49,10 +46,7 @@ export function shuffleQuestionOptions(
   seed: number,
   questionId: string,
 ): QuestionOption[] {
-  return deterministicShuffle(
-    options,
-    hashSeed(`${seed}:${questionId}:options`),
-  );
+  return deterministicShuffle(options, hashSeed(`${seed}:${questionId}:options`));
 }
 
 export function matchesQuizFilters(
@@ -73,26 +67,26 @@ function adaptiveScore(
   question: QuizQuestionMeta,
   history: QuizHistorySnapshot,
   seed: number,
+  masteryByConcept: Record<string, number>,
 ): number {
   const stats = history.questionStats[question.id];
+  const conceptMastery = masteryByConcept[question.primaryConceptId] ?? 0;
+  const masteryGap = (100 - conceptMastery) * 0.9;
+  const tieBreak = (hashSeed(`${seed}:${question.id}`) % 1000) / 10000;
 
   if (!stats) {
-    return 20 + question.difficulty * 2 +
-      (hashSeed(`${seed}:${question.id}`) % 1000) / 10000;
+    return 20 + masteryGap + question.difficulty * 2 + tieBreak;
   }
 
   const errorRate = stats.attempts > 0 ? stats.incorrect / stats.attempts : 0;
   const recentPenalty = stats.lastCorrect === false ? 100 : 0;
   const confidencePenalty = errorRate * 50;
   const challenge = question.difficulty * 2;
-  const tieBreak = (hashSeed(`${seed}:${question.id}`) % 1000) / 10000;
 
-  return recentPenalty + confidencePenalty + challenge + tieBreak;
+  return recentPenalty + confidencePenalty + masteryGap + challenge + tieBreak;
 }
 
-export function getErrorQuestionIds(
-  history: QuizHistorySnapshot,
-): string[] {
+export function getErrorQuestionIds(history: QuizHistorySnapshot): string[] {
   return Object.values(history.questionStats)
     .filter((stats) => stats.lastCorrect === false)
     .sort((a, b) => {
@@ -116,14 +110,10 @@ export function buildQuestionPool({
   filters: QuizFilters;
   history: QuizHistorySnapshot;
 }): QuizQuestionMeta[] {
-  let pool = questions.filter((question) =>
-    matchesQuizFilters(question, filters),
-  );
+  let pool = questions.filter((question) => matchesQuizFilters(question, filters));
 
   if (mode === "UNIT") {
-    pool = unitId
-      ? pool.filter((question) => question.unitId === unitId)
-      : [];
+    pool = unitId ? pool.filter((question) => question.unitId === unitId) : [];
   }
 
   if (mode === "ERRORS") {
@@ -142,6 +132,7 @@ export function selectQuestionIds({
   history,
   size,
   seed,
+  masteryByConcept = {},
 }: {
   questions: QuizQuestionMeta[];
   mode: QuizMode;
@@ -150,21 +141,16 @@ export function selectQuestionIds({
   history: QuizHistorySnapshot;
   size: number;
   seed: number;
+  masteryByConcept?: Record<string, number>;
 }): string[] {
-  const pool = buildQuestionPool({
-    questions,
-    mode,
-    unitId,
-    filters,
-    history,
-  });
+  const pool = buildQuestionPool({ questions, mode, unitId, filters, history });
 
   if (mode === "ADAPTIVE") {
     return [...pool]
       .sort(
         (a, b) =>
-          adaptiveScore(b, history, seed) -
-          adaptiveScore(a, history, seed),
+          adaptiveScore(b, history, seed, masteryByConcept) -
+          adaptiveScore(a, history, seed, masteryByConcept),
       )
       .slice(0, size)
       .map((question) => question.id);

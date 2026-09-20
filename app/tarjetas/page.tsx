@@ -1,6 +1,7 @@
 import { FlashcardSetup } from "@/components/flashcards/flashcard-setup";
 import { getBlock1Flashcards } from "@/lib/content/flashcard-content";
 import { getBlock1Units } from "@/lib/content/study-content";
+import { getBlock1Concepts } from "@/lib/content/progress-content";
 import type { FlashcardMode } from "@/types/flashcard-session";
 
 function normalizeMode(value: string | undefined): FlashcardMode {
@@ -10,15 +11,23 @@ function normalizeMode(value: string | undefined): FlashcardMode {
 export default async function FlashcardsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ mode?: string | string[] }>;
+  searchParams: Promise<{
+    mode?: string | string[];
+    unit?: string | string[];
+  }>;
 }) {
   const params = await searchParams;
   const rawMode = Array.isArray(params.mode) ? params.mode[0] : params.mode;
+  const rawUnit = Array.isArray(params.unit) ? params.unit[0] : params.unit;
 
-  const [cards, units] = await Promise.all([
+  const [cards, units, concepts] = await Promise.all([
     getBlock1Flashcards(),
     getBlock1Units(),
+    getBlock1Concepts(),
   ]);
+  const initialUnitId = units.some((unit) => unit.unitId === rawUnit?.toUpperCase())
+    ? rawUnit!.toUpperCase()
+    : null;
 
   return (
     <section className="flashcards-page">
@@ -34,11 +43,10 @@ export default async function FlashcardsPage({
 
       <FlashcardSetup
         cards={cards}
+        concepts={concepts}
         initialMode={normalizeMode(rawMode)}
-        units={units.map((unit) => ({
-          unitId: unit.unitId,
-          title: unit.title,
-        }))}
+        initialUnitId={initialUnitId}
+        units={units}
       />
     </section>
   );

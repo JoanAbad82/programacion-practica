@@ -10,7 +10,11 @@ import {
   createFlashcardSession,
   useFlashcardHistory,
 } from "@/lib/storage/flashcard-history";
+import { masteryScoreMap } from "@/lib/progress/mastery";
+import { useUnifiedProgress } from "@/lib/storage/unified-progress";
+import type { Concept } from "@/types/content";
 import type { Flashcard } from "@/types/flashcard";
+import type { StudyUnitMeta } from "@/types/study";
 import {
   FLASHCARD_SESSION_SIZES,
   type FlashcardFilters,
@@ -20,11 +24,6 @@ import {
   type FlashcardTypeFilter,
 } from "@/types/flashcard-session";
 
-interface UnitOption {
-  unitId: string;
-  title: string;
-}
-
 const modeCopy: Record<FlashcardMode, { title: string; description: string }> = {
   MIXED: {
     title: "Mezcla",
@@ -33,7 +32,7 @@ const modeCopy: Record<FlashcardMode, { title: string; description: string }> = 
   ADAPTIVE: {
     title: "Adaptativo V1",
     description:
-      "Prioriza tarjetas falladas, dudadas y todavía no vistas.",
+      "Prioriza menor dominio por concepto, tarjetas falladas, dudadas y no vistas.",
   },
 };
 
@@ -76,17 +75,23 @@ export function FlashcardSetup({
   cards,
   units,
   initialMode = "MIXED",
+  initialUnitId = null,
+  concepts,
 }: {
   cards: Flashcard[];
-  units: UnitOption[];
+  units: StudyUnitMeta[];
   initialMode?: FlashcardMode;
+  initialUnitId?: string | null;
+  concepts: Concept[];
 }) {
   const router = useRouter();
   const history = useFlashcardHistory();
+  const progress = useUnifiedProgress({ concepts, units });
+  const masteryByConcept = useMemo(() => masteryScoreMap(progress), [progress]);
 
   const [mode, setMode] = useState<FlashcardMode>(initialMode);
   const [size, setSize] = useState<FlashcardSessionSize>(10);
-  const [unitId, setUnitId] = useState("ALL");
+  const [unitId, setUnitId] = useState(initialUnitId ?? "ALL");
   const [language, setLanguage] =
     useState<FlashcardLanguageFilter>("ALL");
   const [cardType, setCardType] =
@@ -159,6 +164,7 @@ export function FlashcardSetup({
       history,
       size: effectiveSize,
       seed,
+      masteryByConcept,
     });
 
     const selectedCards = cardIds

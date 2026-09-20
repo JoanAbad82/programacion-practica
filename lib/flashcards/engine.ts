@@ -32,10 +32,7 @@ function createRandom(seed: number) {
   };
 }
 
-export function deterministicFlashcardShuffle<T>(
-  values: readonly T[],
-  seed: number,
-): T[] {
+export function deterministicFlashcardShuffle<T>(values: readonly T[], seed: number): T[] {
   const output = [...values];
   const random = createRandom(seed);
 
@@ -63,19 +60,20 @@ function adaptivePriority(
   card: FlashcardMeta,
   history: FlashcardHistorySnapshot,
   seed: number,
+  masteryByConcept: Record<string, number>,
 ): number {
   const stats = history.cardStats[card.id];
+  const conceptMastery = masteryByConcept[card.primaryConceptId] ?? 0;
+  const masteryGap = (100 - conceptMastery) * 0.9;
   const tieBreak =
     (flashcardHashSeed(`${seed}:${card.id}:adaptive`) % 1000) / 10000;
 
   if (!stats) {
-    return 60 + tieBreak;
+    return 60 + masteryGap + tieBreak;
   }
 
   const total = Math.max(1, stats.seen);
-  const difficulty =
-    (stats.miss * 3 + stats.doubt * 1.5) / total;
-
+  const difficulty = (stats.miss * 3 + stats.doubt * 1.5) / total;
   const recencyWeight =
     stats.lastRating === "MISS"
       ? 120
@@ -83,7 +81,7 @@ function adaptivePriority(
         ? 90
         : 20;
 
-  return recencyWeight + difficulty * 20 + tieBreak;
+  return recencyWeight + difficulty * 20 + masteryGap + tieBreak;
 }
 
 export function selectFlashcardIds({
@@ -93,6 +91,7 @@ export function selectFlashcardIds({
   history,
   size,
   seed,
+  masteryByConcept = {},
 }: {
   cards: FlashcardMeta[];
   mode: FlashcardMode;
@@ -100,6 +99,7 @@ export function selectFlashcardIds({
   history: FlashcardHistorySnapshot;
   size: number;
   seed: number;
+  masteryByConcept?: Record<string, number>;
 }): string[] {
   const pool = cards.filter((card) => matchesFlashcardFilters(card, filters));
 
@@ -107,8 +107,8 @@ export function selectFlashcardIds({
     return [...pool]
       .sort(
         (a, b) =>
-          adaptivePriority(b, history, seed) -
-          adaptivePriority(a, history, seed),
+          adaptivePriority(b, history, seed, masteryByConcept) -
+          adaptivePriority(a, history, seed, masteryByConcept),
       )
       .slice(0, size)
       .map((card) => card.id);
@@ -131,9 +131,7 @@ export function getFlashcardDirection({
   seed: number;
   allowReverse: boolean;
 }): FlashcardDirection {
-  if (!allowReverse || !card.reversible) {
-    return "FRONT_TO_BACK";
-  }
+  if (!allowReverse || !card.reversible) return "FRONT_TO_BACK";
 
   return flashcardHashSeed(`${seed}:${card.id}:direction`) % 2 === 0
     ? "FRONT_TO_BACK"
@@ -166,13 +164,9 @@ export function scheduleFlashcardRepeat({
   rating: FlashcardRating;
 }): FlashcardQueueItem[] {
   const queue = [...remainingQueue];
+  const maxExposure = rating === "MISS" ? 3 : rating === "DOUBT" ? 2 : 1;
 
-  const maxExposure =
-    rating === "MISS" ? 3 : rating === "DOUBT" ? 2 : 1;
-
-  if (current.exposure >= maxExposure || rating === "KNOW") {
-    return queue;
-  }
+  if (current.exposure >= maxExposure || rating === "KNOW") return queue;
 
   const gap = rating === "MISS" ? 2 : 5;
   const insertionIndex = Math.min(gap, queue.length);

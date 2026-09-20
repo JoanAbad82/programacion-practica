@@ -1,15 +1,22 @@
-export default function Page() {
+import { ProgressDashboard } from "@/components/progress/progress-dashboard";
+import { getBlock1ProgressMetadata } from "@/lib/content/progress-content";
+
+export default async function ProgressPage() {
+  const { concepts, units } = await getBlock1ProgressMetadata();
+
   return (
-    <section>
-      <header className="page-header">
-        <span className="eyebrow">V1 · Estructura preparada</span>
+    <section className="progress-page">
+      <header className="page-header study-landing-header">
+        <span className="eyebrow">Phase 6 — Progress & Mastery</span>
         <h1>Progreso</h1>
-        <p>Dominio por bloque, unidad y concepto, con evidencias recientes.</p>
+        <p>
+          Una vista única del aprendizaje real: estudio, tests y flashcards se
+          combinan por concepto para mostrar qué está nuevo, en aprendizaje,
+          comprendido o dominado.
+        </p>
       </header>
-      <ul className="placeholder-list">
-        <li>Phase 1: ruta, layout, tema y estructura listos.</li>
-        <li>Phase 2+: integración del contenido y motor educativo.</li>
-      </ul>
+
+      <ProgressDashboard concepts={concepts} units={units} />
     </section>
   );
 }

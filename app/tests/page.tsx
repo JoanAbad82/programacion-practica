@@ -4,6 +4,7 @@ import {
   getBlock1Units,
   normalizeUnitSlug,
 } from "@/lib/content/study-content";
+import { getBlock1Concepts } from "@/lib/content/progress-content";
 import type { QuizMode } from "@/types/quiz";
 
 function normalizeMode(value: string | undefined): QuizMode {
@@ -31,8 +32,11 @@ export default async function TestsPage({
   const rawUnit = Array.isArray(params.unit) ? params.unit[0] : params.unit;
   const rawMode = Array.isArray(params.mode) ? params.mode[0] : params.mode;
   const normalizedSlug = rawUnit ? normalizeUnitSlug(rawUnit) : null;
-  const units = await getBlock1Units();
-  const questions = await getBlock1QuestionMetas();
+  const [units, questions, concepts] = await Promise.all([
+    getBlock1Units(),
+    getBlock1QuestionMetas(),
+    getBlock1Concepts(),
+  ]);
 
   const unit = normalizedSlug
     ? units.find(
@@ -56,13 +60,11 @@ export default async function TestsPage({
       </header>
 
       <QuizSetup
+        concepts={concepts}
         initialMode={initialMode}
         initialUnitId={unit?.unitId ?? null}
         questions={questions}
-        units={units.map((candidate) => ({
-          unitId: candidate.unitId,
-          title: candidate.title,
-        }))}
+        units={units}
       />
     </section>
   );

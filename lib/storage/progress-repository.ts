@@ -1,7 +1,11 @@
-import type { ConceptProgress, FlashcardRating } from "@/types/progress";
+import type { ProgressModel } from "@/types/progress";
+
+/**
+ * Abstraction reserved for a future remote persistence layer.
+ * In V1 the mastery model is derived locally from study, quiz and flashcard
+ * histories, so no duplicate progress database is written.
+ */
 export interface ProgressRepository {
-  getConceptProgress(conceptId: string): Promise<ConceptProgress | null>;
-  recordQuestionAttempt(questionId: string, conceptId: string, correct: boolean, difficulty: 1 | 2 | 3): Promise<void>;
-  recordFlashcardResult(flashcardId: string, conceptId: string, rating: FlashcardRating): Promise<void>;
+  getProgress(): Promise<ProgressModel>;
   resetProgress(): Promise<void>;
 }

@@ -11,8 +11,12 @@ import {
   createQuizSession,
   useQuizHistory,
 } from "@/lib/storage/quiz-history";
+import { masteryScoreMap } from "@/lib/progress/mastery";
+import { useUnifiedProgress } from "@/lib/storage/unified-progress";
+import type { Concept } from "@/types/content";
 import type { Language } from "@/types/content";
 import type { QuestionType } from "@/types/question";
+import type { StudyUnitMeta } from "@/types/study";
 import {
   QUIZ_SESSION_SIZES,
   type QuizDifficultyFilter,
@@ -23,11 +27,6 @@ import {
   type QuizSessionSize,
   type QuizTypeFilter,
 } from "@/types/quiz";
-
-interface UnitOption {
-  unitId: string;
-  title: string;
-}
 
 const modeCopy: Record<QuizMode, { title: string; description: string }> = {
   BLOCK: {
@@ -44,7 +43,7 @@ const modeCopy: Record<QuizMode, { title: string; description: string }> = {
   },
   ADAPTIVE: {
     title: "Adaptativo V1",
-    description: "Prioriza fallos recientes, menor precisión y preguntas aún no vistas.",
+    description: "Prioriza menor dominio por concepto, fallos recientes y preguntas aún no vistas.",
   },
 };
 
@@ -89,14 +88,18 @@ export function QuizSetup({
   units,
   initialUnitId,
   initialMode,
+  concepts,
 }: {
   questions: QuizQuestionMeta[];
-  units: UnitOption[];
+  units: StudyUnitMeta[];
   initialUnitId: string | null;
   initialMode: QuizMode;
+  concepts: Concept[];
 }) {
   const router = useRouter();
   const history = useQuizHistory();
+  const progress = useUnifiedProgress({ concepts, units });
+  const masteryByConcept = useMemo(() => masteryScoreMap(progress), [progress]);
 
   const [mode, setMode] = useState<QuizMode>(initialMode);
   const [unitId, setUnitId] = useState(
@@ -162,6 +165,7 @@ export function QuizSetup({
       history,
       size: effectiveSize,
       seed,
+      masteryByConcept,
     });
 
     const config = {

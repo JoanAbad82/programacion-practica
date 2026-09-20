@@ -1,10 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "progress.schema.json",
-  "type": "object",
-  "required": ["schemaVersion","startedAt","updatedAt","studiedUnits","questionAttempts","flashcardAttempts","conceptProgress","settings"],
-  "properties": {
-    "schemaVersion": {"const":"PROGRESS_SCHEMA_V1"}
-  },
-  "additionalProperties": true
+  "title": "ProgressModelCompatibilityAlias",
+  "description": "Compatibility alias for the Phase 6 derived progress model.",
+  "$ref": "progress-model.schema.json"
 }

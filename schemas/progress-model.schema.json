@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "progress-model.schema.json",
+  "title": "ProgressModel",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "generatedAt",
+    "concepts",
+    "units",
+    "block"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "PROGRESS_MODEL_V1"
+    },
+    "generatedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "concepts": {
+      "type": "object"
+    },
+    "units": {
+      "type": "object"
+    },
+    "block": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
