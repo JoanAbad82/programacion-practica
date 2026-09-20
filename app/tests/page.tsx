@@ -50,7 +50,7 @@ export default async function TestsPage({
   return (
     <section className="quiz-page">
       <header className="page-header study-landing-header">
-        <span className="eyebrow">Phase 4 — Quiz Engine</span>
+        <span className="eyebrow">Bloque 1 · Práctica objetiva</span>
         <h1>Tests</h1>
         <p>
           Practica con las 200 preguntas validadas del Bloque 1. Cada sesión

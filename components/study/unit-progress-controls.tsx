@@ -17,8 +17,8 @@ export function UnitProgressControls({ unitId }: { unitId: string }) {
   }, [unitId]);
 
   return (
-    <div className="unit-progress-controls" aria-live="polite">
-      <span>
+    <div className="unit-progress-controls">
+      <span aria-live="polite" role="status">
         Estado: {status === "STUDIED" ? "Estudiada" : status === "IN_PROGRESS" ? "En curso" : "No iniciada"}
       </span>
       <button

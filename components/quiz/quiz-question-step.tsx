@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { QuizRichText } from "./quiz-rich-text";
 import { shuffleQuestionOptions } from "@/lib/quiz/engine";
 import type { Question } from "@/types/question";
@@ -15,13 +15,7 @@ const typeLabels = {
   F: "Aplicación práctica",
 } as const;
 
-export function QuizQuestionStep({
-  question,
-  seed,
-  index,
-  total,
-  onContinue,
-}: {
+export function QuizQuestionStep({ question, seed, index, total, onContinue }: {
   question: Question;
   seed: number;
   index: number;
@@ -30,20 +24,20 @@ export function QuizQuestionStep({
 }) {
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
   const [answered, setAnswered] = useState(false);
+  const feedbackRef = useRef<HTMLElement>(null);
 
   const options = useMemo(
     () => shuffleQuestionOptions(question.options, seed, question.id),
     [question, seed],
   );
 
-  const selectedOption = options.find(
-    (option) => option.id === selectedOptionId,
-  );
-  const correctOption = question.options.find(
-    (option) => option.id === question.correctOptionId,
-  );
-  const isCorrect =
-    answered && selectedOptionId === question.correctOptionId;
+  const selectedOption = options.find((option) => option.id === selectedOptionId);
+  const correctOption = question.options.find((option) => option.id === question.correctOptionId);
+  const isCorrect = answered && selectedOptionId === question.correctOptionId;
+
+  useEffect(() => {
+    if (answered) feedbackRef.current?.focus();
+  }, [answered]);
 
   function submitAnswer() {
     if (!selectedOptionId) return;
@@ -52,7 +46,6 @@ export function QuizQuestionStep({
 
   function continueSession() {
     if (!answered || !selectedOptionId) return;
-
     onContinue({
       questionId: question.id,
       unitId: question.unitId,
@@ -73,13 +66,14 @@ export function QuizQuestionStep({
       </div>
 
       <div
+        aria-label={`Progreso: ${index + 1} de ${total} preguntas`}
+        aria-valuemax={total}
+        aria-valuemin={1}
+        aria-valuenow={index + 1}
         className="quiz-progress-track"
-        aria-label={`${index + 1} de ${total}`}
+        role="progressbar"
       >
-        <span
-          className="quiz-progress-fill"
-          style={{ width: `${((index + 1) / total) * 100}%` }}
-        />
+        <span className="quiz-progress-fill" style={{ width: `${((index + 1) / total) * 100}%` }} />
       </div>
 
       <div className="quiz-question-meta">
@@ -88,29 +82,19 @@ export function QuizQuestionStep({
         <span>{question.language.replace("_", " ↔ ")}</span>
       </div>
 
-      <h1 className="quiz-question-prompt">
-        <QuizRichText text={question.prompt} />
-      </h1>
+      <h1 className="quiz-question-prompt"><QuizRichText text={question.prompt} /></h1>
 
-      <div className="quiz-options" role="radiogroup" aria-label="Respuestas">
+      <fieldset className="quiz-options">
+        <legend className="sr-only">Selecciona una respuesta</legend>
         {options.map((option) => {
           const selected = option.id === selectedOptionId;
           const correct = option.id === question.correctOptionId;
           const stateClass = answered
-            ? correct
-              ? "is-correct"
-              : selected
-                ? "is-wrong"
-                : ""
-            : selected
-              ? "is-selected"
-              : "";
+            ? correct ? "is-correct" : selected ? "is-wrong" : ""
+            : selected ? "is-selected" : "";
 
           return (
-            <label
-              className={`quiz-option ${stateClass}`}
-              key={option.id}
-            >
+            <label className={`quiz-option ${stateClass}`} key={option.id}>
               <input
                 checked={selected}
                 disabled={answered}
@@ -121,36 +105,27 @@ export function QuizQuestionStep({
               />
               <span className="quiz-option-marker" aria-hidden="true" />
               <QuizRichText compact text={option.text} />
+              {answered && correct ? <span className="option-state-text">Correcta</span> : null}
+              {answered && selected && !correct ? <span className="option-state-text">Tu elección</span> : null}
             </label>
           );
         })}
-      </div>
+      </fieldset>
 
       {!answered ? (
-        <button
-          className="button primary"
-          disabled={!selectedOptionId}
-          onClick={submitAnswer}
-          type="button"
-        >
+        <button className="button primary" disabled={!selectedOptionId} onClick={submitAnswer} type="button">
           Responder
         </button>
       ) : (
         <section
-          className={`quiz-feedback ${isCorrect ? "correct" : "incorrect"}`}
           aria-live="polite"
+          className={`quiz-feedback ${isCorrect ? "correct" : "incorrect"}`}
+          ref={feedbackRef}
+          tabIndex={-1}
         >
           <strong>{isCorrect ? "Respuesta correcta" : "Respuesta incorrecta"}</strong>
-          {!isCorrect && correctOption ? (
-            <p>
-              Respuesta correcta: <QuizRichText compact text={correctOption.text} />
-            </p>
-          ) : null}
-          {selectedOption ? (
-            <p className="quiz-feedback-selection">
-              Tu respuesta: <QuizRichText compact text={selectedOption.text} />
-            </p>
-          ) : null}
+          {!isCorrect && correctOption ? <p>Respuesta correcta: <QuizRichText compact text={correctOption.text} /></p> : null}
+          {selectedOption ? <p className="quiz-feedback-selection">Tu respuesta: <QuizRichText compact text={selectedOption.text} /></p> : null}
           <div className="quiz-explanation">
             <span className="eyebrow">Explicación</span>
             <p><QuizRichText text={question.explanation} /></p>

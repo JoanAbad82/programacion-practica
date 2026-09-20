@@ -1,15 +1,33 @@
-export default function Page() {
+import { ThemeToggle } from "@/components/common/theme-toggle";
+import { LocalDataControls } from "@/components/settings/local-data-controls";
+
+export default function SettingsPage() {
   return (
-    <section>
+    <section className="settings-page">
       <header className="page-header">
-        <span className="eyebrow">V1 · Estructura preparada</span>
+        <span className="eyebrow">Preferencias</span>
         <h1>Ajustes</h1>
-        <p>Apariencia, exportación/importación futura y control del progreso local.</p>
+        <p>
+          Controla la apariencia y los datos de aprendizaje que permanecen en
+          este navegador.
+        </p>
       </header>
-      <ul className="placeholder-list">
-        <li>Phase 1: ruta, layout, tema y estructura listos.</li>
-        <li>Phase 2+: integración del contenido y motor educativo.</li>
-      </ul>
+
+      <div className="settings-grid">
+        <section className="settings-card" aria-labelledby="apariencia-ajustes">
+          <div>
+            <span className="eyebrow">Apariencia</span>
+            <h2 id="apariencia-ajustes">Claro, oscuro o sistema</h2>
+            <p>
+              El modo Sistema sigue la preferencia del dispositivo. La elección
+              se conserva localmente.
+            </p>
+          </div>
+          <ThemeToggle />
+        </section>
+
+        <LocalDataControls />
+      </div>
     </section>
   );
 }

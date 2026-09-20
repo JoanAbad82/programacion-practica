@@ -4,18 +4,49 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <span className="eyebrow">Phase 1 · Bootstrap</span>
+        <span className="eyebrow">Bloque 1 · Fundamentos y comandos básicos</span>
         <h1>Aprende a leer, entender y modificar código.</h1>
-        <p>Una plataforma independiente para aprender Python y PowerShell con estudio guiado, tests, flashcards y progreso por conceptos.</p>
+        <p>
+          Estudia Python y PowerShell con contenido guiado, práctica objetiva,
+          recuperación activa y progreso basado en conceptos.
+        </p>
         <div className="actions">
-          <Link className="button primary" href="/estudiar">Empezar a estudiar</Link>
-          <Link className="button" href="/tests">Practicar con tests</Link>
+          <Link className="button primary" href="/estudiar">
+            Continuar estudiando
+          </Link>
+          <Link className="button" href="/tests">
+            Practicar con tests
+          </Link>
         </div>
       </section>
-      <section className="grid" aria-label="Módulos principales">
-        <article className="card"><strong>Estudio</strong><p>12 unidades del Bloque 1 con contenido canónico versionado.</p><span className="metric">12</span></article>
-        <article className="card"><strong>Tests</strong><p>Banco validado con preguntas orientadas a comprensión y aplicación.</p><span className="metric">200</span></article>
-        <article className="card"><strong>Flashcards</strong><p>Recuperación activa sin convertir las tarjetas en una copia del test.</p><span className="metric">80</span></article>
+
+      <section aria-labelledby="modulos-principales">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">Tu recorrido</span>
+            <h2 id="modulos-principales">Una misma base, tres formas de practicar</h2>
+          </div>
+        </div>
+        <div className="grid home-module-grid">
+          <article className="card home-module-card">
+            <strong>Estudiar</strong>
+            <p>12 unidades canónicas para comprender la lógica antes de memorizar.</p>
+            <span className="metric">12</span>
+            <Link className="text-link" href="/estudiar">Abrir unidades →</Link>
+          </article>
+          <article className="card home-module-card">
+            <strong>Tests</strong>
+            <p>200 preguntas validadas para interpretar, aplicar y depurar.</p>
+            <span className="metric">200</span>
+            <Link className="text-link" href="/tests">Configurar test →</Link>
+          </article>
+          <article className="card home-module-card">
+            <strong>Tarjetas</strong>
+            <p>80 flashcards para recuperación activa y repetición adaptativa.</p>
+            <span className="metric">80</span>
+            <Link className="text-link" href="/tarjetas">Empezar repaso →</Link>
+          </article>
+        </div>
       </section>
     </>
   );

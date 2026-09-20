@@ -4,83 +4,70 @@ import { useEffect, useSyncExternalStore } from "react";
 
 type Theme = "system" | "light" | "dark";
 
-const order: Theme[] = ["system", "light", "dark"];
-const labels: Record<Theme, string> = {
-  system: "Sistema",
-  light: "Claro",
-  dark: "Oscuro",
-};
-
 const storageKey = "pp-theme";
-const themeChangeEvent = "pp-theme-change";
+const changeEvent = "pp-theme-change";
+const themes: Theme[] = ["system", "light", "dark"];
 
 function isTheme(value: string | null): value is Theme {
-  return value !== null && order.includes(value as Theme);
+  return value !== null && themes.includes(value as Theme);
+}
+
+function getSnapshot(): Theme {
+  const saved = window.localStorage.getItem(storageKey);
+  return isTheme(saved) ? saved : "system";
+}
+
+function getServerSnapshot(): Theme {
+  return "system";
+}
+
+function subscribe(listener: () => void) {
+  const onStorage = (event: StorageEvent) => {
+    if (event.key === storageKey) listener();
+  };
+  const onLocalChange = () => listener();
+
+  window.addEventListener("storage", onStorage);
+  window.addEventListener(changeEvent, onLocalChange);
+
+  return () => {
+    window.removeEventListener("storage", onStorage);
+    window.removeEventListener(changeEvent, onLocalChange);
+  };
 }
 
 function applyTheme(theme: Theme) {
   if (theme === "system") {
     document.documentElement.removeAttribute("data-theme");
-    return;
+  } else {
+    document.documentElement.setAttribute("data-theme", theme);
   }
-
-  document.documentElement.setAttribute("data-theme", theme);
-}
-
-function getThemeSnapshot(): Theme {
-  const saved = window.localStorage.getItem(storageKey);
-  return isTheme(saved) ? saved : "system";
-}
-
-function getServerThemeSnapshot(): Theme {
-  return "system";
-}
-
-function subscribeToTheme(listener: () => void) {
-  const onStorage = (event: StorageEvent) => {
-    if (event.key === storageKey) {
-      listener();
-    }
-  };
-
-  const onThemeChange = () => listener();
-
-  window.addEventListener("storage", onStorage);
-  window.addEventListener(themeChangeEvent, onThemeChange);
-
-  return () => {
-    window.removeEventListener("storage", onStorage);
-    window.removeEventListener(themeChangeEvent, onThemeChange);
-  };
 }
 
 export function ThemeToggle() {
-  const theme = useSyncExternalStore(
-    subscribeToTheme,
-    getThemeSnapshot,
-    getServerThemeSnapshot,
-  );
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   useEffect(() => {
     applyTheme(theme);
   }, [theme]);
 
-  function cycle() {
-    const next = order[(order.indexOf(theme) + 1) % order.length];
-
-    window.localStorage.setItem(storageKey, next);
-    applyTheme(next);
-    window.dispatchEvent(new Event(themeChangeEvent));
-  }
-
   return (
-    <button
-      className="theme-button"
-      onClick={cycle}
-      aria-label="Cambiar apariencia"
-      type="button"
-    >
-      Tema: {labels[theme]}
-    </button>
+    <label className="theme-control">
+      <span>Tema</span>
+      <select
+        aria-label="Apariencia de la aplicación"
+        onChange={(event) => {
+          const next = event.target.value as Theme;
+          window.localStorage.setItem(storageKey, next);
+          applyTheme(next);
+          window.dispatchEvent(new Event(changeEvent));
+        }}
+        value={theme}
+      >
+        <option value="system">Sistema</option>
+        <option value="light">Claro</option>
+        <option value="dark">Oscuro</option>
+      </select>
+    </label>
   );
 }

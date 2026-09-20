@@ -32,7 +32,7 @@ export default async function FlashcardsPage({
   return (
     <section className="flashcards-page">
       <header className="page-header study-landing-header">
-        <span className="eyebrow">Phase 5 — Flashcards Engine</span>
+        <span className="eyebrow">Bloque 1 · Recuperación activa</span>
         <h1>Tarjetas</h1>
         <p>
           Recuperación activa sobre las 80 flashcards validadas del Bloque 1.

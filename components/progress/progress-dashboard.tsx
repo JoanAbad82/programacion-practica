@@ -116,7 +116,14 @@ export function ProgressDashboard({
                   <strong>{summary.masteryScore}%</strong>
                 </div>
                 <h3>{unit.title}</h3>
-                <div className="mastery-track" aria-label={`${summary.masteryScore}% de dominio`}>
+                <div
+                  aria-label={`${summary.masteryScore}% de dominio`}
+                  aria-valuemax={100}
+                  aria-valuemin={0}
+                  aria-valuenow={summary.masteryScore}
+                  className="mastery-track"
+                  role="progressbar"
+                >
                   <span style={{ width: `${summary.masteryScore}%` }} />
                 </div>
                 <p>
