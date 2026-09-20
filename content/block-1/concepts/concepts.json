@@ -1,0 +1,1018 @@
+[
+  {
+    "conceptId": "B1-U01-PROGRAMA",
+    "blockId": "B1",
+    "unitId": "U01",
+    "name": "Programa",
+    "definition": "Conjunto de instrucciones que un ordenador ejecuta para realizar una tarea.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U01-CODIGO",
+    "blockId": "B1",
+    "unitId": "U01",
+    "name": "Código",
+    "definition": "Instrucciones escritas utilizando un lenguaje de programación.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U01-LENGUAJE",
+    "blockId": "B1",
+    "unitId": "U01",
+    "name": "Lenguaje de programación",
+    "definition": "Sistema de reglas utilizado para escribir instrucciones ejecutables o interpretables por un ordenador.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U01-INSTRUCCION",
+    "blockId": "B1",
+    "unitId": "U01",
+    "name": "Instrucción",
+    "definition": "Acción concreta expresada mediante código.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U02-TERMINAL",
+    "blockId": "B1",
+    "unitId": "U02",
+    "name": "Terminal / consola",
+    "definition": "Entorno textual desde el que se introducen y ejecutan comandos.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U02-COMANDO",
+    "blockId": "B1",
+    "unitId": "U02",
+    "name": "Comando",
+    "definition": "Instrucción dirigida al sistema para solicitar una acción.",
+    "language": "POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U02-CMDLET",
+    "blockId": "B1",
+    "unitId": "U02",
+    "name": "Cmdlet",
+    "definition": "Tipo de comando propio de PowerShell.",
+    "language": "POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U02-VERBO-SUSTANTIVO",
+    "blockId": "B1",
+    "unitId": "U02",
+    "name": "Convención Verbo-Sustantivo",
+    "definition": "Patrón habitual de nombres de cmdlets de PowerShell, como Get-Location o Set-Location.",
+    "language": "POWERSHELL",
+    "priority": "MEDIUM",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U02-SCRIPT",
+    "blockId": "B1",
+    "unitId": "U02",
+    "name": "Script",
+    "definition": "Archivo que contiene instrucciones guardadas para ejecutarlas y reutilizarlas.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U03-SINTAXIS",
+    "blockId": "B1",
+    "unitId": "U03",
+    "name": "Sintaxis",
+    "definition": "Reglas que determinan cómo debe escribirse correctamente el código.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U03-COMENTARIO",
+    "blockId": "B1",
+    "unitId": "U03",
+    "name": "Comentario",
+    "definition": "Texto incluido para explicar o documentar código y que normalmente no se ejecuta.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U03-INDENTACION",
+    "blockId": "B1",
+    "unitId": "U03",
+    "name": "Indentación",
+    "definition": "Espacios al inicio de una línea que en Python forman parte de la estructura de los bloques.",
+    "language": "PYTHON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U04-VARIABLE",
+    "blockId": "B1",
+    "unitId": "U04",
+    "name": "Variable",
+    "definition": "Nombre utilizado para almacenar y reutilizar un valor.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U04-ASIGNACION",
+    "blockId": "B1",
+    "unitId": "U04",
+    "name": "Asignación",
+    "definition": "Operación de guardar un valor en una variable.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U04-STRING",
+    "blockId": "B1",
+    "unitId": "U04",
+    "name": "String",
+    "definition": "Cadena de texto.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U04-ENTERO",
+    "blockId": "B1",
+    "unitId": "U04",
+    "name": "Entero",
+    "definition": "Número sin parte decimal.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U04-DECIMAL",
+    "blockId": "B1",
+    "unitId": "U04",
+    "name": "Decimal / float",
+    "definition": "Número con parte decimal.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U04-BOOLEANO",
+    "blockId": "B1",
+    "unitId": "U04",
+    "name": "Booleano",
+    "definition": "Dato lógico que representa verdadero o falso.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U05-ENTRADA",
+    "blockId": "B1",
+    "unitId": "U05",
+    "name": "Entrada",
+    "definition": "Información que recibe un programa.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U05-PROCESAMIENTO",
+    "blockId": "B1",
+    "unitId": "U05",
+    "name": "Procesamiento",
+    "definition": "Operaciones que un programa realiza sobre los datos.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U05-SALIDA",
+    "blockId": "B1",
+    "unitId": "U05",
+    "name": "Salida",
+    "definition": "Información producida o mostrada por un programa.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U05-EPS",
+    "blockId": "B1",
+    "unitId": "U05",
+    "name": "Entrada → Procesamiento → Salida",
+    "definition": "Modelo básico de flujo de información de un programa.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U06-OPERADORES",
+    "blockId": "B1",
+    "unitId": "U06",
+    "name": "Operadores matemáticos",
+    "definition": "Símbolos básicos para suma, resta, multiplicación y división.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U06-EXPRESION",
+    "blockId": "B1",
+    "unitId": "U06",
+    "name": "Expresión",
+    "definition": "Combinación de valores, variables y operadores que produce un resultado.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U06-COMPARACION",
+    "blockId": "B1",
+    "unitId": "U06",
+    "name": "Comparación",
+    "definition": "Operación que comprueba la relación entre valores y produce un resultado lógico.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U06-ASIGNAR-COMPARAR",
+    "blockId": "B1",
+    "unitId": "U06",
+    "name": "Asignar frente a comparar",
+    "definition": "Distinción entre guardar un valor y comprobar una relación, por ejemplo = frente a == en Python.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U07-CONDICION",
+    "blockId": "B1",
+    "unitId": "U07",
+    "name": "Condición",
+    "definition": "Expresión lógica utilizada para decidir qué código debe ejecutarse.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U07-IF",
+    "blockId": "B1",
+    "unitId": "U07",
+    "name": "if",
+    "definition": "Estructura que ejecuta un bloque cuando se cumple una condición.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U07-ELSE",
+    "blockId": "B1",
+    "unitId": "U07",
+    "name": "else",
+    "definition": "Bloque alternativo que se ejecuta cuando la condición de if no se cumple.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U08-COLECCION",
+    "blockId": "B1",
+    "unitId": "U08",
+    "name": "Colección",
+    "definition": "Estructura que puede contener varios elementos.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U08-LISTA",
+    "blockId": "B1",
+    "unitId": "U08",
+    "name": "Lista / secuencia básica",
+    "definition": "Colección ordenada de varios elementos; en Python se representa de forma básica con corchetes.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U08-INDICE",
+    "blockId": "B1",
+    "unitId": "U08",
+    "name": "Índice",
+    "definition": "Posición utilizada para acceder a un elemento dentro de una colección.",
+    "language": "PYTHON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U09-BUCLE",
+    "blockId": "B1",
+    "unitId": "U09",
+    "name": "Bucle",
+    "definition": "Estructura utilizada para repetir instrucciones.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U09-FOR",
+    "blockId": "B1",
+    "unitId": "U09",
+    "name": "for",
+    "definition": "Estructura de Python utilizada para recorrer los elementos de una colección.",
+    "language": "PYTHON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U09-FOREACH",
+    "blockId": "B1",
+    "unitId": "U09",
+    "name": "foreach",
+    "definition": "Estructura de PowerShell utilizada para recorrer los elementos de una colección.",
+    "language": "POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U09-ITERACION",
+    "blockId": "B1",
+    "unitId": "U09",
+    "name": "Iteración",
+    "definition": "Cada repetición individual realizada por un bucle.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U10-FUNCION",
+    "blockId": "B1",
+    "unitId": "U10",
+    "name": "Función",
+    "definition": "Bloque reutilizable de instrucciones diseñado para realizar una tarea.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U10-LLAMADA",
+    "blockId": "B1",
+    "unitId": "U10",
+    "name": "Llamada a función",
+    "definition": "Acción mediante la que se solicita ejecutar una función.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U10-PARAMETRO",
+    "blockId": "B1",
+    "unitId": "U10",
+    "name": "Parámetro",
+    "definition": "Variable definida por una función para recibir información.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U10-ARGUMENTO",
+    "blockId": "B1",
+    "unitId": "U10",
+    "name": "Argumento",
+    "definition": "Valor concreto proporcionado al llamar a una función.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U10-RETURN",
+    "blockId": "B1",
+    "unitId": "U10",
+    "name": "return",
+    "definition": "Instrucción introductoria utilizada para devolver un resultado desde una función.",
+    "language": "PYTHON",
+    "priority": "MEDIUM",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U11-RUTA",
+    "blockId": "B1",
+    "unitId": "U11",
+    "name": "Ruta",
+    "definition": "Representación de la ubicación de un archivo o carpeta.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U11-RUTA-ABSOLUTA",
+    "blockId": "B1",
+    "unitId": "U11",
+    "name": "Ruta absoluta",
+    "definition": "Ruta que indica una ubicación completa.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U11-RUTA-RELATIVA",
+    "blockId": "B1",
+    "unitId": "U11",
+    "name": "Ruta relativa",
+    "definition": "Ruta interpretada respecto a la ubicación de trabajo actual.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U11-GET-LOCATION",
+    "blockId": "B1",
+    "unitId": "U11",
+    "name": "Get-Location",
+    "definition": "Cmdlet de PowerShell que consulta la ubicación de trabajo actual.",
+    "language": "POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U11-GET-CHILDITEM",
+    "blockId": "B1",
+    "unitId": "U11",
+    "name": "Get-ChildItem",
+    "definition": "Cmdlet de PowerShell que obtiene elementos de una ubicación.",
+    "language": "POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U11-SET-LOCATION",
+    "blockId": "B1",
+    "unitId": "U11",
+    "name": "Set-Location",
+    "definition": "Cmdlet de PowerShell que cambia la ubicación de trabajo.",
+    "language": "POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U11-PIPELINE",
+    "blockId": "B1",
+    "unitId": "U11",
+    "name": "Pipeline",
+    "definition": "Mecanismo de PowerShell que pasa los resultados de un comando al siguiente mediante |.",
+    "language": "POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U11-AYUDA",
+    "blockId": "B1",
+    "unitId": "U11",
+    "name": "Ayuda y descubrimiento",
+    "definition": "Uso de Get-Help y Get-Command para localizar información técnica.",
+    "language": "POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U12-ERROR-SINTAXIS",
+    "blockId": "B1",
+    "unitId": "U12",
+    "name": "Error de sintaxis",
+    "definition": "Error causado por incumplir las reglas de escritura del lenguaje.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U12-ERROR-EJECUCION",
+    "blockId": "B1",
+    "unitId": "U12",
+    "name": "Error de ejecución",
+    "definition": "Problema que aparece mientras el programa se está ejecutando.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U12-ERROR-LOGICO",
+    "blockId": "B1",
+    "unitId": "U12",
+    "name": "Error lógico",
+    "definition": "Problema en el que el programa puede ejecutarse pero produce un resultado incorrecto.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U12-DEBUGGING",
+    "blockId": "B1",
+    "unitId": "U12",
+    "name": "Debugging / depuración",
+    "definition": "Proceso de localizar, comprender y corregir problemas en el programa.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U12-LEER-ANTES",
+    "blockId": "B1",
+    "unitId": "U12",
+    "name": "Leer antes de modificar",
+    "definition": "Práctica de comprender el código existente antes de cambiarlo.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U12-IA-PRECISION",
+    "blockId": "B1",
+    "unitId": "U12",
+    "name": "Precisión al trabajar con IA",
+    "definition": "Capacidad de describir lenguaje, objetivo, elemento afectado, resultado esperado y restricciones.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B1-U12-CAMBIO-SEGURO",
+    "blockId": "B1",
+    "unitId": "U12",
+    "name": "Cambio seguro con IA",
+    "definition": "Práctica de delimitar qué puede modificarse y qué debe permanecer intacto.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  }
+]

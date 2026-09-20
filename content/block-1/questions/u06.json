@@ -1,0 +1,667 @@
+[
+  {
+    "id": "B1-Q0072",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-OPERADORES",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué operador representa multiplicación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`+`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`/`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`-`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`*`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "`*` representa la multiplicación.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0073",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-OPERADORES",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `total = precio * cantidad`, ¿qué operación se realiza?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Se multiplica `precio` por `cantidad`."
+      },
+      {
+        "id": "opt_2",
+        "text": "Se comparan ambas variables."
+      },
+      {
+        "id": "opt_3",
+        "text": "Se suman obligatoriamente."
+      },
+      {
+        "id": "opt_4",
+        "text": "Se convierten en texto."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El operador `*` realiza una multiplicación.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0074",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-OPERADORES",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`resultado = 10 + 5`. ¿Qué valor tendrá `resultado`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`5`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`15`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`105`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`2`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "10 + 5 = 15.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0075",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-OPERADORES",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Si `precio = 12`, `cantidad = 4` y `total = precio * cantidad`, ¿cuál es el valor de `total`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`16`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`8`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`48`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`3`"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "12 × 4 = 48.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0076",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-OPERADORES",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Se quería calcular `precio × cantidad`, pero se escribió `total = precio + cantidad`. ¿Qué problema existe?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La variable total no puede utilizarse."
+      },
+      {
+        "id": "opt_2",
+        "text": "Falta un comentario."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una suma nunca puede aparecer en Python."
+      },
+      {
+        "id": "opt_4",
+        "text": "Se ha utilizado el operador equivocado."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El código usa + cuando la intención requería *.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0077",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-EXPRESION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es una expresión?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una combinación de valores, variables y operadores que produce un resultado."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una carpeta que contiene varios scripts."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un comentario obligatorio."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un error de ejecución."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Una expresión produce un valor o resultado.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0078",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-EXPRESION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Cuál de estos elementos es una expresión?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`# comentario`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`precio * cantidad`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`programa.py`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`C:\\Datos`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Combina variables y un operador para producir un resultado.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0079",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-EXPRESION",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Si `precio = 5` y `cantidad = 4`, ¿qué produce la expresión `precio * cantidad`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`9`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`1`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`20`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`54`"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "5 × 4 = 20.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0080",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-COMPARACION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Para qué sirve una comparación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para guardar siempre un archivo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para crear obligatoriamente una lista."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para escribir comentarios."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para comprobar la relación entre valores y obtener un resultado lógico."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Una comparación determina si una relación es verdadera o falsa.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0081",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-COMPARACION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Qué expresa `edad >= 18`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una comparación para comprobar si `edad` es mayor o igual que 18."
+      },
+      {
+        "id": "opt_2",
+        "text": "Que se asigna 18 a edad."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una multiplicación."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una salida."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "`>=` significa mayor o igual que.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0082",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-COMPARACION",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Si `edad = 20`, ¿qué resultado produce `edad >= 18`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`20`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`True`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`18`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`False`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "20 es mayor o igual que 18.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0083",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-COMPARACION",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Si `precio = 50`, ¿qué produce `precio < 40`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`40`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`50`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`False`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`True`"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "50 no es menor que 40.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0084",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-COMPARACION",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "¿Cuál comprueba en Python si `edad` es igual a 18?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`edad = 18`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`edad >= 18`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`edad != 18`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`edad == 18`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "`==` realiza una comparación de igualdad.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0085",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-COMPARACION",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "Una persona escribe en PowerShell `$edad >= 18` queriendo utilizar la comparación enseñada en el curso. ¿Qué problema existe?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Está utilizando la sintaxis de comparación mostrada para Python en lugar de `-ge`."
+      },
+      {
+        "id": "opt_2",
+        "text": "PowerShell no permite comparar números."
+      },
+      {
+        "id": "opt_3",
+        "text": "$edad no puede ser una variable."
+      },
+      {
+        "id": "opt_4",
+        "text": "Las comparaciones solo pueden escribirse dentro de funciones."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "En PowerShell se utiliza `-ge` para mayor o igual.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0086",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-ASIGNAR-COMPARAR",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Cuál es la diferencia principal entre `edad = 20` y `edad == 20`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ambas hacen exactamente lo mismo."
+      },
+      {
+        "id": "opt_2",
+        "text": "La primera asigna; la segunda compara."
+      },
+      {
+        "id": "opt_3",
+        "text": "La primera compara; la segunda asigna."
+      },
+      {
+        "id": "opt_4",
+        "text": "La segunda multiplica."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "`=` guarda un valor; `==` comprueba igualdad.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0087",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-ASIGNAR-COMPARAR",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Después de `edad = 20`, ¿qué devuelve conceptualmente `edad == 20`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`20` como nueva asignación"
+      },
+      {
+        "id": "opt_2",
+        "text": "Un string"
+      },
+      {
+        "id": "opt_3",
+        "text": "`True`"
+      },
+      {
+        "id": "opt_4",
+        "text": "Un error obligatorio"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La comparación pregunta si el valor almacenado es igual a 20.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0088",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-ASIGNAR-COMPARAR",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Quieres guardar 100 en `precio`. ¿Qué código es correcto?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`precio == 100`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`precio >= 100`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`precio != 100`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`precio = 100`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Para asignar se utiliza `=`.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0089",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-ASIGNAR-COMPARAR",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un alumno pretende comprobar si `cantidad` vale 3, pero escribe `cantidad = 3`. ¿Cuál es el problema?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ha asignado un valor en lugar de realizar la comparación `cantidad == 3`."
+      },
+      {
+        "id": "opt_2",
+        "text": "Python no admite el número 3."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una variable no puede llamarse cantidad."
+      },
+      {
+        "id": "opt_4",
+        "text": "Toda comparación necesita >=."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La instrucción establece el valor; no comprueba si ya era igual a 3.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0090",
+    "blockId": "B1",
+    "unitId": "U06",
+    "primaryConceptId": "B1-U06-ASIGNAR-COMPARAR",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "¿Por qué es importante distinguir `=` de `==` en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque ambos símbolos significan multiplicar."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque uno asigna un valor y el otro comprueba igualdad."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque == sirve únicamente para escribir comentarios."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque = solo puede utilizarse con texto."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Confundir asignación y comparación cambia la intención del código.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

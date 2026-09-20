@@ -11,7 +11,11 @@ test("Block 1 manifest keeps canonical counts", async () => {
   assert.equal(manifest.canonical_version, "BLOCK1_CANONICAL_V1.0");
 });
 
-test("project is explicitly waiting for Phase 2 content import", async () => {
+test("Phase 2 content import is explicit in the manifest", async () => {
   const manifest = JSON.parse(await readFile(new URL("../content/block-1/manifest.json", import.meta.url), "utf8"));
-  assert.equal(manifest.content_import_status, "PENDING_PHASE_2");
+  assert.equal(manifest.content_import_status, "IMPORTED_PHASE_2");
+  assert.equal(manifest.concept_bank_version, "B1_CONCEPT_BANK_V1.0");
+  assert.equal(manifest.coverage_matrix_version, "B1_TEST_MATRIX_V1.0");
+  assert.equal(manifest.test_bank_version, "BLOCK1_TEST_BANK_V1.0");
+  assert.equal(manifest.flashcard_bank_version, "BLOCK1_FLASHCARD_BANK_V1.0");
 });

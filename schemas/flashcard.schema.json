@@ -2,12 +2,89 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "flashcard.schema.json",
   "type": "object",
-  "required": ["id","blockId","unitId","primaryConceptId","type","language","front","back","sourceVersion","conceptBankVersion","flashcardBankVersion","status"],
+  "required": [
+    "id",
+    "blockId",
+    "unitId",
+    "primaryConceptId",
+    "secondaryConceptIds",
+    "type",
+    "language",
+    "front",
+    "back",
+    "reversible",
+    "sourceVersion",
+    "conceptBankVersion",
+    "flashcardBankVersion",
+    "status"
+  ],
   "properties": {
-    "id": {"type":"string","pattern":"^B[0-9]+-FC[0-9]{4}$"},
-    "type": {"enum":["CD","CM","CR","EC","PX"]},
-    "front": {"type":"string","minLength":1},
-    "back": {"type":"string","minLength":1}
+    "id": {
+      "type": "string",
+      "pattern": "^B1-FC[0-9]{4}$"
+    },
+    "blockId": {
+      "const": "B1"
+    },
+    "unitId": {
+      "type": "string",
+      "pattern": "^U(0[1-9]|1[0-2])$"
+    },
+    "primaryConceptId": {
+      "type": "string",
+      "pattern": "^B1-U[0-9]{2}-[A-Z0-9-]+$"
+    },
+    "secondaryConceptIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^B1-U[0-9]{2}-[A-Z0-9-]+$"
+      },
+      "uniqueItems": true
+    },
+    "type": {
+      "enum": [
+        "CD",
+        "CM",
+        "CR",
+        "EC",
+        "PX"
+      ]
+    },
+    "language": {
+      "enum": [
+        "COMMON",
+        "PYTHON",
+        "POWERSHELL",
+        "PYTHON_POWERSHELL"
+      ]
+    },
+    "front": {
+      "type": "string",
+      "minLength": 1
+    },
+    "back": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reversible": {
+      "type": "boolean"
+    },
+    "sourceVersion": {
+      "const": "BLOCK1_CANONICAL_V1.0"
+    },
+    "conceptBankVersion": {
+      "const": "B1_CONCEPT_BANK_V1.0"
+    },
+    "flashcardBankVersion": {
+      "const": "BLOCK1_FLASHCARD_BANK_V1.0"
+    },
+    "status": {
+      "enum": [
+        "ACTIVE",
+        "RETIRED"
+      ]
+    }
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }

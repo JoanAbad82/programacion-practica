@@ -1,0 +1,492 @@
+[
+  {
+    "id": "B1-Q0058",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-ENTRADA",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es la entrada de un programa?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El código que nunca se ejecuta."
+      },
+      {
+        "id": "opt_2",
+        "text": "La información que recibe el programa."
+      },
+      {
+        "id": "opt_3",
+        "text": "El resultado final mostrado."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una carpeta donde se guarda el programa."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "La entrada son los datos que llegan al programa.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0059",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-ENTRADA",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`nombre = input(\"Nombre: \")` ¿qué hace dentro del modelo estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Muestra únicamente el contenido de nombre."
+      },
+      {
+        "id": "opt_2",
+        "text": "Convierte nombre en una función."
+      },
+      {
+        "id": "opt_3",
+        "text": "Recibe una entrada y la guarda en `nombre`."
+      },
+      {
+        "id": "opt_4",
+        "text": "Elimina cualquier valor anterior sin pedir datos."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "input() solicita información y la asignación la guarda.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0060",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-ENTRADA",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Un usuario escribe `Ana` después de `nombre = input(\"Nombre: \")`. ¿Qué valor pasa a contener `nombre`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`input`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Nombre:`"
+      },
+      {
+        "id": "opt_3",
+        "text": "Nada"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Ana`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La información introducida se almacena en la variable.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0061",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-ENTRADA",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "Quieres que un script PowerShell pregunte al usuario su nombre. ¿Cuál encaja con lo estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`$nombre = Read-Host \"Nombre\"`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Write-Host \"Nombre\"`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Get-Location \"Nombre\"`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`$nombre = Get-Date`"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Read-Host recibe información introducida por el usuario.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0062",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-PROCESAMIENTO",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué significa procesamiento?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Únicamente escribir datos con el teclado."
+      },
+      {
+        "id": "opt_2",
+        "text": "Operaciones que el programa realiza sobre los datos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Únicamente mostrar texto."
+      },
+      {
+        "id": "opt_4",
+        "text": "Guardar siempre un archivo."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "El procesamiento transforma o utiliza datos.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0063",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-PROCESAMIENTO",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `total = precio * cantidad`, ¿qué parte representa principalmente procesamiento?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El nombre precio."
+      },
+      {
+        "id": "opt_2",
+        "text": "La palabra total por sí sola."
+      },
+      {
+        "id": "opt_3",
+        "text": "La operación `precio * cantidad`."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ninguna: no existe procesamiento."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La multiplicación transforma datos para obtener un nuevo valor.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0064",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-PROCESAMIENTO",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Si `precio = 10`, `cantidad = 3` y `total = precio * cantidad`, ¿qué valor produce el procesamiento?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`13`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`7`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`10`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`30`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "10 × 3 = 30.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0065",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-SALIDA",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué representa una salida?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Información producida o mostrada por el programa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una condición."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una variable que aún no tiene valor."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una extensión de archivo."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La salida es la información que el programa produce.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0066",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-SALIDA",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`nombre = \"Ana\"` y luego `print(nombre)`. ¿Qué salida produce?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`nombre = Ana`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Ana`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`print`"
+      },
+      {
+        "id": "opt_4",
+        "text": "Ninguna"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "print(nombre) muestra el valor almacenado.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0067",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-SALIDA",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "¿Cuál se utiliza en los ejemplos estudiados para mostrar información en PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`Read-Host`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Get-Location`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Write-Host`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Set-Location`"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Write-Host se utiliza aquí para mostrar información.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0068",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-EPS",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué orden representa el modelo básico estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Salida → Entrada → Programa"
+      },
+      {
+        "id": "opt_2",
+        "text": "Procesamiento → Salida → Entrada"
+      },
+      {
+        "id": "opt_3",
+        "text": "Código → Error → Carpeta"
+      },
+      {
+        "id": "opt_4",
+        "text": "Entrada → Procesamiento → Salida"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Ese es el flujo conceptual básico.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0069",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-EPS",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `nombre = input(\"Nombre: \")` seguido de `print(\"Hola\", nombre)`, ¿cuál es la entrada principal?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El nombre introducido por el usuario."
+      },
+      {
+        "id": "opt_2",
+        "text": "`print()`"
+      },
+      {
+        "id": "opt_3",
+        "text": "La palabra Hola."
+      },
+      {
+        "id": "opt_4",
+        "text": "El resultado mostrado."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El dato introducido por el usuario constituye la entrada.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0070",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-EPS",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Cuál describe correctamente `nombre = input(\"Nombre: \")` seguido de `print(\"Hola\", nombre)`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Solo existe salida; no hay entrada."
+      },
+      {
+        "id": "opt_2",
+        "text": "input() recibe datos y print() produce salida."
+      },
+      {
+        "id": "opt_3",
+        "text": "print() proporciona la entrada y input() la salida."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ambas instrucciones realizan exactamente la misma función."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "input recibe y print muestra.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0071",
+    "blockId": "B1",
+    "unitId": "U05",
+    "primaryConceptId": "B1-U05-EPS",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Quieres diseñar un programa sencillo que pida una cantidad, realice un cálculo y muestre el resultado. ¿Qué estructura conceptual estás aplicando?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Salida → Comentario → Entrada."
+      },
+      {
+        "id": "opt_2",
+        "text": "Función → Ruta → Script."
+      },
+      {
+        "id": "opt_3",
+        "text": "Entrada → Procesamiento → Salida."
+      },
+      {
+        "id": "opt_4",
+        "text": "Sintaxis → Carpeta → Cmdlet."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El programa recibe un dato, lo procesa y devuelve un resultado.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

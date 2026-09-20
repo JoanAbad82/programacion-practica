@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "block-manifest.schema.json",
+  "type": "object",
+  "required": [
+    "block_id",
+    "title",
+    "canonical_version",
+    "concept_bank_version",
+    "coverage_matrix_version",
+    "test_bank_version",
+    "flashcard_bank_version",
+    "units",
+    "concepts",
+    "questions",
+    "flashcards",
+    "content_import_status",
+    "flashcard_coverage_version",
+    "unit_index",
+    "concept_file",
+    "question_files",
+    "flashcard_files",
+    "coverage_file",
+    "flashcard_coverage_file"
+  ],
+  "properties": {
+    "block_id": {
+      "const": "B1"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_version": {
+      "const": "BLOCK1_CANONICAL_V1.0"
+    },
+    "concept_bank_version": {
+      "const": "B1_CONCEPT_BANK_V1.0"
+    },
+    "coverage_matrix_version": {
+      "const": "B1_TEST_MATRIX_V1.0"
+    },
+    "test_bank_version": {
+      "const": "BLOCK1_TEST_BANK_V1.0"
+    },
+    "flashcard_bank_version": {
+      "const": "BLOCK1_FLASHCARD_BANK_V1.0"
+    },
+    "units": {
+      "const": 12
+    },
+    "concepts": {
+      "const": 56
+    },
+    "questions": {
+      "const": 200
+    },
+    "flashcards": {
+      "const": 80
+    },
+    "content_import_status": {
+      "const": "IMPORTED_PHASE_2"
+    },
+    "flashcard_coverage_version": {
+      "const": "B1_FLASHCARD_MATRIX_V1.0"
+    },
+    "unit_index": {
+      "type": "string",
+      "minLength": 1
+    },
+    "concept_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "question_files": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "flashcard_files": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "coverage_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "flashcard_coverage_file": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

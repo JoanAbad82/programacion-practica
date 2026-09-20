@@ -1,0 +1,597 @@
+[
+  {
+    "id": "B1-Q0119",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-BUCLE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es un bucle?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un archivo utilizado para almacenar errores."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una variable que solo admite booleanos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una estructura utilizada para repetir instrucciones."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una comparación entre dos programas."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Un bucle permite ejecutar repetidamente una acción.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0120",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-BUCLE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Por qué puede ser útil un bucle al trabajar con cien archivos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque obliga a escribir cien instrucciones diferentes."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque convierte los archivos en variables automáticamente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque elimina todos los archivos después de procesarlos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque permite aplicar una acción repetidamente a los elementos."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Los bucles permiten automatizar tareas repetitivas.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0121",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-BUCLE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "En un programa que recorre una lista de nombres y muestra cada uno, ¿qué función principal cumple el bucle?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Repetir la operación de mostrar para cada elemento."
+      },
+      {
+        "id": "opt_2",
+        "text": "Guardar el programa en un archivo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Comparar todos los nombres entre sí."
+      },
+      {
+        "id": "opt_4",
+        "text": "Convertir la lista en un booleano."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El bucle repite una misma acción sobre los elementos.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0122",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-BUCLE",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Una colección contiene Ana, Luis y Marta y un bucle muestra una vez cada elemento. ¿Cuántas veces se ejecuta la acción de mostrar?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "1"
+      },
+      {
+        "id": "opt_2",
+        "text": "3"
+      },
+      {
+        "id": "opt_3",
+        "text": "2"
+      },
+      {
+        "id": "opt_4",
+        "text": "4"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "La acción se realiza una vez por cada elemento.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0123",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-BUCLE",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Un alumno tiene 50 nombres y escribe manualmente 50 instrucciones casi idénticas para mostrarlos. ¿Qué concepto está desaprovechando?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La diferencia entre entero y decimal."
+      },
+      {
+        "id": "opt_2",
+        "text": "La sintaxis de comentarios."
+      },
+      {
+        "id": "opt_3",
+        "text": "La utilidad de un bucle para repetir una acción."
+      },
+      {
+        "id": "opt_4",
+        "text": "El uso de rutas absolutas."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Un bucle evita duplicar manualmente la misma operación.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0124",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-FOR",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON",
+    "prompt": "¿Qué estructura se ha estudiado en Python para recorrer elementos de una colección?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`else`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`return`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Get-Location`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`for`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "for permite recorrer los elementos de una colección.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0125",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-FOR",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `for accion in acciones:`, ¿qué representa `accion`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El elemento actual durante cada repetición."
+      },
+      {
+        "id": "opt_2",
+        "text": "La colección completa permanentemente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una ruta."
+      },
+      {
+        "id": "opt_4",
+        "text": "El número total de elementos."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "accion va representando cada elemento durante las iteraciones.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0126",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-FOR",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`acciones = [\"AAPL\", \"MSFT\"]` y un `for` imprime cada `accion`. ¿Qué se mostrará?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La palabra acciones dos veces."
+      },
+      {
+        "id": "opt_2",
+        "text": "AAPL y MSFT, uno tras otro."
+      },
+      {
+        "id": "opt_3",
+        "text": "0 y 1."
+      },
+      {
+        "id": "opt_4",
+        "text": "Nada."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "El bucle recorre los dos elementos y muestra cada uno.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0127",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-FOR",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "`numeros = [10, 20, 30]` y un `for` imprime cada número. ¿Cuántas veces se ejecuta `print`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "1"
+      },
+      {
+        "id": "opt_2",
+        "text": "2"
+      },
+      {
+        "id": "opt_3",
+        "text": "3"
+      },
+      {
+        "id": "opt_4",
+        "text": "30"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Se ejecuta una vez por cada elemento.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0128",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-FOR",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "¿Cuál está correctamente estructurado en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "```python\nfor accion in acciones\nprint(accion)\n```"
+      },
+      {
+        "id": "opt_2",
+        "text": "```python\nfor = accion in acciones:\n    print(accion)\n```"
+      },
+      {
+        "id": "opt_3",
+        "text": "```python\nfor accion acciones:\n    print(accion)\n```"
+      },
+      {
+        "id": "opt_4",
+        "text": "```python\nfor accion in acciones:\n    print(accion)\n```"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La estructura utiliza `for ... in ...:` y un bloque indentado.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0129",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-FOREACH",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "¿Cuál corresponde a la estructura básica estudiada en PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "```powershell\nforeach ($accion in $acciones) {\n    Write-Host $accion\n}\n```"
+      },
+      {
+        "id": "opt_2",
+        "text": "```powershell\nfor accion in acciones:\n```"
+      },
+      {
+        "id": "opt_3",
+        "text": "```powershell\nif ($accion in $acciones) {\n```"
+      },
+      {
+        "id": "opt_4",
+        "text": "```powershell\nforeach = $accion\n```"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "foreach recorre una colección en PowerShell.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0130",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-FOREACH",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "En `foreach ($accion in $acciones)`, ¿qué representa `$acciones`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Solamente el elemento actual."
+      },
+      {
+        "id": "opt_2",
+        "text": "La colección que se está recorriendo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un comentario."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una condición."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "$acciones contiene la colección.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0131",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-FOREACH",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "`$acciones = @(\"AAPL\", \"MSFT\")`; un `foreach` muestra cada `$accion`. ¿Cuántos valores se muestran?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "0"
+      },
+      {
+        "id": "opt_2",
+        "text": "1"
+      },
+      {
+        "id": "opt_3",
+        "text": "2"
+      },
+      {
+        "id": "opt_4",
+        "text": "3"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La colección contiene dos elementos.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0132",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-FOREACH",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "Un alumno afirma que `$accion` contiene permanentemente toda la colección. ¿Cuál es la corrección?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "$accion es siempre una ruta."
+      },
+      {
+        "id": "opt_2",
+        "text": "Ambas variables deben contener exactamente lo mismo."
+      },
+      {
+        "id": "opt_3",
+        "text": "foreach no utiliza variables."
+      },
+      {
+        "id": "opt_4",
+        "text": "`$accion` representa el elemento actual; `$acciones` es la colección."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La variable singular representa sucesivamente cada elemento.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0133",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-ITERACION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué es una iteración?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Cada repetición individual realizada por un bucle."
+      },
+      {
+        "id": "opt_2",
+        "text": "El archivo donde está escrito un bucle."
+      },
+      {
+        "id": "opt_3",
+        "text": "La condición que siempre termina un programa."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un tipo de variable PowerShell."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Cada paso individual del bucle constituye una iteración.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0134",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-ITERACION",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Un bucle recorre A, B, C y D una vez cada elemento. ¿Cuántas iteraciones realiza?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "2"
+      },
+      {
+        "id": "opt_2",
+        "text": "4"
+      },
+      {
+        "id": "opt_3",
+        "text": "3"
+      },
+      {
+        "id": "opt_4",
+        "text": "1"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Existe una iteración por cada elemento.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0135",
+    "blockId": "B1",
+    "unitId": "U09",
+    "primaryConceptId": "B1-U09-ITERACION",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Una lista tiene tres elementos, pero un alumno afirma que recorrerla completamente con un `for` supone una única iteración. ¿Cuál es su error?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Las listas no pueden recorrerse."
+      },
+      {
+        "id": "opt_2",
+        "text": "for únicamente funciona con un elemento."
+      },
+      {
+        "id": "opt_3",
+        "text": "Confunde el bucle completo con cada repetición individual."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una iteración significa crear una variable."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El bucle es la estructura completa; cada repetición es una iteración.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

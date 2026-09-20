@@ -1,0 +1,422 @@
+[
+  {
+    "id": "B1-Q0107",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-COLECCION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es una colección?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una condición con varias comparaciones."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un error que contiene varios mensajes."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una estructura capaz de contener varios elementos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un archivo que siempre contiene scripts."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Una colección permite agrupar varios datos.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0108",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-COLECCION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Una variable contiene AAPL, MSFT y NVDA agrupados conjuntamente. ¿Qué idea representa?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una única cadena obligatoriamente."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una condición."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un comentario."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una colección de varios elementos."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La característica importante es que hay varios elementos agrupados.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0109",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-COLECCION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Por qué puede resultar útil una colección para procesar nombres de archivos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque permite agrupar varios elementos y trabajar posteriormente con ellos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque convierte automáticamente cualquier archivo en Python."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque elimina la necesidad de variables."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque una colección solo puede contener un elemento."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Las colecciones permiten manejar conjuntos de valores relacionados.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0110",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-COLECCION",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Una colección contiene `AAPL`, `MSFT` y `NVDA`. ¿Cuántos elementos contiene?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "1"
+      },
+      {
+        "id": "opt_2",
+        "text": "3"
+      },
+      {
+        "id": "opt_3",
+        "text": "2"
+      },
+      {
+        "id": "opt_4",
+        "text": "4"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "La colección contiene tres elementos.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0111",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-LISTA",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON",
+    "prompt": "¿Cuál representa una lista de Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`acciones = \"AAPL, MSFT, NVDA\"`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`$acciones = @(\"AAPL\", \"MSFT\", \"NVDA\")`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`acciones = [\"AAPL\", \"MSFT\", \"NVDA\"]`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`acciones == \"AAPL\"`"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La sintaxis básica de lista Python utiliza corchetes.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0112",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-LISTA",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`acciones = [\"AAPL\", \"MSFT\", \"NVDA\"]`. ¿Qué contiene `acciones`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una condición."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una única instrucción PowerShell."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un error de sintaxis."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una lista con tres elementos."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Los tres valores están agrupados en una lista.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0113",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-LISTA",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`numeros = [10, 20, 30]`. ¿Cuántos elementos contiene `numeros`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "3"
+      },
+      {
+        "id": "opt_2",
+        "text": "30"
+      },
+      {
+        "id": "opt_3",
+        "text": "60"
+      },
+      {
+        "id": "opt_4",
+        "text": "2"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Los elementos son 10, 20 y 30.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0114",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-LISTA",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "¿Cuál crea correctamente una colección básica en PowerShell según lo estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`$acciones = [\"AAPL\", \"MSFT\"]`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`$acciones = @(\"AAPL\", \"MSFT\")`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`acciones = @(\"AAPL\", \"MSFT\")`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`$acciones == (\"AAPL\", \"MSFT\")`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "PowerShell usa `$` para la variable y `@(...)` para la colección.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0115",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-INDICE",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 1,
+    "language": "PYTHON",
+    "prompt": "Si `acciones = [\"AAPL\", \"MSFT\", \"NVDA\"]`, ¿cómo accedemos al primer elemento según lo estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`acciones[1]`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`acciones(0)`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`acciones[0]`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`acciones = 0`"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El primer elemento utiliza el índice 0.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0116",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-INDICE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `acciones[1]`, ¿qué representa `1`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El valor almacenado."
+      },
+      {
+        "id": "opt_2",
+        "text": "El número total de elementos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una comparación."
+      },
+      {
+        "id": "opt_4",
+        "text": "El índice o posición utilizada para acceder a un elemento."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El número entre corchetes identifica una posición.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0117",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-INDICE",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`acciones = [\"AAPL\", \"MSFT\", \"NVDA\"]`; `print(acciones[1])`. ¿Qué se mostrará?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`MSFT`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`AAPL`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`NVDA`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`1`"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "AAPL es índice 0 y MSFT es índice 1.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0118",
+    "blockId": "B1",
+    "unitId": "U08",
+    "primaryConceptId": "B1-U08-INDICE",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un alumno quiere obtener `\"AAPL\"` pero utiliza `acciones[1]`. ¿Por qué obtiene otro elemento?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque las listas no permiten índices."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque `1` representa el segundo elemento en este ejemplo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque AAPL no es texto válido."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque los índices solo sirven en PowerShell."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "El primer elemento está en el índice 0.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

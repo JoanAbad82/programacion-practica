@@ -1,0 +1,122 @@
+[
+  {
+    "blockId": "B1",
+    "unitId": "U01",
+    "title": "El ordenador y el código",
+    "objective": "Comprender qué son programa, código, lenguaje e instrucción.",
+    "order": 1,
+    "canonicalFile": "canonical/u01.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "blockId": "B1",
+    "unitId": "U02",
+    "title": "Terminal, comandos y scripts",
+    "objective": "Distinguir terminal, comando, cmdlet y script, y saber cuándo ejecutar o guardar instrucciones.",
+    "order": 2,
+    "canonicalFile": "canonical/u02.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "blockId": "B1",
+    "unitId": "U03",
+    "title": "Sintaxis y comentarios",
+    "objective": "Comprender las reglas de escritura, el uso de comentarios y la importancia estructural de la indentación en Python.",
+    "order": 3,
+    "canonicalFile": "canonical/u03.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "blockId": "B1",
+    "unitId": "U04",
+    "title": "Variables y datos",
+    "objective": "Aprender a almacenar valores, reasignarlos y reconocer tipos de datos básicos.",
+    "order": 4,
+    "canonicalFile": "canonical/u04.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "blockId": "B1",
+    "unitId": "U05",
+    "title": "Entrada y salida",
+    "objective": "Comprender el modelo Entrada → Procesamiento → Salida y los comandos básicos para interactuar con el usuario.",
+    "order": 5,
+    "canonicalFile": "canonical/u05.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "blockId": "B1",
+    "unitId": "U06",
+    "title": "Operaciones y expresiones",
+    "objective": "Realizar operaciones y comparaciones y distinguir claramente asignación de comparación.",
+    "order": 6,
+    "canonicalFile": "canonical/u06.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "blockId": "B1",
+    "unitId": "U07",
+    "title": "Condiciones",
+    "objective": "Tomar decisiones con condiciones, `if` y `else`.",
+    "order": 7,
+    "canonicalFile": "canonical/u07.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "blockId": "B1",
+    "unitId": "U08",
+    "title": "Colecciones",
+    "objective": "Agrupar varios elementos y acceder a ellos mediante índices.",
+    "order": 8,
+    "canonicalFile": "canonical/u08.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "blockId": "B1",
+    "unitId": "U09",
+    "title": "Bucles",
+    "objective": "Automatizar tareas repetitivas recorriendo colecciones.",
+    "order": 9,
+    "canonicalFile": "canonical/u09.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "blockId": "B1",
+    "unitId": "U10",
+    "title": "Funciones",
+    "objective": "Agrupar lógica reutilizable y distinguir definición, llamada, parámetros, argumentos y `return`.",
+    "order": 10,
+    "canonicalFile": "canonical/u10.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "blockId": "B1",
+    "unitId": "U11",
+    "title": "Sistema, archivos y rutas",
+    "objective": "Comprender rutas y comandos básicos de PowerShell para orientarse, listar elementos, cambiar ubicación y consultar ayuda.",
+    "order": 11,
+    "canonicalFile": "canonical/u11.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "blockId": "B1",
+    "unitId": "U12",
+    "title": "Errores, depuración e IA",
+    "objective": "Distinguir tipos de errores, depurar de forma controlada y comunicarse con precisión con una IA.",
+    "order": 12,
+    "canonicalFile": "canonical/u12.md",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  }
+]

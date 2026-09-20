@@ -1,0 +1,702 @@
+[
+  {
+    "id": "B1-Q0038",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-VARIABLE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es una variable?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una instrucción que siempre muestra texto."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un nombre utilizado para almacenar y reutilizar un valor."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un error producido por un cálculo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una carpeta que contiene código."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Una variable asocia un nombre a un valor.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0039",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-VARIABLE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `precio = 100`, ¿qué representa `precio`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El resultado mostrado al usuario."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una comparación."
+      },
+      {
+        "id": "opt_3",
+        "text": "El nombre de una variable."
+      },
+      {
+        "id": "opt_4",
+        "text": "El número que multiplica a 100."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "`precio` es el nombre bajo el que se almacena el valor 100.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0040",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-VARIABLE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "En `$nombre = \"Ana\"`, ¿cuál es la interpretación correcta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`\"Ana\"` es un comando."
+      },
+      {
+        "id": "opt_2",
+        "text": "`$nombre` muestra automáticamente el valor."
+      },
+      {
+        "id": "opt_3",
+        "text": "Se está comparando `$nombre` con `\"Ana\"`."
+      },
+      {
+        "id": "opt_4",
+        "text": "`$nombre` almacena el valor `\"Ana\"`."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La instrucción asigna el texto a la variable.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0041",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-VARIABLE",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Observa:\n```python\nprecio = 100\nprecio = 120\nprint(precio)\n```\n¿Qué se mostrará?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`120`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`100`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`100 120`"
+      },
+      {
+        "id": "opt_4",
+        "text": "Un error porque una variable no puede cambiar."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La segunda asignación sustituye el valor anterior.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0042",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-VARIABLE",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un alumno dice que después de `precio = 100` y luego `precio = 150`, `precio` sigue valiendo 100. ¿Qué error conceptual comete?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Cree que Python solo acepta decimales."
+      },
+      {
+        "id": "opt_2",
+        "text": "Cree que una variable no puede recibir un nuevo valor."
+      },
+      {
+        "id": "opt_3",
+        "text": "Confunde precio con un comentario."
+      },
+      {
+        "id": "opt_4",
+        "text": "Confunde una variable con una lista."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Una variable puede reasignarse.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0043",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-ASIGNACION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué significa asignar un valor?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comparar dos variables."
+      },
+      {
+        "id": "opt_2",
+        "text": "Guardar un resultado únicamente en pantalla."
+      },
+      {
+        "id": "opt_3",
+        "text": "Almacenar un valor bajo un nombre de variable."
+      },
+      {
+        "id": "opt_4",
+        "text": "Eliminar una variable."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La asignación guarda un valor para reutilizarlo.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0044",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-ASIGNACION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `cantidad = 3`, ¿qué función cumple `=`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comprueba si cantidad es igual a 3."
+      },
+      {
+        "id": "opt_2",
+        "text": "Multiplica cantidad por 3."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convierte 3 en texto."
+      },
+      {
+        "id": "opt_4",
+        "text": "Asigna el valor 3 a `cantidad`."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Aquí `=` es el operador de asignación.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0045",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-ASIGNACION",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Cuál asigna correctamente el valor 25 a una variable Python llamada `edad`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`edad = 25`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`25 = edad`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`edad == 25`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`edad > 25`"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La asignación utiliza `variable = valor`.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0046",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-ASIGNACION",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Una persona quiere guardar 20 en `edad`, pero escribe `edad == 20`. ¿Cuál es el problema?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Está mostrando el valor."
+      },
+      {
+        "id": "opt_2",
+        "text": "Está comparando en lugar de asignar."
+      },
+      {
+        "id": "opt_3",
+        "text": "Está creando un comentario."
+      },
+      {
+        "id": "opt_4",
+        "text": "Está multiplicando."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "`==` compara; `=` asigna.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0047",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-STRING",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es un string?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un número sin decimales."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un valor verdadero o falso."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una cadena de texto."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una carpeta del sistema."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "String es el término habitual para una cadena de texto.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0048",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-STRING",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `nombre = \"Ana\"`, ¿qué tipo de dato es `\"Ana\"`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Booleano."
+      },
+      {
+        "id": "opt_2",
+        "text": "Entero."
+      },
+      {
+        "id": "opt_3",
+        "text": "Decimal."
+      },
+      {
+        "id": "opt_4",
+        "text": "String."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El valor es texto y está escrito entre comillas.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0049",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-STRING",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Cuál representa claramente un texto?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`\"25\"`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`25`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`19.95`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`True`"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Al estar entre comillas, se trata como texto.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0050",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-ENTERO",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON",
+    "prompt": "¿Cuál es un número entero?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`\"10\"`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`10`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`True`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`10.5`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "10 es un número sin parte decimal.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0051",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-ENTERO",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Observa:\n```python\nedad = 30\nprint(edad)\n```\n¿Qué se mostrará?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`\"edad\"`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`30.0` obligatoriamente"
+      },
+      {
+        "id": "opt_3",
+        "text": "`30`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`True`"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La variable contiene el entero 30.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0052",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-DECIMAL",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 1,
+    "language": "PYTHON",
+    "prompt": "¿Cuál contiene un valor decimal?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`edad = 20`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`activo = True`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`nombre = \"Ana\"`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`precio = 19.95`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "19.95 contiene una parte decimal.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0053",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-DECIMAL",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`precio = 19.95` y luego `print(precio)`. ¿Qué valor se muestra?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`19.95`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`19`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`\"19.95\"` necesariamente como texto"
+      },
+      {
+        "id": "opt_4",
+        "text": "`True`"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La variable contiene el valor decimal 19.95.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0054",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-BOOLEANO",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`activo = True` y después `print(activo)`. ¿Qué valor contiene `activo`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`\"activo\"`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`True`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`1.0`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`\"True\"` como texto"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "True es un valor booleano.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0055",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-BOOLEANO",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Una condición produce como resultado que algo no se cumple. ¿Qué estado booleano representa esa situación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`10`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`\"No\"`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`False`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`True`"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Los booleanos representan verdadero y falso.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0056",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-BOOLEANO",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "¿Cuál asigna correctamente un booleano verdadero en PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`$activo = \"true\"`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`activo = True`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`$activo == $true`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`$activo = $true`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "PowerShell utiliza `$true`.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0057",
+    "blockId": "B1",
+    "unitId": "U04",
+    "primaryConceptId": "B1-U04-BOOLEANO",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un alumno interpreta `activo = True` como si `True` fuera simplemente el texto `\"True\"`. ¿Cuál es el error?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`True` es un valor booleano, no una cadena escrita entre comillas."
+      },
+      {
+        "id": "opt_2",
+        "text": "Python no permite guardar valores booleanos."
+      },
+      {
+        "id": "opt_3",
+        "text": "activo debería ser un número."
+      },
+      {
+        "id": "opt_4",
+        "text": "Todos los booleanos deben escribirse entre comillas."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "True sin comillas representa un booleano.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

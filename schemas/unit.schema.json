@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "unit.schema.json",
+  "type": "object",
+  "required": [
+    "blockId",
+    "unitId",
+    "title",
+    "objective",
+    "order",
+    "canonicalFile",
+    "sourceVersion",
+    "status"
+  ],
+  "properties": {
+    "blockId": {
+      "const": "B1"
+    },
+    "unitId": {
+      "type": "string",
+      "pattern": "^U(0[1-9]|1[0-2])$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "order": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "canonicalFile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceVersion": {
+      "const": "BLOCK1_CANONICAL_V1.0"
+    },
+    "status": {
+      "enum": [
+        "ACTIVE",
+        "RETIRED"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

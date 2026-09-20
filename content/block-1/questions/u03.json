@@ -1,0 +1,387 @@
+[
+  {
+    "id": "B1-Q0027",
+    "blockId": "B1",
+    "unitId": "U03",
+    "primaryConceptId": "B1-U03-SINTAXIS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué significa sintaxis en programación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El resultado final de un programa."
+      },
+      {
+        "id": "opt_2",
+        "text": "La velocidad con la que se ejecuta el código."
+      },
+      {
+        "id": "opt_3",
+        "text": "Las reglas que determinan cómo debe escribirse correctamente el código."
+      },
+      {
+        "id": "opt_4",
+        "text": "El nombre utilizado para guardar un archivo."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La sintaxis establece las reglas de escritura.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0028",
+    "blockId": "B1",
+    "unitId": "U03",
+    "primaryConceptId": "B1-U03-SINTAXIS",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Cuál de estas instrucciones Python está correctamente escrita?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`print(\"Hola\"`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`print\"Hola\")`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`print(Hola)`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`print(\"Hola\")`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Los paréntesis y las comillas están correctamente abiertos y cerrados.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0029",
+    "blockId": "B1",
+    "unitId": "U03",
+    "primaryConceptId": "B1-U03-SINTAXIS",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Observa `print(\"Hola\"`. ¿Qué problema existe?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Falta cerrar el paréntesis."
+      },
+      {
+        "id": "opt_2",
+        "text": "`print` solo puede utilizarse con números."
+      },
+      {
+        "id": "opt_3",
+        "text": "`\"Hola\"` debería escribirse sin comillas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Falta crear una variable llamada print."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La instrucción incumple la sintaxis porque el paréntesis no se cierra.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0030",
+    "blockId": "B1",
+    "unitId": "U03",
+    "primaryConceptId": "B1-U03-SINTAXIS",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Un programa no llega a ejecutarse porque una de sus instrucciones no respeta las reglas de escritura del lenguaje. ¿Qué tipo de problema describe mejor esta situación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una salida."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un problema de sintaxis."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un comentario."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una variable."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "El código está mal formado según las reglas del lenguaje.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0031",
+    "blockId": "B1",
+    "unitId": "U03",
+    "primaryConceptId": "B1-U03-COMENTARIO",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Para qué sirve un comentario en el código?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para obligar al programa a repetir una instrucción."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para almacenar automáticamente un número."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para añadir explicaciones que normalmente no se ejecutan."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para mostrar siempre información en pantalla."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Los comentarios documentan o explican el código.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0032",
+    "blockId": "B1",
+    "unitId": "U03",
+    "primaryConceptId": "B1-U03-COMENTARIO",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `# Mostrar un mensaje` seguido de `print(\"Hola\")`, ¿qué ocurre con la primera línea?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Se muestra como resultado antes de Hola."
+      },
+      {
+        "id": "opt_2",
+        "text": "Crea una variable llamada Mostrar."
+      },
+      {
+        "id": "opt_3",
+        "text": "Impide que se ejecute la segunda línea."
+      },
+      {
+        "id": "opt_4",
+        "text": "Es un comentario y normalmente no se ejecuta."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Una línea que comienza con `#` se usa aquí como comentario.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0033",
+    "blockId": "B1",
+    "unitId": "U03",
+    "primaryConceptId": "B1-U03-INDENTACION",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 1,
+    "language": "PYTHON",
+    "prompt": "¿Cuál muestra correctamente una instrucción perteneciente a un `if` en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "```python\nif edad >= 18:\n    print(\"Mayor\")\n```"
+      },
+      {
+        "id": "opt_2",
+        "text": "```python\nif edad >= 18:\nprint(\"Mayor\")\n```"
+      },
+      {
+        "id": "opt_3",
+        "text": "```python\nif edad >= 18\n    print(\"Mayor\")\n```"
+      },
+      {
+        "id": "opt_4",
+        "text": "```python\nif edad >= 18\nprint(\"Mayor\")\n```"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El `if` termina con `:` y la instrucción del bloque aparece indentada.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0034",
+    "blockId": "B1",
+    "unitId": "U03",
+    "primaryConceptId": "B1-U03-INDENTACION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `if edad >= 18:` seguido de una línea indentada `print(\"Mayor de edad\")`, ¿qué indica la indentación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Que la línea es un comentario."
+      },
+      {
+        "id": "opt_2",
+        "text": "Que la instrucción pertenece al bloque del `if`."
+      },
+      {
+        "id": "opt_3",
+        "text": "Que print es una variable."
+      },
+      {
+        "id": "opt_4",
+        "text": "Que la condición siempre es verdadera."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "En Python la indentación indica qué instrucciones forman parte de un bloque.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0035",
+    "blockId": "B1",
+    "unitId": "U03",
+    "primaryConceptId": "B1-U03-INDENTACION",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Cuál fragmento respeta la estructura básica estudiada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "```python\nif precio > 100\nprint(\"Alto\")\n```"
+      },
+      {
+        "id": "opt_2",
+        "text": "```python\nif precio > 100:\nprint(\"Alto\")\n```"
+      },
+      {
+        "id": "opt_3",
+        "text": "```python\nif precio > 100:\n    print(\"Alto\")\n```"
+      },
+      {
+        "id": "opt_4",
+        "text": "```python\nif precio > 100\n    print(\"Alto\")\n```"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El bloque necesita `:` e indentación.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0036",
+    "blockId": "B1",
+    "unitId": "U03",
+    "primaryConceptId": "B1-U03-INDENTACION",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Observa:\n```python\nif edad >= 18:\nprint(\"Adulto\")\n```\n¿Cuál es el problema principal?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`edad` no puede contener números."
+      },
+      {
+        "id": "opt_2",
+        "text": "`>=` no puede utilizarse en Python."
+      },
+      {
+        "id": "opt_3",
+        "text": "`print()` solo funciona fuera de condiciones."
+      },
+      {
+        "id": "opt_4",
+        "text": "La instrucción que pertenece al `if` no está indentada."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Python utiliza la indentación para delimitar bloques.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0037",
+    "blockId": "B1",
+    "unitId": "U03",
+    "primaryConceptId": "B1-U03-INDENTACION",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un alumno afirma: «Los espacios al principio de una línea Python solo sirven para que el código quede bonito». ¿Qué respuesta es correcta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Es incorrecto: la indentación puede formar parte de la estructura del programa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Es correcto únicamente en los `if`."
+      },
+      {
+        "id": "opt_3",
+        "text": "Es correcto en todo código Python."
+      },
+      {
+        "id": "opt_4",
+        "text": "Es incorrecto porque Python no permite utilizar espacios."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "En Python la indentación tiene significado estructural.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

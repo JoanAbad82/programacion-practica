@@ -1,0 +1,357 @@
+[
+  {
+    "id": "B1-Q0001",
+    "blockId": "B1",
+    "unitId": "U01",
+    "primaryConceptId": "B1-U01-PROGRAMA",
+    "secondaryConceptIds": [
+      "B1-U01-INSTRUCCION"
+    ],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es un programa?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un conjunto de instrucciones que un ordenador ejecuta para realizar una tarea."
+      },
+      {
+        "id": "opt_2",
+        "text": "El resultado que aparece después de ejecutar una instrucción."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un lenguaje utilizado exclusivamente para escribir páginas web."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una carpeta en la que se almacenan archivos de código."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Un programa agrupa instrucciones destinadas a realizar una tarea.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0002",
+    "blockId": "B1",
+    "unitId": "U01",
+    "primaryConceptId": "B1-U01-PROGRAMA",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Cuál de estas afirmaciones sobre un programa es correcta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Siempre necesita una interfaz gráfica."
+      },
+      {
+        "id": "opt_2",
+        "text": "Puede contener desde unas pocas instrucciones hasta una cantidad muy grande."
+      },
+      {
+        "id": "opt_3",
+        "text": "Solo puede contener instrucciones de un único tipo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Debe tener miles de instrucciones para considerarse un programa."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "El tamaño no determina si algo es un programa.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0003",
+    "blockId": "B1",
+    "unitId": "U01",
+    "primaryConceptId": "B1-U01-PROGRAMA",
+    "secondaryConceptIds": [
+      "B1-U01-CODIGO",
+      "B1-U01-INSTRUCCION"
+    ],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Un archivo contiene instrucciones para leer varios precios, realizar un cálculo y mostrar el resultado. ¿Qué representa el conjunto completo de esas instrucciones?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Únicamente un resultado."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un lenguaje de programación."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un programa."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una carpeta de trabajo."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Las instrucciones trabajan conjuntamente para realizar una tarea.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0004",
+    "blockId": "B1",
+    "unitId": "U01",
+    "primaryConceptId": "B1-U01-CODIGO",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué entendemos por código en programación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Únicamente los mensajes de error producidos por un programa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Los datos que aparecen en pantalla después de ejecutar un programa."
+      },
+      {
+        "id": "opt_3",
+        "text": "El nombre del archivo en el que está guardado un programa."
+      },
+      {
+        "id": "opt_4",
+        "text": "Las instrucciones escritas utilizando un lenguaje de programación."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El código está formado por instrucciones escritas según las reglas de un lenguaje.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0005",
+    "blockId": "B1",
+    "unitId": "U01",
+    "primaryConceptId": "B1-U01-CODIGO",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Cuál es la diferencia correcta entre código y resultado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El código contiene instrucciones; el resultado es aquello que puede producir su ejecución."
+      },
+      {
+        "id": "opt_2",
+        "text": "El código siempre es texto y el resultado siempre es un número."
+      },
+      {
+        "id": "opt_3",
+        "text": "Código y resultado son dos nombres para exactamente lo mismo."
+      },
+      {
+        "id": "opt_4",
+        "text": "El resultado se escribe antes del código para indicar qué debe hacer."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "No deben confundirse las instrucciones con aquello que generan.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0006",
+    "blockId": "B1",
+    "unitId": "U01",
+    "primaryConceptId": "B1-U01-CODIGO",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "Observa:\n\n```powershell\nWrite-Host \"Hola\"\n```\n\nDespués aparece `Hola`. ¿Cuál es la interpretación correcta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Tanto la instrucción como `Hola` son el lenguaje PowerShell."
+      },
+      {
+        "id": "opt_2",
+        "text": "`Write-Host \"Hola\"` es código y `Hola` es el resultado mostrado."
+      },
+      {
+        "id": "opt_3",
+        "text": "`Hola` es el código y la instrucción es su resultado."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ambos elementos son resultados producidos por otro programa."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "La instrucción está escrita en PowerShell y `Hola` es la salida.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0007",
+    "blockId": "B1",
+    "unitId": "U01",
+    "primaryConceptId": "B1-U01-LENGUAJE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es un lenguaje de programación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un programa que únicamente sirve para mostrar texto."
+      },
+      {
+        "id": "opt_2",
+        "text": "El resultado obtenido después de ejecutar cualquier código."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un sistema de reglas utilizado para escribir instrucciones que un ordenador puede ejecutar o interpretar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una colección de archivos guardados en una misma carpeta."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Python y PowerShell son lenguajes con reglas propias.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0008",
+    "blockId": "B1",
+    "unitId": "U01",
+    "primaryConceptId": "B1-U01-LENGUAJE",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál de estas asociaciones coincide correctamente con los ejemplos estudiados?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Python → `$nombre = \"Ana\"` y PowerShell → `nombre = \"Ana\"`"
+      },
+      {
+        "id": "opt_2",
+        "text": "Python → `Write-Host \"Hola\"` y PowerShell → `print(\"Hola\")`"
+      },
+      {
+        "id": "opt_3",
+        "text": "Python → `Get-Date` y PowerShell → `print(\"Hola\")`"
+      },
+      {
+        "id": "opt_4",
+        "text": "Python → `print(\"Hola\")` y PowerShell → `Write-Host \"Hola\"`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La finalidad puede ser similar aunque la sintaxis cambie.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0009",
+    "blockId": "B1",
+    "unitId": "U01",
+    "primaryConceptId": "B1-U01-INSTRUCCION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es una instrucción en programación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una acción indicada mediante código que el programa debe realizar."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una explicación que necesariamente debe aparecer antes del código."
+      },
+      {
+        "id": "opt_3",
+        "text": "El nombre general de cualquier lenguaje de programación."
+      },
+      {
+        "id": "opt_4",
+        "text": "El resultado final de todos los programas."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Una instrucción expresa una acción concreta.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0010",
+    "blockId": "B1",
+    "unitId": "U01",
+    "primaryConceptId": "B1-U01-INSTRUCCION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "En el ejemplo `Get-Date`, ¿qué representa `Get-Date`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El resultado que necesariamente mostrará cualquier programa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una instrucción que solicita al sistema realizar una acción relacionada con la fecha y hora."
+      },
+      {
+        "id": "opt_3",
+        "text": "El nombre de un lenguaje de programación diferente de PowerShell."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una carpeta que contiene información sobre la fecha."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "`Get-Date` es código que solicita una acción.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

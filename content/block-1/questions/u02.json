@@ -1,0 +1,562 @@
+[
+  {
+    "id": "B1-Q0011",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-TERMINAL",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es una terminal o consola?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un archivo que contiene código guardado."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un lenguaje utilizado exclusivamente para administrar Windows."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un entorno textual desde el que podemos introducir y ejecutar comandos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una carpeta especial donde se almacenan los programas."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La terminal permite escribir y ejecutar comandos directamente.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0012",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-TERMINAL",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "Una persona abre PowerShell, escribe `Get-Date` y pulsa Enter. ¿Qué está haciendo?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Guardando automáticamente un script llamado Get-Date.ps1."
+      },
+      {
+        "id": "opt_2",
+        "text": "Creando un nuevo lenguaje de programación."
+      },
+      {
+        "id": "opt_3",
+        "text": "Modificando la configuración de fecha del ordenador."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ejecutando directamente un comando desde la terminal."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Escribir un comando y pulsar Enter lo ejecuta; no crea automáticamente un script.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0013",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-TERMINAL",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "Quieres probar rápidamente un comando de PowerShell sin crear todavía ningún archivo. ¿Cuál es la opción más adecuada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Escribir el comando directamente en la terminal y pulsar Enter."
+      },
+      {
+        "id": "opt_2",
+        "text": "Crear obligatoriamente primero un archivo `.py`."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir el comando en una carpeta."
+      },
+      {
+        "id": "opt_4",
+        "text": "Guardar siempre el comando en un documento de texto antes de utilizarlo."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La terminal permite ejecutar comandos directamente.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0014",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-COMANDO",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "¿Qué es un comando?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El resultado producido después de ejecutar cualquier programa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una instrucción dirigida al sistema para realizar una acción."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un archivo que necesariamente contiene varias instrucciones."
+      },
+      {
+        "id": "opt_4",
+        "text": "El nombre general de todos los lenguajes de programación."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Un comando solicita una acción al sistema.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0015",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-COMANDO",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "`Get-Date`, `Get-Location` y `Get-ChildItem` tienen algo en común. ¿Qué?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Crean scripts nuevos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Cambian obligatoriamente información del ordenador."
+      },
+      {
+        "id": "opt_3",
+        "text": "Son comandos que solicitan al sistema realizar una acción."
+      },
+      {
+        "id": "opt_4",
+        "text": "Son nombres de archivos PowerShell."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Los tres son comandos de PowerShell.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0016",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-COMANDO",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "Quieres consultar la fecha y hora desde PowerShell. ¿Qué comando de los estudiados utilizarías?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`Set-Location`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Get-ChildItem`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Get-Location`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Get-Date`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "`Get-Date` obtiene la fecha y hora.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0017",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-COMANDO",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "Necesitas comprobar una sola vez la ubicación actual y no quieres guardar ninguna automatización. ¿Qué opción es la más adecuada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ejecutar `Get-Location` directamente en PowerShell."
+      },
+      {
+        "id": "opt_2",
+        "text": "Crear obligatoriamente un archivo `.ps1` con varios comandos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Crear un archivo `.py` llamado Get-Location.py."
+      },
+      {
+        "id": "opt_4",
+        "text": "Guardar el texto Get-Location como resultado antes de ejecutarlo."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Para una consulta puntual basta con ejecutar el comando directamente.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0018",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-CMDLET",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "¿Qué es un cmdlet en el contexto de este bloque?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una extensión utilizada para guardar scripts Python."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un tipo de comando propio de PowerShell."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una salida producida por cualquier terminal."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una carpeta donde PowerShell almacena variables."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Un cmdlet es un tipo de comando de PowerShell.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0019",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-CMDLET",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "¿Cuál de los siguientes elementos estudiados es un ejemplo de cmdlet de PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`programa.py`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`\"Hola\"`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Get-ChildItem`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`.ps1`"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "`Get-ChildItem` es un cmdlet.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0020",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-VERBO-SUSTANTIVO",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "¿Qué patrón utilizan muchos cmdlets de PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Número-Número"
+      },
+      {
+        "id": "opt_2",
+        "text": "Archivo-Extensión"
+      },
+      {
+        "id": "opt_3",
+        "text": "Variable-Resultado"
+      },
+      {
+        "id": "opt_4",
+        "text": "Verbo-Sustantivo"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Ejemplos: `Get-Location` o `Set-Location`.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0021",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-VERBO-SUSTANTIVO",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "Compara `Get-Location` y `Set-Location`. ¿Qué nos ayuda a interpretar la primera parte del nombre?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`Get` y `Set` indican acciones diferentes realizadas sobre `Location`."
+      },
+      {
+        "id": "opt_2",
+        "text": "`Get` y `Set` indican extensiones de archivo diferentes."
+      },
+      {
+        "id": "opt_3",
+        "text": "`Location` indica el lenguaje de programación utilizado."
+      },
+      {
+        "id": "opt_4",
+        "text": "El guion significa que ambos comandos son idénticos."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La convención Verbo-Sustantivo ayuda a interpretar el propósito.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0022",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-SCRIPT",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál de estas asociaciones de archivo y lenguaje es correcta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "PowerShell → `programa.py` y Python → `programa.ps1`"
+      },
+      {
+        "id": "opt_2",
+        "text": "PowerShell → `programa.ps1` y Python → `programa.py`"
+      },
+      {
+        "id": "opt_3",
+        "text": "PowerShell → `programa.txt` y Python → `programa.ps1`"
+      },
+      {
+        "id": "opt_4",
+        "text": "PowerShell → `programa.py` y Python → `programa.txt`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "PowerShell usa normalmente `.ps1` y Python `.py`.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0023",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-SCRIPT",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "Quieres guardar `Get-Date`, `Get-Location` y `Get-ChildItem` para ejecutarlos juntos posteriormente. ¿Cuál es la opción correcta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Guardarlos únicamente como el resultado de Get-Date."
+      },
+      {
+        "id": "opt_2",
+        "text": "Convertir cada comando en una carpeta diferente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Guardarlos en un archivo PowerShell con extensión `.ps1`."
+      },
+      {
+        "id": "opt_4",
+        "text": "Cambiar obligatoriamente todas las instrucciones por código Python."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Un script permite almacenar instrucciones para reutilizarlas.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0024",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-SCRIPT",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "Una persona escribe varios comandos directamente en PowerShell, cierra la terminal y después busca el archivo `.ps1` que cree que se creó automáticamente. No encuentra ninguno. ¿Cuál es el error conceptual?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Los archivos `.ps1` solo pueden contener un comando."
+      },
+      {
+        "id": "opt_2",
+        "text": "PowerShell elimina siempre los scripts al cerrar la terminal."
+      },
+      {
+        "id": "opt_3",
+        "text": "Los comandos deberían haberse escrito utilizando sintaxis Python."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ejecutar comandos directamente en la terminal no significa que se haya creado automáticamente un script."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Para conservar instrucciones como script hay que guardarlas expresamente.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0025",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-SCRIPT",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "Tienes un conjunto de comandos que quieres conservar para volver a utilizarlos otro día. ¿Qué opción encaja mejor?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Guardarlos en un script."
+      },
+      {
+        "id": "opt_2",
+        "text": "Considerarlos únicamente resultados."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertirlos en un lenguaje nuevo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Cambiar el nombre de la terminal."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La utilidad fundamental de un script es conservar instrucciones.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0026",
+    "blockId": "B1",
+    "unitId": "U02",
+    "primaryConceptId": "B1-U02-SCRIPT",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Vas a crear un archivo Python y otro PowerShell. ¿Qué combinación es la adecuada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ambos deben terminar necesariamente en `.txt`."
+      },
+      {
+        "id": "opt_2",
+        "text": "Python puede utilizar `.py` y PowerShell `.ps1`."
+      },
+      {
+        "id": "opt_3",
+        "text": "Python debe utilizar `.ps1` y PowerShell `.py`."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ambos deben terminar necesariamente en `.py`."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Las extensiones habituales son `.py` y `.ps1`.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

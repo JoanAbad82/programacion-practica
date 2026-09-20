@@ -1,0 +1,632 @@
+[
+  {
+    "id": "B1-Q0136",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-FUNCION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es una función?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una variable que contiene varios valores."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una condición que siempre es verdadera."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una ruta utilizada para localizar archivos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un bloque reutilizable de instrucciones diseñado para realizar una tarea."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Una función agrupa instrucciones relacionadas para poder reutilizarlas.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0137",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-FUNCION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "```python\ndef saludar():\n    print(\"Hola\")\n```\n¿Qué hace este código?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Define una función llamada `saludar`."
+      },
+      {
+        "id": "opt_2",
+        "text": "Ejecuta automáticamente saludar."
+      },
+      {
+        "id": "opt_3",
+        "text": "Crea una lista llamada saludar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Muestra obligatoriamente Hola en ese momento."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "def saludar(): define la función; no la ejecuta todavía.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0138",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-FUNCION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Por qué resulta útil agrupar instrucciones en una función?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque elimina la necesidad de escribir código."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque permite representar una tarea mediante un bloque reutilizable."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque convierte automáticamente Python en PowerShell."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque toda función se ejecuta indefinidamente."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Una función organiza una tarea y permite reutilizarla.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0139",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-FUNCION",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "```python\ndef saludar():\n    print(\"Hola\")\n\nsaludar()\n```\n¿Qué se mostrará?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`saludar`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`def`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Hola`"
+      },
+      {
+        "id": "opt_4",
+        "text": "Nada"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Primero se define la función y después se llama.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0140",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-FUNCION",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un alumno escribe una definición `def saludar(): ...` y espera que aparezca inmediatamente `\"Hola\"`. ¿Cuál es su error?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una función no puede contener print()."
+      },
+      {
+        "id": "opt_2",
+        "text": "Falta convertir Hola en número."
+      },
+      {
+        "id": "opt_3",
+        "text": "def solamente funciona en PowerShell."
+      },
+      {
+        "id": "opt_4",
+        "text": "Está confundiendo definir una función con llamarla."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Definir una función no implica ejecutarla.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0141",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-LLAMADA",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es una llamada a una función?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La acción mediante la que solicitamos ejecutar una función."
+      },
+      {
+        "id": "opt_2",
+        "text": "La definición del nombre de una variable."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una comparación entre dos funciones."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un comentario colocado sobre una función."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Una llamada indica que queremos ejecutar la función.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0142",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-LLAMADA",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Si existe `def saludar(): ...`, ¿qué representa `saludar()`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una nueva definición."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una llamada a la función."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un parámetro."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un comentario."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "saludar() ejecuta la función definida.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0143",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-LLAMADA",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Una función `mensaje()` imprime `\"Listo\"`. Si se llama dos veces, ¿cuántas veces se muestra `\"Listo\"`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "0"
+      },
+      {
+        "id": "opt_2",
+        "text": "1"
+      },
+      {
+        "id": "opt_3",
+        "text": "2"
+      },
+      {
+        "id": "opt_4",
+        "text": "3"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La función se llama dos veces.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0144",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-LLAMADA",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Después de definir `def saludar(): ...`, ¿cuál es la llamada correcta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`def saludar()`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`saludar = def`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`function saludar`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`saludar()`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La llamada utiliza el nombre seguido de paréntesis.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0145",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-PARAMETRO",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es un parámetro?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una variable definida por una función para recibir información."
+      },
+      {
+        "id": "opt_2",
+        "text": "El resultado final de una función."
+      },
+      {
+        "id": "opt_3",
+        "text": "El nombre del archivo que contiene la función."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una llamada repetida."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El parámetro representa información que la función podrá recibir.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0146",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-PARAMETRO",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `def saludar(nombre):`, ¿qué es `nombre`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un argumento ya enviado."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un parámetro."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una salida."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un índice."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "nombre aparece en la definición y representa el dato que la función recibirá.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0147",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-PARAMETRO",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Cuál define correctamente una función con un parámetro llamado `nombre`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`def saludar = nombre:`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`saludar(nombre)`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`def saludar(nombre):`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`nombre def saludar():`"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El parámetro aparece entre los paréntesis de la definición.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0148",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-PARAMETRO",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "En `def saludar(nombre): ...` y `saludar(\"Ana\")`, un alumno dice que `\"Ana\"` es el parámetro. ¿Qué corrección es adecuada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "No existe ningún parámetro."
+      },
+      {
+        "id": "opt_2",
+        "text": "Tanto nombre como Ana son parámetros."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ana es una función."
+      },
+      {
+        "id": "opt_4",
+        "text": "`nombre` es el parámetro y `\"Ana\"` es el argumento."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El parámetro está en la definición; el argumento es el valor de la llamada.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0149",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-ARGUMENTO",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `saludar(\"Ana\")`, si la función recibe un parámetro `nombre`, ¿qué representa `\"Ana\"`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un argumento."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una definición."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un parámetro de la definición."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un comentario."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Es el valor concreto enviado a la función.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0150",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-ARGUMENTO",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "```python\ndef multiplicar(numero, cantidad):\n    print(numero * cantidad)\n\nmultiplicar(5, 3)\n```\n¿Qué valores se proporcionan como argumentos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "numero y cantidad"
+      },
+      {
+        "id": "opt_2",
+        "text": "5 y 3"
+      },
+      {
+        "id": "opt_3",
+        "text": "multiplicar y print"
+      },
+      {
+        "id": "opt_4",
+        "text": "15 y 3"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "5 y 3 son los valores enviados a los parámetros.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0151",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-ARGUMENTO",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "En `def calcular(precio): ...` y `calcular(100)`, ¿qué distinción debe hacerse?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "precio es una lista y 100 una función."
+      },
+      {
+        "id": "opt_2",
+        "text": "Ambos son comandos PowerShell."
+      },
+      {
+        "id": "opt_3",
+        "text": "`precio` es el parámetro y `100` el argumento."
+      },
+      {
+        "id": "opt_4",
+        "text": "100 es un parámetro y precio una salida."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Uno pertenece a la definición y el otro es el valor enviado.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0152",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-RETURN",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "```python\ndef calcular_total(precio, cantidad):\n    return precio * cantidad\n\ntotal = calcular_total(5, 3)\nprint(total)\n```\n¿Qué se mostrará?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`8`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`5`"
+      },
+      {
+        "id": "opt_3",
+        "text": "Nada"
+      },
+      {
+        "id": "opt_4",
+        "text": "`15`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La función devuelve 5 × 3.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0153",
+    "blockId": "B1",
+    "unitId": "U10",
+    "primaryConceptId": "B1-U10-RETURN",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "¿Cuál representa correctamente la idea introductoria de devolver un resultado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "```python\ndef calcular(precio, cantidad):\n    return precio * cantidad\n```"
+      },
+      {
+        "id": "opt_2",
+        "text": "```python\ndef calcular(precio, cantidad):\n    precio == cantidad\n```"
+      },
+      {
+        "id": "opt_3",
+        "text": "```python\nreturn = calcular(precio)\n```"
+      },
+      {
+        "id": "opt_4",
+        "text": "```python\ndef calcular:\n    precio * cantidad\n```"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "return permite entregar el resultado producido por la función.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

@@ -1,0 +1,807 @@
+[
+  {
+    "id": "B1-Q0154",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-RUTA",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es una ruta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un resultado booleano."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una representación de la ubicación de un archivo o carpeta."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una función que crea archivos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un tipo de bucle."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Una ruta permite identificar dónde se encuentra un elemento.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0155",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-RUTA",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué representa `C:\\Users\\Ana\\Documents\\datos.txt`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una función Python."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una comparación."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una ruta hacia un archivo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un pipeline."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La cadena describe la ubicación de datos.txt.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0156",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-RUTA",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Necesitas indicar a una IA exactamente dónde se encuentra `datos.txt`. ¿Qué información resulta especialmente útil?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El número de variables del programa."
+      },
+      {
+        "id": "opt_2",
+        "text": "La última comparación ejecutada."
+      },
+      {
+        "id": "opt_3",
+        "text": "La cantidad de comentarios."
+      },
+      {
+        "id": "opt_4",
+        "text": "La ruta del archivo."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Una ruta especifica la ubicación del archivo.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0157",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-RUTA-ABSOLUTA",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué caracteriza una ruta absoluta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Indica una ubicación completa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Solo contiene el nombre del archivo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Depende siempre de la carpeta actual."
+      },
+      {
+        "id": "opt_4",
+        "text": "Solo puede utilizarse en Python."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Una ruta absoluta identifica la ubicación completa.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0158",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-RUTA-ABSOLUTA",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Cuál es un ejemplo de ruta absoluta de Windows?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`datos\\archivo.txt`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`C:\\Users\\Ana\\Documents\\archivo.txt`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`archivo.txt`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Documents`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Incluye una ubicación completa desde la unidad.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0159",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-RUTA-RELATIVA",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué caracteriza una ruta relativa?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Siempre comienza por C:\\."
+      },
+      {
+        "id": "opt_2",
+        "text": "Siempre señala una carpeta y nunca un archivo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Se interpreta respecto a la ubicación actual."
+      },
+      {
+        "id": "opt_4",
+        "text": "No puede contener subcarpetas."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Su significado depende de dónde se esté trabajando.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0160",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-RUTA-RELATIVA",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Cuál encaja con el ejemplo de ruta relativa estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`C:\\Users\\Ana\\datos.txt`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`D:\\datos\\archivo.txt`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Get-Location`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`datos\\archivo.txt`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "No especifica una ubicación completa desde una unidad.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0161",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-GET-LOCATION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "¿Qué hace `Get-Location`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Consulta la ubicación de trabajo actual."
+      },
+      {
+        "id": "opt_2",
+        "text": "Lista todos los archivos .txt."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cambia de carpeta."
+      },
+      {
+        "id": "opt_4",
+        "text": "Elimina la ubicación actual."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Get-Location permite saber dónde estamos trabajando.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0162",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-GET-LOCATION",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "Quieres saber en qué carpeta está situada actualmente tu sesión de PowerShell. ¿Qué utilizas?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`Set-Location`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Get-Location`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Read-Host`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Sort-Object`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Get-Location consulta la ubicación actual.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0163",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-GET-CHILDITEM",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "¿Qué finalidad básica tiene `Get-ChildItem`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Cambiar el valor de una variable."
+      },
+      {
+        "id": "opt_2",
+        "text": "Consultar la hora."
+      },
+      {
+        "id": "opt_3",
+        "text": "Obtener o mostrar elementos de una ubicación."
+      },
+      {
+        "id": "opt_4",
+        "text": "Definir una función."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Se utiliza para trabajar con los elementos de una ubicación.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0164",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-GET-CHILDITEM",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "En una carpeta existen `a.txt`, `b.txt` y `foto.jpg`. Si utilizamos `Get-ChildItem *.txt`, ¿qué elementos encajan con lo solicitado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Solo foto.jpg."
+      },
+      {
+        "id": "opt_2",
+        "text": "Los tres necesariamente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ninguno."
+      },
+      {
+        "id": "opt_4",
+        "text": "a.txt y b.txt"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El patrón solicita elementos con extensión .txt.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0165",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-GET-CHILDITEM",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "Quieres ver los elementos de la ubicación actual. ¿Qué comando estudiado resulta adecuado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`Get-ChildItem`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Read-Host`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`return`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Set-Location`"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Get-ChildItem obtiene los elementos de la ubicación.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0166",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-GET-CHILDITEM",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "Quieres obtener únicamente los elementos `.txt` de la ubicación actual. ¿Qué instrucción utilizarías?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`Get-Location *.txt`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Get-ChildItem *.txt`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Set-Location *.txt`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Write-Host *.txt`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "El ejemplo canónico utiliza Get-ChildItem *.txt.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0167",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-SET-LOCATION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "¿Qué hace `Set-Location`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ordena archivos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Consulta ayuda."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cambia la ubicación de trabajo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Muestra la fecha."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Set-Location establece una nueva ubicación de trabajo.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0168",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-SET-LOCATION",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "Quieres cambiar la ubicación de trabajo a `C:\\Users\\Ana\\Documents`. ¿Cuál coincide con lo estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`Get-Location \"C:\\Users\\Ana\\Documents\"`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Get-ChildItem \"C:\\Users\\Ana\\Documents\"`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Read-Host \"C:\\Users\\Ana\\Documents\"`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Set-Location \"C:\\Users\\Ana\\Documents\"`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Set-Location cambia la ubicación de trabajo.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0169",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-PIPELINE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "En `Get-ChildItem *.txt | Sort-Object Name`, ¿qué función cumple `|`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Pasa los resultados del primer comando al siguiente."
+      },
+      {
+        "id": "opt_2",
+        "text": "Convierte ambos comandos en comentarios."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ejecuta solo el comando situado a la izquierda."
+      },
+      {
+        "id": "opt_4",
+        "text": "Indica una comparación de igualdad."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El pipeline conecta la salida de un comando con el siguiente.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0170",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-PIPELINE",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "¿Cuál muestra correctamente el pipeline estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`Get-ChildItem *.txt = Sort-Object Name`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Get-ChildItem *.txt | Sort-Object Name`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Get-ChildItem *.txt == Sort-Object Name`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Get-ChildItem *.txt + Sort-Object Name`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "PowerShell utiliza | para conectar comandos.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0171",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-PIPELINE",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "Un alumno afirma que en `Get-ChildItem | Sort-Object Name` los dos comandos no tienen ninguna relación entre sí. ¿Cuál es el error?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Sort-Object crea siempre archivos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Get-ChildItem es una función Python."
+      },
+      {
+        "id": "opt_3",
+        "text": "El pipeline entrega los resultados del primero al segundo."
+      },
+      {
+        "id": "opt_4",
+        "text": "| significa que solo se ejecuta el segundo comando."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La conexión entre comandos es la finalidad del pipeline.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0172",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-PIPELINE",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "Quieres obtener archivos `.txt` y después ordenar esos resultados por nombre. ¿Cuál encaja con lo estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`Sort-Object Name | Get-Location`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Get-Location | Get-Date`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Set-Location | Read-Host`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Get-ChildItem *.txt | Sort-Object Name`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Primero se obtienen los elementos y después se pasan al comando de ordenación.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0173",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-PIPELINE",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "¿Cómo conviene leer inicialmente `Comando1 | Comando2` dentro del modelo estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ejecuta el primero y entrega sus resultados al segundo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Ejecuta únicamente el segundo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Compara ambos comandos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Guarda ambos como variables."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Esa lectura captura la idea básica del pipeline.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0174",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-AYUDA",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "¿Cuál consulta ayuda sobre `Get-ChildItem`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`Get-ChildItem Get-Help`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Get-Help Get-ChildItem`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`Set-Location Get-ChildItem`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Read-Host Get-ChildItem`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Get-Help permite consultar información sobre un comando.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0175",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-AYUDA",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "Un alumno piensa que para utilizar PowerShell correctamente debe memorizar todos sus comandos. ¿Qué principio estudiado contradice esa idea?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Nunca es necesario aprender ningún comando."
+      },
+      {
+        "id": "opt_2",
+        "text": "PowerShell solo contiene cuatro comandos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Saber consultar ayuda y explorar comandos también forma parte del trabajo técnico."
+      },
+      {
+        "id": "opt_4",
+        "text": "La ayuda sustituye completamente la comprensión."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Saber localizar información técnica es una competencia importante.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0176",
+    "blockId": "B1",
+    "unitId": "U11",
+    "primaryConceptId": "B1-U11-AYUDA",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "Encuentras `Get-ChildItem` en un script y quieres consultar información sobre ese cmdlet. ¿Qué acción es adecuada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Convertirlo a Python."
+      },
+      {
+        "id": "opt_2",
+        "text": "Borrar el comando y volver a escribirlo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Crear una variable llamada `$Help`."
+      },
+      {
+        "id": "opt_4",
+        "text": "Utilizar `Get-Help Get-ChildItem`."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "PowerShell incluye mecanismos de ayuda.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

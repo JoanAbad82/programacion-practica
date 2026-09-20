@@ -1,0 +1,842 @@
+[
+  {
+    "id": "B1-Q0177",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-SINTAXIS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué caracteriza un error de sintaxis?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El código incumple las reglas de escritura del lenguaje."
+      },
+      {
+        "id": "opt_2",
+        "text": "El programa produce un cálculo inesperado."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una variable contiene un valor diferente."
+      },
+      {
+        "id": "opt_4",
+        "text": "El usuario introduce un dato incorrecto."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Un error de sintaxis aparece cuando el código no está correctamente formado.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0178",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-SINTAXIS",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "```python\nif edad >= 18\n    print(\"Adulto\")\n```\n¿Qué tipo de problema aparece?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Error lógico únicamente."
+      },
+      {
+        "id": "opt_2",
+        "text": "Error de sintaxis."
+      },
+      {
+        "id": "opt_3",
+        "text": "Error por utilizar una lista."
+      },
+      {
+        "id": "opt_4",
+        "text": "No existe ningún problema."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Falta `:` después de la condición.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0179",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-SINTAXIS",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`print(\"Hola\"` ¿qué debe revisarse primero?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El valor booleano de Hola."
+      },
+      {
+        "id": "opt_2",
+        "text": "La ruta del programa."
+      },
+      {
+        "id": "opt_3",
+        "text": "La sintaxis, porque falta cerrar el paréntesis."
+      },
+      {
+        "id": "opt_4",
+        "text": "El número de iteraciones."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La estructura de la instrucción está incompleta.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0180",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-SINTAXIS",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "¿Por qué `if precio > 100` seguido de un bloque indentado no representa correctamente el `if` estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "precio no puede ser una variable."
+      },
+      {
+        "id": "opt_2",
+        "text": "> no funciona con números."
+      },
+      {
+        "id": "opt_3",
+        "text": "print() nunca puede estar indentado."
+      },
+      {
+        "id": "opt_4",
+        "text": "Falta `:` al final de la línea del `if`."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El problema concreto es sintáctico.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0181",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-EJECUCION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es un error de ejecución?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un problema que aparece mientras el programa se está ejecutando."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una regla de escritura incorrecta exclusivamente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una explicación incluida como comentario."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una condición cuyo resultado es False."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El programa comienza a ejecutarse y encuentra un problema.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0182",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-EJECUCION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Si se ejecuta `print(numero)` y nunca se ha creado `numero`, ¿qué problema representa dentro del bloque?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un ejemplo correcto de salida."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un error de ejecución relacionado con una variable inexistente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un error lógico sin fallo de ejecución."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una lista vacía."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "El programa intenta utilizar algo que no está definido.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0183",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-EJECUCION",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Un programa llega a `print(precio)` pero `precio` nunca ha sido definido. ¿Qué conviene investigar?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Si print debería convertirse en una lista."
+      },
+      {
+        "id": "opt_2",
+        "text": "Si falta un else."
+      },
+      {
+        "id": "opt_3",
+        "text": "Dónde debía haberse creado o asignado `precio`."
+      },
+      {
+        "id": "opt_4",
+        "text": "Si el archivo debe cambiar de extensión."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El error está relacionado con utilizar una variable inexistente.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0184",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-EJECUCION",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Una instrucción está bien escrita sintácticamente, pero al ejecutarse intenta utilizar una variable inexistente. ¿Cómo se clasifica mejor?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comentario."
+      },
+      {
+        "id": "opt_2",
+        "text": "Error de indentación necesariamente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Error lógico únicamente."
+      },
+      {
+        "id": "opt_4",
+        "text": "Error de ejecución."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La sintaxis puede ser válida y aun así producirse un fallo durante la ejecución.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0185",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-LOGICO",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es un error lógico?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un problema en el que el programa puede ejecutarse pero produce un resultado incorrecto."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un código que siempre contiene un error de sintaxis."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un error producido únicamente por escribir mal un nombre."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un programa que no puede arrancar."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El código funciona técnicamente, pero su lógica no corresponde con la intención.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0186",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-LOGICO",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "`precio = 100`, `cantidad = 3`, `total = precio + cantidad`. ¿Qué mostrará `total`, aunque se pretendiera multiplicar?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`300`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`103`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`97`"
+      },
+      {
+        "id": "opt_4",
+        "text": "Un error de sintaxis"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "El código usa suma, se ejecuta y produce 103.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0187",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-LOGICO",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Se quiere calcular el coste total con `total = precio + cantidad` cuando la intención era multiplicarlos. El programa se ejecuta sin error. ¿Qué tipo de problema existe?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Error de sintaxis."
+      },
+      {
+        "id": "opt_2",
+        "text": "Error de indentación."
+      },
+      {
+        "id": "opt_3",
+        "text": "Error lógico."
+      },
+      {
+        "id": "opt_4",
+        "text": "Error de ruta."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La instrucción es válida, pero la operación elegida no implementa la intención.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0188",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-ERROR-LOGICO",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "¿Por qué puede ser más difícil detectar un error lógico?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque siempre impide iniciar Python."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque únicamente ocurre en PowerShell."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque todos los errores lógicos son comentarios."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque el programa puede ejecutarse sin producir un mensaje de error."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Un resultado incorrecto puede parecer técnicamente válido.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0189",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-DEBUGGING",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué significa depurar o hacer debugging?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Localizar, comprender y corregir problemas en el programa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Eliminar todos los comentarios."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir el programa a otro lenguaje."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ejecutar el mismo código sin revisarlo."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La depuración es un proceso de análisis y corrección.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0190",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-DEBUGGING",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "¿Cuál es el procedimiento más coherente con el método básico estudiado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Cambiar muchas líneas simultáneamente y ejecutar al final."
+      },
+      {
+        "id": "opt_2",
+        "text": "Leer el error, localizar la zona afectada, cambiar algo concreto y volver a probar."
+      },
+      {
+        "id": "opt_3",
+        "text": "Borrar el código que produce el error sin leer el mensaje."
+      },
+      {
+        "id": "opt_4",
+        "text": "Reiniciar el ordenador antes de analizar el problema."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Cambios pequeños y controlados permiten comprender mejor la causa.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0191",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-DEBUGGING",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Un programa falla y el alumno cambia cinco partes distintas simultáneamente. Después funciona, pero no sabe qué cambio lo solucionó. ¿Qué práctica ha dificultado la depuración?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Haber leído el código."
+      },
+      {
+        "id": "opt_2",
+        "text": "Haber ejecutado el programa."
+      },
+      {
+        "id": "opt_3",
+        "text": "Modificar demasiadas cosas al mismo tiempo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Utilizar variables."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Cambiar una cosa cada vez facilita identificar causa y efecto.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0192",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-DEBUGGING",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Aparece un mensaje de error en una línea concreta. ¿Qué actuación encaja mejor con el método enseñado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ignorarlo si el programa es largo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Pedir a una IA que reescriba todo el programa sin contexto."
+      },
+      {
+        "id": "opt_3",
+        "text": "Eliminar la línea directamente."
+      },
+      {
+        "id": "opt_4",
+        "text": "Leer el mensaje, revisar esa zona y comprobar qué debía ocurrir."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Depurar comienza por comprender el problema antes de aplicar cambios.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0193",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-LEER-ANTES",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Antes de modificar un fragmento de código existente, ¿qué conviene hacer primero?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Leer el código y comprender qué datos, variables y condiciones utiliza."
+      },
+      {
+        "id": "opt_2",
+        "text": "Cambiar if por for."
+      },
+      {
+        "id": "opt_3",
+        "text": "Eliminar las variables."
+      },
+      {
+        "id": "opt_4",
+        "text": "Cambiar todos los valores."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Comprender el comportamiento actual reduce el riesgo de cambios incorrectos.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0194",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-LEER-ANTES",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Una IA propone modificar una función que no comprendes. ¿Cuál es la práctica más adecuada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Aceptar siempre cualquier modificación completa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Entender primero qué hace la función y qué cambio se pretende introducir."
+      },
+      {
+        "id": "opt_3",
+        "text": "Eliminar la función."
+      },
+      {
+        "id": "opt_4",
+        "text": "Cambiar también otras partes aunque no sea necesario."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Leer antes de modificar permite evaluar si el cambio corresponde con la intención.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0195",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-IA-PRECISION",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "¿Cuál es el principal problema de este prompt: «Hazme algo con archivos»?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Contiene demasiadas restricciones."
+      },
+      {
+        "id": "opt_2",
+        "text": "Utiliza demasiados términos técnicos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Es ambiguo y no especifica claramente lenguaje, objetivo ni comportamiento."
+      },
+      {
+        "id": "opt_4",
+        "text": "Es demasiado largo."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Una petición técnica precisa ayuda a obtener una solución controlable.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0196",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-IA-PRECISION",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Cuál es una petición más precisa?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "«Haz código»."
+      },
+      {
+        "id": "opt_2",
+        "text": "«Necesito algo mejor»."
+      },
+      {
+        "id": "opt_3",
+        "text": "«Programa lo que creas conveniente»."
+      },
+      {
+        "id": "opt_4",
+        "text": "«Crea un script PowerShell que muestre los archivos `.txt` de una carpeta»."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Especifica lenguaje y objetivo concreto.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0197",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-IA-PRECISION",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Necesitas modificar una función concreta. ¿Cuál proporciona mejor contexto técnico?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "«Modifica la función `calcular_total()` para incluir una comisión»."
+      },
+      {
+        "id": "opt_2",
+        "text": "«Arréglalo todo»."
+      },
+      {
+        "id": "opt_3",
+        "text": "«Hazlo más profesional»."
+      },
+      {
+        "id": "opt_4",
+        "text": "«Cambia lo que quieras»."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Identifica el elemento afectado y el comportamiento solicitado.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0198",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-IA-PRECISION",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Quieres que una IA genere un script que examine `.txt` sin alterar los archivos. ¿Cuál es la mejor petición?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "«Mira archivos»."
+      },
+      {
+        "id": "opt_2",
+        "text": "«Crea un script PowerShell que muestre los archivos `.txt` de una carpeta y no modifique ni elimine ningún archivo»."
+      },
+      {
+        "id": "opt_3",
+        "text": "«Haz un programa de documentos»."
+      },
+      {
+        "id": "opt_4",
+        "text": "«Usa PowerShell»."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Define lenguaje, objetivo, tipo de archivo y restricciones.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0199",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-CAMBIO-SEGURO",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Cuál de estas frases delimita claramente un cambio?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "«Cambia todo lo que consideres»."
+      },
+      {
+        "id": "opt_2",
+        "text": "«Mejora el programa de cualquier forma»."
+      },
+      {
+        "id": "opt_3",
+        "text": "«Modifica únicamente la función `calcular_total()` y mantén intacto el resto»."
+      },
+      {
+        "id": "opt_4",
+        "text": "«Reescribe el proyecto entero»."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La instrucción identifica qué puede cambiarse y qué debe conservarse.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0200",
+    "blockId": "B1",
+    "unitId": "U12",
+    "primaryConceptId": "B1-U12-CAMBIO-SEGURO",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Una aplicación ya funciona y solo necesitas añadir una pequeña condición. ¿Cuál es la petición más controlada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "«Reescribe el programa desde cero»."
+      },
+      {
+        "id": "opt_2",
+        "text": "«Cambia todas las funciones para estar seguros»."
+      },
+      {
+        "id": "opt_3",
+        "text": "«Optimiza cualquier cosa que encuentres»."
+      },
+      {
+        "id": "opt_4",
+        "text": "«Añade esta condición sin eliminar el comportamiento actual y mantén intactas las partes no relacionadas»."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Limitar el alcance reduce cambios innecesarios.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

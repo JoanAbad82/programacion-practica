@@ -1,0 +1,562 @@
+[
+  {
+    "id": "B1-Q0091",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-CONDICION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es una condición en programación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una lista que contiene varios valores."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un archivo que almacena instrucciones."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una expresión cuyo resultado permite decidir qué código ejecutar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una función que siempre muestra texto."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Una condición produce un resultado lógico que puede utilizarse para decidir qué instrucciones ejecutar.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0092",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-CONDICION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Observa `edad >= 18`. ¿Qué representa?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una asignación."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una función."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una lista."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una condición basada en una comparación."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La expresión comprueba si edad es mayor o igual que 18.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0093",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-CONDICION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Si `precio = 120`, ¿cómo debe interpretarse la condición `precio > 100`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comprueba si `precio` es mayor que 100."
+      },
+      {
+        "id": "opt_2",
+        "text": "Guarda 100 en precio."
+      },
+      {
+        "id": "opt_3",
+        "text": "Pregunta si precio es menor que 100."
+      },
+      {
+        "id": "opt_4",
+        "text": "Multiplica precio por 100."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "`>` comprueba si el valor de la izquierda es mayor.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0094",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-CONDICION",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Si `edad = 16`, ¿qué resultado produce `edad >= 18`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`18`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`False`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`16`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`True`"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "16 no es mayor ni igual que 18.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0095",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-CONDICION",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un alumno afirma que `precio < 100` cambia el valor de `precio` a 100. ¿Cuál es su error?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "< significa multiplicar."
+      },
+      {
+        "id": "opt_2",
+        "text": "Las condiciones solo pueden usar booleanos almacenados previamente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una comparación evalúa una relación; no asigna ese valor a la variable."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una condición siempre modifica sus variables."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Para asignar se utiliza `=`; comparar no modifica por sí mismo la variable.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0096",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-IF",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Para qué sirve `if`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para crear siempre una lista."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para guardar un script."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para repetir indefinidamente una instrucción."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para ejecutar código cuando se cumple una condición."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "if permite ejecutar un bloque cuando la condición es verdadera.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0097",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-IF",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En `edad = 20` seguido de `if edad >= 18: print(...)`, ¿por qué se ejecuta el bloque?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque la condición `20 >= 18` es verdadera."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque todos los if se ejecutan siempre."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque print cambia el valor de edad."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque la indentación convierte 20 en texto."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El bloque se ejecuta porque la condición es verdadera.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0098",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-IF",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`precio = 80` y `if precio < 100: print(\"Disponible\")`. ¿Qué se mostrará?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`80`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Disponible`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`100`"
+      },
+      {
+        "id": "opt_4",
+        "text": "Nada"
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "80 es menor que 100, por lo que el bloque se ejecuta.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0099",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-IF",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`precio = 120` y `if precio < 100: print(\"Disponible\")`. ¿Qué sucede?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Se muestra 120."
+      },
+      {
+        "id": "opt_2",
+        "text": "Se muestra Disponible."
+      },
+      {
+        "id": "opt_3",
+        "text": "No se ejecuta el `print()` del bloque."
+      },
+      {
+        "id": "opt_4",
+        "text": "Se cambia precio a 100."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La condición es falsa.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0100",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-IF",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "`edad = 18` y `if edad >= 18: print(\"Acceso permitido\")`. ¿Qué salida produce?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ninguna, porque 18 debe ser mayor, no igual."
+      },
+      {
+        "id": "opt_2",
+        "text": "`True`"
+      },
+      {
+        "id": "opt_3",
+        "text": "`18`"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Acceso permitido`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "`>=` incluye el valor igual.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0101",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-IF",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "¿Cuál está correctamente escrito en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "```python\nif edad >= 18:\n    print(\"Adulto\")\n```"
+      },
+      {
+        "id": "opt_2",
+        "text": "```python\nif edad >= 18\n    print(\"Adulto\")\n```"
+      },
+      {
+        "id": "opt_3",
+        "text": "```python\nif edad >= 18:\nprint(\"Adulto\")\n```"
+      },
+      {
+        "id": "opt_4",
+        "text": "```python\nif = edad >= 18:\n    print(\"Adulto\")\n```"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El if necesita `:` y el contenido del bloque debe estar indentado.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0102",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-IF",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "`edad = 15` seguido de `if edad >= 18: print(\"Adulto\")`. Un alumno espera que aparezca `\"Adulto\"`. ¿Cuál es el problema de su razonamiento?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "print() no puede estar dentro de un if."
+      },
+      {
+        "id": "opt_2",
+        "text": "La condición es falsa, por lo que el bloque no se ejecuta."
+      },
+      {
+        "id": "opt_3",
+        "text": "edad debería ser texto."
+      },
+      {
+        "id": "opt_4",
+        "text": ">= significa menor que."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "15 no es mayor ni igual que 18.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0103",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-ELSE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "En una estructura `if ... else ...`, ¿cuándo se ejecuta el bloque `else`?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Siempre después del if."
+      },
+      {
+        "id": "opt_2",
+        "text": "Solo cuando una variable vale exactamente 18."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cuando la condición del `if` es falsa."
+      },
+      {
+        "id": "opt_4",
+        "text": "Antes de evaluar el if."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "else proporciona la alternativa cuando la condición no se cumple.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0104",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-ELSE",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "`edad = 16`; si `edad >= 18` se imprime `\"Adulto\"` y, si no, `\"Menor\"`. ¿Qué se mostrará?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "`Adulto` y después `Menor`"
+      },
+      {
+        "id": "opt_2",
+        "text": "`Adulto`"
+      },
+      {
+        "id": "opt_3",
+        "text": "Nada"
+      },
+      {
+        "id": "opt_4",
+        "text": "`Menor`"
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La condición es falsa y se ejecuta el bloque else.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0105",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-ELSE",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "¿Cuál representa correctamente una alternativa en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "```python\nif edad >= 18:\n    print(\"Adulto\")\nelse:\n    print(\"Menor\")\n```"
+      },
+      {
+        "id": "opt_2",
+        "text": "```python\nif edad >= 18:\n    print(\"Adulto\")\nelse\n    print(\"Menor\")\n```"
+      },
+      {
+        "id": "opt_3",
+        "text": "```python\nif edad >= 18\n    print(\"Adulto\")\nelse:\n    print(\"Menor\")\n```"
+      },
+      {
+        "id": "opt_4",
+        "text": "```python\nif edad >= 18:\n    print(\"Adulto\")\n    else:\n    print(\"Menor\")\n```"
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "if y else necesitan sintaxis e indentación correctas.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B1-Q0106",
+    "blockId": "B1",
+    "unitId": "U07",
+    "primaryConceptId": "B1-U07-ELSE",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un alumno afirma que en `if precio < 100: ... else: ...` siempre se ejecutan ambos bloques. ¿Qué error comete?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "else sirve para repetir el bloque anterior."
+      },
+      {
+        "id": "opt_2",
+        "text": "Los dos bloques son alternativas: se ejecuta uno u otro según la condición."
+      },
+      {
+        "id": "opt_3",
+        "text": "if solo funciona con texto."
+      },
+      {
+        "id": "opt_4",
+        "text": "else convierte la condición en verdadera."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "En esta estructura se ejecuta una de las dos alternativas.",
+    "sourceVersion": "BLOCK1_CANONICAL_V1.0",
+    "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK1_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]
