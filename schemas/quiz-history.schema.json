@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quiz-history.schema.json",
+  "title": "QuizHistorySnapshot",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "sessions",
+    "questionStats"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "QUIZ_HISTORY_V1"
+    },
+    "sessions": {
+      "type": "object"
+    },
+    "questionStats": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

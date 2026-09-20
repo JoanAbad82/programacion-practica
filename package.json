@@ -10,9 +10,10 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.mjs",
     "validate:bootstrap": "node scripts/validate-bootstrap.mjs",
-    "check": "npm run validate:bootstrap && npm run validate:content && npm run validate:study && npm run lint && npm run typecheck && npm test && npm run build",
+    "check": "npm run validate:bootstrap && npm run validate:content && npm run validate:study && npm run validate:quiz && npm run lint && npm run typecheck && npm test && npm run build",
     "validate:content": "node scripts/validate-content.mjs",
-    "validate:study": "node scripts/validate-study.mjs"
+    "validate:study": "node scripts/validate-study.mjs",
+    "validate:quiz": "node scripts/validate-quiz.mjs"
   },
   "engines": {
     "node": ">=22.13.0"
