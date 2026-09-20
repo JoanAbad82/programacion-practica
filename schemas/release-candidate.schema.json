@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "release-candidate.schema.json",
+  "title": "ReleaseCandidateAcceptance",
+  "type": "object",
+  "required": [
+    "release",
+    "version",
+    "base_phase",
+    "base_head",
+    "base_tree",
+    "canonical_counts",
+    "qa",
+    "runtime_ai",
+    "local_first"
+  ],
+  "properties": {
+    "release": {
+      "const": "PROGRAMACION_PRACTICA_RC1"
+    },
+    "version": {
+      "const": "0.1.0-rc.1"
+    },
+    "base_phase": {
+      "const": 7
+    },
+    "base_head": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 40
+    },
+    "base_tree": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 40
+    },
+    "canonical_counts": {
+      "type": "object",
+      "required": [
+        "units",
+        "concepts",
+        "questions",
+        "flashcards"
+      ],
+      "properties": {
+        "units": {
+          "const": 12
+        },
+        "concepts": {
+          "const": 56
+        },
+        "questions": {
+          "const": 200
+        },
+        "flashcards": {
+          "const": 80
+        }
+      },
+      "additionalProperties": false
+    },
+    "runtime_ai": {
+      "const": false
+    },
+    "local_first": {
+      "const": true
+    }
+  },
+  "additionalProperties": true
+}

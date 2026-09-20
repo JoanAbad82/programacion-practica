@@ -1,0 +1,41 @@
+{
+  "release": "PROGRAMACION_PRACTICA_RC1",
+  "version": "0.1.0-rc.1",
+  "base_phase": 7,
+  "base_head": "76325e27ad066a47e6415135e87c9af00f6ae377",
+  "base_tree": "b254df1fd99d8beaeda273b862090a97a19897f5",
+  "canonical_counts": {
+    "units": 12,
+    "concepts": 56,
+    "questions": 200,
+    "flashcards": 80
+  },
+  "qa": {
+    "regression_tests_min": 54,
+    "clean_builds": 2,
+    "http_routes": 16,
+    "persistence_namespaces": [
+      "pp-study-progress-v1",
+      "pp-quiz-history-v1",
+      "pp-flashcard-history-v1"
+    ],
+    "requires": [
+      "CONTENT_VALIDATION",
+      "STUDY_VALIDATION",
+      "QUIZ_VALIDATION",
+      "FLASHCARD_VALIDATION",
+      "PROGRESS_VALIDATION",
+      "UX_VALIDATION",
+      "QA_VALIDATION",
+      "LINT",
+      "TYPECHECK",
+      "TESTS",
+      "CLEAN_BUILD_REPRODUCIBILITY",
+      "HTTP_SMOKE",
+      "SOURCE_INVENTORY",
+      "GIT_CLEAN"
+    ]
+  },
+  "runtime_ai": false,
+  "local_first": true
+}

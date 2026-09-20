@@ -1,0 +1,15 @@
+{
+  "release": "PROGRAMACION_PRACTICA_RC1",
+  "version": "0.1.0-rc.1",
+  "base_head": "76325e27ad066a47e6415135e87c9af00f6ae377",
+  "base_tree": "b254df1fd99d8beaeda273b862090a97a19897f5",
+  "clean_builds": 2,
+  "build_surface_sha256": "13BEB833DA76ABAD9F524C4008EC33F953244E1E0AD3F430BF76BCE87245C948",
+  "http_routes_checked": 16,
+  "regression_tests": 54,
+  "canonical_units": 12,
+  "canonical_concepts": 56,
+  "canonical_questions": 200,
+  "canonical_flashcards": 80,
+  "runtime_ai": false
+}

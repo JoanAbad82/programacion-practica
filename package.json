@@ -1,6 +1,6 @@
 {
   "name": "programacion-practica",
-  "version": "0.1.0",
+  "version": "0.1.0-rc.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,13 +10,16 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.mjs",
     "validate:bootstrap": "node scripts/validate-bootstrap.mjs",
-    "check": "npm run validate:bootstrap && npm run validate:content && npm run validate:study && npm run validate:quiz && npm run validate:flashcards && npm run validate:progress && npm run validate:ux && npm run lint && npm run typecheck && npm test && npm run build",
+    "check": "npm run validate:bootstrap && npm run validate:content && npm run validate:study && npm run validate:quiz && npm run validate:flashcards && npm run validate:progress && npm run validate:ux && npm run validate:qa && npm run lint && npm run typecheck && npm test && npm run build",
     "validate:content": "node scripts/validate-content.mjs",
     "validate:study": "node scripts/validate-study.mjs",
     "validate:quiz": "node scripts/validate-quiz.mjs",
     "validate:flashcards": "node scripts/validate-flashcards.mjs",
     "validate:progress": "node scripts/validate-progress.mjs",
-    "validate:ux": "node scripts/validate-ux.mjs"
+    "validate:ux": "node scripts/validate-ux.mjs",
+    "validate:qa": "node scripts/validate-qa.mjs",
+    "qa:http": "node scripts/qa-http-smoke.mjs",
+    "qa:build-surface": "node scripts/qa-build-surface.mjs"
   },
   "engines": {
     "node": ">=22.13.0"
