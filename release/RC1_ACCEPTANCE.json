@@ -1,6 +1,6 @@
 {
   "release": "PROGRAMACION_PRACTICA_V1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "target": "cloudflare-pages-static",
   "static_export": "out",
   "base_phase": 7,

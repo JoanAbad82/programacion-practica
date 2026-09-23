@@ -1,6 +1,6 @@
 {
   "release": "PROGRAMACION_PRACTICA_V1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "algorithm": "SHA-256",
   "source": "git-tracked-and-unignored",
   "file_count": 178,
@@ -612,13 +612,13 @@
     },
     {
       "path": "package-lock.json",
-      "bytes": 245855,
-      "sha256": "3DCA51A95FDFFA4DC0E3E59D928AE31B609C957225A136BB50FBFFAFDE6E8354"
+      "bytes": 248325,
+      "sha256": "0739D46B46D70D18DF0487AADC0954DE9B360D2650176DA0405604FAAF09F41F"
     },
     {
       "path": "package.json",
       "bytes": 2091,
-      "sha256": "6C6857E99754191E7AF4D7576537BFEA9349F2FFCFDBC21903EB9270A19DC944"
+      "sha256": "3973A62AC0D3EA9DFEF50245281F5040FCD94D4F631215A4CA2D7AD22B80575E"
     },
     {
       "path": "playwright.config.ts",
@@ -637,8 +637,8 @@
     },
     {
       "path": "release/RC1_ACCEPTANCE.json",
-      "bytes": 1025,
-      "sha256": "C82B0A7E54DF99CE65B4F09EE36D08CBCB9CB8AD8F62BA3C2EC4B4B9C12B4866"
+      "bytes": 1068,
+      "sha256": "CBEE2615C7897657BD51A02340339D4EB55E463C12D6FF6958370B48ADF066F0"
     },
     {
       "path": "release/RC1_BUILD_MANIFEST.json",
@@ -832,8 +832,8 @@
     },
     {
       "path": "tests/release-candidate.test.mjs",
-      "bytes": 3525,
-      "sha256": "C0D7ACC83E2742B3350D198723852AC3FB273512680EA00B8C2667DC38D0CFF6"
+      "bytes": 3547,
+      "sha256": "5BEC811C6DD6ECFE6D4A45D6A2C49C7CA6CC5F0FB6213D0137795BE2581B7880"
     },
     {
       "path": "tests/study-experience.test.mjs",
