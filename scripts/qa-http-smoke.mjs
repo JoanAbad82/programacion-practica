@@ -22,13 +22,12 @@ function getFreePort() {
 const port = await getFreePort();
 if (!port) throw new Error("Could not allocate QA port.");
 
-const nextCli = path.join(root, "node_modules", "next", "dist", "bin", "next");
 const child = spawn(
   process.execPath,
-  [nextCli, "start", "-H", "127.0.0.1", "-p", String(port)],
+  [path.join(root, "scripts", "serve-static-export.mjs")],
   {
     cwd: root,
-    env: { ...process.env, NODE_ENV: "production" },
+    env: { ...process.env, PP_E2E_PORT: String(port) },
     stdio: ["ignore", "pipe", "pipe"],
     windowsHide: true,
   },
@@ -48,7 +47,9 @@ async function waitForServer() {
 
   while (Date.now() < deadline) {
     if (child.exitCode !== null) {
-      throw new Error(`Next server exited early.\n${logs}`);
+      throw new Error(
+        `Static export server exited early (run \`npm run build\` first).\n${logs}`,
+      );
     }
 
     try {

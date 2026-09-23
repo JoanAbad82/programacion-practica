@@ -1,14 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { QuizResults } from "@/components/quiz/quiz-results";
-import { getBlock1Questions } from "@/lib/content/quiz-content";
+import { block1Questions } from "@/lib/content/client-bank";
+import { useClientSearchParams } from "@/lib/navigation/search-params";
 
-export default async function QuizResultsPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ sid?: string | string[] }>;
-}) {
-  const params = await searchParams;
-  const sessionId = Array.isArray(params.sid) ? params.sid[0] : params.sid;
+/**
+ * Static results route. The exported HTML renders the controlled
+ * "missing session id" state and the browser resolves `?sid=` after hydration.
+ */
+export default function QuizResultsPage() {
+  const searchParams = useClientSearchParams();
+  const sessionId = searchParams.get("sid");
 
   if (!sessionId) {
     return (
@@ -20,10 +23,5 @@ export default async function QuizResultsPage({
     );
   }
 
-  return (
-    <QuizResults
-      questions={await getBlock1Questions()}
-      sessionId={sessionId}
-    />
-  );
+  return <QuizResults questions={block1Questions} sessionId={sessionId} />;
 }

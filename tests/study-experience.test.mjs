@@ -42,9 +42,13 @@ test("study progress has the three approved unit states", async () => {
   }
 });
 
-test("each unit can hand context to the future quiz engine", async () => {
+test("each unit hands its practice context to the statically exported test setup", async () => {
   const unitPage = await read("app/estudiar/b1/[unitId]/page.tsx");
   const testsPage = await read("app/tests/page.tsx");
+  const quizSetup = await read("components/quiz/quiz-setup.tsx");
   assert.match(unitPage, /\/tests\?unit=/);
-  assert.match(testsPage, /searchParams/);
+  assert.match(testsPage, /QuizSetup/);
+  assert.match(quizSetup, /useClientSearchParams/);
+  assert.match(quizSetup, /searchParams\.get\("unit"\)/);
+  assert.match(quizSetup, /searchParams\.get\("mode"\)/);
 });

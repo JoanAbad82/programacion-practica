@@ -75,10 +75,12 @@ test("runtime application code contains no configured AI provider", async () => 
   );
 });
 
-test("RC1 contract requires two clean builds and a 16-route HTTP smoke", async () => {
+test("release contract requires a static export, two clean builds and a 16-route HTTP smoke", async () => {
   const acceptance = JSON.parse(await read("release/RC1_ACCEPTANCE.json"));
   const packageJson = JSON.parse(await read("package.json"));
-  assert.equal(packageJson.version, "0.1.0-rc.1");
+  assert.equal(packageJson.version, "1.0.0");
+  assert.equal(acceptance.version, "1.0.0");
+  assert.equal(acceptance.target, "cloudflare-pages-static");
   assert.equal(acceptance.qa.clean_builds, 2);
   assert.equal(acceptance.qa.http_routes, 16);
   assert.equal(acceptance.qa.regression_tests_min, 54);

@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { QuizSession } from "@/components/quiz/quiz-session";
-import { getBlock1Questions } from "@/lib/content/quiz-content";
+import { block1Questions } from "@/lib/content/client-bank";
+import { useClientSearchParams } from "@/lib/navigation/search-params";
 import type {
   QuizDifficultyFilter,
   QuizFilters,
@@ -68,32 +71,34 @@ function parseFilters(params: {
   return { language, difficulty, questionType };
 }
 
-export default async function QuizSessionPage({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
-  const raw = await searchParams;
-  const first = (value: string | string[] | undefined) =>
-    Array.isArray(value) ? value[0] : value;
+/**
+ * Query-param session route.
+ *
+ * The route is exported as static HTML: the exported document renders the
+ * controlled "invalid session" state and the browser rebuilds the real session
+ * from the query string after hydration, so `?sid=&seed=&mode=&size=&ids=`
+ * sessions are preserved without request-time rendering.
+ */
+export default function QuizSessionPage() {
+  const searchParams = useClientSearchParams();
+  const value = (key: string) => searchParams.get(key) ?? undefined;
 
-  const sessionId = first(raw.sid);
-  const seedValue = Number(first(raw.seed));
-  const mode = parseMode(first(raw.mode));
-  const requestedSize = parseSize(first(raw.size));
-  const unit = first(raw.unit)?.toUpperCase() ?? null;
+  const sessionId = value("sid");
+  const seedValue = Number(value("seed"));
+  const mode = parseMode(value("mode"));
+  const requestedSize = parseSize(value("size"));
+  const unit = value("unit")?.toUpperCase() ?? null;
   const filters = parseFilters({
-    language: first(raw.language),
-    difficulty: first(raw.difficulty),
-    type: first(raw.type),
+    language: value("language"),
+    difficulty: value("difficulty"),
+    type: value("type"),
   });
-  const ids = (first(raw.ids) ?? "")
+  const ids = (value("ids") ?? "")
     .split(",")
-    .map((value) => value.trim())
+    .map((id) => id.trim())
     .filter(Boolean);
 
-  const questions = await getBlock1Questions();
-  const byId = new Map(questions.map((question) => [question.id, question]));
+  const byId = new Map(block1Questions.map((question) => [question.id, question]));
   const uniqueIds = new Set(ids);
 
   const valid =

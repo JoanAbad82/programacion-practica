@@ -226,16 +226,23 @@ export async function validateReleaseCandidate() {
   const acceptance = JSON.parse(await read("release/RC1_ACCEPTANCE.json"));
   const packageJson = JSON.parse(await read("package.json"));
 
-  if (packageJson.version !== "0.1.0-rc.1") {
-    failures.push(`Expected package version 0.1.0-rc.1, got ${packageJson.version}`);
+  if (!/^\d+\.\d+\.\d+$/.test(packageJson.version)) {
+    failures.push(`Expected a stable package version, got ${packageJson.version}`);
   }
-  if (acceptance.version !== "0.1.0-rc.1") failures.push("RC1 acceptance version mismatch");
+  if (acceptance.version !== packageJson.version) {
+    failures.push(
+      `Acceptance version ${acceptance.version} does not match package ${packageJson.version}`,
+    );
+  }
   if (acceptance.base_head !== "76325e27ad066a47e6415135e87c9af00f6ae377") {
-    failures.push("RC1 acceptance base HEAD mismatch");
+    failures.push("Acceptance base HEAD mismatch");
   }
-  if (acceptance.qa?.clean_builds !== 2) failures.push("RC1 must require two clean builds");
-  if (acceptance.qa?.http_routes !== 16) failures.push("RC1 must require 16 HTTP route checks");
-  if (acceptance.runtime_ai !== false) failures.push("RC1 runtime_ai must be false");
+  if (acceptance.qa?.clean_builds !== 2) failures.push("Release must require two clean builds");
+  if (acceptance.qa?.http_routes !== 16) failures.push("Release must require 16 HTTP route checks");
+  if (acceptance.target !== "cloudflare-pages-static") {
+    failures.push("Acceptance target must be the Cloudflare Pages static export");
+  }
+  if (acceptance.runtime_ai !== false) failures.push("runtime_ai must be false");
 
   const runtimeAiPattern = /\b(?:openai|anthropic|deepseek|tinyfish|gemini)\b/i;
   for (const directory of ["app", "components", "lib"]) {

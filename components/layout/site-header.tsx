@@ -26,7 +26,6 @@ export function SiteHeader() {
       <div className="shell header-row">
         <Link className="brand" href="/" onClick={() => setOpen(false)}>
           <span>Programación Práctica</span>
-          <small>nombre provisional</small>
         </Link>
 
         <button

@@ -1,5 +1,5 @@
 param(
-  [string]$Owner = "JoanAbad82",
+  [Parameter(Mandatory = $true)][string]$Owner,
   [string]$Repo = "programacion-practica",
   [switch]$Public
 )

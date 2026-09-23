@@ -13,3 +13,4 @@ Thumbs.db
 *.tsbuildinfo
 test-results/
 qa/playwright-report/
+qa/playwright-report.json

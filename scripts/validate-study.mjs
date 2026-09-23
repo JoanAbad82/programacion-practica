@@ -66,7 +66,14 @@ if (!progressSource.includes("pp-study-progress-v1")) failures.push("PROGRESS_ST
 if (!progressSource.includes("useSyncExternalStore")) failures.push("PROGRESS_EXTERNAL_STORE missing");
 
 const testsPageSource = await readFile(path.join(root, "app", "tests", "page.tsx"), "utf8");
-if (!testsPageSource.includes("searchParams")) failures.push("PRACTICE_CONTEXT_RECEIVER missing");
+if (!testsPageSource.includes("QuizSetup")) failures.push("PRACTICE_CONTEXT_RECEIVER missing");
+
+// The practice context (`/tests?unit=uNN`, `/tests?mode=errors`) is resolved on
+// the client because a static export cannot read request-time searchParams.
+const quizSetupSource = await readFile(path.join(root, "components", "quiz", "quiz-setup.tsx"), "utf8");
+for (const token of ["useClientSearchParams", 'searchParams.get("unit")', 'searchParams.get("mode")']) {
+  if (!quizSetupSource.includes(token)) failures.push(`PRACTICE_CONTEXT_ROUTE missing ${token}`);
+}
 
 if (failures.length > 0) {
   console.error(failures.join("\n"));

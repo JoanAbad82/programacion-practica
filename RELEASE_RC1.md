@@ -2,6 +2,11 @@
 
 **Versión:** `0.1.0-rc.1`
 
+> Nota V1: este documento describe el candidato `0.1.0-rc.1` y se conserva como
+> registro histórico. La versión estable es **1.0.0**; consulta
+> [`docs/V1_PUBLICATION_REPORT.md`](docs/V1_PUBLICATION_REPORT.md) para el
+> informe de publicación y la puerta de Cloudflare Pages.
+
 ## Alcance
 
 Este candidato contiene el Bloque 1 completo de **Fundamentos y Comandos Básicos**

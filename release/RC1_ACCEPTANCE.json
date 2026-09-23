@@ -1,6 +1,8 @@
 {
-  "release": "PROGRAMACION_PRACTICA_RC1",
-  "version": "0.1.0-rc.1",
+  "release": "PROGRAMACION_PRACTICA_V1",
+  "version": "1.0.0",
+  "target": "cloudflare-pages-static",
+  "static_export": "out",
   "base_phase": 7,
   "base_head": "76325e27ad066a47e6415135e87c9af00f6ae377",
   "base_tree": "b254df1fd99d8beaeda273b862090a97a19897f5",
@@ -31,6 +33,7 @@
       "TYPECHECK",
       "TESTS",
       "CLEAN_BUILD_REPRODUCIBILITY",
+      "STATIC_EXPORT",
       "HTTP_SMOKE",
       "SOURCE_INVENTORY",
       "GIT_CLEAN"

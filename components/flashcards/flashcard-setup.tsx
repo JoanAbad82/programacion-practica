@@ -11,6 +11,7 @@ import {
   useFlashcardHistory,
 } from "@/lib/storage/flashcard-history";
 import { masteryScoreMap } from "@/lib/progress/mastery";
+import { useClientSearchParams } from "@/lib/navigation/search-params";
 import { useUnifiedProgress } from "@/lib/storage/unified-progress";
 import type { Concept } from "@/types/content";
 import type { Flashcard } from "@/types/flashcard";
@@ -71,33 +72,53 @@ function makeSeed(): number {
   return Math.floor(Math.random() * 4294967295);
 }
 
+function parseModeParam(value: string | null): FlashcardMode | null {
+  switch (value?.toLowerCase()) {
+    case "mixed":
+      return "MIXED";
+    case "adaptive":
+      return "ADAPTIVE";
+    default:
+      return null;
+  }
+}
+
 export function FlashcardSetup({
   cards,
   units,
-  initialMode = "MIXED",
-  initialUnitId = null,
   concepts,
 }: {
   cards: Flashcard[];
   units: StudyUnitMeta[];
-  initialMode?: FlashcardMode;
-  initialUnitId?: string | null;
   concepts: Concept[];
 }) {
   const router = useRouter();
+  const searchParams = useClientSearchParams();
   const history = useFlashcardHistory();
   const progress = useUnifiedProgress({ concepts, units });
   const masteryByConcept = useMemo(() => masteryScoreMap(progress), [progress]);
 
-  const [mode, setMode] = useState<FlashcardMode>(initialMode);
+  // `?mode=adaptive` and `?unit=uNN` arrive as query parameters on a statically
+  // exported route and are derived during render instead of synced by effect.
+  const requestedUnit =
+    units.find(
+      (unit) =>
+        unit.unitId.toLowerCase() === searchParams.get("unit")?.toLowerCase(),
+    )?.unitId ?? null;
+  const requestedMode = parseModeParam(searchParams.get("mode"));
+
+  const [modeOverride, setModeOverride] = useState<FlashcardMode | null>(null);
+  const [unitOverride, setUnitOverride] = useState<string | null>(null);
   const [size, setSize] = useState<FlashcardSessionSize>(10);
-  const [unitId, setUnitId] = useState(initialUnitId ?? "ALL");
   const [language, setLanguage] =
     useState<FlashcardLanguageFilter>("ALL");
   const [cardType, setCardType] =
     useState<FlashcardTypeFilter>("ALL");
   const [allowReverse, setAllowReverse] = useState(true);
   const [message, setMessage] = useState("");
+
+  const mode: FlashcardMode = modeOverride ?? requestedMode ?? "MIXED";
+  const unitId = unitOverride ?? requestedUnit ?? "ALL";
 
   const filters: FlashcardFilters = useMemo(
     () => ({
@@ -220,7 +241,7 @@ export function FlashcardSetup({
               <input
                 checked={mode === candidate}
                 name="flashcard-mode"
-                onChange={() => setMode(candidate)}
+                onChange={() => setModeOverride(candidate)}
                 type="radio"
               />
               <span>
@@ -234,7 +255,10 @@ export function FlashcardSetup({
         <div className="flashcard-filter-grid">
           <label>
             <span>Unidad</span>
-            <select value={unitId} onChange={(event) => setUnitId(event.target.value)}>
+            <select
+              value={unitId}
+              onChange={(event) => setUnitOverride(event.target.value)}
+            >
               <option value="ALL">Todo el Bloque 1</option>
               {units.map((unit) => (
                 <option key={unit.unitId} value={unit.unitId}>

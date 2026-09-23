@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import type { Question } from "@/types/question";
 import type { QuizQuestionMeta } from "@/types/quiz";
+import { activeQuestions, BLOCK1_UNIT_FILES } from "./bank";
 
 const questionRoot = path.join(
   process.cwd(),
@@ -11,22 +12,14 @@ const questionRoot = path.join(
 );
 
 export async function getBlock1Questions(): Promise<Question[]> {
-  const files = Array.from(
-    { length: 12 },
-    (_, index) => `u${String(index + 1).padStart(2, "0")}.json`,
-  );
-
   const groups = await Promise.all(
-    files.map(async (file) => {
+    BLOCK1_UNIT_FILES.map(async (file) => {
       const raw = await readFile(path.join(questionRoot, file), "utf8");
       return JSON.parse(raw) as Question[];
     }),
   );
 
-  return groups
-    .flat()
-    .filter((question) => question.status === "ACTIVE")
-    .sort((a, b) => a.id.localeCompare(b.id));
+  return activeQuestions(groups);
 }
 
 export async function getBlock1QuestionMetas(): Promise<QuizQuestionMeta[]> {

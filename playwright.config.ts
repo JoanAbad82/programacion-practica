@@ -4,10 +4,12 @@ const port = Number(process.env.PP_E2E_PORT ?? 4310);
 const baseURL = `http://127.0.0.1:${port}`;
 
 /**
- * RC1 end-to-end gate.
+ * Static-export end-to-end gate.
  *
- * Runs against the production build (`next start`) on a port reserved for QA so
- * it never collides with the manual acceptance server on 3000.
+ * The production target is a Next.js static HTML export (`output: "export"`),
+ * so the suite runs against the exported `out/` artifact served by
+ * `scripts/serve-static-export.mjs` — never against `next start` — on a port
+ * reserved for QA.
  *
  *   npm run build && npm run test:e2e
  */
@@ -40,11 +42,12 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: `node node_modules/next/dist/bin/next start -H 127.0.0.1 -p ${port}`,
+    command: "node scripts/serve-static-export.mjs",
     url: baseURL,
     reuseExistingServer: false,
     timeout: 120_000,
     stdout: "pipe",
     stderr: "pipe",
+    env: { PP_E2E_PORT: String(port) },
   },
 });

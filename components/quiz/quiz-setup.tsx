@@ -12,6 +12,7 @@ import {
   useQuizHistory,
 } from "@/lib/storage/quiz-history";
 import { masteryScoreMap } from "@/lib/progress/mastery";
+import { useClientSearchParams } from "@/lib/navigation/search-params";
 import { useUnifiedProgress } from "@/lib/storage/unified-progress";
 import type { Concept } from "@/types/content";
 import type { Language } from "@/types/content";
@@ -83,28 +84,48 @@ function makeSeed(): number {
   return Math.floor(Math.random() * 4294967295);
 }
 
+function parseModeParam(value: string | null): QuizMode | null {
+  switch (value?.toLowerCase()) {
+    case "block":
+      return "BLOCK";
+    case "unit":
+      return "UNIT";
+    case "errors":
+      return "ERRORS";
+    case "adaptive":
+      return "ADAPTIVE";
+    default:
+      return null;
+  }
+}
+
 export function QuizSetup({
   questions,
   units,
-  initialUnitId,
-  initialMode,
   concepts,
 }: {
   questions: QuizQuestionMeta[];
   units: StudyUnitMeta[];
-  initialUnitId: string | null;
-  initialMode: QuizMode;
   concepts: Concept[];
 }) {
   const router = useRouter();
+  const searchParams = useClientSearchParams();
   const history = useQuizHistory();
   const progress = useUnifiedProgress({ concepts, units });
   const masteryByConcept = useMemo(() => masteryScoreMap(progress), [progress]);
 
-  const [mode, setMode] = useState<QuizMode>(initialMode);
-  const [unitId, setUnitId] = useState(
-    initialUnitId ?? units[0]?.unitId ?? "U01",
-  );
+  // The static export always ships the default configuration; unit links
+  // (`?unit=u05`) and error review (`?mode=errors`) are resolved from the query
+  // string and derived here, so no effect has to sync state after hydration.
+  const requestedUnit =
+    units.find(
+      (unit) =>
+        unit.unitId.toLowerCase() === searchParams.get("unit")?.toLowerCase(),
+    )?.unitId ?? null;
+  const requestedMode = parseModeParam(searchParams.get("mode"));
+
+  const [modeOverride, setModeOverride] = useState<QuizMode | null>(null);
+  const [unitOverride, setUnitOverride] = useState<string | null>(null);
   const [size, setSize] = useState<QuizSessionSize>(10);
   const [language, setLanguage] = useState<QuizLanguageFilter>("ALL");
   const [difficulty, setDifficulty] =
@@ -112,6 +133,10 @@ export function QuizSetup({
   const [questionType, setQuestionType] =
     useState<QuizTypeFilter>("ALL");
   const [message, setMessage] = useState("");
+
+  const mode: QuizMode =
+    modeOverride ?? (requestedUnit ? "UNIT" : requestedMode ?? "BLOCK");
+  const unitId = unitOverride ?? requestedUnit ?? units[0]?.unitId ?? "U01";
 
   const filters: QuizFilters = useMemo(
     () => ({ language, difficulty, questionType }),
@@ -217,7 +242,7 @@ export function QuizSetup({
                 checked={mode === candidate}
                 name="quiz-mode"
                 onChange={() => {
-                  setMode(candidate);
+                  setModeOverride(candidate);
                   setMessage("");
                 }}
                 type="radio"
@@ -236,7 +261,7 @@ export function QuizSetup({
               <span>Unidad</span>
               <select
                 value={unitId}
-                onChange={(event) => setUnitId(event.target.value)}
+                onChange={(event) => setUnitOverride(event.target.value)}
               >
                 {units.map((unit) => (
                   <option key={unit.unitId} value={unit.unitId}>

@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { FlashcardSession } from "@/components/flashcards/flashcard-session";
-import { getBlock1Flashcards } from "@/lib/content/flashcard-content";
+import { block1Flashcards } from "@/lib/content/client-bank";
+import { useClientSearchParams } from "@/lib/navigation/search-params";
 import type {
   FlashcardFilters,
   FlashcardLanguageFilter,
@@ -65,32 +68,31 @@ function parseFilters(params: {
   return { unitId, language, cardType };
 }
 
-export default async function FlashcardSessionPage({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
-  const raw = await searchParams;
-  const first = (value: string | string[] | undefined) =>
-    Array.isArray(value) ? value[0] : value;
+/**
+ * Query-param flashcard session route. As with the quiz session route, the
+ * exported HTML is the controlled invalid state and the browser rebuilds the
+ * real session from `?sid=&seed=&mode=&size=&ids=&reverse=`.
+ */
+export default function FlashcardSessionPage() {
+  const searchParams = useClientSearchParams();
+  const value = (key: string) => searchParams.get(key) ?? undefined;
 
-  const sessionId = first(raw.sid);
-  const seedValue = Number(first(raw.seed));
-  const mode = parseMode(first(raw.mode));
-  const requestedSize = parseSize(first(raw.size));
-  const allowReverse = first(raw.reverse) === "1";
+  const sessionId = value("sid");
+  const seedValue = Number(value("seed"));
+  const mode = parseMode(value("mode"));
+  const requestedSize = parseSize(value("size"));
+  const allowReverse = value("reverse") === "1";
   const filters = parseFilters({
-    unit: first(raw.unit),
-    language: first(raw.language),
-    type: first(raw.type),
+    unit: value("unit"),
+    language: value("language"),
+    type: value("type"),
   });
-  const ids = (first(raw.ids) ?? "")
+  const ids = (value("ids") ?? "")
     .split(",")
-    .map((value) => value.trim())
+    .map((id) => id.trim())
     .filter(Boolean);
 
-  const cards = await getBlock1Flashcards();
-  const byId = new Map(cards.map((card) => [card.id, card]));
+  const byId = new Map(block1Flashcards.map((card) => [card.id, card]));
   const uniqueIds = new Set(ids);
 
   const valid =
