@@ -3,6 +3,7 @@ node_modules/
 out/
 build/
 coverage/
+!content/block-1/coverage/
 .env
 .env.*
 !.env.example
@@ -10,4 +11,5 @@ coverage/
 .DS_Store
 Thumbs.db
 *.tsbuildinfo
-
+test-results/
+qa/playwright-report/

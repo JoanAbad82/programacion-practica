@@ -203,8 +203,9 @@ export function QuizSetup({
           <span className="eyebrow">Motor de práctica</span>
           <h2 id="configurar-test">Configura la sesión</h2>
           <p>
-            Las preguntas proceden directamente de `BLOCK1_TEST_BANK_V1.0`.
-            La selección y el orden se fijan mediante una semilla reproducible.
+            Las preguntas proceden directamente del banco canónico{" "}
+            <code>BLOCK1_TEST_BANK_V1.0</code>. La selección y el orden se fijan
+            mediante una semilla reproducible.
           </p>
         </div>
 

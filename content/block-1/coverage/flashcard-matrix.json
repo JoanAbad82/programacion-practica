@@ -1,0 +1,43 @@
+{
+  "version": "B1_FLASHCARD_MATRIX_V1.0",
+  "flashcards": 80,
+  "units": {
+    "U01": 4,
+    "U02": 6,
+    "U03": 4,
+    "U04": 8,
+    "U05": 6,
+    "U06": 8,
+    "U07": 7,
+    "U08": 6,
+    "U09": 7,
+    "U10": 8,
+    "U11": 8,
+    "U12": 8
+  },
+  "types": {
+    "CD": 37,
+    "CM": 22,
+    "PX": 9,
+    "EC": 5,
+    "CR": 7
+  },
+  "languages": {
+    "COMMON": 17,
+    "POWERSHELL": 12,
+    "PYTHON_POWERSHELL": 28,
+    "PYTHON": 23
+  },
+  "conceptCoverage": 56,
+  "rules": {
+    "types": [
+      "CD",
+      "CM",
+      "CR",
+      "EC",
+      "PX"
+    ],
+    "requiredConceptCoverage": "primary_or_secondary",
+    "duplicatePolicy": "no_artificial_rewording"
+  }
+}

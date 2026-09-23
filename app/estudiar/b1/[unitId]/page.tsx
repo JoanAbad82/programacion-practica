@@ -67,7 +67,8 @@ export default async function UnitStudyPage({
           <span className="eyebrow">Consolidar</span>
           <h2>Practicar esta unidad</h2>
           <p>
-            El motor de tests se implementará en Phase 4. La unidad queda ya enlazada con su contexto de práctica.
+            Pon a prueba lo estudiado con las preguntas del Bloque 1. La
+            sesión se abre ya filtrada por esta unidad.
           </p>
         </div>
         <Link className="button primary" href={`/tests?unit=${unit.slug}`}>

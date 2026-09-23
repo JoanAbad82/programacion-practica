@@ -1,0 +1,185 @@
+{
+  "status": "PASS",
+  "counts": {
+    "units": 12,
+    "concepts": 56,
+    "questions": 200,
+    "flashcards": 80
+  },
+  "evidence": {
+    "requiredAssetsIgnored": [],
+    "counts": {
+      "units": 12,
+      "concepts": 56,
+      "questions": 200,
+      "flashcards": 80
+    },
+    "syntaxReviewed": [
+      {
+        "question": "B1-Q0033",
+        "language": "python",
+        "validOptions": [
+          "opt_1"
+        ],
+        "correctOptionId": "opt_1",
+        "gate": "informational"
+      },
+      {
+        "question": "B1-Q0105",
+        "language": "python",
+        "validOptions": [
+          "opt_1"
+        ],
+        "correctOptionId": "opt_1",
+        "gate": "informational"
+      },
+      {
+        "question": "B1-Q0129",
+        "language": "powershell",
+        "validOptions": [
+          "opt_1"
+        ],
+        "correctOptionId": "opt_1",
+        "gate": "informational"
+      },
+      {
+        "question": "B1-Q0153",
+        "language": "python",
+        "validOptions": [
+          "opt_1",
+          "opt_2"
+        ],
+        "correctOptionId": "opt_1",
+        "gate": "informational"
+      }
+    ],
+    "syntaxGates": [
+      {
+        "question": "B1-Q0035",
+        "language": "python",
+        "validOptions": [
+          "opt_3"
+        ],
+        "correctOptionId": "opt_3",
+        "gate": "strict"
+      },
+      {
+        "question": "B1-Q0101",
+        "language": "python",
+        "validOptions": [
+          "opt_1"
+        ],
+        "correctOptionId": "opt_1",
+        "gate": "strict"
+      },
+      {
+        "question": "B1-Q0128",
+        "language": "python",
+        "validOptions": [
+          "opt_4"
+        ],
+        "correctOptionId": "opt_4",
+        "gate": "strict"
+      }
+    ],
+    "pythonAvailable": true,
+    "pythonQuestionsExecuted": 13,
+    "pythonQuestionsUnverifiable": 1,
+    "pythonVerified": [
+      {
+        "id": "B1-Q0041",
+        "output": "120",
+        "source": "stdout",
+        "expected": "120"
+      },
+      {
+        "id": "B1-Q0051",
+        "output": "30",
+        "source": "stdout",
+        "expected": "30"
+      },
+      {
+        "id": "B1-Q0066",
+        "output": "Ana",
+        "source": "stdout",
+        "expected": "ana"
+      },
+      {
+        "id": "B1-Q0079",
+        "output": "20",
+        "source": "expression",
+        "expected": "20"
+      },
+      {
+        "id": "B1-Q0083",
+        "output": "False",
+        "source": "expression",
+        "expected": "false"
+      },
+      {
+        "id": "B1-Q0087",
+        "output": "True",
+        "source": "expression",
+        "expected": "true"
+      },
+      {
+        "id": "B1-Q0098",
+        "output": "Disponible",
+        "source": "stdout",
+        "expected": "disponible"
+      },
+      {
+        "id": "B1-Q0100",
+        "output": "Acceso permitido",
+        "source": "stdout",
+        "expected": "acceso permitido"
+      },
+      {
+        "id": "B1-Q0104",
+        "output": "Menor",
+        "source": "expression",
+        "expected": "menor"
+      },
+      {
+        "id": "B1-Q0117",
+        "output": "MSFT",
+        "source": "stdout",
+        "expected": "msft"
+      },
+      {
+        "id": "B1-Q0139",
+        "output": "Hola",
+        "source": "stdout",
+        "expected": "hola"
+      },
+      {
+        "id": "B1-Q0152",
+        "output": "15",
+        "source": "stdout",
+        "expected": "15"
+      },
+      {
+        "id": "B1-Q0186",
+        "output": "103",
+        "source": "expression",
+        "expected": "103"
+      }
+    ],
+    "pythonUnverified": [
+      {
+        "id": "B1-Q0126",
+        "reason": "snippet does not run (SyntaxError: invalid syntax)"
+      }
+    ],
+    "pythonOptionsAstChecked": 145,
+    "inlineSyntaxWarnings": 1
+  },
+  "blockers": [],
+  "warnings": [
+    {
+      "check": "syntax-uniqueness-inline",
+      "id": "B1-Q0028",
+      "message": "2 options are syntactically valid (opt_3, opt_4); the item relies on semantics"
+    }
+  ]
+}

@@ -1,0 +1,903 @@
+{
+  "version": "B1_TEST_MATRIX_V1.0",
+  "questions": 200,
+  "global": {
+    "types": {
+      "A": 36,
+      "B": 48,
+      "C": 34,
+      "D": 25,
+      "E": 32,
+      "F": 25
+    },
+    "difficulty": {
+      "1": 50,
+      "2": 90,
+      "3": 60
+    },
+    "answerPositions": {
+      "opt_1": 50,
+      "opt_2": 50,
+      "opt_3": 50,
+      "opt_4": 50
+    }
+  },
+  "units": {
+    "U01": {
+      "count": 10,
+      "types": {
+        "A": 6,
+        "B": 3,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 6,
+        "2": 4
+      }
+    },
+    "U02": {
+      "count": 16,
+      "types": {
+        "A": 4,
+        "B": 3,
+        "F": 6,
+        "D": 2,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 6,
+        "2": 8,
+        "3": 2
+      }
+    },
+    "U03": {
+      "count": 11,
+      "types": {
+        "A": 2,
+        "D": 3,
+        "E": 4,
+        "B": 2
+      },
+      "difficulty": {
+        "1": 3,
+        "2": 5,
+        "3": 3
+      }
+    },
+    "U04": {
+      "count": 20,
+      "types": {
+        "A": 4,
+        "B": 5,
+        "C": 5,
+        "E": 3,
+        "D": 3
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 10,
+        "3": 5
+      }
+    },
+    "U05": {
+      "count": 14,
+      "types": {
+        "A": 2,
+        "B": 4,
+        "C": 4,
+        "F": 2,
+        "D": 2
+      },
+      "difficulty": {
+        "1": 4,
+        "2": 7,
+        "3": 3
+      }
+    },
+    "U06": {
+      "count": 19,
+      "types": {
+        "A": 3,
+        "B": 4,
+        "C": 6,
+        "E": 4,
+        "D": 2
+      },
+      "difficulty": {
+        "1": 3,
+        "2": 9,
+        "3": 7
+      }
+    },
+    "U07": {
+      "count": 16,
+      "types": {
+        "A": 2,
+        "B": 4,
+        "C": 5,
+        "E": 3,
+        "D": 2
+      },
+      "difficulty": {
+        "1": 2,
+        "2": 8,
+        "3": 6
+      }
+    },
+    "U08": {
+      "count": 12,
+      "types": {
+        "A": 2,
+        "B": 4,
+        "C": 3,
+        "D": 2,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 3,
+        "2": 6,
+        "3": 3
+      }
+    },
+    "U09": {
+      "count": 17,
+      "types": {
+        "A": 2,
+        "B": 5,
+        "C": 5,
+        "E": 3,
+        "D": 2
+      },
+      "difficulty": {
+        "1": 3,
+        "2": 8,
+        "3": 6
+      }
+    },
+    "U10": {
+      "count": 18,
+      "types": {
+        "A": 3,
+        "B": 5,
+        "C": 4,
+        "E": 3,
+        "D": 3
+      },
+      "difficulty": {
+        "1": 3,
+        "2": 8,
+        "3": 7
+      }
+    },
+    "U11": {
+      "count": 23,
+      "types": {
+        "A": 3,
+        "B": 5,
+        "F": 10,
+        "C": 1,
+        "D": 2,
+        "E": 2
+      },
+      "difficulty": {
+        "1": 7,
+        "2": 11,
+        "3": 5
+      }
+    },
+    "U12": {
+      "count": 24,
+      "types": {
+        "A": 3,
+        "B": 4,
+        "E": 8,
+        "C": 1,
+        "D": 1,
+        "F": 7
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 6,
+        "3": 13
+      }
+    }
+  },
+  "concepts": {
+    "B1-U01-PROGRAMA": {
+      "count": 3,
+      "types": {
+        "A": 2,
+        "B": 1
+      },
+      "difficulty": {
+        "1": 2,
+        "2": 1
+      }
+    },
+    "B1-U01-CODIGO": {
+      "count": 3,
+      "types": {
+        "A": 2,
+        "B": 1
+      },
+      "difficulty": {
+        "1": 2,
+        "2": 1
+      }
+    },
+    "B1-U01-LENGUAJE": {
+      "count": 2,
+      "types": {
+        "A": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    "B1-U01-INSTRUCCION": {
+      "count": 2,
+      "types": {
+        "A": 1,
+        "B": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    "B1-U02-TERMINAL": {
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B1-U02-COMANDO": {
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U02-CMDLET": {
+      "count": 2,
+      "types": {
+        "A": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    "B1-U02-VERBO-SUSTANTIVO": {
+      "count": 2,
+      "types": {
+        "A": 1,
+        "B": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    "B1-U02-SCRIPT": {
+      "count": 5,
+      "types": {
+        "D": 2,
+        "E": 1,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 2,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U03-SINTAXIS": {
+      "count": 4,
+      "types": {
+        "A": 1,
+        "D": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U03-COMENTARIO": {
+      "count": 2,
+      "types": {
+        "A": 1,
+        "B": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    "B1-U03-INDENTACION": {
+      "count": 5,
+      "types": {
+        "D": 2,
+        "B": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B1-U04-VARIABLE": {
+      "count": 5,
+      "types": {
+        "A": 1,
+        "B": 2,
+        "C": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 3,
+        "3": 1
+      }
+    },
+    "B1-U04-ASIGNACION": {
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U04-STRING": {
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B1-U04-ENTERO": {
+      "count": 2,
+      "types": {
+        "A": 1,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    "B1-U04-DECIMAL": {
+      "count": 2,
+      "types": {
+        "B": 1,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    "B1-U04-BOOLEANO": {
+      "count": 4,
+      "types": {
+        "C": 2,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "2": 1,
+        "3": 3
+      }
+    },
+    "B1-U05-ENTRADA": {
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U05-PROCESAMIENTO": {
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B1-U05-SALIDA": {
+      "count": 3,
+      "types": {
+        "B": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B1-U05-EPS": {
+      "count": 4,
+      "types": {
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U06-OPERADORES": {
+      "count": 5,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 2,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B1-U06-EXPRESION": {
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B1-U06-COMPARACION": {
+      "count": 6,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 2,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 3,
+        "3": 2
+      }
+    },
+    "B1-U06-ASIGNAR-COMPARAR": {
+      "count": 5,
+      "types": {
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 3
+      }
+    },
+    "B1-U07-CONDICION": {
+      "count": 5,
+      "types": {
+        "A": 1,
+        "B": 2,
+        "C": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 3,
+        "3": 1
+      }
+    },
+    "B1-U07-IF": {
+      "count": 7,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 3,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 3,
+        "3": 3
+      }
+    },
+    "B1-U07-ELSE": {
+      "count": 4,
+      "types": {
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B1-U08-COLECCION": {
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 2,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U08-LISTA": {
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U08-INDICE": {
+      "count": 4,
+      "types": {
+        "D": 1,
+        "B": 1,
+        "C": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U09-BUCLE": {
+      "count": 5,
+      "types": {
+        "A": 1,
+        "B": 2,
+        "C": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B1-U09-FOR": {
+      "count": 5,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 2,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B1-U09-FOREACH": {
+      "count": 4,
+      "types": {
+        "D": 1,
+        "B": 1,
+        "C": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U09-ITERACION": {
+      "count": 3,
+      "types": {
+        "B": 1,
+        "C": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U10-FUNCION": {
+      "count": 5,
+      "types": {
+        "A": 1,
+        "B": 2,
+        "C": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B1-U10-LLAMADA": {
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U10-PARAMETRO": {
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U10-ARGUMENTO": {
+      "count": 3,
+      "types": {
+        "B": 1,
+        "C": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "2": 1,
+        "3": 2
+      }
+    },
+    "B1-U10-RETURN": {
+      "count": 2,
+      "types": {
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B1-U11-RUTA": {
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B1-U11-RUTA-ABSOLUTA": {
+      "count": 2,
+      "types": {
+        "A": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "2": 2
+      }
+    },
+    "B1-U11-RUTA-RELATIVA": {
+      "count": 2,
+      "types": {
+        "A": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "2": 2
+      }
+    },
+    "B1-U11-GET-LOCATION": {
+      "count": 2,
+      "types": {
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 2
+      }
+    },
+    "B1-U11-GET-CHILDITEM": {
+      "count": 4,
+      "types": {
+        "B": 1,
+        "C": 1,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 2,
+        "2": 2
+      }
+    },
+    "B1-U11-SET-LOCATION": {
+      "count": 2,
+      "types": {
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    "B1-U11-PIPELINE": {
+      "count": 5,
+      "types": {
+        "B": 1,
+        "D": 1,
+        "E": 1,
+        "F": 2
+      },
+      "difficulty": {
+        "3": 5
+      }
+    },
+    "B1-U11-AYUDA": {
+      "count": 3,
+      "types": {
+        "D": 1,
+        "E": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B1-U12-ERROR-SINTAXIS": {
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U12-ERROR-EJECUCION": {
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B1-U12-ERROR-LOGICO": {
+      "count": 4,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "3": 3
+      }
+    },
+    "B1-U12-DEBUGGING": {
+      "count": 4,
+      "types": {
+        "B": 1,
+        "D": 1,
+        "E": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "2": 1,
+        "3": 3
+      }
+    },
+    "B1-U12-LEER-ANTES": {
+      "count": 2,
+      "types": {
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B1-U12-IA-PRECISION": {
+      "count": 4,
+      "types": {
+        "E": 1,
+        "F": 3
+      },
+      "difficulty": {
+        "1": 1,
+        "3": 3
+      }
+    },
+    "B1-U12-CAMBIO-SEGURO": {
+      "count": 2,
+      "types": {
+        "F": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "3": 1
+      }
+    }
+  }
+}

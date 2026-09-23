@@ -208,8 +208,8 @@ export function FlashcardSetup({
           <span className="eyebrow">Recuperación activa</span>
           <h2 id="configurar-tarjetas">Configura la sesión</h2>
           <p>
-            Las 80 tarjetas proceden directamente de
-            `BLOCK1_FLASHCARD_BANK_V1.0`.
+            Las 80 tarjetas proceden directamente del banco canónico{" "}
+            <code>BLOCK1_FLASHCARD_BANK_V1.0</code>.
           </p>
         </div>
 
@@ -337,8 +337,8 @@ export function FlashcardSetup({
           </div>
         </div>
         <p>
-          `No la sabía` reaparece pronto; `Dudé`, más adelante;
-          `La sabía` no se repite en la misma sesión.
+          <code>No la sabía</code> reaparece pronto; <code>Dudé</code>, más
+          adelante; <code>La sabía</code> no se repite en la misma sesión.
         </p>
       </aside>
     </div>

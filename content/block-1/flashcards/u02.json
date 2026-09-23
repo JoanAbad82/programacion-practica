@@ -53,12 +53,12 @@
     "unitId": "U02",
     "primaryConceptId": "B1-U02-COMANDO",
     "secondaryConceptIds": [
-      "B1-U11-GET-LOCATION"
+      "B1-U02-CMDLET"
     ],
     "type": "CM",
     "language": "POWERSHELL",
-    "front": "```powershell\nGet-Location\n```",
-    "back": "Cmdlet que permite consultar la ubicación de trabajo actual.",
+    "front": "```powershell\nGet-Date\n```",
+    "back": "Comando que consulta la fecha y la hora actuales.",
     "reversible": true,
     "sourceVersion": "BLOCK1_CANONICAL_V1.0",
     "conceptBankVersion": "B1_CONCEPT_BANK_V1.0",

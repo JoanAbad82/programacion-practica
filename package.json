@@ -19,7 +19,12 @@
     "validate:ux": "node scripts/validate-ux.mjs",
     "validate:qa": "node scripts/validate-qa.mjs",
     "qa:http": "node scripts/qa-http-smoke.mjs",
-    "qa:build-surface": "node scripts/qa-build-surface.mjs"
+    "qa:build-surface": "node scripts/qa-build-surface.mjs",
+    "audit:content": "node scripts/rc1-content-audit.mjs --out qa/RC1_CONTENT_AUDIT.json",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install chromium",
+    "test:e2e:report": "playwright show-report qa/playwright-report",
+    "check:rc1": "npm run check && npm run audit:content && npm run test:e2e"
   },
   "engines": {
     "node": ">=22.13.0"
@@ -30,6 +35,7 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.56.1",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "22.20.4",
     "@types/react": "19.3.0",
