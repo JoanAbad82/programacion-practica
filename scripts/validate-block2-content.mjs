@@ -17,6 +17,8 @@ const EXPECTED = {
   testBankVersion: "BLOCK2_TEST_BANK_V1.0",
   flashcardBankVersion: "BLOCK2_FLASHCARD_BANK_V1.0",
   flashcardMatrixVersion: "B2_FLASHCARD_MATRIX_V1.0",
+  snippetInventoryVersion: "B2_SNIPPET_INVENTORY_V1.0",
+  snippetRegistryVersion: "B2_SNIPPET_CASES_V1.0",
   units: 12,
   concepts: 72,
   questions: 240,
@@ -154,6 +156,10 @@ async function main() {
   if (manifest.test_bank_version !== EXPECTED.testBankVersion) fail("MANIFEST test_bank_version mismatch");
   if (manifest.flashcard_bank_version !== EXPECTED.flashcardBankVersion) fail("MANIFEST flashcard_bank_version mismatch");
   if (manifest.flashcard_coverage_version !== EXPECTED.flashcardMatrixVersion) fail("MANIFEST flashcard_coverage_version mismatch");
+  if (manifest.snippet_inventory_version !== EXPECTED.snippetInventoryVersion) fail("MANIFEST snippet_inventory_version mismatch");
+  if (manifest.snippet_registry_version !== EXPECTED.snippetRegistryVersion) fail("MANIFEST snippet_registry_version mismatch");
+  if (manifest.snippet_registry_file !== "snippets/snippet-cases.json") fail("MANIFEST snippet_registry_file mismatch");
+  if (manifest.snippet_inventory_file !== "snippets/inventory.json") fail("MANIFEST snippet_inventory_file mismatch");
   if (manifest.units !== EXPECTED.units) fail(`MANIFEST units expected ${EXPECTED.units}, got ${manifest.units}`);
   if (manifest.concepts !== EXPECTED.concepts) fail(`MANIFEST concepts expected ${EXPECTED.concepts}, got ${manifest.concepts}`);
   if (manifest.questions !== EXPECTED.questions) fail(`MANIFEST questions expected ${EXPECTED.questions}, got ${manifest.questions}`);
@@ -324,6 +330,9 @@ async function main() {
   if (integrity.algorithm !== "sha256") fail("INTEGRITY algorithm must be sha256");
   const entries = Object.entries(integrity.files ?? {});
   if (!entries.length) fail("INTEGRITY file list is empty");
+  for (const required of ["snippets/snippet-cases.json", "snippets/inventory.json"]) {
+    if (!entries.some(([rel]) => rel === required)) fail(`INTEGRITY must cover ${required}`);
+  }
   for (const [rel, expectedHash] of entries) {
     const bytes = await readFile(path.join(BLOCK, rel)).catch(() => null);
     if (!bytes) {

@@ -2,7 +2,7 @@
   "block_id": "B2",
   "title": "Automatización práctica con archivos y datos",
   "canonical_version": "BLOCK2_CANONICAL_V1.0",
-  "status": "CONTENT_BANKS_GENERATED_QA_PASS",
+  "status": "CONTENT_AND_SNIPPET_QA_PASS",
   "publication_status": "NOT_PUBLISHED_TO_WEB",
   "repository_branch": "content/block-2-canonical-v1",
   "language": "es",
@@ -28,6 +28,13 @@
     "total": 96,
     "reversible_only_when_unambiguous": true
   },
+  "snippet_qa": {
+    "inventory_version": "B2_SNIPPET_INVENTORY_V1.0",
+    "registry_version": "B2_SNIPPET_CASES_V1.0",
+    "validator": "scripts/validate-block2-snippets.mjs",
+    "report": "snippets/SNIPPET_QA_REPORT.md",
+    "gate": "BLOCK2_SNIPPET_GATE=PASS"
+  },
   "scope": {
     "languages": ["Python", "PowerShell"],
     "focus": "Automatización local segura, archivos, datos y scripts reutilizables",
@@ -47,6 +54,7 @@
   "notes": [
     "La especificación está registrada en GitHub antes de publicar B2 en la web.",
     "Los bancos B2 de conceptos, preguntas y flashcards han sido generados y pasan el validador estructural específico del bloque.",
+    "Los snippets ejecutables se validan automáticamente mediante casos curados versionados; los ejemplos destructivos solo se ejecutan contra fixtures temporales desechables y el resto queda marcado como no ejecutado.",
     "B1 permanece canónico y publicado en main."
   ]
 }

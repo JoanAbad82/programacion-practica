@@ -110,16 +110,14 @@ El contenido respeta el alcance de B2 declarado en `README.md`:
 ## 6. Limitaciones y notas honestas
 
 - La validación de sintaxis/ejecución automática de *snippets* ejecutables citada en
-  el plan de B2 (`README.md`, criterio 7) **no** se ejecuta aquí: los ejemplos son
-  cortos y plausibles, revisados manualmente, pero no se corren en este entorno.
-  Queda como trabajo pendiente antes de la integración en `main`.
-- Aviso de integración: `.gitignore` ignora `coverage/` y solo exceptúa
-  `content/block-1/coverage/`. Los archivos `content/block-2/coverage/test-matrix.json`
-  y `content/block-2/coverage/flashcard-matrix.json` existen en el árbol de trabajo,
-  pero para versionarlos habrá que añadir una excepción (`!content/block-2/coverage/`)
-  o forzar su inclusión (`git add -f`) durante la integración. No se tocó `.gitignore`
-  porque queda fuera del alcance autorizado de este cambio (solo `content/block-2/**`
-  y el validador `scripts/validate-block2-content.mjs`).
+  el plan de B2 (`README.md`, criterio 7) se cierra con el gate B2-only descrito en
+  la sección 9 de este informe (`scripts/validate-block2-snippets.mjs`). Ese gate
+  ejecuta casos curados en directorios temporales; los casos destructivos solo se
+  ejecutan contra fixtures temporales desechables y los inseguros no se ejecutan. No se declara cobertura ejecutable del 100 %.
+- Nota de integración: `.gitignore` exceptúa tanto `content/block-1/coverage/` como
+  `content/block-2/coverage/`, de modo que `coverage/test-matrix.json` y
+  `coverage/flashcard-matrix.json` de B2 se versionan con el resto del bloque. No
+  fue necesario modificar `.gitignore` para cerrar el gate de snippets.
 - Este informe y los archivos de B2 **no** están conectados a la aplicación en runtime;
   B1 permanece intacto y publicado. B2 se integra cuando el contenido y los gates
   estén cerrados.
@@ -137,8 +135,29 @@ versionar este estado.
 
 ```bash
 node scripts/validate-block2-content.mjs
+node scripts/validate-block2-snippets.mjs
 ```
 
 Salida esperada: `BLOCK2_CONTENT_VALIDATION=PASS` con métricas de recuentos,
 dificultad, posiciones de respuesta y cobertura de conceptos. Sale con código
 distinto de cero y lista de fallos accionables ante cualquier incumplimiento.
+
+## 9. Gate de snippets ejecutables (criterio 7) y ejemplos destructivos (criterio 8)
+
+El gate `scripts/validate-block2-snippets.mjs` cierra el criterio 7 y refuerza el
+criterio 8. Inventaría los fragmentos con forma de código de B2 (52 elementos con
+referencias de origen), versiona casos curados (`B2_SNIPPET_CASES_V1.0`) y ejecuta
+solo los casos `EXECUTE_SAFE_PURE` y `EXECUTE_SAFE_TEMP_MUTATION` con aserciones
+explícitas, en directorios temporales únicos que se eliminan en `finally`.
+
+- Registro e inventario versionados: `snippets/snippet-cases.json`,
+  `snippets/inventory.json`.
+- Informe detallado: `snippets/SNIPPET_QA_REPORT.md`.
+- Los ejemplos destructivos (`unlink`, `Remove-Item`) se ejecutan **solo** contra
+  fixtures desechables creados por el propio caso dentro del *temp root*; el resto
+  de ejemplos destructivos (`except: pass`, `Remove-Item -Recurse -Force`,
+  `Move-Item -Force`) quedan `UNSAFE_NOT_EXECUTED` y prueban el `DENY_CHECK`.
+- El gate verifica que el árbol del repositorio no cambió (`REPO_MUTATION_GUARD`) y
+  que las mutaciones no escapan del *temp root* (`TEMP_ONLY_GUARD`).
+
+Salida esperada: `BLOCK2_SNIPPET_GATE=PASS`.

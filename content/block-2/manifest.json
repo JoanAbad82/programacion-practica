@@ -47,5 +47,10 @@
   ],
   "coverage_file": "coverage/test-matrix.json",
   "flashcard_coverage_version": "B2_FLASHCARD_MATRIX_V1.0",
-  "flashcard_coverage_file": "coverage/flashcard-matrix.json"
+  "flashcard_coverage_file": "coverage/flashcard-matrix.json",
+  "snippet_inventory_version": "B2_SNIPPET_INVENTORY_V1.0",
+  "snippet_registry_version": "B2_SNIPPET_CASES_V1.0",
+  "snippet_inventory_file": "snippets/inventory.json",
+  "snippet_registry_file": "snippets/snippet-cases.json",
+  "snippet_report_file": "snippets/SNIPPET_QA_REPORT.md"
 }
