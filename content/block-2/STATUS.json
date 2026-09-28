@@ -1,0 +1,52 @@
+{
+  "block_id": "B2",
+  "title": "Automatización práctica con archivos y datos",
+  "canonical_version": "BLOCK2_CANONICAL_V1.0",
+  "status": "CANONICAL_SPEC_APPROVED",
+  "publication_status": "NOT_PUBLISHED_TO_WEB",
+  "repository_branch": "content/block-2-canonical-v1",
+  "language": "es",
+  "runtime_ai": false,
+  "planned_counts": {
+    "units": 12,
+    "concepts": 72,
+    "questions": 240,
+    "flashcards": 96,
+    "guided_practices": 11,
+    "integrated_project": 1
+  },
+  "question_plan": {
+    "per_unit": 20,
+    "difficulty_1": 60,
+    "difficulty_2": 108,
+    "difficulty_3": 72,
+    "options_per_question": 4,
+    "single_correct_answer": true
+  },
+  "flashcard_plan": {
+    "per_unit": 8,
+    "total": 96,
+    "reversible_only_when_unambiguous": true
+  },
+  "scope": {
+    "languages": ["Python", "PowerShell"],
+    "focus": "Automatización local segura, archivos, datos y scripts reutilizables",
+    "excluded_for_later_blocks": [
+      "SQL y bases de datos",
+      "APIs HTTP/REST",
+      "autenticación",
+      "programación orientada a objetos",
+      "concurrencia y async",
+      "frameworks web",
+      "Docker",
+      "cloud automation",
+      "CI/CD",
+      "Git avanzado"
+    ]
+  },
+  "notes": [
+    "La especificación está registrada en GitHub antes de publicar B2 en la web.",
+    "Los bancos de preguntas y flashcards aún no se consideran canónicos hasta ser redactados y auditados.",
+    "B1 permanece canónico y publicado en main."
+  ]
+}
