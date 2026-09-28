@@ -1,0 +1,707 @@
+[
+  {
+    "id": "B2-Q0081",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-STRUCTURE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué describe la estructura de un archivo CSV?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una jerarquía de claves y valores anidados."
+      },
+      {
+        "id": "opt_2",
+        "text": "Datos tabulares en filas y columnas, con encabezados, delimitador y reglas de escapado de comillas."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un único bloque de texto sin separadores."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un archivo binario comprimido."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Un CSV organiza datos tabulares; los encabezados, el delimitador y las comillas definen su estructura.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0082",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-STRUCTURE",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué problema genera olvidar las comillas al construir un CSV a mano?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El encabezado desaparece."
+      },
+      {
+        "id": "opt_2",
+        "text": "El archivo se comprime automáticamente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Los números se convierten en fechas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un campo que contiene una coma se divide en dos columnas distintas."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Si un campo con comas no va entre comillas, el separador parte el campo y se desalinean las columnas.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0083",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-STRUCTURE",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué elemento indica el significado de cada columna en un CSV?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El número de líneas vacías."
+      },
+      {
+        "id": "opt_2",
+        "text": "El tamaño total del archivo."
+      },
+      {
+        "id": "opt_3",
+        "text": "La fecha de modificación."
+      },
+      {
+        "id": "opt_4",
+        "text": "La fila de encabezados."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Los encabezados nombran las columnas y permiten referirse a los campos por su nombre.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0084",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-PARSE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace csv.DictReader en Python o Import-Csv en PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comprimir el CSV para que ocupe menos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Renombrar las columnas del archivo para dejarlas en mayúsculas."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir cada fila del CSV en un registro con campos accesibles por el nombre del encabezado."
+      },
+      {
+        "id": "opt_4",
+        "text": "Borrar las filas que estén vacías."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Ambas herramientas interpretan el CSV y devuelven registros cuyos campos se acceden por el nombre de la columna.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0085",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-PARSE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Por qué se recomienda usar un analizador de CSV en lugar de dividir cada línea por comas manualmente?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque respeta las comillas y los campos que contienen el delimitador."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque hace que el archivo sea más pequeño."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque evita tener que abrir el archivo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque cambia la codificación a UTF-16."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Dividir a mano por comas rompe los campos entrecomillados que contienen comas; el analizador los maneja bien.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0086",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-PARSE",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script divide cada línea del CSV por comas y obtiene columnas desalineadas solo en algunas filas. ¿Cuál es la causa más probable?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El archivo tiene demasiadas filas."
+      },
+      {
+        "id": "opt_2",
+        "text": "Hay campos entrecomillados que contienen comas, y el corte manual los parte mal."
+      },
+      {
+        "id": "opt_3",
+        "text": "La primera línea está vacía."
+      },
+      {
+        "id": "opt_4",
+        "text": "El script usó una lista en lugar de un diccionario."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Los campos entrecomillados con comas solo se interpretan bien con un analizador de CSV; el corte manual los rompe.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0087",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-TYPES",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Al importar un CSV, ¿por qué un campo numérico como 25 puede no comportarse como número?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque el encabezado sobrescribe el valor."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque los números no se pueden guardar en CSV."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque el delimitador cambia los dígitos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque los valores importados llegan como texto y deben convertirse explícitamente cuando se opera con ellos."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Los analizadores devuelven texto por defecto; hay que convertir a número antes de sumar o comparar como cifra.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0088",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-TYPES",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere sumar una columna importe de un CSV. ¿Qué paso es imprescindible?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ordenar las filas por la columna importe."
+      },
+      {
+        "id": "opt_2",
+        "text": "Convertir el valor de texto a número antes de sumarlo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Renombrar el encabezado a mayúsculas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Cambiar el delimitador de coma a punto y coma."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Sin convertir el texto a número, sumar cadenas produce concatenación o error, no una cifra correcta.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0089",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-TYPES",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "En un CSV, la columna fecha llega como texto y debe compararse cronológicamente. ¿Qué es más seguro?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Cambiar el delimitador a tabulador."
+      },
+      {
+        "id": "opt_2",
+        "text": "Comparar las cadenas tal cual para ahorrar conversiones."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir el texto a una fecha real y comparar fechas, no cadenas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Renombrar la columna a 'date'."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Comparar fechas como texto puede fallar según el formato; convertir a fecha real evita ordenaciones incorrectas.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0090",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-FILTER",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace el filtrado de filas en un CSV?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ordenar alfabéticamente los encabezados."
+      },
+      {
+        "id": "opt_2",
+        "text": "Eliminar las columnas que no se usan."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cambiar el delimitador del archivo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Seleccionar únicamente los registros que cumplen una condición sobre sus campos."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Filtrar conserva solo las filas que cumplen la condición definida.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0091",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-FILTER",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué devuelve un filtrado como [r for r in filas if r['estado'] == 'abierto'] sobre registros de un CSV?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La lista de registros cuyo campo estado vale exactamente 'abierto'."
+      },
+      {
+        "id": "opt_2",
+        "text": "El número total de filas del archivo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Los encabezados de las columnas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un archivo CSV nuevo con todas las filas."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La condición compara el campo estado y conserva solo los registros coincidentes.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0092",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-FILTER",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quieren las incidencias con prioridad alta Y estado abierto. ¿Cómo se expresa la condición?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Filtrando solo por el tamaño del archivo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Con una condición que acepte prioridad alta o estado abierto."
+      },
+      {
+        "id": "opt_3",
+        "text": "Con una condición que exija ambas cosas a la vez (prioridad alta y estado abierto)."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ordenando las filas por identificador."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Cuando se piden ambas condiciones simultáneamente hay que combinarlas con Y, no con O.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0093",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-TRANSFORM",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es transformar un registro de un CSV?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Crear, renombrar o calcular campos derivados a partir de los datos importados."
+      },
+      {
+        "id": "opt_2",
+        "text": "Eliminar el archivo original tras importarlo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cambiar la extensión del archivo a .txt."
+      },
+      {
+        "id": "opt_4",
+        "text": "Comprimir el CSV en un ZIP."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Transformar produce una representación derivada, como un campo calculado o renombrado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0094",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-TRANSFORM",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere añadir una columna total calculada como cantidad × precio. ¿Dónde se hace?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Al construir cada registro de salida, calculando el campo a partir de los datos importados."
+      },
+      {
+        "id": "opt_2",
+        "text": "Modificando directamente el archivo de entrada."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cambiando el delimitador del CSV original."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ordenando las filas por precio."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El campo derivado se calcula al transformar los registros, normalmente hacia una salida, sin alterar la entrada.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0095",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-TRANSFORM",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Al calcular total = cantidad × precio con los valores tal como llegan del CSV, el resultado es una cadena repetida o un error, no el producto esperado. ¿Qué revisarías primero?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Si cantidad y precio se convirtieron a número antes de multiplicarlos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Si el archivo tiene encabezados."
+      },
+      {
+        "id": "opt_3",
+        "text": "Si se usó el delimitador correcto al exportar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Si el nombre del archivo termina en .csv."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Los campos importados como texto deben convertirse a número antes de multiplicarlos; de lo contrario puede obtenerse repetición de cadena o un error según el lenguaje.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0096",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-EXPORT",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué implica exportar un CSV de forma controlada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Exportar solo las columnas que tengan números."
+      },
+      {
+        "id": "opt_2",
+        "text": "Reutilizar siempre el nombre del archivo de entrada."
+      },
+      {
+        "id": "opt_3",
+        "text": "Elegir las columnas, su orden y la codificación de salida del archivo nuevo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Comprimir la salida en formato binario."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Una exportación controlada define columnas, orden y codificación, y produce un archivo nuevo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0097",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-EXPORT",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se procesa un CSV de incidencias y se quiere generar uno nuevo con columnas y orden concretos. ¿Qué paso conviene?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Exportar sin encabezados para ahorrar espacio."
+      },
+      {
+        "id": "opt_2",
+        "text": "Escribir la salida con las columnas en el orden del diccionario interno."
+      },
+      {
+        "id": "opt_3",
+        "text": "Reutilizar el archivo de entrada como salida."
+      },
+      {
+        "id": "opt_4",
+        "text": "Definir los campos de salida explícitamente y escribirlos con el encabezado controlado."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Definir los campos de salida y su orden mantiene el CSV reproducible y legible.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0098",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-EXPORT",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Al exportar un CSV que contiene acentos, ¿qué decisión evita problemas al reabrirlo?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Eliminar los acentos de todos los campos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Declarar explícitamente la codificación (por ejemplo UTF-8) al escribir."
+      },
+      {
+        "id": "opt_3",
+        "text": "Guardar con extensión .txt en lugar de .csv."
+      },
+      {
+        "id": "opt_4",
+        "text": "No escribir encabezados."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Declarar la codificación al exportar asegura que los acentos se lean igual en distintas herramientas.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0099",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-FILTER",
+    "secondaryConceptIds": [
+      "B2-U05-CSV-TYPES"
+    ],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se filtra un CSV por 'importe mayor que 100' y salen filas inesperadas. ¿Qué causa es más probable?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Que se aplicó más de un filtro."
+      },
+      {
+        "id": "opt_2",
+        "text": "Que el CSV no tenía encabezados."
+      },
+      {
+        "id": "opt_3",
+        "text": "Que el campo importe se comparó como texto en lugar de como número."
+      },
+      {
+        "id": "opt_4",
+        "text": "Que el archivo se abrió en modo binario."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Comparar cadenas por orden alfabético da resultados distintos que comparar números; hay que convertir el campo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0100",
+    "blockId": "B2",
+    "unitId": "U05",
+    "primaryConceptId": "B2-U05-CSV-TRANSFORM",
+    "secondaryConceptIds": [
+      "B2-U05-CSV-PARSE",
+      "B2-U05-CSV-EXPORT"
+    ],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la secuencia más coherente para obtener un CSV nuevo con un campo calculado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Editar el CSV original a mano y guardarlo con otro nombre."
+      },
+      {
+        "id": "opt_2",
+        "text": "Analizar el CSV a registros, calcular el campo derivado y exportar los registros con la codificación elegida."
+      },
+      {
+        "id": "opt_3",
+        "text": "Dividir cada línea por comas y reescribirla sin encabezados."
+      },
+      {
+        "id": "opt_4",
+        "text": "Leer el CSV como texto y reemplazar las comas por puntos."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "El flujo robusto es analizar, transformar y exportar, sin editar manualmente el original.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

@@ -1,0 +1,707 @@
+[
+  {
+    "id": "B2-Q0201",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-LOGGING",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Para qué sirve el registro (logging) en una automatización?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para comprimir la salida del script."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para acelerar el procesamiento de los archivos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para conservar evidencia de lo ocurrido durante la ejecución y poder revisarlo después."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para eliminar los archivos temporales."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El registro conserva eventos relevantes para revisar decisiones y fallos a posteriori.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0202",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-LOGGING",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Una operación por lotes mueve muchos archivos. ¿Por qué conviene registrar cada acción?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para que los archivos se muevan más rápido."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para poder auditar qué se movió y diagnosticar si algo salió mal."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para reducir el tamaño de los archivos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para evitar tener que validar la entrada."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Registrar cada acción permite auditar y diagnosticar el resultado de la operación.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0203",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-LOGGING",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es una forma útil de registrar, en lugar de imprimir mensajes sueltos sin contexto?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Usar un registro con nivel y, cuando proceda, un archivo de log con marca de tiempo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Imprimir solo los errores y nada más."
+      },
+      {
+        "id": "opt_3",
+        "text": "No registrar nada para no llenar el disco."
+      },
+      {
+        "id": "opt_4",
+        "text": "Guardar el registro como CSV sin encabezados."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Un registro estructurado, con nivel y marca de tiempo, es más útil que mensajes sueltos por pantalla.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0204",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-TIMESTAMPS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué aporta una marca de tiempo a un evento registrado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Reduce el tamaño del registro."
+      },
+      {
+        "id": "opt_2",
+        "text": "Permite ordenar y correlacionar las acciones por el momento en que ocurrieron."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convierte el registro en JSON."
+      },
+      {
+        "id": "opt_4",
+        "text": "Elimina la necesidad de niveles de log."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "La marca de tiempo sitúa cada evento en el tiempo y permite ordenarlos y correlacionarlos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0205",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-TIMESTAMPS",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Se quiere averiguar cuánto tardó cada paso de una ejecución. ¿Qué ayuda más?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Imprimir solo un mensaje al final."
+      },
+      {
+        "id": "opt_2",
+        "text": "Contar el número total de archivos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Registrar cada paso con su marca de tiempo de inicio y de fin."
+      },
+      {
+        "id": "opt_4",
+        "text": "Guardar el registro sin fechas."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Con marcas de inicio y fin por paso se puede medir la duración de cada uno.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0206",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-TIMESTAMPS",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué ventaja tiene ordenar los eventos de un log por marca de tiempo?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Cambiar la codificación del log."
+      },
+      {
+        "id": "opt_2",
+        "text": "Reducir el tamaño del archivo de log."
+      },
+      {
+        "id": "opt_3",
+        "text": "Reconstruir la secuencia real de lo que ocurrió."
+      },
+      {
+        "id": "opt_4",
+        "text": "Eliminar los eventos duplicados."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El orden temporal permite reconstruir la secuencia de acciones y detectar el punto de fallo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0207",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-LOG-LEVELS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Para qué sirven los niveles de log (información, advertencia, error)?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para distinguir los mensajes normales de los problemáticos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para ordenar alfabéticamente los mensajes."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para comprimir el archivo de log."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para convertir el log a CSV."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Los niveles permiten separar lo informativo, lo que requiere atención y lo que es un error.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0208",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-LOG-LEVELS",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué nivel corresponde a una condición que no impide continuar pero conviene revisar?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Error."
+      },
+      {
+        "id": "opt_2",
+        "text": "Advertencia (warning)."
+      },
+      {
+        "id": "opt_3",
+        "text": "Información."
+      },
+      {
+        "id": "opt_4",
+        "text": "Depuración detallada de todo."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "La advertencia indica un posible problema que no detiene la ejecución.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0209",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-LOG-LEVELS",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un log mezcla avisos y errores en el mismo nivel y cuesta encontrar los fallos. ¿Qué conviene corregir?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Aumentar la velocidad de ejecución."
+      },
+      {
+        "id": "opt_2",
+        "text": "Eliminar todos los mensajes de error."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir el log a JSON."
+      },
+      {
+        "id": "opt_4",
+        "text": "Clasificar los mensajes por nivel para separar advertencias y errores."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Usar los niveles adecuadamente permite filtrar y localizar los errores con rapidez.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0210",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-DRY-RUN-IMPLEMENTATION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué caracteriza a una implementación de dry-run bien hecha?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Omite la validación de la entrada."
+      },
+      {
+        "id": "opt_2",
+        "text": "Aplica los cambios y muestra el plan después."
+      },
+      {
+        "id": "opt_3",
+        "text": "Modifica los archivos sin avisar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Mantiene una fase de plan separada de la fase de aplicación."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El dry-run separa el plan (lo que se haría) de la aplicación (lo que se hace).",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0211",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-DRY-RUN-IMPLEMENTATION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere que el usuario revise el plan antes de aplicar cambios. ¿Qué estructura conviene?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una única fase que aplica y luego informa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una fase que genera el plan y una fase que aplica, activada solo cuando el usuario lo decide."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una fase que aplica cambios al azar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una fase que borra el plan tras generarlo."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Separar la generación del plan y su aplicación permite revisar antes de modificar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0212",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-DRY-RUN-IMPLEMENTATION",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué diferencia principal hay entre el modo plan y el modo aplicación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "No hay ninguna diferencia."
+      },
+      {
+        "id": "opt_2",
+        "text": "Ambos modifican el sistema, pero el plan usa otra codificación."
+      },
+      {
+        "id": "opt_3",
+        "text": "El modo plan siempre borra y el de aplicación crea."
+      },
+      {
+        "id": "opt_4",
+        "text": "El modo plan solo calcula lo que se haría; el modo aplicación ejecuta los cambios."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Plan calcula sin modificar; aplicación ejecuta. Mantenerlos separados es la base del dry-run.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0213",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-IDEMPOTENT-CHANGES",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué significa que los cambios de una automatización sean idempotentes?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Que comprobar el estado antes de actuar evita repetir acciones ya realizadas."
+      },
+      {
+        "id": "opt_2",
+        "text": "Que el script se ejecuta siempre en menos de un segundo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Que siempre crea archivos nuevos en cada ejecución."
+      },
+      {
+        "id": "opt_4",
+        "text": "Que no puede fallar nunca."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La idempotencia de los cambios garantiza que reejecutar no repita acciones ya hechas.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0214",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-IDEMPOTENT-CHANGES",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un proceso organiza archivos en subcarpetas por extensión. ¿Cómo se logra la idempotencia?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comprobando si el archivo ya está en su destino antes de moverlo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Moviéndolo siempre aunque ya esté en su sitio."
+      },
+      {
+        "id": "opt_3",
+        "text": "Renombrando el archivo con un sufijo nuevo en cada ejecución."
+      },
+      {
+        "id": "opt_4",
+        "text": "Borrando la carpeta de destino antes de empezar."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Comprobar el estado antes de mover permite que la segunda ejecución no repita el trabajo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0215",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-IDEMPOTENT-CHANGES",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Tras ejecutar dos veces una organización de archivos, aparecen duplicados con sufijos. ¿Qué falla?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Faltan marcas de tiempo en el log."
+      },
+      {
+        "id": "opt_2",
+        "text": "Los cambios no son idempotentes: no se comprueba el estado antes de actuar."
+      },
+      {
+        "id": "opt_3",
+        "text": "El script usa demasiados parámetros."
+      },
+      {
+        "id": "opt_4",
+        "text": "El log no tiene niveles."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Los duplicados tras repetir indican ausencia de comprobación de estado; hay que hacer los cambios idempotentes.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0216",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-EXECUTION-SUMMARY",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué resume un informe de ejecución de una automatización?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Cuántos elementos se inspeccionaron, se modificaron, se omitieron y fallaron."
+      },
+      {
+        "id": "opt_2",
+        "text": "El código fuente completo del script."
+      },
+      {
+        "id": "opt_3",
+        "text": "La lista de todos los archivos del disco."
+      },
+      {
+        "id": "opt_4",
+        "text": "El color de los mensajes del terminal."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El resumen de ejecución da recuentos de inspeccionados, modificados, omitidos y fallidos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0217",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-EXECUTION-SUMMARY",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Al terminar un proceso por lotes, ¿por qué conviene mostrar un resumen?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para evitar mostrar los errores."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para comprimir los archivos procesados."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para verificar de un vistazo qué se hizo y detectar anomalías."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para cambiar la codificación de salida."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Un resumen permite comprobar el resultado y detectar cifras anómalas rápidamente.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0218",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-EXECUTION-SUMMARY",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es el orden correcto de las fases de una operación por lotes segura?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Informe → aplicar → plan."
+      },
+      {
+        "id": "opt_2",
+        "text": "Aplicar → plan → revisión → borrar."
+      },
+      {
+        "id": "opt_3",
+        "text": "Borrar → plan → aplicar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Plan → revisión → aplicar → informe final."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El patrón es plan, revisión, aplicación e informe final, seguido de una reejecución idempotente.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0219",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-DRY-RUN-IMPLEMENTATION",
+    "secondaryConceptIds": [
+      "B2-U11-IDEMPOTENT-CHANGES"
+    ],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué relación hay entre dry-run e idempotencia en una herramienta por lotes?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La idempotencia obliga a aplicar los cambios sin plan."
+      },
+      {
+        "id": "opt_2",
+        "text": "El dry-run impide que la herramienta sea idempotente."
+      },
+      {
+        "id": "opt_3",
+        "text": "El plan permite revisar los cambios y, al aplicar de forma idempotente, la segunda ejecución no repite lo ya hecho."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ambos conceptos son incompatibles."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Plan y aplicación idempotente se complementan: se revisa antes y repetir no duplica.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0220",
+    "blockId": "B2",
+    "unitId": "U11",
+    "primaryConceptId": "B2-U11-IDEMPOTENT-CHANGES",
+    "secondaryConceptIds": [
+      "B2-U11-DRY-RUN-IMPLEMENTATION",
+      "B2-U11-EXECUTION-SUMMARY"
+    ],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere comprobar que una segunda ejecución no duplica trabajo. ¿Qué evidencia ayuda más?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Desactivar el registro de acciones."
+      },
+      {
+        "id": "opt_2",
+        "text": "Ejecutar solo una vez y suponer que es estable."
+      },
+      {
+        "id": "opt_3",
+        "text": "Borrar los archivos para que la segunda ejecución tenga trabajo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ejecutar de nuevo y comparar el resumen: cero modificaciones y los mismos elementos omitidos."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Repetir y verificar que el resumen muestra cero cambios indica que los cambios son idempotentes.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

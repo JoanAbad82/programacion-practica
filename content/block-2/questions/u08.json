@@ -1,0 +1,706 @@
+[
+  {
+    "id": "B2-Q0141",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-FILTER",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace filtrar una colección de registros?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Combinar dos colecciones en una."
+      },
+      {
+        "id": "opt_2",
+        "text": "Cambiar el tipo de dato de todos los elementos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ordenar los elementos por una clave."
+      },
+      {
+        "id": "opt_4",
+        "text": "Conservar únicamente los elementos que cumplen un predicado."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Filtrar conserva los elementos que cumplen la condición y descarta el resto.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0142",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-FILTER",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué devuelve Where-Object -Property estado -eq 'abierto' aplicado a una colección de objetos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Los objetos cuyo campo estado vale 'abierto'."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una cadena de texto con todos los estados."
+      },
+      {
+        "id": "opt_3",
+        "text": "El número de objetos de la colección."
+      },
+      {
+        "id": "opt_4",
+        "text": "Los encabezados de las propiedades."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Where-Object filtra objetos según una condición y devuelve los que la cumplen, manteniendo los objetos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0143",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-FILTER",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quieren conservar solo los tickets cerrados. ¿Qué operación corresponde?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una suma de los importes."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un orden descendente por identificador."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un agrupamiento por prioridad."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un filtro que se quede con los registros cuyo estado sea 'cerrado'."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Seleccionar registros por el valor de un campo es un filtrado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0144",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-TRANSFORM",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es transformar una colección de registros?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ordenar los elementos por una clave."
+      },
+      {
+        "id": "opt_2",
+        "text": "Eliminar los elementos que no se usan."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cambiar el delimitador de un CSV."
+      },
+      {
+        "id": "opt_4",
+        "text": "Producir, para cada elemento, una representación derivada, por ejemplo seleccionando o calculando campos."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Transformar da a cada elemento una nueva forma o campos derivados, sin necesariamente descartarlo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0145",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-TRANSFORM",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué produce Select-Object -Property id, prioridad sobre una colección de objetos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un único objeto con todos los tickets."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una colección de objetos que solo conservan las propiedades id y prioridad."
+      },
+      {
+        "id": "opt_3",
+        "text": "El número total de propiedades."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una cadena con los identificadores concatenados."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Select-Object proyecta cada objeto dejando solo las propiedades indicadas, manteniendo un objeto por elemento.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0146",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-TRANSFORM",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere añadir un campo prioridad_alta booleano a cada ticket según su prioridad. ¿Qué corresponde?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un orden por prioridad."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un filtro que descarte los tickets de baja prioridad."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una transformación que calcule el campo nuevo por cada registro."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una suma de las prioridades."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Calcular un campo derivado por cada elemento es una transformación.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0147",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-SORT",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace ordenar una colección?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Disponer los elementos según una o varias claves, indicando el sentido."
+      },
+      {
+        "id": "opt_2",
+        "text": "Descartar los elementos repetidos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Agrupar los elementos por categoría."
+      },
+      {
+        "id": "opt_4",
+        "text": "Sumar un campo numérico."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Ordenar reorganiza los elementos según las claves y el sentido indicados.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0148",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-SORT",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué diferencia hay entre un orden ascendente y uno descendente?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El ascendente va de menor a mayor y el descendente de mayor a menor según la clave."
+      },
+      {
+        "id": "opt_2",
+        "text": "El ascendente agrupa y el descendente filtra."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ambos producen exactamente el mismo resultado."
+      },
+      {
+        "id": "opt_4",
+        "text": "El descendente elimina los duplicados."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El sentido del orden define si los valores van de menor a mayor o al contrario.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0149",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-SORT",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere ordenar primero por prioridad y, dentro de cada prioridad, por fecha. ¿Cómo se hace?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Filtrando primero por fecha y luego por prioridad."
+      },
+      {
+        "id": "opt_2",
+        "text": "Ordenando solo por fecha y descartando la prioridad."
+      },
+      {
+        "id": "opt_3",
+        "text": "Agrupando por prioridad y sin ordenar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Indicando varias claves de ordenación, en el orden de importancia."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Ordenar por varias claves aplica la primera como principal y las siguientes como desempate.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0150",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-GROUP",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace agrupar una colección de registros?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Eliminar los registros repetidos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Reunir los registros que comparten una clave común en grupos identificables."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ordenar los registros por identificador."
+      },
+      {
+        "id": "opt_4",
+        "text": "Sumar los valores de una columna."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Agrupar reúne los elementos que comparten una clave, como categoría o prioridad.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0151",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-GROUP",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué produce Group-Object -Property categoria sobre una lista de tickets?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La suma de las categorías."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una sola lista con todos los tickets."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un grupo por cada valor distinto de categoria, con sus elementos asociados."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un error, porque categoria no es numérica."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Group-Object crea un grupo por cada valor distinto de la propiedad indicada.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0152",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-GROUP",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué diferencia principal hay entre agrupar y ordenar?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Agrupar elimina duplicados y ordenar los conserva siempre."
+      },
+      {
+        "id": "opt_2",
+        "text": "Agrupar ordena y ordenar agrupa: son lo mismo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Agrupar reúne por clave común; ordenar solo cambia la posición sin reunir en grupos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ordenar siempre requiere agrupar antes."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Agrupar forma conjuntos por clave; ordenar únicamente cambia el orden de la secuencia.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0153",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-DEDUPE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es deduplicar una colección?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Eliminar duplicados aplicando una clave o criterio de identidad definido explícitamente."
+      },
+      {
+        "id": "opt_2",
+        "text": "Ordenar los elementos por identificador."
+      },
+      {
+        "id": "opt_3",
+        "text": "Sumar los importes repetidos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Cambiar los nombres de los campos."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Deduplicar requiere definir qué se considera duplicado, normalmente según una clave o identificador.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0154",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-DEDUPE",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace Sort-Object -Property id -Unique sobre una lista con identificadores repetidos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ordena por id y conserva una sola entrada por cada valor distinto de id."
+      },
+      {
+        "id": "opt_2",
+        "text": "Ordena por id sin eliminar nada."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cuenta cuántas veces se repite cada id."
+      },
+      {
+        "id": "opt_4",
+        "text": "Convierte los identificadores a números."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "-Unique conserva un único elemento por valor de la clave usada para ordenar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0155",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-DEDUPE",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se intentó eliminar duplicados por identificador, pero se perdieron registros que solo diferían en la fecha. ¿Qué falla?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Faltó ordenar antes de deduplicar."
+      },
+      {
+        "id": "opt_2",
+        "text": "La clave de deduplicación elegida (identificador) era demasiado amplia para el objetivo."
+      },
+      {
+        "id": "opt_3",
+        "text": "El campo fecha no se puede conservar nunca."
+      },
+      {
+        "id": "opt_4",
+        "text": "El error es de codificación de caracteres."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Deduplicar por una clave excesivamente gruesa descarta registros que solo difieren en otros campos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0156",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-AGGREGATE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es agregar o resumir una colección?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Eliminar los elementos repetidos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Calcular valores resumen, como recuentos, sumas, medias o máximos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ordenar por una clave."
+      },
+      {
+        "id": "opt_4",
+        "text": "Filtrar los elementos que no cumplen una condición."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Agregar produce valores resumen sobre una colección de registros.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0157",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-AGGREGATE",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué calcula Measure-Object -Property importe -Sum sobre una lista de objetos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El importe máximo de un solo objeto."
+      },
+      {
+        "id": "opt_2",
+        "text": "El número de objetos de la lista."
+      },
+      {
+        "id": "opt_3",
+        "text": "La suma de la propiedad importe de todos los objetos."
+      },
+      {
+        "id": "opt_4",
+        "text": "La media de todas las propiedades."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Measure-Object con -Sum acumula el valor de la propiedad indicada.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0158",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-AGGREGATE",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere un informe con el número de tickets por categoría. ¿Qué combinación es la adecuada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ordenar por categoría y no contar nada."
+      },
+      {
+        "id": "opt_2",
+        "text": "Agrupar por categoría y contar los elementos de cada grupo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Filtrar por categoría y descartar el resto."
+      },
+      {
+        "id": "opt_4",
+        "text": "Deduplicar por identificador."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Contar por grupo combina el agrupamiento con una operación de recuento sobre cada grupo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0159",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-GROUP",
+    "secondaryConceptIds": [
+      "B2-U08-AGGREGATE"
+    ],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Tras agrupar por categoría, ¿qué paso produce un resumen útil por grupo?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Convertir cada grupo en una cadena de texto."
+      },
+      {
+        "id": "opt_2",
+        "text": "Ordenar los grupos por tamaño y descartar el resto."
+      },
+      {
+        "id": "opt_3",
+        "text": "Calcular una agregación, por ejemplo un recuento o una suma, sobre cada grupo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Filtrar los grupos que tengan más de un elemento."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Agrupar reúne y la agregación calcula el resumen; juntas dan el informe por categoría.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0160",
+    "blockId": "B2",
+    "unitId": "U08",
+    "primaryConceptId": "B2-U08-DEDUPE",
+    "secondaryConceptIds": [
+      "B2-U08-SORT"
+    ],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere deduplicar preservando el registro más reciente por identificador. ¿Qué estrategia es correcta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ordenar solo por identificador y conservar el primero."
+      },
+      {
+        "id": "opt_2",
+        "text": "Deduplicar por orden de aparición sin mirar la fecha."
+      },
+      {
+        "id": "opt_3",
+        "text": "Eliminar todos los registros que compartan identificador."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ordenar por fecha y, al deduplicar por identificador, conservar el registro más reciente."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Combinar el orden por fecha con la deduplicación permite conservar el registro más reciente de cada identificador.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

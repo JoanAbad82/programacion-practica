@@ -1,0 +1,707 @@
+[
+  {
+    "id": "B2-Q0121",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-LITERAL-MATCH",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Cuándo conviene usar una coincidencia literal en lugar de una expresión regular?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Siempre, porque las expresiones regulares nunca sirven."
+      },
+      {
+        "id": "opt_2",
+        "text": "Cuando basta con buscar una subcadena fija, sin patrones variables."
+      },
+      {
+        "id": "opt_3",
+        "text": "Solo cuando el texto contiene números."
+      },
+      {
+        "id": "opt_4",
+        "text": "Únicamente cuando el archivo es muy grande."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Si la búsqueda es una subcadena fija, la comparación literal es más simple y legible que una regex.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0122",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-LITERAL-MATCH",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es una ventaja de la comparación literal frente a una expresión regular para buscar el texto 'error'?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ordena las coincidencias por longitud."
+      },
+      {
+        "id": "opt_2",
+        "text": "Encuentra también las palabras parecidas automáticamente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ignora las mayúsculas por defecto en todos los lenguajes."
+      },
+      {
+        "id": "opt_4",
+        "text": "No necesita escapar metacaracteres y expresa exactamente lo que se busca."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La comparación literal evita la complejidad y los errores de escape de una regex cuando no se necesita patrón.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0123",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-LITERAL-MATCH",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se necesita buscar el texto exacto INC-2026 en muchas líneas y no hay variación. ¿Qué enfoque es preferible?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una expresión regular con cuantificadores anidados."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una expresión regular con muchos grupos de captura."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una comprobación de subcadena literal."
+      },
+      {
+        "id": "opt_4",
+        "text": "Convertir cada línea a número."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Sin variación, la coincidencia literal es suficiente; una expresión regular sería innecesaria.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0124",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-ANCHORS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Para qué sirven las anclas ^ y $ en una expresión regular?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para repetir el patrón muchas veces."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para exigir que el patrón coincida al inicio (^) o al final ($) de la cadena."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para convertir el texto a mayúsculas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para agrupar subcadenas y extraerlas."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Las anclas fijan la posición: ^ el inicio y $ el final, evitando coincidencias parciales no deseadas.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0125",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-ANCHORS",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Se quiere validar que una cadena sea exactamente un código de cinco dígitos. ¿Qué patrón es adecuado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Uno que use ^ y $ sin ningún dígito."
+      },
+      {
+        "id": "opt_2",
+        "text": "Uno sin anclas que busque dígitos en cualquier posición."
+      },
+      {
+        "id": "opt_3",
+        "text": "Uno que busque solo letras."
+      },
+      {
+        "id": "opt_4",
+        "text": "Uno anclado al inicio y al final con cinco dígitos, como ^\\d{5}$."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Las anclas ^ y $ obligan a que toda la cadena coincida con el patrón de cinco dígitos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0126",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-ANCHORS",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Un patrón sin anclas acepta 'abc12345' cuando solo debía aceptar códigos de cinco dígitos. ¿Qué falta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Anclar el patrón al inicio y al final para que toda la cadena coincida."
+      },
+      {
+        "id": "opt_2",
+        "text": "Añadir más cuantificadores sin restringir la posición."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir el texto a JSON antes de compararlo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Usar una clase de caracteres que incluya letras."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Sin anclas, la expresión regular encuentra los dígitos dentro de una cadena más larga; hay que fijar inicio y fin.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0127",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-CHARACTER-CLASSES",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué representa \\d en una expresión regular?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un carácter cualquiera en mayúscula."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un dígito, del 0 al 9."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un espacio en blanco."
+      },
+      {
+        "id": "opt_4",
+        "text": "El final de la cadena."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "\\d es la clase predefinida que coincide con un dígito.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0128",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-CHARACTER-CLASSES",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué coincide la clase [A-Z]?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La letra A seguida de la letra Z."
+      },
+      {
+        "id": "opt_2",
+        "text": "Cualquier carácter, incluidos números y símbolos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una letra mayúscula de la A a la Z."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un espacio en blanco."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "[A-Z] define un rango de caracteres: cualquier letra mayúscula de la A a la Z.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0129",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-CHARACTER-CLASSES",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Se quieren códigos que empiecen por letras y sigan con números. ¿Qué clase describe la parte de letras?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un cuantificador que repita el final."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una clase que admita solo dígitos, como \\d."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una clase que admita solo espacios."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una clase que admita letras, como [A-Za-z], acotada según el caso."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Para la parte alfabética hay que elegir una clase de letras; \\d sola solo admite dígitos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0130",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-QUANTIFIERS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué indica el cuantificador + en un patrón como \\d+?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Exactamente dos repeticiones."
+      },
+      {
+        "id": "opt_2",
+        "text": "Cero o una repetición del elemento anterior."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una o más repeticiones del elemento anterior (aquí, uno o más dígitos)."
+      },
+      {
+        "id": "opt_4",
+        "text": "El final de la cadena."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "+ exige al menos una repetición; \\d+ coincide con una secuencia de uno o más dígitos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0131",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-QUANTIFIERS",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué diferencia hay entre los cuantificadores * y +?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "* exige al menos una; + admite cero."
+      },
+      {
+        "id": "opt_2",
+        "text": "* admite cero o más repeticiones; + exige al menos una."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ambos exigen exactamente una repetición."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ambos cuentan los caracteres de la cadena."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "* permite cero repeticiones (puede no coincidir nada) y + requiere al menos una.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0132",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-QUANTIFIERS",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Se quieren entre dos y cuatro dígitos. ¿Qué cuantificador corresponde?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "* aplicado a \\d."
+      },
+      {
+        "id": "opt_2",
+        "text": "{2} aplicado a \\d."
+      },
+      {
+        "id": "opt_3",
+        "text": "{2,4} aplicado a \\d."
+      },
+      {
+        "id": "opt_4",
+        "text": "$ aplicado a \\d."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El cuantificador {2,4} fija el mínimo y el máximo de repeticiones.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0133",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-CAPTURE-GROUPS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Para qué sirven los grupos de captura entre paréntesis?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para eliminar los caracteres especiales del texto."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para repetir toda la cadena."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para convertir el resultado en número automáticamente."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para aislar subpartes del patrón y extraer o reutilizar lo que coincide con cada una."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Los paréntesis delimitan subpartes cuyo contenido queda disponible para extracción o reutilización.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0134",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-CAPTURE-GROUPS",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Con re.search(r'(\\d{4})-(\\d{2})', '2026-09'), ¿qué capturan los dos grupos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El grupo '2026' y el grupo '-09-'."
+      },
+      {
+        "id": "opt_2",
+        "text": "El grupo '2026-09' completo en ambos casos."
+      },
+      {
+        "id": "opt_3",
+        "text": "El primer grupo '2026' y el segundo grupo '09'."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ninguno, porque el patrón no tiene anclas."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Cada paréntesis captura la porción que coincide: el año y el mes por separado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0135",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-CAPTURE-GROUPS",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script extrae la fecha completa cuando solo quería el año. ¿Qué ajuste lo corrige?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Capturar solo la subparte del año con un grupo, en lugar de toda la coincidencia."
+      },
+      {
+        "id": "opt_2",
+        "text": "Añadir un cuantificador + al final del patrón."
+      },
+      {
+        "id": "opt_3",
+        "text": "Quitar las anclas del patrón."
+      },
+      {
+        "id": "opt_4",
+        "text": "Convertir la coincidencia a mayúsculas."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Delimitar con un grupo solo la porción deseada permite extraer el año y no la fecha entera.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0136",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-REPLACE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace re.sub() en Python o -replace en PowerShell sobre un texto?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Sustituir los fragmentos que coinciden con un patrón por otro texto."
+      },
+      {
+        "id": "opt_2",
+        "text": "Contar cuántas veces aparece un patrón."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir el texto a JSON."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ordenar las líneas del texto."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La sustitución con expresión regular reemplaza las coincidencias del patrón por el texto indicado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0137",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-REPLACE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere reemplazar todos los grupos de espacios consecutivos por uno solo. ¿Qué enfoque es correcto?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Sustituir solo la primera aparición del primer espacio."
+      },
+      {
+        "id": "opt_2",
+        "text": "Usar un patrón que describa varios espacios y sustituirlo por uno, aplicado de forma global."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir los espacios a números."
+      },
+      {
+        "id": "opt_4",
+        "text": "Anclar el patrón al final de la línea."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Un patrón como \\s+ sustituido globalmente por un solo espacio normaliza los separadores.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0138",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-REPLACE",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la forma más segura de sustituir un patrón en muchos registros?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Probar el patrón en una muestra, verificar el resultado y aplicarlo de forma controlada."
+      },
+      {
+        "id": "opt_2",
+        "text": "Aplicarlo a todos los registros sin revisar el patrón."
+      },
+      {
+        "id": "opt_3",
+        "text": "Sustituir sin comprobar y sobrescribir siempre el original."
+      },
+      {
+        "id": "opt_4",
+        "text": "Convertir primero todos los registros a números."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Validar el patrón en una muestra antes de aplicarlo masivamente evita sustituciones destructivas.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0139",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-REGEX-ANCHORS",
+    "secondaryConceptIds": [
+      "B2-U07-LITERAL-MATCH"
+    ],
+    "type": "D",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Se quiere localizar exactamente el identificador INC-2026 y no coincidencias parciales. ¿Qué combinación es adecuada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Anclar el patrón al inicio y al final de la cadena para exigir coincidencia completa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Buscar la subcadena sin anclas para encontrarla en cualquier parte."
+      },
+      {
+        "id": "opt_3",
+        "text": "Usar \\d+ en lugar de las anclas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Convertir el texto a mayúsculas antes de buscar."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Las anclas fuerzan a que toda la cadena coincida; sin ellas se aceptarían coincidencias parciales.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0140",
+    "blockId": "B2",
+    "unitId": "U07",
+    "primaryConceptId": "B2-U07-CAPTURE-GROUPS",
+    "secondaryConceptIds": [
+      "B2-U07-REGEX-REPLACE",
+      "B2-U07-REGEX-QUANTIFIERS"
+    ],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Al sustituir partes de un identificador con un patrón, ¿qué permite reordenar los fragmentos capturados?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Quitar el cuantificador del patrón."
+      },
+      {
+        "id": "opt_2",
+        "text": "Añadir más anclas al patrón."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir los grupos a número."
+      },
+      {
+        "id": "opt_4",
+        "text": "Reutilizar los grupos de captura en el texto de sustitución."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Los grupos capturados pueden referenciarse en la sustitución para reordenar o reconstruir el texto.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

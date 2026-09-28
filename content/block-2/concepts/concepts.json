@@ -1,0 +1,1275 @@
+[
+  {
+    "conceptId": "B2-U01-AUTOMATION-SCOPE",
+    "blockId": "B2",
+    "unitId": "U01",
+    "name": "Alcance de la automatización",
+    "definition": "Delimitación explícita de qué rutas, archivos y carpetas puede leer, crear, modificar o mover el script, y qué elementos quedan fuera de su responsabilidad.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U01-INPUT-OUTPUT-CONTRACT",
+    "blockId": "B2",
+    "unitId": "U01",
+    "name": "Contrato de entrada y salida",
+    "definition": "Especificación de qué datos recibe la automatización (rutas, formato y parámetros) y qué resultado debe producir (archivos, informes o códigos), junto con sus formatos esperados.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U01-PRECONDITIONS",
+    "blockId": "B2",
+    "unitId": "U01",
+    "name": "Precondiciones",
+    "definition": "Condiciones que deben cumplirse antes de ejecutar acciones: que la ruta exista, que el formato sea válido o que el destino sea accesible y escribible.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U01-SIDE-EFFECTS",
+    "blockId": "B2",
+    "unitId": "U01",
+    "name": "Efectos secundarios",
+    "definition": "Cambios observables fuera del cálculo interno del programa, como crear, mover, renombrar, sobrescribir o borrar archivos.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U01-IDEMPOTENCE",
+    "blockId": "B2",
+    "unitId": "U01",
+    "name": "Idempotencia",
+    "definition": "Propiedad por la que ejecutar de nuevo la automatización sobre el mismo estado no genera duplicados ni destruye el trabajo ya realizado.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U01-DRY-RUN",
+    "blockId": "B2",
+    "unitId": "U01",
+    "name": "Dry-run",
+    "definition": "Modo de ejecución que calcula y muestra las acciones previstas sin aplicarlas, de modo que puedan revisarse antes de modificar nada.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U02-PATH-COMPOSITION",
+    "blockId": "B2",
+    "unitId": "U02",
+    "name": "Composición de rutas",
+    "definition": "Construir rutas con las primitivas del lenguaje (Path en Python, Join-Path en PowerShell) en lugar de concatenar separadores a mano, para que funcionen entre sistemas.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U02-PATH-EXISTENCE-TYPE",
+    "blockId": "B2",
+    "unitId": "U02",
+    "name": "Existencia y tipo de ruta",
+    "definition": "Comprobar si una ruta existe y si representa un archivo regular o un directorio antes de operar con ella.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U02-DIRECTORY-ENUMERATION",
+    "blockId": "B2",
+    "unitId": "U02",
+    "name": "Enumeración de directorio",
+    "definition": "Obtener los elementos contenidos directamente en una carpeta, tanto archivos como subcarpetas, sin descender a niveles inferiores.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U02-RECURSION",
+    "blockId": "B2",
+    "unitId": "U02",
+    "name": "Recorrido recursivo controlado",
+    "definition": "Recorrer subdirectorios en profundidad con límites y filtros definidos, para no procesar rutas que quedan fuera del alcance previsto.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U02-FILE-METADATA",
+    "blockId": "B2",
+    "unitId": "U02",
+    "name": "Metadatos de archivo",
+    "definition": "Información descriptiva de un archivo (nombre, extensión, tamaño, fecha de modificación y atributos) utilizada para clasificarlo o validarlo.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U02-DIRECTORY-CREATION",
+    "blockId": "B2",
+    "unitId": "U02",
+    "name": "Creación segura de directorios",
+    "definition": "Crear carpetas solo cuando son necesarias y de forma que repetir la operación no provoque errores ni efectos no deseados.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U03-COPY",
+    "blockId": "B2",
+    "unitId": "U03",
+    "name": "Copiar",
+    "definition": "Crear una copia de un elemento conservando el original intacto, decidiendo qué metadatos (marca de tiempo, permisos) se preservan.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U03-MOVE",
+    "blockId": "B2",
+    "unitId": "U03",
+    "name": "Mover",
+    "definition": "Cambiar la ubicación de un elemento retirándolo de su origen, de modo que deja de existir en la ruta original.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U03-RENAME",
+    "blockId": "B2",
+    "unitId": "U03",
+    "name": "Renombrar",
+    "definition": "Cambiar el nombre de un elemento dentro de su misma ubicación sin alterar innecesariamente su contenido.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U03-DELETE",
+    "blockId": "B2",
+    "unitId": "U03",
+    "name": "Eliminar",
+    "definition": "Borrar un elemento únicamente con alcance, autorización y validación explícitos, nunca como efecto colateral de otra operación.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U03-COLLISION-POLICY",
+    "blockId": "B2",
+    "unitId": "U03",
+    "name": "Política de colisión",
+    "definition": "Decisión definida de antemano sobre qué hacer cuando el destino ya existe: omitir, renombrar, sobrescribir o abortar.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U03-BACKUP-ROLLBACK",
+    "blockId": "B2",
+    "unitId": "U03",
+    "name": "Respaldo y reversión",
+    "definition": "Conservar una vía razonable de recuperación (copia previa, registro de acciones) para poder deshacer o auditar los cambios realizados.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U04-TEXT-ENCODING",
+    "blockId": "B2",
+    "unitId": "U04",
+    "name": "Codificación de texto",
+    "definition": "Correspondencia entre caracteres y bytes; declarar la codificación de forma explícita (por ejemplo UTF-8) evita resultados distintos según el sistema.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U04-TEXT-READ",
+    "blockId": "B2",
+    "unitId": "U04",
+    "name": "Lectura de texto",
+    "definition": "Obtener el contenido de un archivo de texto, completo o por líneas, sin modificar el archivo de origen.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U04-TEXT-WRITE",
+    "blockId": "B2",
+    "unitId": "U04",
+    "name": "Escritura de texto",
+    "definition": "Crear o sustituir deliberadamente el contenido de un archivo de texto, decidiendo de forma consciente si se sobrescribe lo existente.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U04-TEXT-APPEND",
+    "blockId": "B2",
+    "unitId": "U04",
+    "name": "Añadir texto",
+    "definition": "Incorporar contenido al final de un archivo existente sin eliminar lo que ya contiene.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U04-LINE-PROCESSING",
+    "blockId": "B2",
+    "unitId": "U04",
+    "name": "Procesamiento por líneas",
+    "definition": "Tratar cada línea como unidad de trabajo para filtrar, normalizar o transformar el contenido de un archivo de texto.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U04-BOM-NEWLINES",
+    "blockId": "B2",
+    "unitId": "U04",
+    "name": "BOM y saltos de línea",
+    "definition": "Reconocer la marca de orden de bytes (BOM) y las diferencias entre terminadores de línea (LF y CRLF) al leer, comparar o combinar texto.",
+    "language": "COMMON",
+    "priority": "MEDIUM",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U05-CSV-STRUCTURE",
+    "blockId": "B2",
+    "unitId": "U05",
+    "name": "Estructura de un CSV",
+    "definition": "Organización de datos tabulares en filas y columnas con una fila de encabezados, un delimitador y reglas de escapado de comillas.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U05-CSV-PARSE",
+    "blockId": "B2",
+    "unitId": "U05",
+    "name": "Análisis de CSV",
+    "definition": "Convertir el texto CSV en registros estructurados respetando encabezados y comillas, sin dividir las líneas manualmente por comas.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U05-CSV-TYPES",
+    "blockId": "B2",
+    "unitId": "U05",
+    "name": "Tipos de datos en CSV",
+    "definition": "Los valores importados de un CSV llegan habitualmente como texto y deben convertirse explícitamente a número, fecha o booleano antes de operar con ellos.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U05-CSV-FILTER",
+    "blockId": "B2",
+    "unitId": "U05",
+    "name": "Filtrado de filas CSV",
+    "definition": "Seleccionar únicamente los registros que cumplen una condición definida sobre uno o varios de sus campos.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U05-CSV-TRANSFORM",
+    "blockId": "B2",
+    "unitId": "U05",
+    "name": "Transformación de registros",
+    "definition": "Crear, renombrar o calcular campos derivados a partir de los datos importados de un CSV.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U05-CSV-EXPORT",
+    "blockId": "B2",
+    "unitId": "U05",
+    "name": "Exportación de CSV",
+    "definition": "Generar un archivo CSV nuevo controlando explícitamente las columnas, su orden y la codificación de salida.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U06-JSON-OBJECTS-ARRAYS",
+    "blockId": "B2",
+    "unitId": "U06",
+    "name": "Objetos y arrays JSON",
+    "definition": "Distinguir entre objetos JSON, que asocian claves con valores, y arrays JSON, que son listas ordenadas de valores.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U06-JSON-PARSE",
+    "blockId": "B2",
+    "unitId": "U06",
+    "name": "Deserializar JSON",
+    "definition": "Convertir texto JSON válido en estructuras nativas del lenguaje (diccionarios y listas, u objetos) para poder operar con ellas.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U06-JSON-SERIALIZE",
+    "blockId": "B2",
+    "unitId": "U06",
+    "name": "Serializar JSON",
+    "definition": "Convertir estructuras nativas en texto JSON válido, controlando el formato y la profundidad de anidamiento.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U06-NESTED-ACCESS",
+    "blockId": "B2",
+    "unitId": "U06",
+    "name": "Acceso a datos anidados",
+    "definition": "Navegar estructuras jerárquicas comprobando en cada nivel que la clave existe y que el valor tiene el tipo esperado.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U06-JSON-TYPES",
+    "blockId": "B2",
+    "unitId": "U06",
+    "name": "Tipos JSON",
+    "definition": "Conjunto de tipos de valor que admite JSON: cadena, número, booleano, null, objeto y array.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U06-JSON-SHAPE-VALIDATION",
+    "blockId": "B2",
+    "unitId": "U06",
+    "name": "Validación de forma JSON",
+    "definition": "Comprobar que la estructura contiene los campos obligatorios y con los tipos esperados antes de consumir sus datos.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U07-LITERAL-MATCH",
+    "blockId": "B2",
+    "unitId": "U07",
+    "name": "Coincidencia literal",
+    "definition": "Buscar una subcadena fija sin metacaracteres; debe preferirse cuando no se necesita un patrón variable.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U07-REGEX-ANCHORS",
+    "blockId": "B2",
+    "unitId": "U07",
+    "name": "Anclas de expresión regular",
+    "definition": "Uso de ^ y $ para exigir que el patrón coincida al inicio, al final o con la totalidad de la cadena.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U07-REGEX-CHARACTER-CLASSES",
+    "blockId": "B2",
+    "unitId": "U07",
+    "name": "Clases de caracteres",
+    "definition": "Descripción de conjuntos de caracteres admisibles mediante corchetes o clases predefinidas como \\d (dígito) o \\w (carácter de palabra).",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U07-REGEX-QUANTIFIERS",
+    "blockId": "B2",
+    "unitId": "U07",
+    "name": "Cuantificadores",
+    "definition": "Expresar cuántas veces puede repetirse una parte del patrón, por ejemplo con *, +, ? o {n,m}.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U07-CAPTURE-GROUPS",
+    "blockId": "B2",
+    "unitId": "U07",
+    "name": "Grupos de captura",
+    "definition": "Delimitar subpartes de un patrón entre paréntesis para extraer o reutilizar los fragmentos que coinciden.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U07-REGEX-REPLACE",
+    "blockId": "B2",
+    "unitId": "U07",
+    "name": "Sustitución con expresión regular",
+    "definition": "Reemplazar únicamente los fragmentos que cumplen un patrón explícito, decidiendo si la sustitución afecta a todas las coincidencias.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U08-FILTER",
+    "blockId": "B2",
+    "unitId": "U08",
+    "name": "Filtrar",
+    "definition": "Conservar únicamente los elementos de una colección que cumplen un predicado.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U08-TRANSFORM",
+    "blockId": "B2",
+    "unitId": "U08",
+    "name": "Transformar",
+    "definition": "Producir, para cada elemento de una colección, una representación derivada, por ejemplo seleccionando o calculando campos.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U08-SORT",
+    "blockId": "B2",
+    "unitId": "U08",
+    "name": "Ordenar",
+    "definition": "Disponer los elementos según una o varias claves de ordenación, indicando el sentido ascendente o descendente.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U08-GROUP",
+    "blockId": "B2",
+    "unitId": "U08",
+    "name": "Agrupar",
+    "definition": "Reunir los registros que comparten una clave común en grupos identificables.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U08-DEDUPE",
+    "blockId": "B2",
+    "unitId": "U08",
+    "name": "Deduplicar",
+    "definition": "Eliminar duplicados aplicando una clave o un criterio de identidad definido explícitamente.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U08-AGGREGATE",
+    "blockId": "B2",
+    "unitId": "U08",
+    "name": "Agregar y resumir",
+    "definition": "Calcular valores resumen sobre una colección, como recuentos, sumas, medias o máximos.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U09-INPUT-VALIDATION",
+    "blockId": "B2",
+    "unitId": "U09",
+    "name": "Validación de entrada",
+    "definition": "Rechazar las entradas que incumplen el contrato (tipo, rango, existencia) antes de realizar cualquier acción.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U09-TRY-EXCEPT",
+    "blockId": "B2",
+    "unitId": "U09",
+    "name": "try/except en Python",
+    "definition": "Capturar en Python excepciones esperadas dentro de un ámbito pequeño, reaccionando a ellas sin ocultar errores no previstos.",
+    "language": "PYTHON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U09-TRY-CATCH",
+    "blockId": "B2",
+    "unitId": "U09",
+    "name": "try/catch en PowerShell",
+    "definition": "Manejar en PowerShell errores terminantes de forma explícita, activándolos con -ErrorAction Stop cuando es necesario.",
+    "language": "POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U09-SPECIFIC-ERRORS",
+    "blockId": "B2",
+    "unitId": "U09",
+    "name": "Errores específicos",
+    "definition": "Distinguir los tipos de fallo (archivo ausente, permiso denegado, dato inválido) en lugar de tratarlos con un manejador genérico.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U09-FINALLY-CLEANUP",
+    "blockId": "B2",
+    "unitId": "U09",
+    "name": "Limpieza garantizada (finally)",
+    "definition": "Bloque que se ejecuta siempre para cerrar recursos o dejar el estado limpio, tanto si hubo error como si no.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U09-EXIT-CODES",
+    "blockId": "B2",
+    "unitId": "U09",
+    "name": "Códigos de salida",
+    "definition": "Comunicar al proceso que llama si el script terminó con éxito (código 0) o con error (código distinto de cero).",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U10-ENTRYPOINT",
+    "blockId": "B2",
+    "unitId": "U10",
+    "name": "Punto de entrada",
+    "definition": "Separación entre las definiciones reutilizables y el código que se ejecuta solo cuando el archivo se lanza directamente.",
+    "language": "PYTHON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U10-PARAMETERS",
+    "blockId": "B2",
+    "unitId": "U10",
+    "name": "Parámetros",
+    "definition": "Valores como rutas, opciones o formatos que se pasan al script desde fuera en lugar de quedar fijados en el código.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U10-DEFAULTS",
+    "blockId": "B2",
+    "unitId": "U10",
+    "name": "Valores por defecto",
+    "definition": "Valores que se aplican cuando no se proporciona un parámetro, siempre que sean seguros y comprensibles.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U10-NAMED-ARGUMENTS",
+    "blockId": "B2",
+    "unitId": "U10",
+    "name": "Argumentos con nombre",
+    "definition": "Asociar cada valor con su parámetro de forma explícita, para que la invocación sea legible y no dependa del orden.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U10-RETURN-VS-OUTPUT",
+    "blockId": "B2",
+    "unitId": "U10",
+    "name": "Retorno frente a salida",
+    "definition": "Distinguir entre devolver datos a quien llama y mostrar información al usuario; mezclar ambos dificulta el reúso y las pruebas.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U10-MODULE-REUSE",
+    "blockId": "B2",
+    "unitId": "U10",
+    "name": "Reutilización por módulos",
+    "definition": "Extraer funcionalidad a funciones o módulos para evitar la duplicación y facilitar su prueba y mantenimiento.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U11-LOGGING",
+    "blockId": "B2",
+    "unitId": "U11",
+    "name": "Registro de eventos",
+    "definition": "Conservar evidencia de lo ocurrido durante una ejecución para poder revisar después decisiones y fallos.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U11-TIMESTAMPS",
+    "blockId": "B2",
+    "unitId": "U11",
+    "name": "Marcas de tiempo",
+    "definition": "Asociar fecha y hora a cada evento registrado para poder ordenar y correlacionar las acciones de una ejecución.",
+    "language": "COMMON",
+    "priority": "MEDIUM",
+    "difficultyMin": 1,
+    "difficultyMax": 2,
+    "competencies": [
+      "R",
+      "I"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U11-LOG-LEVELS",
+    "blockId": "B2",
+    "unitId": "U11",
+    "name": "Niveles de log",
+    "definition": "Clasificar los mensajes (información, advertencia, error) para distinguir lo normal de lo problemático.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U11-DRY-RUN-IMPLEMENTATION",
+    "blockId": "B2",
+    "unitId": "U11",
+    "name": "Implementación de dry-run",
+    "definition": "Mantener una fase de plan separada de la fase de aplicación, de forma que el plan pueda revisarse antes de modificar nada.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U11-IDEMPOTENT-CHANGES",
+    "blockId": "B2",
+    "unitId": "U11",
+    "name": "Cambios idempotentes",
+    "definition": "Comprobar el estado antes de actuar para no repetir acciones que ya se realizaron en ejecuciones anteriores.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U11-EXECUTION-SUMMARY",
+    "blockId": "B2",
+    "unitId": "U11",
+    "name": "Resumen de ejecución",
+    "definition": "Recuento final de cuántos elementos se inspeccionaron, cuántos se modificaron, cuántos se omitieron y cuántos fallaron.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U12-PIPELINE-STAGES",
+    "blockId": "B2",
+    "unitId": "U12",
+    "name": "Etapas del pipeline",
+    "definition": "Separación del proceso en etapas con responsabilidad clara: descubrir, validar, transformar, planificar, aplicar y verificar.",
+    "language": "COMMON",
+    "priority": "CRITICAL",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U12-RECORD-SCHEMA",
+    "blockId": "B2",
+    "unitId": "U12",
+    "name": "Esquema de registro",
+    "definition": "Forma estable y documentada que tienen los registros internos que circulan entre las etapas de la herramienta.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "R",
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U12-PLAN-APPLY",
+    "blockId": "B2",
+    "unitId": "U12",
+    "name": "Plan y aplicación",
+    "definition": "Separar formalmente la decisión de los cambios (plan) de su ejecución real (apply).",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U12-CHANGE-JOURNAL",
+    "blockId": "B2",
+    "unitId": "U12",
+    "name": "Diario de cambios",
+    "definition": "Registro de cada modificación realizada, con su origen, destino y resultado, útil para auditoría o recuperación.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U12-POSTCONDITION-VERIFY",
+    "blockId": "B2",
+    "unitId": "U12",
+    "name": "Verificación de postcondiciones",
+    "definition": "Comprobar que el estado final del sistema coincide con el plan y que se cumplen las condiciones esperadas.",
+    "language": "PYTHON_POWERSHELL",
+    "priority": "CRITICAL",
+    "difficultyMin": 2,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A",
+      "D"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "conceptId": "B2-U12-REPRODUCIBLE-REPORT",
+    "blockId": "B2",
+    "unitId": "U12",
+    "name": "Informe reproducible",
+    "definition": "Producir salidas CSV o JSON estables y comparables entre ejecuciones, para poder contrastar resultados.",
+    "language": "COMMON",
+    "priority": "HIGH",
+    "difficultyMin": 1,
+    "difficultyMax": 3,
+    "competencies": [
+      "I",
+      "A"
+    ],
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "status": "ACTIVE"
+  }
+]

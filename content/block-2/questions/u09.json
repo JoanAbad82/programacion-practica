@@ -1,0 +1,706 @@
+[
+  {
+    "id": "B2-Q0161",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-INPUT-VALIDATION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es validar la entrada de un script?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Convertir la salida a JSON."
+      },
+      {
+        "id": "opt_2",
+        "text": "Mostrar un mensaje de bienvenida al usuario."
+      },
+      {
+        "id": "opt_3",
+        "text": "Comprobar que los datos recibidos cumplen el contrato antes de usarlos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Registrar el tiempo de ejecución."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Validar la entrada rechaza datos que no cumplen el contrato antes de actuar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0162",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-INPUT-VALIDATION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Un script recibe una ruta como parámetro. ¿Qué validación de entrada es razonable?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Renombrar la ruta para evitar errores."
+      },
+      {
+        "id": "opt_2",
+        "text": "Asumir que la ruta siempre existe."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir la ruta a número."
+      },
+      {
+        "id": "opt_4",
+        "text": "Comprobar que la ruta existe y es del tipo esperado antes de operar."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Validar existencia y tipo de la ruta forma parte del contrato de entrada.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0163",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-INPUT-VALIDATION",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "¿Cuál es la forma más segura de tratar entradas que podrían incumplir el contrato?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Modificar los datos originales para que encajen."
+      },
+      {
+        "id": "opt_2",
+        "text": "Continuar y corregir los datos sobre la marcha."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ignorar el problema hasta que falle más tarde."
+      },
+      {
+        "id": "opt_4",
+        "text": "Rechazar la entrada inválida con un mensaje claro antes de realizar cualquier acción."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Rechazar pronto y con un mensaje claro evita efectos secundarios con datos inválidos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0164",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-TRY-EXCEPT",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON",
+    "prompt": "¿Para qué sirve try/except en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para acelerar la ejecución del programa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para capturar excepciones esperadas y reaccionar a ellas en un ámbito pequeño."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para convertir tipos automáticamente."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para imprimir por pantalla."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "try/except permite manejar errores previstos de forma controlada.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0165",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-TRY-EXCEPT",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Un script abre un archivo que puede no existir. ¿Qué excepción conviene capturar de forma específica?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "StopIteration."
+      },
+      {
+        "id": "opt_2",
+        "text": "ValueError."
+      },
+      {
+        "id": "opt_3",
+        "text": "FileNotFoundError."
+      },
+      {
+        "id": "opt_4",
+        "text": "OverflowError."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "FileNotFoundError describe exactamente el caso de una ruta inexistente.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0166",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-TRY-EXCEPT",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un script usa except: pass tras leer un JSON y luego falla más tarde sin explicación. ¿Cuál es el problema?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El script debería usar recursión."
+      },
+      {
+        "id": "opt_2",
+        "text": "Falta declarar la codificación UTF-8."
+      },
+      {
+        "id": "opt_3",
+        "text": "El JSON debería leerse como CSV."
+      },
+      {
+        "id": "opt_4",
+        "text": "except: pass oculta el error real y dificulta el diagnóstico."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Silenciar todas las excepciones oculta la causa del fallo; hay que capturar errores específicos y actuar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0167",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-TRY-CATCH",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "POWERSHELL",
+    "prompt": "¿Para qué sirve try/catch en PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para manejar errores terminantes de forma explícita."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para comprimir los archivos procesados."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para ordenar la salida por columnas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para convertir objetos a JSON."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "try/catch captura errores terminantes y permite reaccionar de forma controlada.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0168",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-TRY-CATCH",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "En PowerShell, un cmdlet no lanza error terminante y el catch no se ejecuta. ¿Qué suele hacer falta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Añadir -Recurse al cmdlet."
+      },
+      {
+        "id": "opt_2",
+        "text": "Usar -ErrorAction Stop para que el error sea terminante y lo capture el catch."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir el resultado a JSON."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ordenar la entrada antes de procesarla."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Muchos errores no terminantes no activan catch; -ErrorAction Stop los convierte en terminantes.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0169",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-TRY-CATCH",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "POWERSHELL",
+    "prompt": "Un try/catch no captura el fallo de Remove-Item cuando el archivo no existe. ¿Qué causa es más probable?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El error no era terminante y no se usó -ErrorAction Stop."
+      },
+      {
+        "id": "opt_2",
+        "text": "Remove-Item no admite try/catch."
+      },
+      {
+        "id": "opt_3",
+        "text": "El archivo tenía una extensión incorrecta."
+      },
+      {
+        "id": "opt_4",
+        "text": "Faltó convertir el resultado a JSON."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Sin error terminante, catch no se ejecuta; hay que forzar -ErrorAction Stop o comprobar antes.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0170",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-SPECIFIC-ERRORS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Por qué conviene distinguir entre tipos de error en lugar de usar un único manejador genérico?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque el manejador genérico es más lento."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque cada tipo de fallo requiere una respuesta distinta y un mensaje útil."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque solo se puede capturar una excepción por archivo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque así el programa nunca falla."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Distinguir errores (archivo ausente, permisos, dato inválido) permite responder de forma adecuada a cada caso.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0171",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-SPECIFIC-ERRORS",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 1,
+    "language": "PYTHON",
+    "prompt": "¿Qué excepción es más específica para un problema de permisos al abrir un archivo en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "PermissionError."
+      },
+      {
+        "id": "opt_2",
+        "text": "KeyboardInterrupt."
+      },
+      {
+        "id": "opt_3",
+        "text": "IndexError."
+      },
+      {
+        "id": "opt_4",
+        "text": "StopIteration."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "PermissionError describe un fallo por falta de permisos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0172",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-SPECIFIC-ERRORS",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué diferencia hay entre un error de archivo ausente y uno de permisos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Requieren reacciones distintas: avisar de la ruta o del permiso, respectivamente."
+      },
+      {
+        "id": "opt_2",
+        "text": "Son el mismo caso y se tratan igual siempre."
+      },
+      {
+        "id": "opt_3",
+        "text": "El de permisos nunca se puede capturar."
+      },
+      {
+        "id": "opt_4",
+        "text": "El de archivo ausente no es un error."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Distinguir los casos permite mensajes y decisiones correctas para cada situación.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0173",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-FINALLY-CLEANUP",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué garantiza el bloque finally?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Que no se produzca ninguna excepción."
+      },
+      {
+        "id": "opt_2",
+        "text": "Que el programa termine con éxito."
+      },
+      {
+        "id": "opt_3",
+        "text": "Que su contenido se ejecute siempre, haya error o no, para cerrar o limpiar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Que se ordene la salida por columnas."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "finally se ejecuta siempre y se usa para liberar recursos o dejar el estado limpio.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0174",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-FINALLY-CLEANUP",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se abre un archivo temporal y puede fallar el procesamiento. ¿Dónde conviene cerrar el recurso?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Solo si todo va bien, al final del try."
+      },
+      {
+        "id": "opt_2",
+        "text": "En un bloque finally o con un gestor de contexto, para cerrarlo siempre."
+      },
+      {
+        "id": "opt_3",
+        "text": "Nunca, para no añadir complejidad."
+      },
+      {
+        "id": "opt_4",
+        "text": "Antes de abrirlo."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Cerrar en finally (o usar un gestor de contexto) garantiza la limpieza aunque falle el procesamiento.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0175",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-FINALLY-CLEANUP",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Tras un error a mitad del proceso quedan archivos temporales sin borrar. ¿Qué falta en el diseño?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un bloque de limpieza garantizada (finally) que elimine los temporales pase lo que pase."
+      },
+      {
+        "id": "opt_2",
+        "text": "Más recursión en el recorrido."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cambiar la codificación de los temporales."
+      },
+      {
+        "id": "opt_4",
+        "text": "Convertir la salida a JSON."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La limpieza garantizada en finally evita dejar restos cuando ocurre un error.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0176",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-EXIT-CODES",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué comunica el código de salida de un script?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La fecha de la última ejecución."
+      },
+      {
+        "id": "opt_2",
+        "text": "El número de archivos procesados."
+      },
+      {
+        "id": "opt_3",
+        "text": "El tamaño total de los archivos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Si el proceso terminó con éxito (normalmente 0) o con error (distinto de cero)."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El código de salida informa al proceso que llama sobre el resultado: 0 éxito, distinto de 0 error.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0177",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-EXIT-CODES",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Un script encuentra datos inválidos y no puede continuar. ¿Qué debería devolver al proceso llamador?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un archivo CSV con el error."
+      },
+      {
+        "id": "opt_2",
+        "text": "El código 0 para no alarmar al usuario."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ningún código, para terminar antes."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un código de salida distinto de cero y un mensaje de error claro."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Comunicar el fallo con un código distinto de cero permite que otros procesos detecten el problema.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0178",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-EXIT-CODES",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la forma más correcta de terminar un script que ha fallado al validar la entrada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Continuar con valores por defecto silenciosamente y salir con código 0."
+      },
+      {
+        "id": "opt_2",
+        "text": "Imprimir un mensaje de error claro y salir con un código distinto de cero."
+      },
+      {
+        "id": "opt_3",
+        "text": "Terminar con código 0 para que los llamadores no detecten el fallo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Reintentar indefinidamente hasta que funcione."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Un fallo de validación debe comunicarse con un mensaje claro y un código de salida distinto de cero.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0179",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-EXIT-CODES",
+    "secondaryConceptIds": [
+      "B2-U09-SPECIFIC-ERRORS"
+    ],
+    "type": "D",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué relación hay entre distinguir tipos de error y el código de salida?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El código de salida solo importa si no hay errores."
+      },
+      {
+        "id": "opt_2",
+        "text": "El código de salida sustituye a los mensajes de error."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cada tipo de error relevante puede traducirse a un mensaje útil y a un código de salida coherente."
+      },
+      {
+        "id": "opt_4",
+        "text": "Los tipos de error no influyen en el código de salida."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Distinguir el error permite informar al llamador con precisión y devolver un código adecuado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0180",
+    "blockId": "B2",
+    "unitId": "U09",
+    "primaryConceptId": "B2-U09-TRY-EXCEPT",
+    "secondaryConceptIds": [
+      "B2-U09-FINALLY-CLEANUP"
+    ],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "¿Cuál es el uso correcto de try/except con limpieza en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "No usar finally para ahorrar código."
+      },
+      {
+        "id": "opt_2",
+        "text": "Capturar todo con except: pass para no interrumpir."
+      },
+      {
+        "id": "opt_3",
+        "text": "Capturar el error específico en except y cerrar los recursos en finally."
+      },
+      {
+        "id": "opt_4",
+        "text": "Devolver siempre código 0 aunque haya error."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Capturar errores específicos y limpiar en finally combina diagnóstico y estado limpio.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]
