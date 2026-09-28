@@ -1,3 +1,4 @@
+import type { BlockId } from "./block";
 import type { Priority } from "./content";
 import type { StudyUnitStatus } from "./study";
 
@@ -26,6 +27,7 @@ export interface MasteryStateCounts {
 
 export interface ConceptProgress {
   conceptId: string;
+  blockId: BlockId;
   unitId: string;
   name: string;
   priority: Priority;
@@ -46,6 +48,7 @@ export interface ConceptProgress {
 }
 
 export interface UnitProgressSummary {
+  blockId: BlockId;
   unitId: string;
   title: string;
   studyStatus: StudyUnitStatus;
@@ -68,7 +71,7 @@ export interface ProgressActivitySummary {
 }
 
 export interface BlockProgressSummary {
-  blockId: "B1";
+  blockId: BlockId;
   conceptCount: number;
   masteryScore: number;
   coveragePercent: number;
@@ -80,6 +83,13 @@ export interface ProgressModel {
   schemaVersion: "PROGRESS_MODEL_V1";
   generatedAt: string | null;
   concepts: Record<string, ConceptProgress>;
+  /**
+   * Unit summaries are keyed by `blockId:unitId` (for example `B1:U01`),
+   * because both blocks reuse `U01`..`U12`.
+   */
   units: Record<string, UnitProgressSummary>;
+  /** Backwards-compatible Bloque 1 summary. */
   block: BlockProgressSummary;
+  /** All block summaries, keyed by block id. */
+  blocks: Record<BlockId, BlockProgressSummary>;
 }

@@ -21,6 +21,7 @@ export function FlashcardSession({
   const history = useFlashcardHistory();
   const stored = history.sessions[config.sessionId];
   const cardMap = new Map(cards.map((card) => [card.id, card]));
+  const resultsHref = `/tarjetas/resultados?sid=${encodeURIComponent(config.sessionId)}&block=${config.blockId ?? "B1"}`;
 
   if (stored?.completedAt) {
     return (
@@ -29,7 +30,7 @@ export function FlashcardSession({
         <h1>Este repaso ya está terminado.</h1>
         <Link
           className="button primary"
-          href={`/tarjetas/resultados?sid=${encodeURIComponent(config.sessionId)}`}
+          href={resultsHref}
         >
           Ver resultados
         </Link>
@@ -92,7 +93,7 @@ export function FlashcardSession({
 
           if (final) {
             router.push(
-              `/tarjetas/resultados?sid=${encodeURIComponent(config.sessionId)}`,
+              resultsHref,
             );
           }
         }}

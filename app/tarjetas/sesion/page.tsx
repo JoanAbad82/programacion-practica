@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { FlashcardSession } from "@/components/flashcards/flashcard-session";
-import { block1Flashcards } from "@/lib/content/client-bank";
+import { flashcardsForBlock } from "@/lib/content/client-bank";
+import { parseBlockParam } from "@/lib/content/session-params";
 import { useClientSearchParams } from "@/lib/navigation/search-params";
+import { blockIdFromContentId, type BlockId } from "@/types/block";
 import type {
   FlashcardFilters,
   FlashcardLanguageFilter,
@@ -68,10 +70,21 @@ function parseFilters(params: {
   return { unitId, language, cardType };
 }
 
+function resolveBlock(
+  explicit: string | undefined,
+  ids: string[],
+): BlockId | null {
+  const requested = parseBlockParam(explicit, "B1");
+  const fromIds = ids.length > 0 ? blockIdFromContentId(ids[0]) : null;
+
+  if (ids.length === 0) return requested;
+  return fromIds === requested ? requested : null;
+}
+
 /**
  * Query-param flashcard session route. As with the quiz session route, the
  * exported HTML is the controlled invalid state and the browser rebuilds the
- * real session from `?sid=&seed=&mode=&size=&ids=&reverse=`.
+ * real session from `?sid=&seed=&block=&mode=&size=&ids=&reverse=`.
  */
 export default function FlashcardSessionPage() {
   const searchParams = useClientSearchParams();
@@ -92,10 +105,13 @@ export default function FlashcardSessionPage() {
     .map((id) => id.trim())
     .filter(Boolean);
 
-  const byId = new Map(block1Flashcards.map((card) => [card.id, card]));
+  const blockId = resolveBlock(value("block"), ids);
+  const bank = blockId ? flashcardsForBlock(blockId) : [];
+  const byId = new Map(bank.map((card) => [card.id, card]));
   const uniqueIds = new Set(ids);
 
   const valid =
+    blockId !== null &&
     Boolean(sessionId) &&
     Number.isInteger(seedValue) &&
     seedValue >= 0 &&
@@ -108,7 +124,7 @@ export default function FlashcardSessionPage() {
     uniqueIds.size === ids.length &&
     ids.every((id) => byId.has(id));
 
-  if (!valid || !sessionId || !mode || !requestedSize || !filters) {
+  if (!valid || !blockId || !sessionId || !mode || !requestedSize || !filters) {
     return (
       <section className="flashcard-session-state">
         <span className="eyebrow">Sesión no válida</span>
@@ -127,6 +143,7 @@ export default function FlashcardSessionPage() {
   const config: FlashcardSessionConfig = {
     sessionId,
     seed: seedValue,
+    blockId,
     mode,
     requestedSize,
     cardIds: ids,

@@ -10,9 +10,12 @@ import {
   createFlashcardSession,
   useFlashcardHistory,
 } from "@/lib/storage/flashcard-history";
+import { flashcardHistoryMetrics } from "@/lib/storage/history-metrics";
 import { masteryScoreMap } from "@/lib/progress/mastery";
 import { useClientSearchParams } from "@/lib/navigation/search-params";
 import { useUnifiedProgress } from "@/lib/storage/unified-progress";
+import { blockQueryValue, parseBlockParam } from "@/lib/content/session-params";
+import { BLOCK_IDS, BLOCK_LABELS, type BlockId } from "@/types/block";
 import type { Concept } from "@/types/content";
 import type { Flashcard } from "@/types/flashcard";
 import type { StudyUnitMeta } from "@/types/study";
@@ -84,18 +87,24 @@ function parseModeParam(value: string | null): FlashcardMode | null {
 }
 
 export function FlashcardSetup({
-  cards,
-  units,
-  concepts,
+  blockLibraries,
+  blockCounts,
 }: {
-  cards: Flashcard[];
-  units: StudyUnitMeta[];
-  concepts: Concept[];
+  blockLibraries: Record<BlockId, {
+    units: StudyUnitMeta[];
+    cards: Flashcard[];
+    concepts: Concept[];
+  }>;
+  blockCounts: Record<BlockId, { questions: number; flashcards: number }>;
 }) {
   const router = useRouter();
   const searchParams = useClientSearchParams();
   const history = useFlashcardHistory();
-  const progress = useUnifiedProgress({ concepts, units });
+  const requestedBlock = parseBlockParam(searchParams.get("block"), "B1");
+  const [blockId, setBlockId] = useState<BlockId>(requestedBlock);
+
+  const { units, cards, concepts } = blockLibraries[blockId];
+  const progress = useUnifiedProgress({ concepts, units, blockId });
   const masteryByConcept = useMemo(() => masteryScoreMap(progress), [progress]);
 
   // `?mode=adaptive` and `?unit=uNN` arrive as query parameters on a statically
@@ -147,18 +156,13 @@ export function FlashcardSetup({
     [cards, filters],
   );
 
-  const completedSessions = Object.values(history.sessions).filter(
-    (session) => session.completedAt !== null,
-  ).length;
-
-  const totalSeen = Object.values(history.cardStats).reduce(
-    (sum, stats) => sum + stats.seen,
-    0,
+  // History metrics follow the selected block: sessions use their normalized
+  // `blockId` (legacy entries default to B1) and card stats use the
+  // block-unique card ids, so B1/B2 counts never mix.
+  const { completedSessions, totalSeen, needsReview } = useMemo(
+    () => flashcardHistoryMetrics(history, blockId),
+    [history, blockId],
   );
-
-  const needsReview = Object.values(history.cardStats).filter(
-    (stats) => stats.lastRating !== "KNOW",
-  ).length;
 
   function startSession() {
     const effectiveSize = Math.min(size, pool.length);
@@ -185,6 +189,7 @@ export function FlashcardSetup({
       history,
       size: effectiveSize,
       seed,
+      blockId,
       masteryByConcept,
     });
 
@@ -195,6 +200,7 @@ export function FlashcardSetup({
     const config = {
       sessionId,
       seed,
+      blockId,
       mode,
       requestedSize: size,
       cardIds,
@@ -207,6 +213,7 @@ export function FlashcardSetup({
     const params = new URLSearchParams({
       sid: sessionId,
       seed: String(seed),
+      block: blockQueryValue(blockId),
       mode: mode.toLowerCase(),
       size: String(size),
       ids: cardIds.join(","),
@@ -229,10 +236,36 @@ export function FlashcardSetup({
           <span className="eyebrow">Recuperación activa</span>
           <h2 id="configurar-tarjetas">Configura la sesión</h2>
           <p>
-            Las 80 tarjetas proceden directamente del banco canónico{" "}
-            <code>BLOCK1_FLASHCARD_BANK_V1.0</code>.
+            Las {blockCounts[blockId].flashcards} tarjetas proceden directamente
+            del banco canónico{" "}
+            <code>{blockId === "B2" ? "BLOCK2_FLASHCARD_BANK_V1.0" : "BLOCK1_FLASHCARD_BANK_V1.0"}</code>.
           </p>
         </div>
+
+        <fieldset className="block-selector">
+          <legend>Bloque</legend>
+          {BLOCK_IDS.map((candidate) => (
+            <label className="block-selector-option" key={candidate}>
+              <input
+                checked={blockId === candidate}
+                name="flashcard-block"
+                onChange={() => {
+                  setBlockId(candidate);
+                  setModeOverride(null);
+                  setUnitOverride(null);
+                  setMessage("");
+                  router.replace(`/tarjetas?block=${blockQueryValue(candidate)}`);
+                }}
+                type="radio"
+                value={blockQueryValue(candidate)}
+              />
+              <span>
+                <strong>{BLOCK_LABELS[candidate]}</strong>
+                <small>{blockCounts[candidate].flashcards} tarjetas</small>
+              </span>
+            </label>
+          ))}
+        </fieldset>
 
         <fieldset className="flashcard-mode-grid">
           <legend>Modo</legend>
@@ -259,7 +292,7 @@ export function FlashcardSetup({
               value={unitId}
               onChange={(event) => setUnitOverride(event.target.value)}
             >
-              <option value="ALL">Todo el Bloque 1</option>
+              <option value="ALL">Todo el {BLOCK_LABELS[blockId]}</option>
               {units.map((unit) => (
                 <option key={unit.unitId} value={unit.unitId}>
                   {unit.unitId} — {unit.title}

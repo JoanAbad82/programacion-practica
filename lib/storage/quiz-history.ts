@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useSyncExternalStore } from "react";
+import { blockIdFromContentId, type BlockId } from "@/types/block";
 import type {
   QuizAttempt,
   QuizHistorySnapshot,
@@ -18,6 +19,17 @@ const emptySnapshot: QuizHistorySnapshot = {
 };
 const emptySerialized = JSON.stringify(emptySnapshot);
 
+function inferBlockId(session: StoredQuizSession): BlockId {
+  return (
+    session.blockId ??
+    blockIdFromContentId(session.sessionId) ??
+    (session.questionIds ?? [])
+      .map((id) => blockIdFromContentId(id))
+      .find((value): value is BlockId => Boolean(value)) ??
+    "B1"
+  );
+}
+
 function parseSnapshot(raw: string | null): QuizHistorySnapshot {
   if (!raw) return emptySnapshot;
 
@@ -34,9 +46,17 @@ function parseSnapshot(raw: string | null): QuizHistorySnapshot {
       return emptySnapshot;
     }
 
+    const sessions = parsed.sessions as Record<string, StoredQuizSession>;
+    // Historical sessions predate multi-block support, so their block is
+    // inferred from the block-unique question ids instead of clearing storage.
+    const normalized: Record<string, StoredQuizSession> = {};
+    for (const [id, session] of Object.entries(sessions)) {
+      normalized[id] = { ...session, blockId: inferBlockId(session) };
+    }
+
     return {
       schemaVersion: "QUIZ_HISTORY_V1",
-      sessions: parsed.sessions as Record<string, StoredQuizSession>,
+      sessions: normalized,
       questionStats: parsed.questionStats as Record<string, QuizQuestionStats>,
     };
   } catch {

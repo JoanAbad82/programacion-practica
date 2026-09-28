@@ -28,8 +28,22 @@ function countBy(items, keyFn) {
 }
 
 
-export async function loadBlock1(root = process.cwd()) {
-  const blockRoot = path.join(root, "content", "block-1");
+const BLOCK_DIRECTORIES = {
+  B1: "block-1",
+  B2: "block-2",
+};
+
+/**
+ * Generic manifest-driven loader used by the multi-block tests. Accepts a
+ * typed block id (`B1`/`B2`) and rejects anything else.
+ */
+export async function loadBlock(blockId, root = process.cwd()) {
+  const directory = BLOCK_DIRECTORIES[blockId];
+  if (!directory) {
+    throw new Error(`Unknown block id: ${blockId}`);
+  }
+
+  const blockRoot = path.join(root, "content", directory);
   const manifest = JSON.parse(await readFile(path.join(blockRoot, "manifest.json"), "utf8"));
   const units = JSON.parse(await readFile(path.join(blockRoot, manifest.unit_index), "utf8"));
   const concepts = JSON.parse(await readFile(path.join(blockRoot, manifest.concept_file), "utf8"));
@@ -53,6 +67,7 @@ export async function loadBlock1(root = process.cwd()) {
   return {
     root,
     blockRoot,
+    blockId,
     manifest,
     units,
     concepts,
@@ -62,6 +77,62 @@ export async function loadBlock1(root = process.cwd()) {
     flashcardMatrix,
     integrity,
   };
+}
+
+export function loadBlock1(root = process.cwd()) {
+  return loadBlock("B1", root);
+}
+
+/**
+ * Lightweight multi-block schema/identity check. The full Bloque 1 validator
+ * stays the strict contract for the published bank; this helper lets the same
+ * loader assert counts, ids and block ownership for any block.
+ */
+export async function validateBlockCounts(
+  blockId,
+  expected,
+  root = process.cwd(),
+) {
+  const data = await loadBlock(blockId, root);
+  const failures = [];
+  const expectCount = (key, value) => {
+    if (value !== expected[key]) {
+      failures.push(`${blockId} ${key} expected ${expected[key]}, got ${value}`);
+    }
+  };
+
+  if (data.manifest.block_id !== blockId) {
+    failures.push(`${blockId} manifest block_id is ${data.manifest.block_id}`);
+  }
+
+  expectCount("units", data.units.length);
+  expectCount("concepts", data.concepts.length);
+  expectCount("questions", data.questions.length);
+  expectCount("flashcards", data.flashcards.length);
+
+  for (const unit of data.units) {
+    if (unit.blockId !== blockId) failures.push(`${blockId} unit ${unit.unitId} has blockId ${unit.blockId}`);
+  }
+  for (const concept of data.concepts) {
+    if (concept.blockId !== blockId) failures.push(`${blockId} concept ${concept.conceptId} has blockId ${concept.blockId}`);
+  }
+  for (const question of data.questions) {
+    if (question.blockId && question.blockId !== blockId) failures.push(`${blockId} question ${question.id} has blockId ${question.blockId}`);
+  }
+  for (const card of data.flashcards) {
+    if (card.blockId && card.blockId !== blockId) failures.push(`${blockId} flashcard ${card.id} has blockId ${card.blockId}`);
+  }
+
+  const questionIds = new Set(data.questions.map((question) => question.id));
+  if (questionIds.size !== data.questions.length) {
+    failures.push(`${blockId} has duplicate question ids`);
+  }
+  const cardIds = new Set(data.flashcards.map((card) => card.id));
+  if (cardIds.size !== data.flashcards.length) {
+    failures.push(`${blockId} has duplicate flashcard ids`);
+  }
+
+  return { ok: failures.length === 0, failures, data };
 }
 
 export async function validateBlock1(root = process.cwd()) {

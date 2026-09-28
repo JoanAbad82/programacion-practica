@@ -39,6 +39,7 @@ export function QuizResults({
   const total = session.attempts.length;
   const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
   const wrong = session.attempts.filter((attempt) => !attempt.correct);
+  const blockId = session.blockId ?? "B1";
 
   const difficultyStats = [1, 2, 3].map((difficulty) => {
     const attempts = session.attempts.filter(
@@ -77,14 +78,14 @@ export function QuizResults({
       <div className="actions quiz-results-actions">
         <Link className="button primary" href="/tests">Nuevo test</Link>
         {wrong.length > 0 ? (
-          <Link className="button" href="/tests?mode=errors">
+          <Link className="button" href={`/tests?mode=errors&block=${blockId}`}>
             Repasar errores
           </Link>
         ) : null}
         {session.unitId ? (
           <Link
             className="button"
-            href={`/estudiar/b1/${session.unitId.toLowerCase()}`}
+            href={`/estudiar/${blockId.toLowerCase()}/${session.unitId.toLowerCase()}`}
           >
             Volver a la unidad
           </Link>

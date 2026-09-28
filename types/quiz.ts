@@ -1,3 +1,4 @@
+import type { BlockId } from "./block";
 import type { Language } from "./content";
 import type { Question, QuestionType } from "./question";
 
@@ -27,6 +28,7 @@ export interface QuizQuestionMeta {
 export interface QuizSessionConfig {
   sessionId: string;
   seed: number;
+  blockId?: BlockId;
   mode: QuizMode;
   unitId: string | null;
   requestedSize: QuizSessionSize;

@@ -5,6 +5,7 @@ import {
   getUnitStudyStatus,
   useStudyProgress,
 } from "@/lib/storage/unit-study-progress";
+import { BLOCK_LABELS, type BlockId } from "@/types/block";
 import type { StudyUnitMeta, StudyUnitStatus } from "@/types/study";
 
 const labels: Record<StudyUnitStatus, string> = {
@@ -13,21 +14,29 @@ const labels: Record<StudyUnitStatus, string> = {
   STUDIED: "Estudiada",
 };
 
-export function BlockUnitList({ units }: { units: StudyUnitMeta[] }) {
+export function BlockUnitList({
+  units,
+  blockId = "B1",
+}: {
+  units: StudyUnitMeta[];
+  blockId?: BlockId;
+}) {
   const progress = useStudyProgress();
   const studied = units.filter(
-    (unit) => getUnitStudyStatus(progress, unit.unitId) === "STUDIED",
+    (unit) => getUnitStudyStatus(progress, unit.unitId, blockId) === "STUDIED",
   ).length;
   const inProgress = units.filter(
-    (unit) => getUnitStudyStatus(progress, unit.unitId) === "IN_PROGRESS",
+    (unit) => getUnitStudyStatus(progress, unit.unitId, blockId) === "IN_PROGRESS",
   ).length;
-  const completion = Math.round((studied / units.length) * 100);
+  const completion = units.length > 0 ? Math.round((studied / units.length) * 100) : 0;
+  const blockSlug = blockId.toLowerCase();
+  const headingId = `unidades-${blockSlug}`;
 
   return (
-    <section aria-labelledby="unidades-b1">
+    <section aria-labelledby={headingId}>
       <div className="study-progress-panel">
         <div>
-          <span className="eyebrow">Progreso de estudio</span>
+          <span className="eyebrow">Progreso de estudio · {BLOCK_LABELS[blockId]}</span>
           <strong>{studied}/{units.length} unidades estudiadas</strong>
           <p>{inProgress > 0 ? `${inProgress} en curso` : "Ninguna unidad en curso"}</p>
         </div>
@@ -39,15 +48,15 @@ export function BlockUnitList({ units }: { units: StudyUnitMeta[] }) {
         </div>
       </div>
 
-      <h2 id="unidades-b1">Unidades</h2>
+      <h2 id={headingId}>Unidades</h2>
       <div className="unit-list">
         {units.map((unit) => {
-          const status = getUnitStudyStatus(progress, unit.unitId);
+          const status = getUnitStudyStatus(progress, unit.unitId, blockId);
 
           return (
             <Link
               className="unit-card"
-              href={`/estudiar/b1/${unit.unitId.toLowerCase()}`}
+              href={`/estudiar/${blockSlug}/${unit.unitId.toLowerCase()}`}
               key={unit.unitId}
             >
               <div className="unit-card-index">{String(unit.order).padStart(2, "0")}</div>

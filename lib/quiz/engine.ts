@@ -1,4 +1,5 @@
 import type { QuestionOption } from "@/types/question";
+import type { BlockId } from "@/types/block";
 import type {
   QuizFilters,
   QuizHistorySnapshot,
@@ -132,6 +133,7 @@ export function selectQuestionIds({
   history,
   size,
   seed,
+  blockId = "B1",
   masteryByConcept = {},
 }: {
   questions: QuizQuestionMeta[];
@@ -141,6 +143,7 @@ export function selectQuestionIds({
   history: QuizHistorySnapshot;
   size: number;
   seed: number;
+  blockId?: BlockId;
   masteryByConcept?: Record<string, number>;
 }): string[] {
   const pool = buildQuestionPool({ questions, mode, unitId, filters, history });
@@ -158,7 +161,7 @@ export function selectQuestionIds({
 
   return deterministicShuffle(
     pool,
-    hashSeed(`${seed}:${mode}:${unitId ?? "B1"}:questions`),
+    hashSeed(`${seed}:${mode}:${blockId}:${unitId ?? "BLOCK"}:questions`),
   )
     .slice(0, size)
     .map((question) => question.id);

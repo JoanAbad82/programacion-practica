@@ -15,12 +15,19 @@ const unitFiles = Array.from(
   (_, index) => `estudiar/b1/u${String(index + 1).padStart(2, "0")}.html`,
 );
 
+const unit2Files = Array.from(
+  { length: 12 },
+  (_, index) => `estudiar/b2/u${String(index + 1).padStart(2, "0")}.html`,
+);
+
 const expectedHtml = [
   "index.html",
   "404.html",
   "estudiar.html",
   "estudiar/b1.html",
   ...unitFiles,
+  "estudiar/b2.html",
+  ...unit2Files,
   "tests.html",
   "tests/sesion.html",
   "tests/resultados.html",
@@ -63,6 +70,14 @@ if (exportedUnits !== 12) {
   failures.push(`Expected 12 exported units, got ${exportedUnits}`);
 }
 
+const exported2Units = (
+  await Promise.all(unit2Files.map(async (file) => (await readExport(file)) !== null))
+).filter(Boolean).length;
+
+if (exported2Units !== 12) {
+  failures.push(`Expected 12 exported Block 2 units, got ${exported2Units}`);
+}
+
 for (const relativePath of ["index.html", "404.html"]) {
   const html = await readExport(relativePath);
   if (html !== null && !html.includes("<h1")) {
@@ -77,6 +92,7 @@ if (failures.length > 0) {
 
 console.log("STATIC_EXPORT_VERIFY=PASS");
 console.log(`EXPORTED_ROUTES=${expectedHtml.length}`);
-console.log(`EXPORTED_UNITS=${exportedUnits}`);
+console.log(`EXPORTED_UNITS=${exportedUnits}/12`);
+console.log(`EXPORTED_B2_UNITS=${exported2Units}/12`);
 console.log("OUT_INDEX=out/index.html");
 console.log("OUT_404=out/404.html");

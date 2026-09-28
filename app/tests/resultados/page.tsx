@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import { QuizResults } from "@/components/quiz/quiz-results";
-import { block1Questions } from "@/lib/content/client-bank";
+import { questionsForBlock } from "@/lib/content/client-bank";
+import { parseBlockParam } from "@/lib/content/session-params";
 import { useClientSearchParams } from "@/lib/navigation/search-params";
 
 /**
  * Static results route. The exported HTML renders the controlled
- * "missing session id" state and the browser resolves `?sid=` after hydration.
+ * "missing session id" state and the browser resolves `?sid=` (and the optional
+ * `?block=`) after hydration. Historical links without `block` remain valid
+ * and resolve as Bloque 1.
  */
 export default function QuizResultsPage() {
   const searchParams = useClientSearchParams();
@@ -23,5 +26,9 @@ export default function QuizResultsPage() {
     );
   }
 
-  return <QuizResults questions={block1Questions} sessionId={sessionId} />;
+  const blockId = parseBlockParam(searchParams.get("block"), "B1");
+
+  return (
+    <QuizResults questions={questionsForBlock(blockId)} sessionId={sessionId} />
+  );
 }

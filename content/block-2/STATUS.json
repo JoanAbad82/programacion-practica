@@ -2,9 +2,9 @@
   "block_id": "B2",
   "title": "Automatización práctica con archivos y datos",
   "canonical_version": "BLOCK2_CANONICAL_V1.0",
-  "status": "CONTENT_AND_SNIPPET_QA_PASS",
+  "status": "RUNTIME_INTEGRATION_QA_PASS",
   "publication_status": "NOT_PUBLISHED_TO_WEB",
-  "repository_branch": "content/block-2-canonical-v1",
+  "repository_branch": "integration/block-2-v1",
   "language": "es",
   "runtime_ai": false,
   "actual_counts": {
@@ -55,6 +55,7 @@
     "La especificación está registrada en GitHub antes de publicar B2 en la web.",
     "Los bancos B2 de conceptos, preguntas y flashcards han sido generados y pasan el validador estructural específico del bloque.",
     "Los snippets ejecutables se validan automáticamente mediante casos curados versionados; los ejemplos destructivos solo se ejecutan contra fixtures temporales desechables y el resto queda marcado como no ejecutado.",
-    "B1 permanece canónico y publicado en main."
+    "B1 permanece canónico y publicado en main.",
+    "B2 se ha integrado como runtime en la rama integration/block-2-v1 y pasa el gate de contenido, el gate de snippets, las pruebas unitarias y la suite E2E; sigue sin publicarse en la web."
   ]
 }

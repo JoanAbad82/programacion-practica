@@ -11,6 +11,10 @@ const unitRoutes = Array.from(
   { length: 12 },
   (_, index) => `/estudiar/b1/u${String(index + 1).padStart(2, "0")}`,
 );
+const block2UnitRoutes = Array.from(
+  { length: 12 },
+  (_, index) => `/estudiar/b2/u${String(index + 1).padStart(2, "0")}`,
+);
 
 async function readExported(file: string) {
   return readFile(path.join(outDir, file), "utf8");
@@ -30,10 +34,17 @@ test.describe("artefacto de exportación estática", () => {
       expect(info.size, `${file} está vacío`).toBeGreaterThan(1_000);
       expect(await readFile(file, "utf8")).toContain('class="unit-study-page"');
     }
+
+    for (const route of block2UnitRoutes) {
+      const file = path.join(outDir, `${route}.html`);
+      const info = await stat(file);
+      expect(info.size, `${file} está vacío`).toBeGreaterThan(1_000);
+      expect(await readFile(file, "utf8")).toContain('class="unit-study-page"');
+    }
   });
 
   test("el artefacto servido responde 200 y mantiene el 404 controlado", async ({ request }) => {
-    for (const route of ["/", "/tests", "/tests/sesion", "/tests/resultados", "/tarjetas", "/tarjetas/sesion", "/tarjetas/resultados", "/progreso", "/ajustes", ...unitRoutes]) {
+    for (const route of ["/", "/estudiar/b2", "/tests", "/tests/sesion", "/tests/resultados", "/tarjetas", "/tarjetas/sesion", "/tarjetas/resultados", "/progreso", "/ajustes", ...unitRoutes, ...block2UnitRoutes]) {
       const response = await request.get(route, { maxRedirects: 0 });
       expect(response.status(), `${route} devuelve ${response.status()}`).toBe(200);
       expect(await response.text()).toContain('id="main-content"');

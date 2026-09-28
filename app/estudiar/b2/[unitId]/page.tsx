@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { UnitStudyReader } from "@/components/study/unit-study-reader";
 import {
-  getAdjacentUnits,
-  getBlock1UnitBySlug,
-  getBlock1Units,
+  getBlockAdjacentUnits,
+  getBlockUnitBySlug,
+  getBlockUnits,
 } from "@/lib/content/study-content";
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const units = await getBlock1Units();
+  const units = await getBlockUnits("B2");
   return units.map((unit) => ({ unitId: unit.unitId.toLowerCase() }));
 }
 
@@ -20,11 +20,11 @@ export async function generateMetadata({
   params: Promise<{ unitId: string }>;
 }): Promise<Metadata> {
   const { unitId } = await params;
-  const unit = await getBlock1UnitBySlug(unitId);
+  const unit = await getBlockUnitBySlug("B2", unitId);
 
   return unit
     ? {
-        title: `${unit.unitId} — ${unit.title} | Programación Práctica`,
+        title: `${unit.unitId} — ${unit.title} | Bloque 2 | Programación Práctica`,
         description: unit.objective,
       }
     : {};
@@ -36,14 +36,14 @@ export default async function UnitStudyPage({
   params: Promise<{ unitId: string }>;
 }) {
   const { unitId } = await params;
-  const unit = await getBlock1UnitBySlug(unitId);
+  const unit = await getBlockUnitBySlug("B2", unitId);
   if (!unit) notFound();
 
-  const { previous, next } = await getAdjacentUnits(unit.slug);
+  const { previous, next } = await getBlockAdjacentUnits("B2", unit.slug);
 
   return (
     <UnitStudyReader
-      blockId="B1"
+      blockId="B2"
       next={next}
       previous={previous}
       unit={unit}

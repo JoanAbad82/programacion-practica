@@ -1,3 +1,5 @@
+import type { BlockId } from "./block";
+
 export type StudyUnitStatus = "NOT_STARTED" | "IN_PROGRESS" | "STUDIED";
 
 export interface StudyUnitMeta {
@@ -29,6 +31,7 @@ export interface StudyUnitDocument extends StudyUnitMeta {
 }
 
 export interface UnitStudyProgress {
+  blockId: BlockId;
   unitId: string;
   status: StudyUnitStatus;
   startedAt: string | null;
