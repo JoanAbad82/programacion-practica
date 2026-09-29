@@ -1,9 +1,9 @@
 # Bloque 2 — Automatización práctica con archivos y datos
 
-**ID:** B2  
-**Versión canónica de diseño:** `BLOCK2_CANONICAL_V1.0`  
-**Estado:** especificación aprobada, aún no publicada en la web.  
-**Lenguajes:** Python + PowerShell.  
+**ID:** B2
+**Versión canónica de diseño:** `BLOCK2_CANONICAL_V1.0`
+**Estado:** especificación aprobada, aún no publicada en la web.
+**Lenguajes:** Python + PowerShell.
 **IA en runtime:** ninguna.
 
 ## Objetivo terminal
