@@ -1,0 +1,707 @@
+[
+  {
+    "id": "B2-Q0021",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-PATH-COMPOSITION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la forma recomendada de construir una ruta en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Fijar la ruta absoluta de una máquina concreta en todos los puntos del código."
+      },
+      {
+        "id": "opt_2",
+        "text": "Concatenar cadenas con barras invertidas escritas a mano."
+      },
+      {
+        "id": "opt_3",
+        "text": "Componerla con pathlib, por ejemplo Path('datos') / 'informe.csv'."
+      },
+      {
+        "id": "opt_4",
+        "text": "Guardar el separador como número y sumarlo a la ruta."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "pathlib compone rutas de forma portable; concatenar separadores a mano es frágil entre sistemas.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0022",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-PATH-COMPOSITION",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Qué ruta resulta de componer Path('datos') / 'sub' / 'f.txt' en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un error, porque Path no admite el operador /."
+      },
+      {
+        "id": "opt_2",
+        "text": "La cadena con dobles barras escritas literalmente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una ruta que une los tres segmentos con el separador del sistema, datos/sub/f.txt."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un archivo temporal en la raíz del disco."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El operador / de pathlib compone segmentos usando el separador adecuado del sistema operativo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0023",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-PATH-COMPOSITION",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Python y PowerShell permiten unir rutas sin concatenar manualmente. ¿Por qué se prefiere esa forma?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque evita tener que comprobar si la ruta existe."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque es la única forma de que un archivo llegue a existir."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque produce rutas correctas en distintos separadores y evita errores como dobles barras."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque cambia los permisos del archivo de destino."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Componer con primitivas evita el error clásico de mezclar separadores manuales como 'C:\\carpeta\\' + nombre.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0024",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-PATH-EXISTENCE-TYPE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué comprueban is_dir() e is_file() sobre una ruta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ambos comprueban si la ruta tiene permisos de escritura."
+      },
+      {
+        "id": "opt_2",
+        "text": "is_dir() el tamaño e is_file() la fecha."
+      },
+      {
+        "id": "opt_3",
+        "text": "is_dir() la codificación e is_file() el contenido."
+      },
+      {
+        "id": "opt_4",
+        "text": "is_dir() si es un directorio e is_file() si es un archivo regular."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "is_dir() e is_file() distinguen el tipo de ruta; conviene comprobarlo antes de operar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0025",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-PATH-EXISTENCE-TYPE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script va a leer un archivo y luego escribirlo. ¿Qué comprobación conviene hacer antes de leerlo?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comprobar si el usuario tiene un navegador abierto."
+      },
+      {
+        "id": "opt_2",
+        "text": "Comprobar el color del terminal."
+      },
+      {
+        "id": "opt_3",
+        "text": "Comprobar cuántas líneas tiene el script."
+      },
+      {
+        "id": "opt_4",
+        "text": "Comprobar que la ruta existe y que es un archivo, no un directorio."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Antes de leer hay que asegurar que la ruta existe y es un archivo; si es un directorio, la lectura fallará.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0026",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-PATH-EXISTENCE-TYPE",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script abre una ruta sin comprobar nada y falla con un error del tipo 'Is a directory' cuando el usuario pasa una carpeta. ¿Qué debería haber hecho?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Validar antes que la ruta existe y que es un archivo, con is_file() o el equivalente en PowerShell."
+      },
+      {
+        "id": "opt_2",
+        "text": "Abrir siempre en modo de escritura para evitar el error."
+      },
+      {
+        "id": "opt_3",
+        "text": "Capturar la excepción y continuar como si nada hubiera pasado."
+      },
+      {
+        "id": "opt_4",
+        "text": "Cambiar la codificación a UTF-16."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Comprobar el tipo de ruta es una precondición: si es un directorio, hay que rechazarlo con un mensaje claro.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0027",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-DIRECTORY-ENUMERATION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué devuelve iterdir() en Python o Get-ChildItem sin -Recurse en PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Todos los archivos de todo el disco."
+      },
+      {
+        "id": "opt_2",
+        "text": "Los elementos contenidos directamente en la carpeta, sin descender a subcarpetas."
+      },
+      {
+        "id": "opt_3",
+        "text": "El contenido de cada archivo como texto."
+      },
+      {
+        "id": "opt_4",
+        "text": "Únicamente los nombres de las carpetas, nunca archivos."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "La enumeración directa lista archivos y subcarpetas del nivel actual, pero no entra en los subdirectorios.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0028",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-DIRECTORY-ENUMERATION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere listar solo los archivos .csv de una carpeta, sin incluir sus subcarpetas. ¿Qué enfoque es correcto?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Leer todos los archivos como texto y buscar la palabra csv."
+      },
+      {
+        "id": "opt_2",
+        "text": "Enumerar recursivamente todo el disco y quedarse con el primero."
+      },
+      {
+        "id": "opt_3",
+        "text": "Enumerar los elementos directos de la carpeta y filtrar por la extensión .csv."
+      },
+      {
+        "id": "opt_4",
+        "text": "Recorrer toda la unidad de disco para no perder ningún archivo .csv."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La enumeración directa más un filtro por extensión expresa exactamente el alcance pedido.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0029",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-DIRECTORY-ENUMERATION",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la forma más segura de obtener la lista de archivos de una carpeta antes de procesarlos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Enumerar la carpeta, quedarse con los que sean archivos y guardar la lista antes de operar."
+      },
+      {
+        "id": "opt_2",
+        "text": "Procesar cada elemento a medida que se enumera, sin guardar nada."
+      },
+      {
+        "id": "opt_3",
+        "text": "Modificar los archivos durante la propia enumeración."
+      },
+      {
+        "id": "opt_4",
+        "text": "Borrar la carpeta para enumerar solo lo nuevo."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Obtener primero la lista y filtrar por tipo separa la detección de la acción y evita sorpresas durante el recorrido.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0030",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-RECURSION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace rglob('*.txt') en Python o Get-ChildItem -Recurse -Filter *.txt en PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Renombrar los .txt para quitarles la extensión."
+      },
+      {
+        "id": "opt_2",
+        "text": "Leer el contenido de todos los .txt del disco."
+      },
+      {
+        "id": "opt_3",
+        "text": "Crear archivos .txt vacíos en cada carpeta."
+      },
+      {
+        "id": "opt_4",
+        "text": "Buscar archivos .txt recorriendo también los subdirectorios, acotados por el patrón."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Ambas formas recorren subdirectorios aplicando un filtro; es un recorrido recursivo controlado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0031",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-RECURSION",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "En un recorrido con rglob o -Recurse, ¿qué efecto tiene el filtro de patrón?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Limita los resultados a las rutas que coinciden con el patrón, aunque visite los subdirectorios."
+      },
+      {
+        "id": "opt_2",
+        "text": "Impide entrar en los subdirectorios, igual que la enumeración directa."
+      },
+      {
+        "id": "opt_3",
+        "text": "Obliga a leer el contenido de cada archivo encontrado."
+      },
+      {
+        "id": "opt_4",
+        "text": "Renombra los archivos que no coinciden."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El filtro acota lo que se devuelve; el recorrido sigue descendiendo por los subdirectorios.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0032",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-RECURSION",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué diferencia principal hay entre enumerar solo el nivel actual y recorrer recursivamente?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "No hay ninguna diferencia práctica entre ambas."
+      },
+      {
+        "id": "opt_2",
+        "text": "La enumeración directa lee el contenido de los archivos y la recursión no."
+      },
+      {
+        "id": "opt_3",
+        "text": "La recursión siempre es de solo lectura y la enumeración no."
+      },
+      {
+        "id": "opt_4",
+        "text": "La recursión incluye los elementos de los subdirectorios; la enumeración directa no."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Recorrer en profundidad amplía el conjunto a los subdirectorios; conviene limitarlo con filtros para no salir del alcance.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0033",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-FILE-METADATA",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál de estos es un metadato típico de un archivo?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El tamaño en bytes y la fecha de modificación."
+      },
+      {
+        "id": "opt_2",
+        "text": "El contenido completo del archivo como texto."
+      },
+      {
+        "id": "opt_3",
+        "text": "El resultado de ejecutar el archivo."
+      },
+      {
+        "id": "opt_4",
+        "text": "El nombre del usuario que escribió el script."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Tamaño, fechas, nombre, extensión y atributos son metadatos; el contenido no es un metadato.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0034",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-FILE-METADATA",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Se quiere clasificar archivos por extensión y fecha. ¿Qué información conviene obtener de cada archivo?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El nombre con su extensión y la fecha de modificación, sin abrir el contenido."
+      },
+      {
+        "id": "opt_2",
+        "text": "El contenido binario completo de cada archivo."
+      },
+      {
+        "id": "opt_3",
+        "text": "El resultado de ejecutar cada archivo."
+      },
+      {
+        "id": "opt_4",
+        "text": "La fecha de creación del script en Python."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Para clasificar por extensión y fecha bastan los metadatos: nombre, extensión y fecha, sin leer el contenido.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0035",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-FILE-METADATA",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un inventario toma el tamaño con stat().st_size y obtiene 0 para todos los archivos. ¿Cuál es la causa más probable?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Los archivos son demasiado pequeños para medirse."
+      },
+      {
+        "id": "opt_2",
+        "text": "Se está midiendo un elemento equivocado, por ejemplo la carpeta en lugar del archivo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Falta abrir los archivos en modo binario."
+      },
+      {
+        "id": "opt_4",
+        "text": "La codificación del terminal es incorrecta."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Un tamaño 0 uniforme sugiere que se mide otro elemento (por ejemplo la carpeta) o que la ruta no apunta al archivo esperado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0036",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-DIRECTORY-CREATION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué aporta exist_ok=True en Path.mkdir() de Python o -Force en New-Item de PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Convertir la carpeta en un archivo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Borrar la carpeta antes de crearla."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cambiar la codificación de la carpeta."
+      },
+      {
+        "id": "opt_4",
+        "text": "Permitir que la operación se repita sin error cuando la carpeta ya existe."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "exist_ok=True (y -Force donde aplica) tolera que el destino ya exista, apoyando la idempotencia de la creación.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0037",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-DIRECTORY-CREATION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script crea la carpeta de salida en cada ejecución. ¿Qué hay que tener en cuenta para que no falle la segunda vez?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Borrar la carpeta y volver a crearla siempre."
+      },
+      {
+        "id": "opt_2",
+        "text": "Comprobar si la carpeta ya existe antes de crearla o usar una opción que tolere que exista."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cambiar el nombre de la carpeta en cada ejecución."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ejecutar el script solo una vez en la vida del sistema."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "La creación de directorios debe ser segura ante repeticiones: comprobar antes o tolerar que ya exista.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0038",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-DIRECTORY-CREATION",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la forma más segura de asegurar que existe una carpeta de salida antes de escribir en ella?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Borrar la carpeta y crearla vacía cada vez para evitar restos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Comprobar si existe y crearla solo si falta, con una opción que tolere repeticiones."
+      },
+      {
+        "id": "opt_3",
+        "text": "Escribir sin comprobar y confiar en que ya existe."
+      },
+      {
+        "id": "opt_4",
+        "text": "Crear la carpeta en la raíz del disco con permisos abiertos."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Crear solo cuando falta y tolerar repeticiones mantiene la operación segura e idempotente.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0039",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-FILE-METADATA",
+    "secondaryConceptIds": [
+      "B2-U02-DIRECTORY-ENUMERATION"
+    ],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Al inventariar una carpeta se combinó la enumeración con la lectura de metadatos. ¿Qué precaución evita clasificar mal los elementos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Suponer que todo lo enumerado es un archivo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Leer el tamaño de las carpetas como si fueran archivos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Comprobar, antes de leer metadatos, si cada entrada es un archivo y descartar las subcarpetas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ordenar las entradas antes de leer su contenido binario."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La enumeración mezcla archivos y subcarpetas; comprobar el tipo antes de leer metadatos evita clasificar mal.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0040",
+    "blockId": "B2",
+    "unitId": "U02",
+    "primaryConceptId": "B2-U02-RECURSION",
+    "secondaryConceptIds": [
+      "B2-U02-DIRECTORY-CREATION",
+      "B2-U02-PATH-EXISTENCE-TYPE"
+    ],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un recorrido recursivo intenta crear una subcarpeta por cada subdirectorio encontrado y falla en la segunda ejecución. ¿Qué error de diseño es más probable?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Usar un patrón que limita los resultados."
+      },
+      {
+        "id": "opt_2",
+        "text": "Crear carpetas durante la inspección sin comprobar antes si ya existen, mezclando inspección y modificación."
+      },
+      {
+        "id": "opt_3",
+        "text": "Comprobar el tipo de cada ruta antes de operar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Guardar la lista de rutas antes de procesarlas."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Un recorrido de inspección no debería crear carpetas; además la creación debe tolerar repeticiones si finalmente se hace.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

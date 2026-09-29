@@ -4,6 +4,7 @@ out/
 build/
 coverage/
 !content/block-1/coverage/
+!content/block-2/coverage/
 .env
 .env.*
 !.env.example

@@ -44,11 +44,14 @@ test("study progress has the three approved unit states", async () => {
 
 test("each unit hands its practice context to the statically exported test setup", async () => {
   const unitPage = await read("app/estudiar/b1/[unitId]/page.tsx");
+  const reader = await read("components/study/unit-study-reader.tsx");
   const testsPage = await read("app/tests/page.tsx");
   const quizSetup = await read("components/quiz/quiz-setup.tsx");
-  assert.match(unitPage, /\/tests\?unit=/);
+  assert.match(unitPage, /UnitStudyReader/);
+  assert.match(reader, /\/tests\?block=[^`]*unit=/);
   assert.match(testsPage, /QuizSetup/);
   assert.match(quizSetup, /useClientSearchParams/);
   assert.match(quizSetup, /searchParams\.get\("unit"\)/);
   assert.match(quizSetup, /searchParams\.get\("mode"\)/);
+  assert.match(quizSetup, /searchParams\.get\("block"\)/);
 });

@@ -43,6 +43,7 @@ const surface = {
   staticExport: true,
   routes,
   unitRoutes: routes.filter((route) => /^\/estudiar\/b1\/u\d\d$/.test(route)),
+  unitRoutesB2: routes.filter((route) => /^\/estudiar\/b2\/u\d\d$/.test(route)),
   rscPayloads: files.filter((file) => file.endsWith(".txt")).sort(),
 };
 

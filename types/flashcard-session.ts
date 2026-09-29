@@ -1,3 +1,4 @@
+import type { BlockId } from "./block";
 import type { Language } from "./content";
 import type { FlashcardType } from "./flashcard";
 
@@ -34,6 +35,7 @@ export interface FlashcardQueueItem {
 export interface FlashcardSessionConfig {
   sessionId: string;
   seed: number;
+  blockId?: BlockId;
   mode: FlashcardMode;
   requestedSize: FlashcardSessionSize;
   cardIds: string[];

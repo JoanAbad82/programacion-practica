@@ -1,0 +1,206 @@
+[
+  {
+    "blockId": "B2",
+    "unitId": "U01",
+    "title": "Diseñar una automatización antes de programarla",
+    "objective": "Definir una tarea automatizable con alcance, entradas, salidas, precondiciones y efectos controlados antes de escribir código.",
+    "order": 1,
+    "canonicalFile": "canonical/u01.md",
+    "conceptIds": [
+      "B2-U01-AUTOMATION-SCOPE",
+      "B2-U01-INPUT-OUTPUT-CONTRACT",
+      "B2-U01-PRECONDITIONS",
+      "B2-U01-SIDE-EFFECTS",
+      "B2-U01-IDEMPOTENCE",
+      "B2-U01-DRY-RUN"
+    ],
+    "status": "APPROVED_SPEC"
+  },
+  {
+    "blockId": "B2",
+    "unitId": "U02",
+    "title": "Rutas, carpetas y recorrido del sistema de archivos",
+    "objective": "Construir y recorrer rutas de forma robusta, distinguiendo archivos y directorios y obteniendo metadatos útiles.",
+    "order": 2,
+    "canonicalFile": "canonical/u02.md",
+    "conceptIds": [
+      "B2-U02-PATH-COMPOSITION",
+      "B2-U02-PATH-EXISTENCE-TYPE",
+      "B2-U02-DIRECTORY-ENUMERATION",
+      "B2-U02-RECURSION",
+      "B2-U02-FILE-METADATA",
+      "B2-U02-DIRECTORY-CREATION"
+    ],
+    "status": "APPROVED_SPEC"
+  },
+  {
+    "blockId": "B2",
+    "unitId": "U03",
+    "title": "Copiar, mover, renombrar y eliminar con seguridad",
+    "objective": "Aplicar operaciones con efectos reales sobre archivos usando políticas explícitas de colisión, recuperación y validación.",
+    "order": 3,
+    "canonicalFile": "canonical/u03.md",
+    "conceptIds": [
+      "B2-U03-COPY",
+      "B2-U03-MOVE",
+      "B2-U03-RENAME",
+      "B2-U03-DELETE",
+      "B2-U03-COLLISION-POLICY",
+      "B2-U03-BACKUP-ROLLBACK"
+    ],
+    "status": "APPROVED_SPEC"
+  },
+  {
+    "blockId": "B2",
+    "unitId": "U04",
+    "title": "Archivos de texto y codificación",
+    "objective": "Leer y escribir texto de forma predecible, comprendiendo codificación, saltos de línea y modos de apertura.",
+    "order": 4,
+    "canonicalFile": "canonical/u04.md",
+    "conceptIds": [
+      "B2-U04-TEXT-ENCODING",
+      "B2-U04-TEXT-READ",
+      "B2-U04-TEXT-WRITE",
+      "B2-U04-TEXT-APPEND",
+      "B2-U04-LINE-PROCESSING",
+      "B2-U04-BOM-NEWLINES"
+    ],
+    "status": "APPROVED_SPEC"
+  },
+  {
+    "blockId": "B2",
+    "unitId": "U05",
+    "title": "Datos tabulares con CSV",
+    "objective": "Importar, validar, filtrar, transformar y exportar datos tabulares sencillos sin depender de librerías pesadas.",
+    "order": 5,
+    "canonicalFile": "canonical/u05.md",
+    "conceptIds": [
+      "B2-U05-CSV-STRUCTURE",
+      "B2-U05-CSV-PARSE",
+      "B2-U05-CSV-TYPES",
+      "B2-U05-CSV-FILTER",
+      "B2-U05-CSV-TRANSFORM",
+      "B2-U05-CSV-EXPORT"
+    ],
+    "status": "APPROVED_SPEC"
+  },
+  {
+    "blockId": "B2",
+    "unitId": "U06",
+    "title": "Datos estructurados con JSON",
+    "objective": "Trabajar con datos jerárquicos preservando tipos, estructura y validaciones mínimas antes de consumirlos.",
+    "order": 6,
+    "canonicalFile": "canonical/u06.md",
+    "conceptIds": [
+      "B2-U06-JSON-OBJECTS-ARRAYS",
+      "B2-U06-JSON-PARSE",
+      "B2-U06-JSON-SERIALIZE",
+      "B2-U06-NESTED-ACCESS",
+      "B2-U06-JSON-TYPES",
+      "B2-U06-JSON-SHAPE-VALIDATION"
+    ],
+    "status": "APPROVED_SPEC"
+  },
+  {
+    "blockId": "B2",
+    "unitId": "U07",
+    "title": "Búsqueda de patrones y expresiones regulares",
+    "objective": "Utilizar patrones cuando aportan valor real, diferenciando búsqueda literal, captura y sustitución.",
+    "order": 7,
+    "canonicalFile": "canonical/u07.md",
+    "conceptIds": [
+      "B2-U07-LITERAL-MATCH",
+      "B2-U07-REGEX-ANCHORS",
+      "B2-U07-REGEX-CHARACTER-CLASSES",
+      "B2-U07-REGEX-QUANTIFIERS",
+      "B2-U07-CAPTURE-GROUPS",
+      "B2-U07-REGEX-REPLACE"
+    ],
+    "status": "APPROVED_SPEC"
+  },
+  {
+    "blockId": "B2",
+    "unitId": "U08",
+    "title": "Filtrar, transformar, ordenar, agrupar y resumir",
+    "objective": "Construir pipelines de procesamiento que conviertan colecciones de registros en resultados útiles y verificables.",
+    "order": 8,
+    "canonicalFile": "canonical/u08.md",
+    "conceptIds": [
+      "B2-U08-FILTER",
+      "B2-U08-TRANSFORM",
+      "B2-U08-SORT",
+      "B2-U08-GROUP",
+      "B2-U08-DEDUPE",
+      "B2-U08-AGGREGATE"
+    ],
+    "status": "APPROVED_SPEC"
+  },
+  {
+    "blockId": "B2",
+    "unitId": "U09",
+    "title": "Validación, excepciones y códigos de salida",
+    "objective": "Diseñar scripts que detectan fallos previsibles, comunican el error con precisión y terminan en un estado inequívoco.",
+    "order": 9,
+    "canonicalFile": "canonical/u09.md",
+    "conceptIds": [
+      "B2-U09-INPUT-VALIDATION",
+      "B2-U09-TRY-EXCEPT",
+      "B2-U09-TRY-CATCH",
+      "B2-U09-SPECIFIC-ERRORS",
+      "B2-U09-FINALLY-CLEANUP",
+      "B2-U09-EXIT-CODES"
+    ],
+    "status": "APPROVED_SPEC"
+  },
+  {
+    "blockId": "B2",
+    "unitId": "U10",
+    "title": "Scripts reutilizables y parámetros",
+    "objective": "Convertir ejemplos aislados en herramientas reutilizables separando lógica, interfaz de línea de comandos y valores configurables.",
+    "order": 10,
+    "canonicalFile": "canonical/u10.md",
+    "conceptIds": [
+      "B2-U10-ENTRYPOINT",
+      "B2-U10-PARAMETERS",
+      "B2-U10-DEFAULTS",
+      "B2-U10-NAMED-ARGUMENTS",
+      "B2-U10-RETURN-VS-OUTPUT",
+      "B2-U10-MODULE-REUSE"
+    ],
+    "status": "APPROVED_SPEC"
+  },
+  {
+    "blockId": "B2",
+    "unitId": "U11",
+    "title": "Automatizaciones fiables: logs, dry-run e idempotencia",
+    "objective": "Implementar observabilidad, simulación y control de repetición para que una automatización sea segura y diagnóstica.",
+    "order": 11,
+    "canonicalFile": "canonical/u11.md",
+    "conceptIds": [
+      "B2-U11-LOGGING",
+      "B2-U11-TIMESTAMPS",
+      "B2-U11-LOG-LEVELS",
+      "B2-U11-DRY-RUN-IMPLEMENTATION",
+      "B2-U11-IDEMPOTENT-CHANGES",
+      "B2-U11-EXECUTION-SUMMARY"
+    ],
+    "status": "APPROVED_SPEC"
+  },
+  {
+    "blockId": "B2",
+    "unitId": "U12",
+    "title": "Proyecto integrado: auditor y organizador seguro de archivos",
+    "objective": "Integrar el bloque completo en una herramienta reproducible que inspecciona, planifica, aplica cambios seguros y verifica resultados.",
+    "order": 12,
+    "canonicalFile": "canonical/u12.md",
+    "conceptIds": [
+      "B2-U12-PIPELINE-STAGES",
+      "B2-U12-RECORD-SCHEMA",
+      "B2-U12-PLAN-APPLY",
+      "B2-U12-CHANGE-JOURNAL",
+      "B2-U12-POSTCONDITION-VERIFY",
+      "B2-U12-REPRODUCIBLE-REPORT"
+    ],
+    "status": "APPROVED_SPEC"
+  }
+]

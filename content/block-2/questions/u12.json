@@ -1,0 +1,707 @@
+[
+  {
+    "id": "B2-Q0221",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-PIPELINE-STAGES",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué etapas separa un pipeline de auditoría de archivos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Copiar, pintar y renombrar."
+      },
+      {
+        "id": "opt_2",
+        "text": "Escribir, borrar y comprimir."
+      },
+      {
+        "id": "opt_3",
+        "text": "Descubrir, validar, transformar, planificar, aplicar y verificar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Cargar, dibujar y subir a la nube."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El pipeline separa etapas con responsabilidad clara, desde el descubrimiento hasta la verificación.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0222",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-PIPELINE-STAGES",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Por qué conviene separar el descubrimiento y la transformación en etapas distintas?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque así el programa ocupa menos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque cada etapa tiene una responsabilidad clara y es más fácil de probar y razonar."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque evita tener que escribir parámetros."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque elimina la necesidad de verificar."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Separar responsabilidades facilita probar, razonar y mantener cada etapa.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0223",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-PIPELINE-STAGES",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "¿Qué orden de etapas evita modificar el sistema antes de haber decidido qué hacer?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Aplicar y descubrir a la vez."
+      },
+      {
+        "id": "opt_2",
+        "text": "Aplicar antes de descubrir."
+      },
+      {
+        "id": "opt_3",
+        "text": "Verificar antes de descubrir."
+      },
+      {
+        "id": "opt_4",
+        "text": "Descubrir y validar antes de planificar y aplicar."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Descubrir y validar antes de planificar y aplicar evita cambios sin decisión previa.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0224",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-RECORD-SCHEMA",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es el esquema de registro interno de una herramienta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El color de los mensajes del log."
+      },
+      {
+        "id": "opt_2",
+        "text": "El orden en que se ejecutan las funciones."
+      },
+      {
+        "id": "opt_3",
+        "text": "El nombre del archivo de salida."
+      },
+      {
+        "id": "opt_4",
+        "text": "La forma estable y documentada de los registros que circulan entre etapas."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El esquema define de forma estable qué campos tiene cada registro interno.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0225",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-RECORD-SCHEMA",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Por qué conviene mantener estable el esquema de los registros internos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque elimina los errores de codificación."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque así los archivos ocupan menos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque evita tener que validar la entrada."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque las etapas dependen de esos campos y un cambio rompería el flujo."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Un esquema estable permite que las etapas intercambien datos sin sorpresas.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0226",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-RECORD-SCHEMA",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Si una etapa añade un campo 'accion' al registro y otra espera 'operacion', ¿qué problema aparece?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Los mensajes de log cambian de color."
+      },
+      {
+        "id": "opt_2",
+        "text": "El archivo se comprime automáticamente."
+      },
+      {
+        "id": "opt_3",
+        "text": "El programa se ejecuta más rápido."
+      },
+      {
+        "id": "opt_4",
+        "text": "Los registros no cumplen el mismo esquema y la siguiente etapa no encuentra el campo."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Nombres de campo distintos rompen el esquema compartido y la etapa siguiente falla.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0227",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-PLAN-APPLY",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué significa separar el plan de la aplicación en una herramienta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Que la decisión de los cambios y su ejecución son fases distintas."
+      },
+      {
+        "id": "opt_2",
+        "text": "Que el plan se ejecuta y la aplicación se guarda."
+      },
+      {
+        "id": "opt_3",
+        "text": "Que nunca se aplican cambios."
+      },
+      {
+        "id": "opt_4",
+        "text": "Que se aplica primero y se planifica después."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "El plan decide qué hacer; la aplicación lo ejecuta. Separarlos permite revisar antes.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0228",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-PLAN-APPLY",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Por qué es útil aplicar solo las acciones ya aprobadas en el plan?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque evita que la herramienta haga cambios que el usuario no ha revisado."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque acelera la copia de archivos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque cambia la codificación de salida."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque elimina la necesidad de un diario."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Aplicar solo lo planificado mantiene la coherencia entre lo revisado y lo ejecutado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0229",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-PLAN-APPLY",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Una herramienta aplica cambios que no aparecían en el plan revisado. ¿Qué principio se rompe?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El uso de marcas de tiempo."
+      },
+      {
+        "id": "opt_2",
+        "text": "La separación entre plan y aplicación: debería aplicarse solo lo planificado."
+      },
+      {
+        "id": "opt_3",
+        "text": "La codificación de los archivos."
+      },
+      {
+        "id": "opt_4",
+        "text": "El esquema de registro, que prohíbe nuevos campos."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Aplicar cambios no planificados rompe la separación plan/aplicación y la confianza en el plan.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0230",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-CHANGE-JOURNAL",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Para qué sirve un diario de cambios (change journal)?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para ordenar los archivos por nombre."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para comprimir los archivos procesados."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para registrar cada modificación y poder auditarla o revertirla."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para eliminar los duplicados."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El diario registra origen, destino y resultado de cada cambio para auditoría o recuperación.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0231",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-CHANGE-JOURNAL",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué debería incluir una entrada del diario de cambios?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Qué elemento se cambió, de dónde a dónde y con qué resultado."
+      },
+      {
+        "id": "opt_2",
+        "text": "Solo el nombre del usuario."
+      },
+      {
+        "id": "opt_3",
+        "text": "El color del terminal."
+      },
+      {
+        "id": "opt_4",
+        "text": "El número total de archivos del disco."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Una entrada útil incluye el elemento afectado, el origen, el destino y el resultado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0232",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-CHANGE-JOURNAL",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la mejor práctica respecto al diario de cambios?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Escribir el diario una sola vez al final sin detalle."
+      },
+      {
+        "id": "opt_2",
+        "text": "Escribir la entrada de cada acción de forma que la operación pueda auditarse o revertirse."
+      },
+      {
+        "id": "opt_3",
+        "text": "No escribir diario para ahorrar espacio."
+      },
+      {
+        "id": "opt_4",
+        "text": "Guardar el diario en el mismo archivo que se modifica."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Registrar cada acción con suficiente detalle permite auditar y, si es necesario, revertir.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0233",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-POSTCONDITION-VERIFY",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es verificar las postcondiciones tras aplicar cambios?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comprobar que el estado final coincide con lo planificado."
+      },
+      {
+        "id": "opt_2",
+        "text": "Comprobar la velocidad de la ejecución."
+      },
+      {
+        "id": "opt_3",
+        "text": "Comprobar el color de los mensajes."
+      },
+      {
+        "id": "opt_4",
+        "text": "Comprobar que el script tiene menos de mil líneas."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Las postcondiciones comprueban que el resultado real coincide con el plan.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0234",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-POSTCONDITION-VERIFY",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Tras mover archivos, ¿qué comprobación es una postcondición adecuada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Que los archivos estén en su destino y ya no en el origen, según lo previsto."
+      },
+      {
+        "id": "opt_2",
+        "text": "Que el disco tenga más espacio libre."
+      },
+      {
+        "id": "opt_3",
+        "text": "Que el log tenga el color correcto."
+      },
+      {
+        "id": "opt_4",
+        "text": "Que el script se ejecute más rápido."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Una postcondición verifica que el cambio esperado se ha producido realmente.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0235",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-POSTCONDITION-VERIFY",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "El resumen dice que se movieron 10 archivos, pero la verificación encuentra solo 8 en el destino. ¿Qué indica?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Que el esquema de registro cambió."
+      },
+      {
+        "id": "opt_2",
+        "text": "Que el resumen es siempre correcto."
+      },
+      {
+        "id": "opt_3",
+        "text": "Que faltan marcas de tiempo en el log."
+      },
+      {
+        "id": "opt_4",
+        "text": "Que las postcondiciones no se cumplen y hay que investigar el desajuste."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Un desajuste entre el plan o el resumen y el estado final señala un problema que la verificación debe detectar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0236",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-REPRODUCIBLE-REPORT",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué caracteriza a un informe reproducible?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Depende de la hora del sistema."
+      },
+      {
+        "id": "opt_2",
+        "text": "Cambia de formato en cada ejecución."
+      },
+      {
+        "id": "opt_3",
+        "text": "Es estable y comparable entre ejecuciones."
+      },
+      {
+        "id": "opt_4",
+        "text": "Oculta los recuentos."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Un informe reproducible tiene un formato estable y sus resultados son comparables entre ejecuciones.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0237",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-REPRODUCIBLE-REPORT",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Por qué conviene que los informes CSV/JSON sean comparables entre ejecuciones?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para eliminar los duplicados."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para reducir el tamaño del informe."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para poder contrastar resultados y detectar cambios o anomalías."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para cambiar la codificación del informe."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Informes comparables permiten contrastar ejecuciones y detectar diferencias.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0238",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-REPRODUCIBLE-REPORT",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "¿Cuál es la mejor forma de generar un informe reproducible?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Con columnas en orden aleatorio en cada ejecución."
+      },
+      {
+        "id": "opt_2",
+        "text": "Con columnas y orden fijos y una codificación declarada, de modo que dos ejecuciones sean comparables."
+      },
+      {
+        "id": "opt_3",
+        "text": "Sin encabezados para ahorrar espacio."
+      },
+      {
+        "id": "opt_4",
+        "text": "Incluyendo la hora exacta como única columna."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Columnas y orden fijos con codificación declarada hacen el informe estable y comparable.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0239",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-PIPELINE-STAGES",
+    "secondaryConceptIds": [
+      "B2-U12-PLAN-APPLY"
+    ],
+    "type": "D",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué relación hay entre las etapas del pipeline y el par plan/aplicación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Planificar y aplicar son la misma etapa siempre."
+      },
+      {
+        "id": "opt_2",
+        "text": "El pipeline solo tiene la etapa de aplicar."
+      },
+      {
+        "id": "opt_3",
+        "text": "El pipeline incluye explícitamente una etapa de planificación y otra de aplicación, separadas."
+      },
+      {
+        "id": "opt_4",
+        "text": "El pipeline no incluye verificación."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El pipeline separa planificar y aplicar como etapas distintas, además de descubrir, validar y verificar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0240",
+    "blockId": "B2",
+    "unitId": "U12",
+    "primaryConceptId": "B2-U12-POSTCONDITION-VERIFY",
+    "secondaryConceptIds": [
+      "B2-U12-CHANGE-JOURNAL",
+      "B2-U12-REPRODUCIBLE-REPORT"
+    ],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere cerrar el proyecto con una verificación sólida. ¿Qué combinación lo consigue?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Confiar en el resumen sin comprobar el estado real."
+      },
+      {
+        "id": "opt_2",
+        "text": "Registrar cada cambio en el diario y comparar el estado final con el plan mediante postcondiciones."
+      },
+      {
+        "id": "opt_3",
+        "text": "Eliminar el diario para ahorrar espacio."
+      },
+      {
+        "id": "opt_4",
+        "text": "Cambiar el formato del informe en cada ejecución."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Diario más verificación de postcondiciones permiten comprobar que el estado final coincide con el plan.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

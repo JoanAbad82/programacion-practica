@@ -1,4 +1,5 @@
 import type { Flashcard } from "@/types/flashcard";
+import type { BlockId } from "@/types/block";
 import type {
   FlashcardDirection,
   FlashcardFilters,
@@ -91,6 +92,7 @@ export function selectFlashcardIds({
   history,
   size,
   seed,
+  blockId = "B1",
   masteryByConcept = {},
 }: {
   cards: FlashcardMeta[];
@@ -99,6 +101,7 @@ export function selectFlashcardIds({
   history: FlashcardHistorySnapshot;
   size: number;
   seed: number;
+  blockId?: BlockId;
   masteryByConcept?: Record<string, number>;
 }): string[] {
   const pool = cards.filter((card) => matchesFlashcardFilters(card, filters));
@@ -116,7 +119,7 @@ export function selectFlashcardIds({
 
   return deterministicFlashcardShuffle(
     pool,
-    flashcardHashSeed(`${seed}:flashcards:mixed`),
+    flashcardHashSeed(`${seed}:flashcards:mixed:${blockId}`),
   )
     .slice(0, size)
     .map((card) => card.id);

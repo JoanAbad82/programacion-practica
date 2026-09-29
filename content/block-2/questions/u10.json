@@ -1,0 +1,707 @@
+[
+  {
+    "id": "B2-Q0181",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-ENTRYPOINT",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON",
+    "prompt": "¿Para qué sirve la comprobación if __name__ == '__main__': en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para ejecutar cierto código solo cuando el archivo se lanza directamente, no cuando se importa."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para comprobar que el archivo no tiene errores de sintaxis."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para convertir el archivo en un ejecutable."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para declarar las variables globales."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Esta comprobación separa las definiciones reutilizables del código que solo debe correr en la ejecución directa.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0182",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-ENTRYPOINT",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Qué ocurre si un script ejecuta trabajo al importarse, sin protegerlo con __name__?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El trabajo se realiza también cuando otro módulo lo importa, con efectos no deseados."
+      },
+      {
+        "id": "opt_2",
+        "text": "Nada, porque al importar nunca se ejecuta código."
+      },
+      {
+        "id": "opt_3",
+        "text": "El módulo se convierte en un ejecutable."
+      },
+      {
+        "id": "opt_4",
+        "text": "Se pierden las funciones definidas."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Sin la protección, importar el módulo dispara el código de nivel superior y sus efectos secundarios.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0183",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-ENTRYPOINT",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "¿Qué ventaja aporta separar la lógica en funciones y un punto de entrada protegido?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Elimina la necesidad de parámetros."
+      },
+      {
+        "id": "opt_2",
+        "text": "Hace que el script se ejecute más rápido siempre."
+      },
+      {
+        "id": "opt_3",
+        "text": "Evita tener que validar la entrada."
+      },
+      {
+        "id": "opt_4",
+        "text": "Permite reutilizar y probar la lógica sin que se ejecute automáticamente al importarla."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Separar lógica y punto de entrada facilita el reúso y las pruebas.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0184",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-PARAMETERS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es un parámetro de un script?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una variable interna que nunca cambia."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un valor que se pasa al script desde fuera, como una ruta o una opción."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un comentario que explica el código."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un archivo temporal del sistema."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Los parámetros permiten configurar el script sin editar su código.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0185",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-PARAMETERS",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere que una herramienta reciba la carpeta de entrada y el archivo de salida sin editar el código. ¿Qué se necesita?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Duplicar el script para cada carpeta."
+      },
+      {
+        "id": "opt_2",
+        "text": "Fijar las rutas en constantes dentro del script."
+      },
+      {
+        "id": "opt_3",
+        "text": "Definir parámetros para la ruta de entrada y la de salida."
+      },
+      {
+        "id": "opt_4",
+        "text": "Convertir las rutas a números."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Parametrizar las rutas convierte el ejemplo en una herramienta reutilizable.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0186",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-PARAMETERS",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la forma más reutilizable de construir una herramienta de procesamiento?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Escribir una copia del script por cada tarea."
+      },
+      {
+        "id": "opt_2",
+        "text": "Recibir las rutas y opciones como parámetros en lugar de fijarlas en el código."
+      },
+      {
+        "id": "opt_3",
+        "text": "Pedir al usuario que edite las rutas dentro del código."
+      },
+      {
+        "id": "opt_4",
+        "text": "Asumir una única carpeta fija para todos los casos."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Parametrizar entradas y opciones evita duplicar código y facilita el reúso.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0187",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-DEFAULTS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es un valor por defecto de un parámetro?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El primer parámetro de la lista, por orden."
+      },
+      {
+        "id": "opt_2",
+        "text": "El valor máximo que admite el parámetro."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un valor que nunca se puede cambiar."
+      },
+      {
+        "id": "opt_4",
+        "text": "El valor que se aplica cuando no se proporciona ese parámetro."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El valor por defecto se usa si el usuario no especifica el parámetro, siempre que sea seguro.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0188",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-DEFAULTS",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se define un parámetro de formato con valor por defecto 'csv'. ¿Qué implica?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El parámetro no admite ningún valor."
+      },
+      {
+        "id": "opt_2",
+        "text": "El formato siempre será csv aunque se indique otro."
+      },
+      {
+        "id": "opt_3",
+        "text": "Si no se indica formato, la herramienta usará csv."
+      },
+      {
+        "id": "opt_4",
+        "text": "El valor por defecto tiene prioridad sobre lo que pase el usuario."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El valor por defecto solo se aplica cuando no se proporciona el parámetro.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0189",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-DEFAULTS",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un valor por defecto peligroso sobrescribe siempre un archivo de salida existente. ¿Qué conviene cambiar?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Hacer que el valor por defecto sea la ruta de entrada."
+      },
+      {
+        "id": "opt_2",
+        "text": "Quitar todos los parámetros del script."
+      },
+      {
+        "id": "opt_3",
+        "text": "Elegir un valor por defecto seguro, por ejemplo no sobrescribir salvo que se indique."
+      },
+      {
+        "id": "opt_4",
+        "text": "Convertir el formato a número."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Los valores por defecto deben ser seguros; no deben provocar pérdida de datos sin que el usuario lo pida.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0190",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-NAMED-ARGUMENTS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué son los argumentos con nombre en una invocación?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Mensajes de error del script."
+      },
+      {
+        "id": "opt_2",
+        "text": "Valores pasados en un orden fijo sin nombre."
+      },
+      {
+        "id": "opt_3",
+        "text": "Archivos que contienen la configuración."
+      },
+      {
+        "id": "opt_4",
+        "text": "Valores asociados explícitamente con el nombre de su parámetro."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Nombrar los argumentos hace la invocación legible y evita depender del orden.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0191",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-NAMED-ARGUMENTS",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué diferencia hay entre pasar rutas en orden y usar argumentos con nombre?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Con nombre no se pueden pasar rutas."
+      },
+      {
+        "id": "opt_2",
+        "text": "En orden el script no se ejecuta."
+      },
+      {
+        "id": "opt_3",
+        "text": "Con nombre queda explícito qué valor corresponde a cada parámetro, sin depender del orden."
+      },
+      {
+        "id": "opt_4",
+        "text": "No hay ninguna diferencia."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Los argumentos con nombre asocian valor y parámetro de forma explícita, más legible y menos propensa a errores.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0192",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-NAMED-ARGUMENTS",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "¿Para qué sirve ValidateSet en un parámetro de PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para comprimir la salida del script."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para restringir el parámetro a un conjunto de valores permitidos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para ordenar los parámetros por nombre."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para convertir los valores a JSON."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "ValidateSet valida que el valor pertenezca a la lista permitida, como 'csv' o 'json'.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0193",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-RETURN-VS-OUTPUT",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué diferencia hay entre devolver un valor y mostrarlo por pantalla?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Devolverlo siempre imprime además en pantalla."
+      },
+      {
+        "id": "opt_2",
+        "text": "Son exactamente lo mismo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Devolverlo entrega el dato a quien llama; mostrarlo solo lo imprime para el usuario."
+      },
+      {
+        "id": "opt_4",
+        "text": "Mostrarlo permite reutilizar el dato en otro programa."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Devolver datos permite reutilizarlos; imprimirlos solo informa al usuario.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0194",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-RETURN-VS-OUTPUT",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Se quiere reutilizar el resultado de una función en otra parte del programa. ¿Qué conviene?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Que la función devuelva el valor con return."
+      },
+      {
+        "id": "opt_2",
+        "text": "Que la función lo imprima con print."
+      },
+      {
+        "id": "opt_3",
+        "text": "Que la función lo escriba en un archivo temporal."
+      },
+      {
+        "id": "opt_4",
+        "text": "Que la función lo muestre en un cuadro de diálogo."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "return devuelve el valor para poder reutilizarlo; print solo lo muestra.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0195",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-RETURN-VS-OUTPUT",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Una función mezcla print con return y quien la llama no obtiene el dato esperado. ¿Cuál es el problema?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Confunde la salida mostrada al usuario con el valor devuelto a quien llama."
+      },
+      {
+        "id": "opt_2",
+        "text": "Usa demasiados parámetros."
+      },
+      {
+        "id": "opt_3",
+        "text": "No declara la codificación del archivo."
+      },
+      {
+        "id": "opt_4",
+        "text": "No emplea recursión."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Separar lo que se muestra de lo que se devuelve evita que el llamador reciba nada útil.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0196",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-MODULE-REUSE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué ventaja aporta extraer funcionalidad a funciones o módulos reutilizables?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Evitar la duplicación y facilitar las pruebas y el mantenimiento."
+      },
+      {
+        "id": "opt_2",
+        "text": "Aumentar siempre el tamaño del código."
+      },
+      {
+        "id": "opt_3",
+        "text": "Impedir que el script se ejecute."
+      },
+      {
+        "id": "opt_4",
+        "text": "Eliminar la necesidad de validar la entrada."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Reutilizar funciones reduce duplicación y hace el código más fácil de probar y mantener.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0197",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-MODULE-REUSE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Dos scripts contienen la misma lógica de lectura de CSV copiada y pegada. ¿Qué conviene hacer?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Mantener las dos copias y actualizarlas por separado."
+      },
+      {
+        "id": "opt_2",
+        "text": "Extraer esa lógica a una función o módulo compartido."
+      },
+      {
+        "id": "opt_3",
+        "text": "Eliminar uno de los scripts."
+      },
+      {
+        "id": "opt_4",
+        "text": "Convertir las copias a formatos distintos."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Extraer la lógica común a una función o módulo evita divergencias y duplicación.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0198",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-MODULE-REUSE",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "¿Cuál es la mejor forma de reutilizar la lógica de una herramienta en varias tareas?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Convertir la lógica en comentarios."
+      },
+      {
+        "id": "opt_2",
+        "text": "Copiar el archivo completo para cada tarea."
+      },
+      {
+        "id": "opt_3",
+        "text": "Duplicar el código dentro del mismo archivo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Separarla en funciones o un módulo y llamarla desde cada tarea."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Separar la lógica en funciones o módulos permite reutilizarla sin duplicar el código.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0199",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-PARAMETERS",
+    "secondaryConceptIds": [
+      "B2-U10-DEFAULTS"
+    ],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué relación hay entre parámetros y valores por defecto en una herramienta reutilizable?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ambos conceptos son excluyentes."
+      },
+      {
+        "id": "opt_2",
+        "text": "Los valores por defecto impiden usar parámetros."
+      },
+      {
+        "id": "opt_3",
+        "text": "Los parámetros solo funcionan si no hay valores por defecto."
+      },
+      {
+        "id": "opt_4",
+        "text": "Los parámetros permiten configurarla; los valores por defecto cubren los casos en que no se indican."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Los parámetros configuran el script y los valores por defecto aportan un comportamiento seguro cuando se omiten.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0200",
+    "blockId": "B2",
+    "unitId": "U10",
+    "primaryConceptId": "B2-U10-DEFAULTS",
+    "secondaryConceptIds": [
+      "B2-U10-NAMED-ARGUMENTS",
+      "B2-U10-PARAMETERS"
+    ],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script asume la carpeta actual cuando no se indica la entrada y da resultados distintos según dónde se ejecute. ¿Qué falla?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El uso de argumentos con nombre."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un valor por defecto poco claro; la entrada debería ser un parámetro explícito con un valor por defecto predecible o exigirse."
+      },
+      {
+        "id": "opt_3",
+        "text": "El bloque finally."
+      },
+      {
+        "id": "opt_4",
+        "text": "La codificación de los archivos."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Un valor por defecto basado en el contexto de ejecución produce resultados impredecibles; conviene parametrizarlo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

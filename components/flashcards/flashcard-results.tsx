@@ -28,6 +28,7 @@ export function FlashcardResults({ sessionId }: { sessionId: string }) {
   const know = session.attempts.filter(
     (attempt) => attempt.rating === "KNOW",
   ).length;
+  const blockId = session.blockId ?? "B1";
 
   const finalRatingByCard = new Map<string, string>();
 
@@ -73,7 +74,7 @@ export function FlashcardResults({ sessionId }: { sessionId: string }) {
         <Link className="button primary" href="/tarjetas">
           Nueva sesión
         </Link>
-        <Link className="button" href="/tarjetas?mode=adaptive">
+        <Link className="button" href={`/tarjetas?mode=adaptive&block=${blockId}`}>
           Repaso adaptativo
         </Link>
       </div>

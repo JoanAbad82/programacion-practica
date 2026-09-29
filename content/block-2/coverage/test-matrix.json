@@ -1,0 +1,1350 @@
+{
+  "version": "B2_TEST_MATRIX_V1.0",
+  "questions": 240,
+  "global": {
+    "types": {
+      "A": 72,
+      "B": 54,
+      "C": 27,
+      "D": 30,
+      "E": 34,
+      "F": 23
+    },
+    "difficulty": {
+      "1": 60,
+      "2": 108,
+      "3": 72
+    },
+    "answerPositions": {
+      "opt_1": 60,
+      "opt_2": 60,
+      "opt_3": 60,
+      "opt_4": 60
+    },
+    "languages": {
+      "COMMON": 70,
+      "POWERSHELL": 5,
+      "PYTHON": 19,
+      "PYTHON_POWERSHELL": 146
+    }
+  },
+  "units": {
+    "U01": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 5,
+        "C": 1,
+        "D": 3,
+        "E": 3,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "COMMON": 16,
+        "PYTHON": 1,
+        "PYTHON_POWERSHELL": 3
+      }
+    },
+    "U02": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 4,
+        "C": 2,
+        "D": 3,
+        "E": 3,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "COMMON": 1,
+        "PYTHON": 2,
+        "PYTHON_POWERSHELL": 17
+      }
+    },
+    "U03": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 4,
+        "C": 2,
+        "D": 3,
+        "E": 2,
+        "F": 3
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "COMMON": 3,
+        "PYTHON": 1,
+        "PYTHON_POWERSHELL": 16
+      }
+    },
+    "U04": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 4,
+        "C": 2,
+        "D": 3,
+        "E": 3,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "COMMON": 4,
+        "PYTHON": 4,
+        "PYTHON_POWERSHELL": 12
+      }
+    },
+    "U05": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 5,
+        "C": 2,
+        "D": 2,
+        "E": 3,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "COMMON": 3,
+        "PYTHON_POWERSHELL": 17
+      }
+    },
+    "U06": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 4,
+        "C": 3,
+        "D": 3,
+        "E": 2,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "COMMON": 6,
+        "POWERSHELL": 1,
+        "PYTHON": 1,
+        "PYTHON_POWERSHELL": 12
+      }
+    },
+    "U07": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 4,
+        "C": 3,
+        "D": 3,
+        "E": 3,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "COMMON": 11,
+        "PYTHON": 1,
+        "PYTHON_POWERSHELL": 8
+      }
+    },
+    "U08": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 3,
+        "C": 6,
+        "D": 2,
+        "E": 2,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "PYTHON_POWERSHELL": 20
+      }
+    },
+    "U09": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 5,
+        "C": 1,
+        "D": 2,
+        "E": 4,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "COMMON": 6,
+        "POWERSHELL": 3,
+        "PYTHON": 5,
+        "PYTHON_POWERSHELL": 6
+      }
+    },
+    "U10": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 4,
+        "C": 3,
+        "D": 2,
+        "E": 3,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "COMMON": 3,
+        "POWERSHELL": 1,
+        "PYTHON": 4,
+        "PYTHON_POWERSHELL": 12
+      }
+    },
+    "U11": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 6,
+        "C": 1,
+        "D": 2,
+        "E": 3,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "COMMON": 5,
+        "PYTHON_POWERSHELL": 15
+      }
+    },
+    "U12": {
+      "count": 20,
+      "types": {
+        "A": 6,
+        "B": 6,
+        "C": 1,
+        "D": 2,
+        "E": 3,
+        "F": 2
+      },
+      "difficulty": {
+        "1": 5,
+        "2": 9,
+        "3": 6
+      },
+      "answerPositions": {
+        "opt_1": 5,
+        "opt_2": 5,
+        "opt_3": 5,
+        "opt_4": 5
+      },
+      "languages": {
+        "COMMON": 12,
+        "PYTHON_POWERSHELL": 8
+      }
+    }
+  },
+  "concepts": {
+    "B2-U01-AUTOMATION-SCOPE": {
+      "unitId": "U01",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U01-INPUT-OUTPUT-CONTRACT": {
+      "unitId": "U01",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U01-PRECONDITIONS": {
+      "unitId": "U01",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U01-SIDE-EFFECTS": {
+      "unitId": "U01",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U01-IDEMPOTENCE": {
+      "unitId": "U01",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 2
+      }
+    },
+    "B2-U01-DRY-RUN": {
+      "unitId": "U01",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B2-U02-PATH-COMPOSITION": {
+      "unitId": "U02",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U02-PATH-EXISTENCE-TYPE": {
+      "unitId": "U02",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U02-DIRECTORY-ENUMERATION": {
+      "unitId": "U02",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U02-RECURSION": {
+      "unitId": "U02",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U02-FILE-METADATA": {
+      "unitId": "U02",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 2
+      }
+    },
+    "B2-U02-DIRECTORY-CREATION": {
+      "unitId": "U02",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U03-COPY": {
+      "unitId": "U03",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U03-MOVE": {
+      "unitId": "U03",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U03-RENAME": {
+      "unitId": "U03",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U03-DELETE": {
+      "unitId": "U03",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U03-COLLISION-POLICY": {
+      "unitId": "U03",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B2-U03-BACKUP-ROLLBACK": {
+      "unitId": "U03",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U04-TEXT-ENCODING": {
+      "unitId": "U04",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U04-TEXT-READ": {
+      "unitId": "U04",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U04-TEXT-WRITE": {
+      "unitId": "U04",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U04-TEXT-APPEND": {
+      "unitId": "U04",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U04-LINE-PROCESSING": {
+      "unitId": "U04",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B2-U04-BOM-NEWLINES": {
+      "unitId": "U04",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U05-CSV-STRUCTURE": {
+      "unitId": "U05",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U05-CSV-PARSE": {
+      "unitId": "U05",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U05-CSV-TYPES": {
+      "unitId": "U05",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U05-CSV-FILTER": {
+      "unitId": "U05",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U05-CSV-TRANSFORM": {
+      "unitId": "U05",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 2
+      }
+    },
+    "B2-U05-CSV-EXPORT": {
+      "unitId": "U05",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U06-JSON-OBJECTS-ARRAYS": {
+      "unitId": "U06",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 2,
+        "2": 1
+      }
+    },
+    "B2-U06-JSON-PARSE": {
+      "unitId": "U06",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 2
+      }
+    },
+    "B2-U06-JSON-SERIALIZE": {
+      "unitId": "U06",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U06-NESTED-ACCESS": {
+      "unitId": "U06",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B2-U06-JSON-TYPES": {
+      "unitId": "U06",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U06-JSON-SHAPE-VALIDATION": {
+      "unitId": "U06",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U07-LITERAL-MATCH": {
+      "unitId": "U07",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 2,
+        "2": 1
+      }
+    },
+    "B2-U07-REGEX-ANCHORS": {
+      "unitId": "U07",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 2
+      }
+    },
+    "B2-U07-REGEX-CHARACTER-CLASSES": {
+      "unitId": "U07",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U07-REGEX-QUANTIFIERS": {
+      "unitId": "U07",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "2": 3
+      }
+    },
+    "B2-U07-CAPTURE-GROUPS": {
+      "unitId": "U07",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 2
+      }
+    },
+    "B2-U07-REGEX-REPLACE": {
+      "unitId": "U07",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "2": 1,
+        "3": 2
+      }
+    },
+    "B2-U08-FILTER": {
+      "unitId": "U08",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U08-TRANSFORM": {
+      "unitId": "U08",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U08-SORT": {
+      "unitId": "U08",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 2,
+        "3": 1
+      }
+    },
+    "B2-U08-GROUP": {
+      "unitId": "U08",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 2
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B2-U08-DEDUPE": {
+      "unitId": "U08",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B2-U08-AGGREGATE": {
+      "unitId": "U08",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U09-INPUT-VALIDATION": {
+      "unitId": "U09",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U09-TRY-EXCEPT": {
+      "unitId": "U09",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 2
+      }
+    },
+    "B2-U09-TRY-CATCH": {
+      "unitId": "U09",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U09-SPECIFIC-ERRORS": {
+      "unitId": "U09",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U09-FINALLY-CLEANUP": {
+      "unitId": "U09",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U09-EXIT-CODES": {
+      "unitId": "U09",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U10-ENTRYPOINT": {
+      "unitId": "U10",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "D": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U10-PARAMETERS": {
+      "unitId": "U10",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U10-DEFAULTS": {
+      "unitId": "U10",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 2
+      }
+    },
+    "B2-U10-NAMED-ARGUMENTS": {
+      "unitId": "U10",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U10-RETURN-VS-OUTPUT": {
+      "unitId": "U10",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "C": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U10-MODULE-REUSE": {
+      "unitId": "U10",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U11-LOGGING": {
+      "unitId": "U11",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U11-TIMESTAMPS": {
+      "unitId": "U11",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U11-LOG-LEVELS": {
+      "unitId": "U11",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U11-DRY-RUN-IMPLEMENTATION": {
+      "unitId": "U11",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U11-IDEMPOTENT-CHANGES": {
+      "unitId": "U11",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 2
+      }
+    },
+    "B2-U11-EXECUTION-SUMMARY": {
+      "unitId": "U11",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    },
+    "B2-U12-PIPELINE-STAGES": {
+      "unitId": "U12",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "D": 2
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U12-RECORD-SCHEMA": {
+      "unitId": "U12",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B2-U12-PLAN-APPLY": {
+      "unitId": "U12",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 1
+      },
+      "difficulty": {
+        "2": 2,
+        "3": 1
+      }
+    },
+    "B2-U12-CHANGE-JOURNAL": {
+      "unitId": "U12",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 2,
+        "2": 1
+      }
+    },
+    "B2-U12-POSTCONDITION-VERIFY": {
+      "unitId": "U12",
+      "count": 4,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "E": 2
+      },
+      "difficulty": {
+        "2": 1,
+        "3": 3
+      }
+    },
+    "B2-U12-REPRODUCIBLE-REPORT": {
+      "unitId": "U12",
+      "count": 3,
+      "types": {
+        "A": 1,
+        "B": 1,
+        "F": 1
+      },
+      "difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      }
+    }
+  },
+  "conceptCoverage": {
+    "totalConcepts": 72,
+    "requiredPrimaryMin": 3,
+    "minPrimary": 3,
+    "maxPrimary": 4,
+    "conceptsWithMinPrimary": 72
+  }
+}

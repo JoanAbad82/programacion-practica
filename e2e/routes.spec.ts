@@ -1,14 +1,17 @@
 import { expect, test } from "@playwright/test";
-import { units } from "./support/content";
+import { units, unitsFor } from "./support/content";
 import { watchPage } from "./support/helpers";
 
 const unitRoutes = units.map((unit) => `/estudiar/b1/${unit.unitId.toLowerCase()}`);
+const block2UnitRoutes = unitsFor("b2").map((unit) => `/estudiar/b2/${unit.unitId.toLowerCase()}`);
 
 const routes = [
   "/",
   "/estudiar",
   "/estudiar/b1",
   ...unitRoutes,
+  "/estudiar/b2",
+  ...block2UnitRoutes,
   "/tests",
   "/tests/sesion",
   "/tests/resultados",

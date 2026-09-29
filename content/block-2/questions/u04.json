@@ -1,0 +1,708 @@
+[
+  {
+    "id": "B2-Q0061",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-ENCODING",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Por qué conviene declarar la codificación al leer o escribir texto?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque así el archivo ocupa menos espacio."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque la relación entre caracteres y bytes debe ser explícita y no depender de la configuración del sistema."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque sin codificación el archivo no puede contener vocales."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque evita tener que cerrar el archivo."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Declarar la codificación (por ejemplo UTF-8) evita que el mismo archivo se interprete de forma distinta según el sistema.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0062",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-ENCODING",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Qué diferencia práctica hay entre leer un archivo como UTF-8 y leerlo con la codificación del sistema en otra máquina?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El archivo se convierte automáticamente en JSON."
+      },
+      {
+        "id": "opt_2",
+        "text": "El número de líneas cambia siempre."
+      },
+      {
+        "id": "opt_3",
+        "text": "Los nombres de las variables del script cambian."
+      },
+      {
+        "id": "opt_4",
+        "text": "Los acentos y caracteres especiales pueden verse o interpretarse de forma distinta."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Distintas codificaciones pueden producir caracteres corruptos (mojibake) o errores de decodificación.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0063",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-ENCODING",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Un archivo muestra el carácter 'Ã±' donde debería aparecer 'ñ'. ¿Qué ha ocurrido probablemente?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Se leyó o escribió con una codificación distinta de la del archivo."
+      },
+      {
+        "id": "opt_2",
+        "text": "El archivo está dañado físicamente en el disco."
+      },
+      {
+        "id": "opt_3",
+        "text": "El script usó recursión en lugar de enumeración."
+      },
+      {
+        "id": "opt_4",
+        "text": "Faltó comprobar la fecha de modificación."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Los caracteres extraños como 'Ã±' son señal de haber decodificado con la codificación equivocada (por ejemplo UTF-8 leído como Latin-1).",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0064",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-READ",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué significa leer un archivo de texto por líneas?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Borrar las líneas vacías del original."
+      },
+      {
+        "id": "opt_2",
+        "text": "Leer únicamente la primera línea y descartar el resto."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir cada línea en un archivo nuevo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Tratar el contenido línea a línea, normalmente sin modificar el archivo de origen."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "La lectura por líneas procesa el contenido línea a línea; leer no modifica el archivo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0065",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-READ",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere leer un archivo de log para contar sus líneas sin alterarlo. ¿Qué se necesita?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Mover el archivo a otra carpeta antes de leerlo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Abrir el archivo en modo de escritura para poder contarlas."
+      },
+      {
+        "id": "opt_3",
+        "text": "Abrir el archivo en modo de solo lectura y recorrer sus líneas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Renombrar el archivo con la extensión .txt."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Contar líneas solo requiere lectura; abrir en modo escritura podría truncar el archivo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0066",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-READ",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un script abre un archivo con open(ruta, 'w') para leer su contenido y descubre que queda vacío. ¿Qué error cometió?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Debía haber usado recursión para leerlo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Faltó declarar la codificación UTF-16."
+      },
+      {
+        "id": "opt_3",
+        "text": "Usó el modo de escritura 'w', que trunca el archivo; debía abrirlo en modo lectura 'r'."
+      },
+      {
+        "id": "opt_4",
+        "text": "El archivo estaba en otra unidad de disco."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El modo 'w' trunca el archivo al abrirlo; para leer hay que usar 'r'.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0067",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-WRITE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace escribir un archivo en modo de sobrescritura?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Añade el nuevo contenido al final del existente."
+      },
+      {
+        "id": "opt_2",
+        "text": "Sustituye el contenido existente por el nuevo de forma deliberada."
+      },
+      {
+        "id": "opt_3",
+        "text": "Crea una copia de seguridad automática."
+      },
+      {
+        "id": "opt_4",
+        "text": "Comprime el contenido anterior antes de escribir."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "El modo de escritura reemplaza el contenido; para conservar lo anterior hay que añadir (append) o respaldar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0068",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-WRITE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se debe generar un informe nuevo sin tocar el archivo de log original. ¿Cómo se hace?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Abrir el log en modo de escritura para actualizar sus líneas."
+      },
+      {
+        "id": "opt_2",
+        "text": "Escribir en el mismo archivo de log para no crear copias."
+      },
+      {
+        "id": "opt_3",
+        "text": "Escribir el resultado en un archivo de salida distinto y dejar el original intacto."
+      },
+      {
+        "id": "opt_4",
+        "text": "Renombrar el log y escribir encima."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Escribir en un archivo de salida separado conserva el original, coherente con no alterar la entrada.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0069",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-WRITE",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la forma más segura de crear un archivo de salida que podría ya existir?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Borrar toda la carpeta de salida antes de escribir."
+      },
+      {
+        "id": "opt_2",
+        "text": "Sobrescribir siempre sin comprobar nada."
+      },
+      {
+        "id": "opt_3",
+        "text": "Escribir en la ruta del archivo de entrada."
+      },
+      {
+        "id": "opt_4",
+        "text": "Decidir explícitamente la política de sobrescritura y, si hay riesgo, escribir en un archivo nuevo versionado."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Decidir la política de sobrescritura y evitar pisar datos importantes sin querer forma parte del contrato de salida.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0070",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-APPEND",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué diferencia hay entre escribir y añadir texto a un archivo?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Escribir sustituye el contenido; añadir incorpora al final sin borrar lo existente."
+      },
+      {
+        "id": "opt_2",
+        "text": "Escribir añade al final; añadir sustituye el contenido."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ambas operaciones borran el archivo primero."
+      },
+      {
+        "id": "opt_4",
+        "text": "Añadir solo funciona con archivos vacíos."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Añadir (append) respeta el contenido previo; escribir en modo de sobrescritura lo reemplaza.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0071",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-APPEND",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Qué modo de apertura permite añadir líneas al final sin borrar las existentes?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El modo de escritura, 'w'."
+      },
+      {
+        "id": "opt_2",
+        "text": "El modo de lectura, 'r'."
+      },
+      {
+        "id": "opt_3",
+        "text": "El modo de adición, 'a'."
+      },
+      {
+        "id": "opt_4",
+        "text": "El modo binario, 'rb'."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El modo 'a' abre el archivo para escribir al final, conservando lo que ya contiene.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0072",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-TEXT-APPEND",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un registro de actividad debe conservar todas las ejecuciones anteriores. ¿Qué modo de escritura corresponde?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Añadir (append), porque conserva el contenido previo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Sobrescribir, porque empieza limpio cada vez."
+      },
+      {
+        "id": "opt_3",
+        "text": "Leer en binario, porque así conserva todo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Renombrar, porque cambia el nombre del log."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Para conservar el historial hay que añadir al final, no sobrescribir.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0073",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-LINE-PROCESSING",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿En qué consiste el procesamiento por líneas?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Eliminar la primera línea de cada archivo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Leer el archivo byte a byte sin separar líneas."
+      },
+      {
+        "id": "opt_3",
+        "text": "Comprimir cada línea por separado."
+      },
+      {
+        "id": "opt_4",
+        "text": "Usar cada línea como unidad para filtrar, normalizar o transformar el contenido."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Trabajar por líneas es la base para filtrar líneas vacías o normalizar campos en un log.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0074",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-LINE-PROCESSING",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere eliminar las líneas vacías de un log y generar un archivo nuevo. ¿Qué enfoque es correcto?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Sobrescribir el log sin las líneas vacías."
+      },
+      {
+        "id": "opt_2",
+        "text": "Recorrer las líneas, descartar las vacías y escribir las restantes en el archivo de salida."
+      },
+      {
+        "id": "opt_3",
+        "text": "Renombrar el log para que las líneas vacías desaparezcan."
+      },
+      {
+        "id": "opt_4",
+        "text": "Mover el log a otra carpeta y volver a leerlo."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Filtrar líneas vacías durante el procesamiento y escribir en una salida nueva conserva el original.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0075",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-LINE-PROCESSING",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un script procesa un log línea a línea, pero el resultado incluye saltos de línea dobles. ¿Qué causa es la más probable?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La línea ya traía su terminador y se añadió otro al escribir, sin normalizarlo."
+      },
+      {
+        "id": "opt_2",
+        "text": "La codificación del archivo era UTF-8."
+      },
+      {
+        "id": "opt_3",
+        "text": "El archivo tenía más de mil líneas."
+      },
+      {
+        "id": "opt_4",
+        "text": "El script usó una lista en lugar de un diccionario."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Si cada línea conserva su terminador y se agrega otro, aparecen saltos dobles; conviene normalizar al leer o escribir.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0076",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-BOM-NEWLINES",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es el BOM de un archivo de texto?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El nombre del archivo sin extensión."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un error de sintaxis del script."
+      },
+      {
+        "id": "opt_3",
+        "text": "El número total de líneas del archivo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una marca de orden de bytes que algunos archivos incluyen al inicio para indicar la codificación."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El BOM es una secuencia inicial de bytes que puede indicar la codificación y confundir comparaciones si no se maneja.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0077",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-BOM-NEWLINES",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Dos archivos parecen iguales, pero uno usa LF y otro CRLF. ¿Qué diferencia es?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El tamaño del nombre del archivo."
+      },
+      {
+        "id": "opt_2",
+        "text": "La codificación de caracteres."
+      },
+      {
+        "id": "opt_3",
+        "text": "El terminador de línea: uno usa salto de línea simple y otro retorno de carro más salto."
+      },
+      {
+        "id": "opt_4",
+        "text": "El número de columnas si fueran CSV."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "LF y CRLF son terminadores de línea distintos; comparar texto sin normalizarlos puede dar falsos negativos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0078",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-BOM-NEWLINES",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la forma más segura de comparar el contenido de dos archivos de texto que pueden tener distinto terminador y BOM?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comparar los bytes directamente y confiar en que coinciden."
+      },
+      {
+        "id": "opt_2",
+        "text": "Normalizar (quitar el BOM y unificar los saltos de línea) antes de comparar el texto."
+      },
+      {
+        "id": "opt_3",
+        "text": "Renombrar ambos archivos igual antes de compararlos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Abrirlos en modo binario y sumar todos los bytes."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Normalizar el BOM y los terminadores evita diferencias espurias al comparar o combinar texto.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0079",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-LINE-PROCESSING",
+    "secondaryConceptIds": [
+      "B2-U04-TEXT-READ",
+      "B2-U04-TEXT-WRITE"
+    ],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Al procesar un log línea a línea y escribir la salida, ¿qué precaución mantiene el resultado predecible?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Escribir la salida encima del archivo de entrada."
+      },
+      {
+        "id": "opt_2",
+        "text": "Leer el original sin modificarlo, normalizar cada línea y escribir en un archivo nuevo con terminadores consistentes."
+      },
+      {
+        "id": "opt_3",
+        "text": "Conservar los terminadores mezclados sin normalizar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Abrir el log en modo de escritura antes de leerlo."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Leer el original, normalizar y escribir aparte con terminadores consistentes mantiene la salida predecible.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0080",
+    "blockId": "B2",
+    "unitId": "U04",
+    "primaryConceptId": "B2-U04-BOM-NEWLINES",
+    "secondaryConceptIds": [
+      "B2-U04-TEXT-ENCODING",
+      "B2-U04-LINE-PROCESSING"
+    ],
+    "type": "E",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script que separa líneas obtiene un carácter invisible al principio de la primera línea. ¿Qué debería revisar?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Si el archivo empieza con un BOM y conviene eliminarlo antes de procesar las líneas."
+      },
+      {
+        "id": "opt_2",
+        "text": "Si el archivo tiene demasiadas columnas."
+      },
+      {
+        "id": "opt_3",
+        "text": "Si el nombre del archivo es demasiado largo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Si se usó enumeración recursiva."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Un BOM al inicio puede aparecer como carácter invisible en la primera línea; hay que normalizarlo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

@@ -2,12 +2,17 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import type { Concept } from "@/types/content";
 import type { StudyUnitMeta } from "@/types/study";
+import type { BlockId } from "@/types/block";
+import { blockContentRoot } from "./blocks";
 
-const blockRoot = path.join(process.cwd(), "content", "block-1");
+function isActiveUnit(unit: StudyUnitMeta): boolean {
+  const status = (unit as { status?: string }).status;
+  return status === "ACTIVE" || status === "APPROVED_SPEC";
+}
 
-export async function getBlock1Concepts(): Promise<Concept[]> {
+export async function getBlockConcepts(blockId: BlockId): Promise<Concept[]> {
   const raw = await readFile(
-    path.join(blockRoot, "concepts", "concepts.json"),
+    path.join(blockContentRoot(blockId), "concepts", "concepts.json"),
     "utf8",
   );
 
@@ -16,18 +21,31 @@ export async function getBlock1Concepts(): Promise<Concept[]> {
     .sort((a, b) => a.conceptId.localeCompare(b.conceptId));
 }
 
-export async function getBlock1ProgressMetadata(): Promise<{
+export async function getBlockProgressMetadata(blockId: BlockId): Promise<{
   concepts: Concept[];
   units: StudyUnitMeta[];
 }> {
   const [concepts, rawUnits] = await Promise.all([
-    getBlock1Concepts(),
-    readFile(path.join(blockRoot, "canonical", "units.json"), "utf8"),
+    getBlockConcepts(blockId),
+    readFile(
+      path.join(blockContentRoot(blockId), "canonical", "units.json"),
+      "utf8",
+    ),
   ]);
 
   const units = (JSON.parse(rawUnits) as StudyUnitMeta[])
-    .filter((unit) => unit.status === "ACTIVE")
+    .filter(isActiveUnit)
     .sort((a, b) => a.order - b.order);
 
   return { concepts, units };
+}
+
+/* Backwards-compatible Bloque 1 wrappers. */
+
+export function getBlock1Concepts(): Promise<Concept[]> {
+  return getBlockConcepts("B1");
+}
+
+export function getBlock1ProgressMetadata() {
+  return getBlockProgressMetadata("B1");
 }

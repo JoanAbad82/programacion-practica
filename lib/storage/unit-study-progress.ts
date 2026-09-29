@@ -1,12 +1,22 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { studyUnitKey } from "@/types/block";
+import type { BlockId } from "@/types/block";
 import type {
   StudyProgressSnapshot,
   StudyUnitStatus,
   UnitStudyProgress,
 } from "@/types/study";
 
+/**
+ * Study progress survives across blocks under the same `V1` storage key.
+ *
+ * Unit ids alone (`U01`) are not globally unique, so B2 progress is stored
+ * under a block-namespaced key (`B1:U01` / `B2:U01`). Legacy B1-only snapshots
+ * that used the bare `U01` key are normalized to `B1:U01` at read time, which
+ * keeps existing browser-local data valid without clearing storage.
+ */
 const STORAGE_KEY = "pp-study-progress-v1";
 const CHANGE_EVENT = "pp-study-progress-change";
 
@@ -22,6 +32,15 @@ function isStatus(value: unknown): value is StudyUnitStatus {
   return value === "NOT_STARTED" || value === "IN_PROGRESS" || value === "STUDIED";
 }
 
+function parseNamespaceKey(
+  key: string,
+): { blockId: BlockId; unitId: string } | null {
+  const match = /^(B1|B2):(U\d+)$/.exec(key);
+  return match
+    ? { blockId: match[1] as BlockId, unitId: match[2] }
+    : null;
+}
+
 function sanitizeSnapshot(value: unknown): StudyProgressSnapshot {
   if (!value || typeof value !== "object") return EMPTY_SNAPSHOT;
 
@@ -29,12 +48,26 @@ function sanitizeSnapshot(value: unknown): StudyProgressSnapshot {
   const units: Record<string, UnitStudyProgress> = {};
 
   if (candidate.units && typeof candidate.units === "object") {
-    for (const [unitId, rawProgress] of Object.entries(candidate.units)) {
+    for (const [rawKey, rawProgress] of Object.entries(candidate.units)) {
       if (!rawProgress || typeof rawProgress !== "object") continue;
       const progress = rawProgress as Partial<UnitStudyProgress>;
       if (!isStatus(progress.status)) continue;
 
-      units[unitId] = {
+      // New namespaced keys carry their block explicitly. Legacy bare unit ids
+      // predate B2 and therefore always belong to Bloque 1.
+      const namespaced = parseNamespaceKey(rawKey);
+      const blockId: BlockId = namespaced
+        ? namespaced.blockId
+        : progress.blockId === "B2"
+          ? "B2"
+          : "B1";
+      const unitId = namespaced
+        ? namespaced.unitId
+        : progress.unitId ?? rawKey;
+      const key = studyUnitKey(blockId, unitId);
+
+      units[key] = {
+        blockId,
         unitId,
         status: progress.status,
         startedAt: typeof progress.startedAt === "string" ? progress.startedAt : null,
@@ -108,9 +141,10 @@ function writeSnapshot(snapshot: StudyProgressSnapshot) {
 
 function currentUnitProgress(
   snapshot: StudyProgressSnapshot,
+  blockId: BlockId,
   unitId: string,
 ): UnitStudyProgress | null {
-  return snapshot.units[unitId] ?? null;
+  return snapshot.units[studyUnitKey(blockId, unitId)] ?? null;
 }
 
 export function useStudyProgress(): StudyProgressSnapshot {
@@ -120,13 +154,17 @@ export function useStudyProgress(): StudyProgressSnapshot {
 export function getUnitStudyStatus(
   snapshot: StudyProgressSnapshot,
   unitId: string,
+  blockId: BlockId = "B1",
 ): StudyUnitStatus {
-  return currentUnitProgress(snapshot, unitId)?.status ?? "NOT_STARTED";
+  return currentUnitProgress(snapshot, blockId, unitId)?.status ?? "NOT_STARTED";
 }
 
-export function markUnitStarted(unitId: string) {
+export function markUnitStarted(
+  unitId: string,
+  blockId: BlockId = "B1",
+) {
   const snapshot = readSnapshot();
-  const current = currentUnitProgress(snapshot, unitId);
+  const current = currentUnitProgress(snapshot, blockId, unitId);
   if (current?.status === "STUDIED" || current?.status === "IN_PROGRESS") return;
 
   const now = new Date().toISOString();
@@ -134,7 +172,8 @@ export function markUnitStarted(unitId: string) {
     schemaVersion: "STUDY_PROGRESS_V1",
     units: {
       ...snapshot.units,
-      [unitId]: {
+      [studyUnitKey(blockId, unitId)]: {
+        blockId,
         unitId,
         status: "IN_PROGRESS",
         startedAt: current?.startedAt ?? now,
@@ -145,16 +184,20 @@ export function markUnitStarted(unitId: string) {
   });
 }
 
-export function markUnitStudied(unitId: string) {
+export function markUnitStudied(
+  unitId: string,
+  blockId: BlockId = "B1",
+) {
   const snapshot = readSnapshot();
-  const current = currentUnitProgress(snapshot, unitId);
+  const current = currentUnitProgress(snapshot, blockId, unitId);
   const now = new Date().toISOString();
 
   writeSnapshot({
     schemaVersion: "STUDY_PROGRESS_V1",
     units: {
       ...snapshot.units,
-      [unitId]: {
+      [studyUnitKey(blockId, unitId)]: {
+        blockId,
         unitId,
         status: "STUDIED",
         startedAt: current?.startedAt ?? now,

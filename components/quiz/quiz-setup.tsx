@@ -4,16 +4,18 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   buildQuestionPool,
-  getErrorQuestionIds,
   selectQuestionIds,
 } from "@/lib/quiz/engine";
 import {
   createQuizSession,
   useQuizHistory,
 } from "@/lib/storage/quiz-history";
+import { quizHistoryMetrics } from "@/lib/storage/history-metrics";
 import { masteryScoreMap } from "@/lib/progress/mastery";
 import { useClientSearchParams } from "@/lib/navigation/search-params";
 import { useUnifiedProgress } from "@/lib/storage/unified-progress";
+import { blockQueryValue, parseBlockParam } from "@/lib/content/session-params";
+import { BLOCK_IDS, BLOCK_LABELS, type BlockId } from "@/types/block";
 import type { Concept } from "@/types/content";
 import type { Language } from "@/types/content";
 import type { QuestionType } from "@/types/question";
@@ -32,7 +34,7 @@ import {
 const modeCopy: Record<QuizMode, { title: string; description: string }> = {
   BLOCK: {
     title: "Bloque completo",
-    description: "Mezcla preguntas de las 12 unidades del Bloque 1.",
+    description: "Mezcla preguntas de las 12 unidades del bloque.",
   },
   UNIT: {
     title: "Por unidad",
@@ -100,18 +102,24 @@ function parseModeParam(value: string | null): QuizMode | null {
 }
 
 export function QuizSetup({
-  questions,
-  units,
-  concepts,
+  blockLibraries,
+  blockCounts,
 }: {
-  questions: QuizQuestionMeta[];
-  units: StudyUnitMeta[];
-  concepts: Concept[];
+  blockLibraries: Record<BlockId, {
+    units: StudyUnitMeta[];
+    questions: QuizQuestionMeta[];
+    concepts: Concept[];
+  }>;
+  blockCounts: Record<BlockId, { questions: number; flashcards: number }>;
 }) {
   const router = useRouter();
   const searchParams = useClientSearchParams();
   const history = useQuizHistory();
-  const progress = useUnifiedProgress({ concepts, units });
+  const requestedBlock = parseBlockParam(searchParams.get("block"), "B1");
+  const [blockId, setBlockId] = useState<BlockId>(requestedBlock);
+
+  const { units, questions, concepts } = blockLibraries[blockId];
+  const progress = useUnifiedProgress({ concepts, units, blockId });
   const masteryByConcept = useMemo(() => masteryScoreMap(progress), [progress]);
 
   // The static export always ships the default configuration; unit links
@@ -155,17 +163,12 @@ export function QuizSetup({
     [questions, mode, unitId, filters, history],
   );
 
-  const errorCount = useMemo(
-    () => getErrorQuestionIds(history).length,
-    [history],
-  );
-
-  const completedSessions = Object.values(history.sessions).filter(
-    (session) => session.completedAt !== null,
-  ).length;
-  const totalAttempts = Object.values(history.questionStats).reduce(
-    (sum, stats) => sum + stats.attempts,
-    0,
+  // History metrics follow the selected block: sessions use their normalized
+  // `blockId` (legacy entries default to B1) and question stats use the
+  // block-unique question ids, so B1/B2 counts never mix.
+  const { completedSessions, totalAttempts, errorCount } = useMemo(
+    () => quizHistoryMetrics(history, blockId),
+    [history, blockId],
   );
 
   function startSession() {
@@ -190,12 +193,14 @@ export function QuizSetup({
       history,
       size: effectiveSize,
       seed,
+      blockId,
       masteryByConcept,
     });
 
     const config = {
       sessionId,
       seed,
+      blockId,
       mode,
       unitId: mode === "UNIT" ? unitId : null,
       requestedSize: size,
@@ -208,6 +213,7 @@ export function QuizSetup({
     const params = new URLSearchParams({
       sid: sessionId,
       seed: String(seed),
+      block: blockQueryValue(blockId),
       mode: mode.toLowerCase(),
       size: String(size),
       ids: questionIds.join(","),
@@ -229,10 +235,36 @@ export function QuizSetup({
           <h2 id="configurar-test">Configura la sesión</h2>
           <p>
             Las preguntas proceden directamente del banco canónico{" "}
-            <code>BLOCK1_TEST_BANK_V1.0</code>. La selección y el orden se fijan
-            mediante una semilla reproducible.
+            <code>{blockId === "B2" ? "BLOCK2_TEST_BANK_V1.0" : "BLOCK1_TEST_BANK_V1.0"}</code>{" "}
+            ({blockCounts[blockId].questions} preguntas). La selección y el
+            orden se fijan mediante una semilla reproducible.
           </p>
         </div>
+
+        <fieldset className="block-selector">
+          <legend>Bloque</legend>
+          {BLOCK_IDS.map((candidate) => (
+            <label className="block-selector-option" key={candidate}>
+              <input
+                checked={blockId === candidate}
+                name="quiz-block"
+                onChange={() => {
+                  setBlockId(candidate);
+                  setModeOverride(null);
+                  setUnitOverride(null);
+                  setMessage("");
+                  router.replace(`/tests?block=${blockQueryValue(candidate)}`);
+                }}
+                type="radio"
+                value={blockQueryValue(candidate)}
+              />
+              <span>
+                <strong>{BLOCK_LABELS[candidate]}</strong>
+                <small>{blockCounts[candidate].questions} preguntas</small>
+              </span>
+            </label>
+          ))}
+        </fieldset>
 
         <fieldset className="quiz-mode-grid">
           <legend>Modo</legend>

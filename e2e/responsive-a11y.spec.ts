@@ -1,7 +1,16 @@
 import { expect, test } from "@playwright/test";
 import { expectHeaderDoesNotCoverContent, expectNoHorizontalOverflow, watchPage } from "./support/helpers";
 
-const routes = ["/", "/estudiar", "/estudiar/b1", "/tests", "/tarjetas", "/progreso", "/ajustes"];
+const routes = [
+  "/",
+  "/estudiar",
+  "/estudiar/b1",
+  "/estudiar/b2",
+  "/tests",
+  "/tarjetas",
+  "/progreso",
+  "/ajustes",
+];
 
 test.describe("responsive y accesibilidad", () => {
   for (const viewport of [

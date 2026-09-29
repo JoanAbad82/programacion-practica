@@ -1,3 +1,5 @@
+import type { BlockId } from "../../types/block";
+import { blockIdFromContentId, studyUnitKey } from "../../types/block";
 import type { Concept } from "../../types/content";
 import type { FlashcardHistorySnapshot } from "../../types/flashcard-session";
 import type { QuizHistorySnapshot } from "../../types/quiz";
@@ -89,6 +91,21 @@ function weightedScore(evidence: MasteryEvidence[]): number {
   return Math.round((weighted / totalWeight) * 100);
 }
 
+function studyStatusFor(
+  studyProgress: StudyProgressSnapshot,
+  blockId: BlockId,
+  unitId: string,
+): UnitStudyProgressView {
+  const blockUnit = studyProgress.units[studyUnitKey(blockId, unitId)];
+  const legacy = blockId === "B1" ? studyProgress.units[unitId] : undefined;
+  return blockUnit ?? legacy ?? null;
+}
+
+type UnitStudyProgressView =
+  | StudyProgressSnapshot["units"][string]
+  | null
+  | undefined;
+
 function buildStudyEvidence({
   concept,
   studyProgress,
@@ -96,7 +113,8 @@ function buildStudyEvidence({
   concept: Concept;
   studyProgress: StudyProgressSnapshot;
 }): MasteryEvidence[] {
-  const progress = studyProgress.units[concept.unitId];
+  const blockId = (concept.blockId as BlockId) ?? "B1";
+  const progress = studyStatusFor(studyProgress, blockId, concept.unitId);
   if (!progress || progress.status === "NOT_STARTED") return [];
 
   const studied = progress.status === "STUDIED";
@@ -105,7 +123,7 @@ function buildStudyEvidence({
     : progress.startedAt ?? progress.updatedAt;
 
   return [{
-    id: `study:${concept.unitId}:${concept.conceptId}`,
+    id: `study:${blockId}:${concept.unitId}:${concept.conceptId}`,
     kind: "STUDY",
     conceptId: concept.conceptId,
     unitId: concept.unitId,
@@ -127,6 +145,16 @@ function buildQuizEvidence({
   const evidence: MasteryEvidence[] = [];
 
   for (const session of Object.values(quizHistory.sessions)) {
+    const blockId =
+      (session.blockId as BlockId | undefined) ??
+      blockIdFromContentId(session.sessionId) ??
+      (session.questionIds ?? [])
+        .map((id) => blockIdFromContentId(id))
+        .find((value): value is BlockId => Boolean(value)) ??
+      "B1";
+
+    if (blockId !== concept.blockId) continue;
+
     session.attempts.forEach((attempt, index) => {
       if (attempt.conceptId !== concept.conceptId) return;
 
@@ -157,6 +185,15 @@ function buildFlashcardEvidence({
   const evidence: MasteryEvidence[] = [];
 
   for (const session of Object.values(flashcardHistory.sessions)) {
+    const blockId =
+      (session.blockId as BlockId | undefined) ??
+      (session.cardIds ?? [])
+        .map((id) => blockIdFromContentId(id))
+        .find((value): value is BlockId => Boolean(value)) ??
+      "B1";
+
+    if (blockId !== concept.blockId) continue;
+
     session.attempts.forEach((attempt, index) => {
       if (attempt.conceptId !== concept.conceptId) return;
 
@@ -206,6 +243,7 @@ export function buildConceptProgress({
   flashcardHistory: FlashcardHistorySnapshot;
   studyProgress: StudyProgressSnapshot;
 }): ConceptProgress {
+  const blockId = (concept.blockId as BlockId) ?? "B1";
   const evidence = buildConceptEvidence({
     concept,
     quizHistory,
@@ -225,6 +263,7 @@ export function buildConceptProgress({
 
   return {
     conceptId: concept.conceptId,
+    blockId,
     unitId: concept.unitId,
     name: concept.name,
     priority: concept.priority,
@@ -234,7 +273,9 @@ export function buildConceptProgress({
     flashcardKnow: flashEvidence.filter((item) => item.value === 1).length,
     flashcardDoubt: flashEvidence.filter((item) => item.value === 0.5).length,
     flashcardMiss: flashEvidence.filter((item) => item.value === 0).length,
-    studyStatus: studyProgress.units[concept.unitId]?.status ?? "NOT_STARTED",
+    studyStatus:
+      studyStatusFor(studyProgress, blockId, concept.unitId)?.status ??
+      "NOT_STARTED",
     interactions: evidence.length,
     objectiveInteractions,
     evidenceWindowCount: recent.length,
@@ -273,6 +314,7 @@ function aggregateUnit({
   studyStatus: StudyUnitStatus;
 }): UnitProgressSummary {
   return {
+    blockId: (unit.blockId as BlockId) ?? "B1",
     unitId: unit.unitId,
     title: unit.title,
     studyStatus,
@@ -280,6 +322,70 @@ function aggregateUnit({
     masteryScore: averageScore(concepts),
     coveragePercent: coveragePercent(concepts),
     stateCounts: stateCounts(concepts),
+  };
+}
+
+function aggregateBlock({
+  blockId,
+  concepts,
+  units,
+  studyProgress,
+}: {
+  blockId: BlockId;
+  concepts: ConceptProgress[];
+  units: StudyUnitMeta[];
+  studyProgress: StudyProgressSnapshot;
+}): BlockProgressSummary {
+  const quizAttempts = concepts.reduce(
+    (sum, item) => sum + item.questionAttempts,
+    0,
+  );
+  const quizCorrect = concepts.reduce(
+    (sum, item) => sum + item.questionCorrect,
+    0,
+  );
+  const flashcardRatings = concepts.reduce(
+    (sum, item) => sum + item.flashcardSeen,
+    0,
+  );
+  const flashcardKnow = concepts.reduce(
+    (sum, item) => sum + item.flashcardKnow,
+    0,
+  );
+  const flashcardDoubt = concepts.reduce(
+    (sum, item) => sum + item.flashcardDoubt,
+    0,
+  );
+  const flashcardMiss = concepts.reduce(
+    (sum, item) => sum + item.flashcardMiss,
+    0,
+  );
+
+  return {
+    blockId,
+    conceptCount: concepts.length,
+    masteryScore: averageScore(concepts),
+    coveragePercent: coveragePercent(concepts),
+    stateCounts: stateCounts(concepts),
+    activity: {
+      studiedUnits: units.filter(
+        (unit) =>
+          studyStatusFor(studyProgress, blockId, unit.unitId)?.status === "STUDIED",
+      ).length,
+      inProgressUnits: units.filter(
+        (unit) =>
+          studyStatusFor(studyProgress, blockId, unit.unitId)?.status === "IN_PROGRESS",
+      ).length,
+      quizAttempts,
+      quizCorrect,
+      quizAccuracy: quizAttempts > 0
+        ? Math.round((quizCorrect / quizAttempts) * 100)
+        : 0,
+      flashcardRatings,
+      flashcardKnow,
+      flashcardDoubt,
+      flashcardMiss,
+    },
   };
 }
 
@@ -310,66 +416,41 @@ export function buildProgressModel({
   );
 
   const unitProgressEntries = units.map((unit) => {
+    const blockId = (unit.blockId as BlockId) ?? "B1";
     const unitConcepts = conceptProgressList.filter(
-      (item) => item.unitId === unit.unitId,
+      (item) => item.blockId === blockId && item.unitId === unit.unitId,
     );
     const summary = aggregateUnit({
       unit,
       concepts: unitConcepts,
-      studyStatus: studyProgress.units[unit.unitId]?.status ?? "NOT_STARTED",
+      studyStatus:
+        studyStatusFor(studyProgress, blockId, unit.unitId)?.status ??
+        "NOT_STARTED",
     });
-    return [unit.unitId, summary] as const;
+    return [studyUnitKey(blockId, unit.unitId), summary] as const;
   });
 
-  const quizAttempts = conceptProgressList.reduce(
-    (sum, item) => sum + item.questionAttempts,
-    0,
-  );
-  const quizCorrect = conceptProgressList.reduce(
-    (sum, item) => sum + item.questionCorrect,
-    0,
-  );
-  const flashcardRatings = conceptProgressList.reduce(
-    (sum, item) => sum + item.flashcardSeen,
-    0,
-  );
-  const flashcardKnow = conceptProgressList.reduce(
-    (sum, item) => sum + item.flashcardKnow,
-    0,
-  );
-  const flashcardDoubt = conceptProgressList.reduce(
-    (sum, item) => sum + item.flashcardDoubt,
-    0,
-  );
-  const flashcardMiss = conceptProgressList.reduce(
-    (sum, item) => sum + item.flashcardMiss,
-    0,
+  const blockIds = Array.from(
+    new Set(units.map((unit) => (unit.blockId as BlockId) ?? "B1")),
   );
 
-  const block: BlockProgressSummary = {
-    blockId: "B1",
-    conceptCount: conceptProgressList.length,
-    masteryScore: averageScore(conceptProgressList),
-    coveragePercent: coveragePercent(conceptProgressList),
-    stateCounts: stateCounts(conceptProgressList),
-    activity: {
-      studiedUnits: units.filter(
-        (unit) => studyProgress.units[unit.unitId]?.status === "STUDIED",
-      ).length,
-      inProgressUnits: units.filter(
-        (unit) => studyProgress.units[unit.unitId]?.status === "IN_PROGRESS",
-      ).length,
-      quizAttempts,
-      quizCorrect,
-      quizAccuracy: quizAttempts > 0
-        ? Math.round((quizCorrect / quizAttempts) * 100)
-        : 0,
-      flashcardRatings,
-      flashcardKnow,
-      flashcardDoubt,
-      flashcardMiss,
-    },
-  };
+  const blocks = Object.fromEntries(
+    blockIds.map((blockId) => [
+      blockId,
+      aggregateBlock({
+        blockId,
+        concepts: conceptProgressList.filter((item) => item.blockId === blockId),
+        units: units.filter(
+          (unit) => ((unit.blockId as BlockId) ?? "B1") === blockId,
+        ),
+        studyProgress,
+      }),
+    ]),
+  ) as Partial<Record<BlockId, BlockProgressSummary>>;
+
+  const b1Summary =
+    blocks.B1 ??
+    aggregateBlock({ blockId: "B1", concepts: [], units: [], studyProgress });
 
   const latestTimes = conceptProgressList
     .map((item) => item.lastInteractionAt)
@@ -381,7 +462,13 @@ export function buildProgressModel({
     generatedAt: latestTimes[0] ?? null,
     concepts: conceptProgress,
     units: Object.fromEntries(unitProgressEntries),
-    block,
+    block: b1Summary,
+    blocks: {
+      B1: b1Summary,
+      B2:
+        blocks.B2 ??
+        aggregateBlock({ blockId: "B2", concepts: [], units: [], studyProgress }),
+    },
   };
 }
 

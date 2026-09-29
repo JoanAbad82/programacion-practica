@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { QuizSession } from "@/components/quiz/quiz-session";
-import { block1Questions } from "@/lib/content/client-bank";
+import { questionsForBlock } from "@/lib/content/client-bank";
+import { parseBlockParam } from "@/lib/content/session-params";
 import { useClientSearchParams } from "@/lib/navigation/search-params";
+import { blockIdFromContentId, type BlockId } from "@/types/block";
 import type {
   QuizDifficultyFilter,
   QuizFilters,
@@ -71,13 +73,27 @@ function parseFilters(params: {
   return { language, difficulty, questionType };
 }
 
+function resolveBlock(
+  explicit: string | undefined,
+  ids: string[],
+): BlockId | null {
+  const requested = parseBlockParam(explicit, "B1");
+  const fromIds = ids.length > 0 ? blockIdFromContentId(ids[0]) : null;
+
+  if (ids.length === 0) return requested;
+  // Block-unique ids must all agree with the requested (or default) block, so a
+  // B1 session can never rebuild from an ids list that carries B2 questions.
+  return fromIds === requested ? requested : null;
+}
+
 /**
  * Query-param session route.
  *
  * The route is exported as static HTML: the exported document renders the
  * controlled "invalid session" state and the browser rebuilds the real session
- * from the query string after hydration, so `?sid=&seed=&mode=&size=&ids=`
- * sessions are preserved without request-time rendering.
+ * from the query string after hydration, so
+ * `?sid=&seed=&block=&mode=&size=&ids=` sessions are preserved without
+ * request-time rendering.
  */
 export default function QuizSessionPage() {
   const searchParams = useClientSearchParams();
@@ -98,10 +114,13 @@ export default function QuizSessionPage() {
     .map((id) => id.trim())
     .filter(Boolean);
 
-  const byId = new Map(block1Questions.map((question) => [question.id, question]));
+  const blockId = resolveBlock(value("block"), ids);
+  const bank = blockId ? questionsForBlock(blockId) : [];
+  const byId = new Map(bank.map((question) => [question.id, question]));
   const uniqueIds = new Set(ids);
 
   const valid =
+    blockId !== null &&
     Boolean(sessionId) &&
     Number.isInteger(seedValue) &&
     seedValue >= 0 &&
@@ -115,7 +134,7 @@ export default function QuizSessionPage() {
     ids.every((id) => byId.has(id)) &&
     (mode !== "UNIT" || /^U(?:0[1-9]|1[0-2])$/.test(unit ?? ""));
 
-  if (!valid || !sessionId || !mode || !requestedSize || !filters) {
+  if (!valid || !blockId || !sessionId || !mode || !requestedSize || !filters) {
     return (
       <section className="quiz-session-state">
         <span className="eyebrow">Sesión no válida</span>
@@ -138,6 +157,7 @@ export default function QuizSessionPage() {
   const config: QuizSessionConfig = {
     sessionId,
     seed: seedValue,
+    blockId,
     mode,
     unitId: mode === "UNIT" ? unit : null,
     requestedSize,

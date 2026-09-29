@@ -5,8 +5,10 @@ import type {
   StudyUnitDocument,
   StudyUnitMeta,
 } from "@/types/study";
+import type { BlockId } from "@/types/block";
+import { blockContentRoot } from "./blocks";
 
-interface BlockManifest {
+export interface BlockManifest {
   block_id: string;
   title: string;
   canonical_version: string;
@@ -17,10 +19,12 @@ interface BlockManifest {
   concepts: number;
   questions: number;
   flashcards: number;
+  language?: string;
+  unit_index?: string;
+  concept_file?: string;
+  content_import_status?: string;
+  [key: string]: unknown;
 }
-
-const blockRoot = path.join(process.cwd(), "content", "block-1");
-const canonicalRoot = path.join(blockRoot, "canonical");
 
 export function normalizeUnitSlug(value: string): string | null {
   const normalized = value.trim().toLowerCase();
@@ -171,32 +175,45 @@ function parseStudyMarkdown(markdown: string): StudySection[] {
   return sections;
 }
 
-export async function getBlock1Manifest(): Promise<BlockManifest> {
+function isActiveUnit(unit: StudyUnitMeta): boolean {
+  const status = (unit as { status?: string }).status;
+  return status === "ACTIVE" || status === "APPROVED_SPEC";
+}
+
+export async function getBlockManifest(blockId: BlockId): Promise<BlockManifest> {
   return JSON.parse(
-    await readFile(path.join(blockRoot, "manifest.json"), "utf8"),
+    await readFile(path.join(blockContentRoot(blockId), "manifest.json"), "utf8"),
   ) as BlockManifest;
 }
 
-export async function getBlock1Units(): Promise<StudyUnitMeta[]> {
+export async function getBlockUnits(blockId: BlockId): Promise<StudyUnitMeta[]> {
   const units = JSON.parse(
-    await readFile(path.join(canonicalRoot, "units.json"), "utf8"),
+    await readFile(
+      path.join(blockContentRoot(blockId), "canonical", "units.json"),
+      "utf8",
+    ),
   ) as StudyUnitMeta[];
 
-  return [...units].sort((a, b) => a.order - b.order);
+  return units
+    .filter(isActiveUnit)
+    .sort((a, b) => a.order - b.order);
 }
 
-export async function getBlock1UnitBySlug(
+export async function getBlockUnitBySlug(
+  blockId: BlockId,
   rawSlug: string,
 ): Promise<StudyUnitDocument | null> {
   const slug = normalizeUnitSlug(rawSlug);
   if (!slug) return null;
 
-  const units = await getBlock1Units();
-  const unit = units.find((candidate) => candidate.unitId.toLowerCase() === slug);
+  const units = await getBlockUnits(blockId);
+  const unit = units.find(
+    (candidate) => candidate.unitId.toLowerCase() === slug,
+  );
   if (!unit) return null;
 
   const markdown = await readFile(
-    path.join(blockRoot, unit.canonicalFile),
+    path.join(blockContentRoot(blockId), unit.canonicalFile),
     "utf8",
   );
 
@@ -207,11 +224,14 @@ export async function getBlock1UnitBySlug(
   };
 }
 
-export async function getAdjacentUnits(rawSlug: string) {
+export async function getBlockAdjacentUnits(
+  blockId: BlockId,
+  rawSlug: string,
+): Promise<{ previous: StudyUnitMeta | null; next: StudyUnitMeta | null }> {
   const slug = normalizeUnitSlug(rawSlug);
   if (!slug) return { previous: null, next: null };
 
-  const units = await getBlock1Units();
+  const units = await getBlockUnits(blockId);
   const index = units.findIndex((unit) => unit.unitId.toLowerCase() === slug);
 
   if (index < 0) return { previous: null, next: null };
@@ -220,4 +240,24 @@ export async function getAdjacentUnits(rawSlug: string) {
     previous: index > 0 ? units[index - 1] : null,
     next: index < units.length - 1 ? units[index + 1] : null,
   };
+}
+
+/* Backwards-compatible Bloque 1 wrappers. */
+
+export function getBlock1Manifest(): Promise<BlockManifest> {
+  return getBlockManifest("B1");
+}
+
+export function getBlock1Units(): Promise<StudyUnitMeta[]> {
+  return getBlockUnits("B1");
+}
+
+export function getBlock1UnitBySlug(
+  rawSlug: string,
+): Promise<StudyUnitDocument | null> {
+  return getBlockUnitBySlug("B1", rawSlug);
+}
+
+export function getAdjacentUnits(rawSlug: string) {
+  return getBlockAdjacentUnits("B1", rawSlug);
 }

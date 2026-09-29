@@ -53,10 +53,10 @@ test.describe("experiencia de estudio", () => {
     await page.goto("/estudiar/b1/u05");
 
     const practiceLink = page.getByRole("link", { name: /Ir a práctica/ });
-    await expect(practiceLink).toHaveAttribute("href", "/tests?unit=u05");
+    await expect(practiceLink).toHaveAttribute("href", "/tests?block=b1&unit=u05");
 
     await practiceLink.click();
-    await expect(page).toHaveURL(/\/tests\?unit=u05/);
+    await expect(page).toHaveURL(/\/tests\?block=b1&unit=u05/);
     await expect(page.getByRole("radio", { name: /Por unidad/ })).toBeChecked();
   });
 });

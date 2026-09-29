@@ -2,7 +2,11 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
+import { useRouter } from "next/navigation";
 import { useUnifiedProgress } from "@/lib/storage/unified-progress";
+import { useClientSearchParams } from "@/lib/navigation/search-params";
+import { blockQueryValue, parseBlockParam } from "@/lib/content/session-params";
+import { BLOCK_IDS, BLOCK_LABELS } from "@/types/block";
 import type { Concept } from "@/types/content";
 import type { ConceptProgress, MasteryState } from "@/types/progress";
 import type { StudyUnitMeta } from "@/types/study";
@@ -30,12 +34,26 @@ export function ProgressDashboard({
   concepts: Concept[];
   units: StudyUnitMeta[];
 }) {
-  const model = useUnifiedProgress({ concepts, units });
+  const router = useRouter();
+  const searchParams = useClientSearchParams();
+  const blockId = parseBlockParam(searchParams.get("block"), "B1");
+  const blockSlug = blockQueryValue(blockId);
+
+  const model = useUnifiedProgress({ concepts, units, blockId });
   const block = model.block;
+
+  const blockUnits = useMemo(
+    () => units.filter((unit) => unit.blockId === blockId),
+    [units, blockId],
+  );
+  const blockConcepts = useMemo(
+    () => Object.values(model.concepts).filter((item) => item.blockId === blockId),
+    [model.concepts, blockId],
+  );
 
   const attention = useMemo(
     () =>
-      Object.values(model.concepts)
+      blockConcepts
         .filter((item) => item.masteryState !== "MASTERED")
         .sort((a, b) => {
           const byState = attentionRank(a) - attentionRank(b);
@@ -45,22 +63,42 @@ export function ProgressDashboard({
           return priorityRank[a.priority] - priorityRank[b.priority];
         })
         .slice(0, 8),
-    [model.concepts],
+    [blockConcepts],
   );
 
   const strong = useMemo(
     () =>
-      Object.values(model.concepts)
-        .filter((item) =>
-          item.masteryState === "MASTERED" || item.masteryState === "UNDERSTOOD",
+      blockConcepts
+        .filter(
+          (item) =>
+            item.masteryState === "MASTERED" ||
+            item.masteryState === "UNDERSTOOD",
         )
         .sort((a, b) => b.masteryScore - a.masteryScore)
         .slice(0, 6),
-    [model.concepts],
+    [blockConcepts],
   );
 
   return (
     <div className="progress-dashboard">
+      <fieldset className="block-selector">
+        <legend>Bloque</legend>
+        {BLOCK_IDS.map((candidate) => (
+          <label className="block-selector-option" key={candidate}>
+            <input
+              checked={blockId === candidate}
+              name="progress-block"
+              onChange={() => router.replace(`/progreso?block=${blockQueryValue(candidate)}`)}
+              type="radio"
+              value={blockQueryValue(candidate)}
+            />
+            <span>
+              <strong>{BLOCK_LABELS[candidate]}</strong>
+            </span>
+          </label>
+        ))}
+      </fieldset>
+
       <section className="progress-hero-grid" aria-label="Resumen global">
         <article className="progress-hero-card primary-metric">
           <span>Dominio medio</span>
@@ -79,7 +117,7 @@ export function ProgressDashboard({
         </article>
         <article className="progress-hero-card">
           <span>Estudio</span>
-          <strong>{block.activity.studiedUnits}/12</strong>
+          <strong>{block.activity.studiedUnits}/{blockUnits.length}</strong>
           <small>{block.activity.inProgressUnits} unidades en curso</small>
         </article>
       </section>
@@ -87,7 +125,9 @@ export function ProgressDashboard({
       <section className="progress-state-panel" aria-labelledby="estados-dominio">
         <div>
           <span className="eyebrow">Estados de dominio</span>
-          <h2 id="estados-dominio">56 conceptos, una señal común</h2>
+          <h2 id="estados-dominio">
+            {block.conceptCount} conceptos, una señal común · {BLOCK_LABELS[blockId]}
+          </h2>
         </div>
         <div className="progress-state-grid">
           <div><strong>{block.stateCounts.new}</strong><span>Nuevo</span></div>
@@ -101,14 +141,15 @@ export function ProgressDashboard({
         <div className="progress-section-heading">
           <div>
             <span className="eyebrow">Por unidad</span>
-            <h2 id="progreso-unidades">Bloque 1</h2>
+            <h2 id="progreso-unidades">{BLOCK_LABELS[blockId]}</h2>
           </div>
           <p>El porcentaje de dominio agrega los conceptos de cada unidad.</p>
         </div>
 
         <div className="progress-unit-grid">
-          {units.map((unit) => {
-            const summary = model.units[unit.unitId];
+          {blockUnits.map((unit) => {
+            const summary = model.units[`${blockId}:${unit.unitId}`];
+            if (!summary) return null;
             return (
               <article className="progress-unit-card" key={unit.unitId}>
                 <div className="progress-unit-heading">
@@ -133,9 +174,9 @@ export function ProgressDashboard({
                   Cobertura {summary.coveragePercent}% · Estudio {summary.studyStatus === "STUDIED" ? "completado" : summary.studyStatus === "IN_PROGRESS" ? "en curso" : "sin iniciar"}
                 </p>
                 <div className="progress-unit-actions">
-                  <Link href={`/estudiar/b1/${unit.unitId.toLowerCase()}`}>Estudiar</Link>
-                  <Link href={`/tests?unit=${unit.unitId.toLowerCase()}`}>Test</Link>
-                  <Link href={`/tarjetas?unit=${unit.unitId}`}>Tarjetas</Link>
+                  <Link href={`/estudiar/${blockSlug}/${unit.unitId.toLowerCase()}`}>Estudiar</Link>
+                  <Link href={`/tests?block=${blockSlug}&unit=${unit.unitId.toLowerCase()}`}>Test</Link>
+                  <Link href={`/tarjetas?block=${blockSlug}&unit=${unit.unitId}`}>Tarjetas</Link>
                 </div>
               </article>
             );
@@ -153,7 +194,7 @@ export function ProgressDashboard({
             {attention.map((item) => (
               <Link
                 className="progress-concept-row"
-                href={`/tests?unit=${item.unitId.toLowerCase()}`}
+                href={`/tests?block=${blockSlug}&unit=${item.unitId.toLowerCase()}`}
                 key={item.conceptId}
               >
                 <span>

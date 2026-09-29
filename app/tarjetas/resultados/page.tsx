@@ -7,6 +7,8 @@ import { useClientSearchParams } from "@/lib/navigation/search-params";
 /**
  * Static flashcard results route: the exported HTML renders the controlled
  * "missing session id" state and the browser resolves `?sid=` after hydration.
+ * The selected block is resolved from the local session, so historical links
+ * without `block` remain valid.
  */
 export default function FlashcardResultsPage() {
   const searchParams = useClientSearchParams();

@@ -28,6 +28,7 @@ export function QuizSession({
   const history = useQuizHistory();
   const storedSession = history.sessions[config.sessionId];
   const completedAttempts = storedSession?.attempts.length ?? 0;
+  const resultsHref = `/tests/resultados?sid=${encodeURIComponent(config.sessionId)}&block=${config.blockId ?? "B1"}`;
 
   if (storedSession?.completedAt) {
     return (
@@ -36,7 +37,7 @@ export function QuizSession({
         <h1>Este test ya está terminado.</h1>
         <Link
           className="button primary"
-          href={`/tests/resultados?sid=${encodeURIComponent(config.sessionId)}`}
+          href={resultsHref}
         >
           Ver resultados
         </Link>
@@ -54,7 +55,7 @@ export function QuizSession({
         <div className="actions">
           <Link
             className="button primary"
-            href={`/tests/resultados?sid=${encodeURIComponent(config.sessionId)}`}
+            href={resultsHref}
           >
             Ver resultados
           </Link>
@@ -77,7 +78,7 @@ export function QuizSession({
 
     if (final) {
       router.push(
-        `/tests/resultados?sid=${encodeURIComponent(config.sessionId)}`,
+        resultsHref,
       );
     }
   }

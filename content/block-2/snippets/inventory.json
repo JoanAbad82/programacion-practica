@@ -1,0 +1,592 @@
+{
+  "inventoryVersion": "B2_SNIPPET_INVENTORY_V1.0",
+  "blockId": "B2",
+  "canonicalVersion": "BLOCK2_CANONICAL_V1.0",
+  "description": "Inventario auditable de fragmentos con forma de codigo y constructos ejecutables nombrados en el material canonico de B2. Cada elemento declara una o mas referencias de origen (archivo + id de pregunta/tarjeta cuando aplica).",
+  "classifications": [
+    "EXECUTE_SAFE_PURE",
+    "EXECUTE_SAFE_TEMP_MUTATION",
+    "PARSE_ONLY",
+    "PROSE_NOT_EXECUTABLE",
+    "UNSAFE_NOT_EXECUTED"
+  ],
+  "items": [
+    {
+      "id": "B2-INV-PY-001",
+      "language": "PYTHON",
+      "construct": "pathlib.Path: composicion con el operador /",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u02.md" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0021" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0022" },
+        { "file": "content/block-2/flashcards/u02.json", "itemId": "B2-FC0009" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-002",
+      "language": "PYTHON",
+      "construct": "Path.mkdir(parents=True, exist_ok=True) idempotente",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u02.md" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0036" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-003",
+      "language": "PYTHON",
+      "construct": "iterdir() / rglob() + stat()/suffix (metadatos)",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u02.md" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0027" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0028" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0030" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0031" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0033" },
+        { "file": "content/block-2/flashcards/u02.json", "itemId": "B2-FC0013" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-004",
+      "language": "PYTHON",
+      "construct": "shutil.copy2 / shutil.move / Path.rename",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0042" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0044" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0047" },
+        { "file": "content/block-2/flashcards/u03.json", "itemId": "B2-FC0017" },
+        { "file": "content/block-2/flashcards/u03.json", "itemId": "B2-FC0018" },
+        { "file": "content/block-2/flashcards/u03.json", "itemId": "B2-FC0019" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-005",
+      "language": "PYTHON",
+      "construct": "Path.unlink: borrado de un archivo",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "destructive": true,
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0051" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-006",
+      "language": "PYTHON",
+      "construct": "open(..., encoding='utf-8') / Path.read_text / Path.write_text (append)",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u04.md" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-007",
+      "language": "PYTHON",
+      "construct": "csv.DictReader: registros accesibles por encabezado",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u05.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0084" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-008",
+      "language": "PYTHON",
+      "construct": "list comprehension de filtrado [r for r in filas if ...]",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0091" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-009",
+      "language": "PYTHON",
+      "construct": "conversion numerica de campos CSV antes de calcular",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u05.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0095" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-010",
+      "language": "PYTHON",
+      "construct": "csv.DictWriter exportando con encoding utf-8 explicito",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u05.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0098" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-011",
+      "language": "PYTHON",
+      "construct": "json.loads / json.dumps round-trip preservando tipos",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u06.md" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0104" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0107" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-012",
+      "language": "PYTHON",
+      "construct": "texto JSON sin deserializar vs objeto (subindice por clave)",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u06.md" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0106" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-013",
+      "language": "PYTHON",
+      "construct": "re.search con grupos de captura y re.findall",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u07.md" },
+        { "file": "content/block-2/questions/u07.json", "itemId": "B2-Q0134" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-014",
+      "language": "PYTHON",
+      "construct": "re.sub sustitucion guiada por patron",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u07.md" },
+        { "file": "content/block-2/questions/u07.json", "itemId": "B2-Q0136" },
+        { "file": "content/block-2/flashcards/u07.json", "itemId": "B2-FC0056" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-015",
+      "language": "PYTHON",
+      "construct": "sorted()/set()/dict acumulador (filtrar, transformar, agrupar)",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0154" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-016",
+      "language": "PYTHON",
+      "construct": "try/except/finally con excepcion especifica (ValueError/JSONDecodeError/FileNotFoundError)",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u09.md" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0164" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0166" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0173" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0174" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0180" },
+        { "file": "content/block-2/flashcards/u09.json", "itemId": "B2-FC0066" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-017",
+      "language": "PYTHON",
+      "construct": "sys.exit(codigo) como codigo de salida del proceso",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u09.md" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0176" },
+        { "file": "content/block-2/flashcards/u09.json", "itemId": "B2-FC0070" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-018",
+      "language": "PYTHON",
+      "construct": "argparse: defaults y elecciones (choices)",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u10.md" },
+        { "file": "content/block-2/questions/u10.json", "itemId": "B2-Q0188" },
+        { "file": "content/block-2/questions/u10.json", "itemId": "B2-Q0200" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-019",
+      "language": "PYTHON",
+      "construct": "entrypoint guard: if __name__ == \"__main__\"",
+      "classification": "PARSE_ONLY",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u10.md" },
+        { "file": "content/block-2/questions/u10.json", "itemId": "B2-Q0181" },
+        { "file": "content/block-2/flashcards/u10.json", "itemId": "B2-FC0073" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-020",
+      "language": "PYTHON",
+      "construct": "modulo logging: niveles y salida controlada",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u11.md" },
+        { "file": "content/block-2/questions/u11.json", "itemId": "B2-Q0201" },
+        { "file": "content/block-2/flashcards/u11.json", "itemId": "B2-FC0081" }
+      ]
+    },
+    {
+      "id": "B2-INV-PY-021",
+      "language": "PYTHON",
+      "construct": "antipatron except: pass (oculta el error real)",
+      "classification": "UNSAFE_NOT_EXECUTED",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u09.md" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0166" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0180" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-001",
+      "language": "POWERSHELL",
+      "construct": "Join-Path: composicion de rutas",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u02.md" },
+        { "file": "content/block-2/flashcards/u02.json", "itemId": "B2-FC0009" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-002",
+      "language": "POWERSHELL",
+      "construct": "Test-Path / Get-Item / Get-ChildItem (-Recurse -Filter) / New-Item -Force",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u02.md" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0027" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0028" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0030" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0033" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0036" },
+        { "file": "content/block-2/flashcards/u02.json", "itemId": "B2-FC0013" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-003",
+      "language": "POWERSHELL",
+      "construct": "Copy-Item / Move-Item / Rename-Item",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0042" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0044" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0047" },
+        { "file": "content/block-2/flashcards/u03.json", "itemId": "B2-FC0017" },
+        { "file": "content/block-2/flashcards/u03.json", "itemId": "B2-FC0018" },
+        { "file": "content/block-2/flashcards/u03.json", "itemId": "B2-FC0019" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-004",
+      "language": "POWERSHELL",
+      "construct": "Remove-Item de un archivo con -ErrorAction Stop",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "destructive": true,
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0051" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0169" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-005",
+      "language": "POWERSHELL",
+      "construct": "Get-Content / Set-Content / Add-Content con encoding",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u04.md" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-006",
+      "language": "POWERSHELL",
+      "construct": "Import-Csv: registros con propiedades por encabezado",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u05.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0084" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-007",
+      "language": "POWERSHELL",
+      "construct": "Export-Csv con -NoTypeInformation y encoding",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u05.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0096" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0098" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-008",
+      "language": "POWERSHELL",
+      "construct": "ConvertFrom-Json: deserializacion",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u06.md" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0104" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0106" },
+        { "file": "content/block-2/flashcards/u06.json", "itemId": "B2-FC0047" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-009",
+      "language": "POWERSHELL",
+      "construct": "ConvertTo-Json -Depth: anidamiento frente a truncamiento",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u06.md" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0107" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0108" },
+        { "file": "content/block-2/flashcards/u06.json", "itemId": "B2-FC0047" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-010",
+      "language": "POWERSHELL",
+      "construct": "-match / -replace / $Matches",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u07.md" },
+        { "file": "content/block-2/questions/u07.json", "itemId": "B2-Q0136" },
+        { "file": "content/block-2/questions/u07.json", "itemId": "B2-Q0121" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-011",
+      "language": "POWERSHELL",
+      "construct": "Where-Object: filtrado de objetos",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0142" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-012",
+      "language": "POWERSHELL",
+      "construct": "Select-Object -Property: proyeccion",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0145" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-013",
+      "language": "POWERSHELL",
+      "construct": "Sort-Object -Unique: orden y deduplicacion",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0153" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0154" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-014",
+      "language": "POWERSHELL",
+      "construct": "Group-Object: agrupacion por clave",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0151" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-015",
+      "language": "POWERSHELL",
+      "construct": "Measure-Object -Sum: agregacion",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0157" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-016",
+      "language": "POWERSHELL",
+      "construct": "try/catch/finally + -ErrorAction Stop + codigos de salida",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u09.md" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0167" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0168" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0169" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0176" },
+        { "file": "content/block-2/flashcards/u09.json", "itemId": "B2-FC0067" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-017",
+      "language": "POWERSHELL",
+      "construct": "Write-Verbose / Write-Warning / Write-Error",
+      "classification": "EXECUTE_SAFE_PURE",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u11.md" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-018",
+      "language": "POWERSHELL",
+      "construct": "param(...) con defaults y ValidateSet",
+      "classification": "PARSE_ONLY",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u10.md" },
+        { "file": "content/block-2/questions/u10.json", "itemId": "B2-Q0184" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-019",
+      "language": "POWERSHELL",
+      "construct": "Remove-Item -Recurse -Force: borrado recursivo indiscriminado",
+      "classification": "UNSAFE_NOT_EXECUTED",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u03.md" }
+      ]
+    },
+    {
+      "id": "B2-INV-PS-020",
+      "language": "POWERSHELL",
+      "construct": "Move-Item -Force: sobrescritura silenciosa sin politica de colision",
+      "classification": "UNSAFE_NOT_EXECUTED",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0046" }
+      ]
+    },
+    {
+      "id": "B2-INV-PROSE-001",
+      "language": "COMMON",
+      "construct": "Diseno previo: alcance, contrato E/S, precondiciones, dry-run e idempotencia",
+      "classification": "PROSE_NOT_EXECUTABLE",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u01.md" },
+        { "file": "content/block-2/questions/u01.json", "itemId": "B2-Q0016" },
+        { "file": "content/block-2/flashcards/u01.json", "itemId": "B2-FC0005" }
+      ]
+    },
+    {
+      "id": "B2-INV-PROSE-002",
+      "language": "COMMON",
+      "construct": "Efectos secundarios y separacion entre consulta y modificacion",
+      "classification": "PROSE_NOT_EXECUTABLE",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u01.md" }
+      ]
+    },
+    {
+      "id": "B2-INV-PROSE-003",
+      "language": "COMMON",
+      "construct": "Politica de colision y respaldo/rollback",
+      "classification": "PROSE_NOT_EXECUTABLE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0056" }
+      ]
+    },
+    {
+      "id": "B2-INV-PROSE-004",
+      "language": "COMMON",
+      "construct": "BOM y terminadores de linea como concepto textual",
+      "classification": "PROSE_NOT_EXECUTABLE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u04.md" }
+      ]
+    },
+    {
+      "id": "B2-INV-PROSE-005",
+      "language": "COMMON",
+      "construct": "Tipos JSON declarativos (string/number/boolean/null/object/array)",
+      "classification": "PROSE_NOT_EXECUTABLE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u06.md" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0113" }
+      ]
+    },
+    {
+      "id": "B2-INV-PROSE-006",
+      "language": "COMMON",
+      "construct": "Preferir coincidencia literal frente a expresiones regulares cuando basta",
+      "classification": "PROSE_NOT_EXECUTABLE",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u07.md" },
+        { "file": "content/block-2/questions/u07.json", "itemId": "B2-Q0121" }
+      ]
+    },
+    {
+      "id": "B2-INV-PROSE-007",
+      "language": "COMMON",
+      "construct": "Deduplicacion por una clave definida",
+      "classification": "PROSE_NOT_EXECUTABLE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0153" }
+      ]
+    },
+    {
+      "id": "B2-INV-PROSE-008",
+      "language": "COMMON",
+      "construct": "Validacion de la entrada (contrato) antes de actuar",
+      "classification": "PROSE_NOT_EXECUTABLE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u09.md" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0161" }
+      ]
+    },
+    {
+      "id": "B2-INV-PROSE-009",
+      "language": "COMMON",
+      "construct": "Distinguir devolver datos (return) de mostrar al usuario (output)",
+      "classification": "PROSE_NOT_EXECUTABLE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u10.md" },
+        { "file": "content/block-2/questions/u10.json", "itemId": "B2-Q0193" }
+      ]
+    },
+    {
+      "id": "B2-INV-PROSE-010",
+      "language": "COMMON",
+      "construct": "Log, dry-run, idempotencia y resumen de ejecucion como diseno",
+      "classification": "PROSE_NOT_EXECUTABLE",
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u11.md" },
+        { "file": "content/block-2/questions/u11.json", "itemId": "B2-Q0216" },
+        { "file": "content/block-2/flashcards/u11.json", "itemId": "B2-FC0086" }
+      ]
+    },
+    {
+      "id": "B2-INV-PROSE-011",
+      "language": "COMMON",
+      "construct": "Etapas PLAN/APPLY, journal de cambios, postcondiciones y reporte reproducible",
+      "classification": "PROSE_NOT_EXECUTABLE",
+      "sourceRefs": [
+        { "file": "content/block-2/README.md" },
+        { "file": "content/block-2/canonical/u12.md" },
+        { "file": "content/block-2/questions/u12.json", "itemId": "B2-Q0227" },
+        { "file": "content/block-2/flashcards/u12.json", "itemId": "B2-FC0091" }
+      ]
+    }
+  ]
+}

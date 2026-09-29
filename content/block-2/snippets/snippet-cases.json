@@ -1,0 +1,724 @@
+{
+  "registryVersion": "B2_SNIPPET_CASES_V1.0",
+  "blockId": "B2",
+  "canonicalVersion": "BLOCK2_CANONICAL_V1.0",
+  "description": "Casos curados y revisados para validar automaticamente los fragmentos ejecutables de B2. El validador NUNCA ejecuta cadenas extraidas de las preguntas: solo estos casos, con clasificacion explicita y aserciones deterministas.",
+  "runtimeRequirements": {
+    "python": {
+      "required": true,
+      "candidates": ["python", "python3", "py"],
+      "versionArgs": ["--version"]
+    },
+    "powershell": {
+      "required": true,
+      "candidates": ["pwsh", "powershell"],
+      "versionArgs": ["-NoProfile", "-Command", "$PSVersionTable.PSVersion.ToString()"]
+    }
+  },
+  "resultProtocol": {
+    "prefix": "RESULT:",
+    "description": "Cada caso imprime en stdout una linea 'RESULT:' seguida de un objeto JSON. El validador compara ese objeto con el campo 'expect' y exige ademas el codigo de salida declarado.",
+    "envVar": "B2_SNIPPET_TEMP"
+  },
+  "cases": [
+    {
+      "id": "py-path-compose",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Componer rutas con pathlib sin concatenar separadores.",
+      "inventoryIds": ["B2-INV-PY-001"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u02.md" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0021" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0022" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import json\nfrom pathlib import Path\n\nbase = Path(\"datos\") / \"sub\" / \"f.txt\"\nresult = {\n    \"parts\": list(base.parts),\n    \"name\": base.name,\n    \"suffix\": base.suffix,\n    \"parent_name\": base.parent.name,\n    \"is_absolute\": base.is_absolute(),\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "parts": ["datos", "sub", "f.txt"], "name": "f.txt", "suffix": ".txt", "parent_name": "sub", "is_absolute": false }
+    },
+    {
+      "id": "py-mkdir-idempotent",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "Crear directorios dos veces con exist_ok=True sin error (idempotencia de creacion).",
+      "inventoryIds": ["B2-INV-PY-002"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u02.md" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0036" }
+      ],
+      "destructive": false,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "import json, os\nfrom pathlib import Path\n\nroot = Path(os.environ[\"B2_SNIPPET_TEMP\"])\ntarget = root / \"out\" / \"sub\"\ntarget.mkdir(parents=True, exist_ok=True)\ntarget.mkdir(parents=True, exist_ok=True)\nresult = {\n    \"created\": target.is_dir(),\n    \"parents_created\": (root / \"out\").is_dir(),\n    \"inside_temp\": str(target).startswith(str(root)),\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "created": true, "parents_created": true, "inside_temp": true }
+    },
+    {
+      "id": "py-enumerate-metadata",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "Enumerar iterdir/rglob y leer metadatos (nombre, extension, tamano) de un fixture temporal.",
+      "inventoryIds": ["B2-INV-PY-003"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u02.md" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0027" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0030" }
+      ],
+      "destructive": false,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "import json, os\nfrom pathlib import Path\n\nroot = Path(os.environ[\"B2_SNIPPET_TEMP\"])\n(root / \"sub\").mkdir(parents=True, exist_ok=True)\n(root / \"a.txt\").write_text(\"hola\", encoding=\"utf-8\")\n(root / \"sub\" / \"b.csv\").write_text(\"id\\n1\\n\", encoding=\"utf-8\")\n(root / \"sub\" / \"c.txt\").write_text(\"abc\", encoding=\"utf-8\")\ndirect = sorted(p.name for p in root.iterdir())\nrecursive_txt = sorted(p.name for p in root.rglob(\"*.txt\"))\nresult = {\n    \"direct_names\": direct,\n    \"recursive_txt\": recursive_txt,\n    \"suffix_a\": (root / \"a.txt\").suffix,\n    \"size_a\": (root / \"a.txt\").stat().st_size,\n    \"is_file_a\": (root / \"a.txt\").is_file(),\n    \"is_dir_sub\": (root / \"sub\").is_dir(),\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "direct_names": ["a.txt", "sub"], "recursive_txt": ["a.txt", "c.txt"], "suffix_a": ".txt", "size_a": 4, "is_file_a": true, "is_dir_sub": true }
+    },
+    {
+      "id": "py-copy-move-rename",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "copy2 conserva el original; move y rename cambian ubicacion/nombre conservando el contenido.",
+      "inventoryIds": ["B2-INV-PY-004"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0042" }
+      ],
+      "destructive": false,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "import json, os, shutil\nfrom pathlib import Path\n\nroot = Path(os.environ[\"B2_SNIPPET_TEMP\"])\nsrc = root / \"origen.txt\"\nsrc.write_text(\"contenido\", encoding=\"utf-8\")\ncopy = root / \"copia.txt\"\nshutil.copy2(src, copy)\nmoved = root / \"movido.txt\"\nshutil.move(str(copy), str(moved))\nrenamed = root / \"renombrado.txt\"\nmoved.rename(renamed)\nresult = {\n    \"origin_intact\": src.read_text(encoding=\"utf-8\") == \"contenido\",\n    \"copy_removed_by_move\": not copy.exists(),\n    \"moved_removed_by_rename\": not moved.exists(),\n    \"final_content\": renamed.read_text(encoding=\"utf-8\"),\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "origin_intact": true, "copy_removed_by_move": true, "moved_removed_by_rename": true, "final_content": "contenido" }
+    },
+    {
+      "id": "py-unlink-destructive",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "Path.unlink borra solo el archivo objetivo dentro del fixture temporal; el resto permanece.",
+      "inventoryIds": ["B2-INV-PY-005"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0051" }
+      ],
+      "destructive": true,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "import json, os\nfrom pathlib import Path\n\nroot = Path(os.environ[\"B2_SNIPPET_TEMP\"])\nvictim = root / \"a_borrar.txt\"\nkeeper = root / \"conservar.txt\"\nvictim.write_text(\"x\", encoding=\"utf-8\")\nkeeper.write_text(\"y\", encoding=\"utf-8\")\nexisted = victim.exists()\nvictim.unlink()\nresult = {\n    \"existed_before\": existed,\n    \"victim_gone\": not victim.exists(),\n    \"keeper_still_there\": keeper.exists(),\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "existed_before": true, "victim_gone": true, "keeper_still_there": true }
+    },
+    {
+      "id": "py-text-encoding",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "Leer/escribir texto con encoding explicito, filtrar lineas vacias y anexar sin sobrescribir.",
+      "inventoryIds": ["B2-INV-PY-006"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u04.md" }
+      ],
+      "destructive": false,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "import json, os\nfrom pathlib import Path\n\nroot = Path(os.environ[\"B2_SNIPPET_TEMP\"])\np = root / \"nota.txt\"\np.write_text(\"linea1\\n\\nlinea2\\n\", encoding=\"utf-8\")\nlines = [ln for ln in p.read_text(encoding=\"utf-8\").splitlines() if ln.strip()]\nappended = root / \"append.txt\"\nwith appended.open(\"w\", encoding=\"utf-8\", newline=\"\\n\") as fh:\n    fh.write(\"primera\\n\")\nwith appended.open(\"a\", encoding=\"utf-8\", newline=\"\\n\") as fh:\n    fh.write(\"segunda\\n\")\ntext = appended.read_text(encoding=\"utf-8\")\nresult = {\n    \"non_empty_lines\": lines,\n    \"appended_text\": text,\n    \"appended_line_count\": len(text.splitlines()),\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "non_empty_lines": ["linea1", "linea2"], "appended_text": "primera\nsegunda\n", "appended_line_count": 2 }
+    },
+    {
+      "id": "py-csv-parse",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "csv.DictReader convierte cada fila en un registro accesible por encabezado y los campos llegan como texto.",
+      "inventoryIds": ["B2-INV-PY-007"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u05.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0084" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import csv, io, json\n\ntext = \"id,estado,importe\\n1,abierto,10\\n2,cerrado,20\\n\"\nrows = list(csv.DictReader(io.StringIO(text)))\nresult = {\n    \"row_count\": len(rows),\n    \"headers\": list(rows[0].keys()),\n    \"field_type\": type(rows[0][\"importe\"]).__name__,\n    \"first_state\": rows[0][\"estado\"],\n    \"all_values_strings\": all(isinstance(v, str) for row in rows for v in row.values()),\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "row_count": 2, "headers": ["id", "estado", "importe"], "field_type": "str", "first_state": "abierto", "all_values_strings": true }
+    },
+    {
+      "id": "py-csv-filter-comprehension",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Una list comprehension filtra los registros cuyo campo estado es exactamente 'abierto'.",
+      "inventoryIds": ["B2-INV-PY-008"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0091" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import json\n\nfilas = [\n    {\"id\": \"1\", \"estado\": \"abierto\"},\n    {\"id\": \"2\", \"estado\": \"cerrado\"},\n    {\"id\": \"3\", \"estado\": \"abierto\"},\n]\nabiertas = [r[\"id\"] for r in filas if r[\"estado\"] == \"abierto\"]\nresult = {\"abiertas\": abiertas, \"total\": len(filas), \"abiertas_count\": len(abiertas)}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "abiertas": ["1", "3"], "total": 3, "abiertas_count": 2 }
+    },
+    {
+      "id": "py-csv-numeric-transform",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Multiplicar campos CSV sin convertir produce error en Python; convertidos a numero dan el producto esperado.",
+      "inventoryIds": ["B2-INV-PY-009"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u05.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0095" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import json\n\ncantidad_txt = \"6\"\nprecio_txt = \"2.5\"\nrepetition = \"5\" * 3\ntry:\n    cantidad_txt * precio_txt\n    raw_kind = \"no-error\"\nexcept TypeError:\n    raw_kind = \"TypeError\"\ntotal = int(cantidad_txt) * float(precio_txt)\nresult = {\n    \"raw_product_kind\": raw_kind,\n    \"repetition\": repetition,\n    \"converted_total\": total,\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "raw_product_kind": "TypeError", "repetition": "555", "converted_total": 15.0 }
+    },
+    {
+      "id": "py-csv-export-encoding",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "csv.DictWriter con encoding utf-8 explicito conserva encabezados y acentos al reabrir el CSV.",
+      "inventoryIds": ["B2-INV-PY-010"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u05.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0098" }
+      ],
+      "destructive": false,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "import csv, json, os\nfrom pathlib import Path\n\nroot = Path(os.environ[\"B2_SNIPPET_TEMP\"])\nout = root / \"salida.csv\"\nfieldnames = [\"id\", \"nombre\"]\nwith out.open(\"w\", encoding=\"utf-8\", newline=\"\") as fh:\n    writer = csv.DictWriter(fh, fieldnames=fieldnames)\n    writer.writeheader()\n    writer.writerow({\"id\": \"1\", \"nombre\": \"Añó\"})\n    writer.writerow({\"id\": \"2\", \"nombre\": \"Peña\"})\nwith out.open(encoding=\"utf-8\", newline=\"\") as fh:\n    reread = list(csv.DictReader(fh))\nresult = {\n    \"header_ok\": out.read_text(encoding=\"utf-8\").splitlines()[0] == \"id,nombre\",\n    \"row_count\": len(reread),\n    \"accent_preserved\": reread[0][\"nombre\"] == \"Añó\",\n    \"second_name\": reread[1][\"nombre\"],\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "header_ok": true, "row_count": 2, "accent_preserved": true, "second_name": "Peña" }
+    },
+    {
+      "id": "py-json-roundtrip",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "json.loads/json.dumps preserva tipos nativos (string, bool, int, list, null) en ida y vuelta.",
+      "inventoryIds": ["B2-INV-PY-011"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u06.md" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0104" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0107" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import json\n\nraw = '{\"nombre\": \"informe\", \"activo\": true, \"total\": 3, \"items\": [1, 2], \"extra\": null}'\ndata = json.loads(raw)\nserialized = json.dumps(data, ensure_ascii=False, sort_keys=True)\nagain = json.loads(serialized)\nresult = {\n    \"nombre\": data[\"nombre\"],\n    \"activo_type\": type(data[\"activo\"]).__name__,\n    \"total_type\": type(data[\"total\"]).__name__,\n    \"items_len\": len(data[\"items\"]),\n    \"extra_is_none\": data[\"extra\"] is None,\n    \"roundtrip_equal\": again == data,\n    \"top_level_type\": type(data).__name__,\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "nombre": "informe", "activo_type": "bool", "total_type": "int", "items_len": 2, "extra_is_none": true, "roundtrip_equal": true, "top_level_type": "dict" }
+    },
+    {
+      "id": "py-json-text-vs-object",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Texto JSON sin deserializar no admite acceso por clave; tras json.loads si.",
+      "inventoryIds": ["B2-INV-PY-012"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u06.md" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0106" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import json\n\ntexto = '{\"total\": 3}'\ntry:\n    texto[\"total\"]\n    raw_kind = \"no-error\"\nexcept TypeError:\n    raw_kind = \"TypeError\"\nobj = json.loads(texto)\nresult = {\n    \"raw_text_subscript\": raw_kind,\n    \"raw_text_type\": type(texto).__name__,\n    \"parsed_subscript\": obj[\"total\"],\n    \"parsed_type\": type(obj).__name__,\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "raw_text_subscript": "TypeError", "raw_text_type": "str", "parsed_subscript": 3, "parsed_type": "dict" }
+    },
+    {
+      "id": "py-regex-capture",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "re.search con grupos captura anio y mes; las anclas ^ y $ restringen la coincidencia completa.",
+      "inventoryIds": ["B2-INV-PY-013"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u07.md" },
+        { "file": "content/block-2/questions/u07.json", "itemId": "B2-Q0134" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import json, re\n\nm = re.search(r\"(\\d{4})-(\\d{2})\", \"2026-09\")\nfound = re.findall(r\"INC-(\\d{4})-(\\d+)\", \"INC-2026-00421 y INC-2025-00007\")\nno_match = re.search(r\"^(\\d{4})-(\\d{2})$\", \"2026-09-extra\")\nresult = {\n    \"groups\": list(m.groups()) if m else None,\n    \"found\": [list(g) for g in found],\n    \"anchored_match_is_none\": no_match is None,\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "groups": ["2026", "09"], "found": [["2026", "00421"], ["2025", "00007"]], "anchored_match_is_none": true }
+    },
+    {
+      "id": "py-regex-sub",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "re.sub sustituye solo los fragmentos que cumplen el patron; puede reordenar grupos capturados.",
+      "inventoryIds": ["B2-INV-PY-014"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u07.md" },
+        { "file": "content/block-2/questions/u07.json", "itemId": "B2-Q0136" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import json, re\n\nreordered = re.sub(r\"(\\d{4})-(\\d{2})\", r\"\\2/\\1\", \"fecha 2026-09\")\nmasked = re.sub(r\"\\d\", \"#\", \"a1b2\")\nresult = {\"reordered\": reordered, \"masked\": masked}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "reordered": "fecha 09/2026", "masked": "a#b#" }
+    },
+    {
+      "id": "py-collections-pipeline",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "sorted(), set() y acumuladores convierten registros en resultados ordenados, deduplicados y agregados.",
+      "inventoryIds": ["B2-INV-PY-015"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0154" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import json\n\ntickets = [\n    {\"id\": \"2\", \"categoria\": \"red\", \"importe\": 10},\n    {\"id\": \"1\", \"categoria\": \"app\", \"importe\": 20},\n    {\"id\": \"2\", \"categoria\": \"red\", \"importe\": 30},\n]\nsorted_ids = [t[\"id\"] for t in sorted(tickets, key=lambda t: t[\"id\"])]\nunique = sorted({t[\"id\"] for t in tickets})\ngroup = {}\nfor t in tickets:\n    group[t[\"categoria\"]] = group.get(t[\"categoria\"], 0) + t[\"importe\"]\ntotal = sum(t[\"importe\"] for t in tickets)\nresult = {\"sorted_ids\": sorted_ids, \"unique_ids\": unique, \"sum_by_category\": group, \"total\": total}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "sorted_ids": ["1", "2", "2"], "unique_ids": ["1", "2"], "sum_by_category": { "app": 20, "red": 40 }, "total": 60 }
+    },
+    {
+      "id": "py-try-except-finally",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Capturar excepciones especificas (ValueError, JSONDecodeError, FileNotFoundError) y limpiar en finally.",
+      "inventoryIds": ["B2-INV-PY-016"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u09.md" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0164" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0180" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import json\n\nsteps = []\ntry:\n    raise ValueError(\"boom\")\nexcept KeyError:\n    steps.append(\"wrong-handler\")\nexcept ValueError as exc:\n    steps.append(type(exc).__name__)\nfinally:\n    steps.append(\"finally\")\n\ntry:\n    json.loads(\"{no valido}\")\n    json_error = \"no-error\"\nexcept json.JSONDecodeError:\n    json_error = \"JSONDecodeError\"\n\ntry:\n    open(\"ruta_que_no_existe_b2.txt\", encoding=\"utf-8\")\n    file_error = \"no-error\"\nexcept FileNotFoundError:\n    file_error = \"FileNotFoundError\"\n\nresult = {\"steps\": steps, \"json_error\": json_error, \"file_error\": file_error}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "steps": ["ValueError", "finally"], "json_error": "JSONDecodeError", "file_error": "FileNotFoundError" }
+    },
+    {
+      "id": "py-exit-codes",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "sys.exit propaga un codigo de salida no cero al proceso llamador (aqui 3).",
+      "inventoryIds": ["B2-INV-PY-017"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u09.md" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0176" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 3,
+      "code": "import json, sys\n\nresult = {\"error_previsto\": \"ValueError\", \"codigo\": 3}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\nsys.exit(3)\n",
+      "expect": { "error_previsto": "ValueError", "codigo": 3 }
+    },
+    {
+      "id": "py-argparse-defaults",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "argparse aplica el valor por defecto cuando no se indica el parametro y respeta el valor explicito.",
+      "inventoryIds": ["B2-INV-PY-018"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u10.md" },
+        { "file": "content/block-2/questions/u10.json", "itemId": "B2-Q0188" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import argparse, json\n\nparser = argparse.ArgumentParser(description=\"herramienta B2\")\nparser.add_argument(\"--formato\", default=\"csv\", choices=[\"csv\", \"json\"])\nparser.add_argument(\"--entrada\", required=False)\ndefaults = parser.parse_args([])\nexplicit = parser.parse_args([\"--formato\", \"json\"])\nresult = {\n    \"default_formato\": defaults.formato,\n    \"explicit_formato\": explicit.formato,\n    \"entrada\": defaults.entrada,\n    \"prog_set\": bool(parser.prog),\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "default_formato": "csv", "explicit_formato": "json", "entrada": null, "prog_set": true }
+    },
+    {
+      "id": "py-entrypoint-guard",
+      "language": "PYTHON",
+      "classification": "PARSE_ONLY",
+      "purpose": "Guard if __name__ == \"__main__\" separa definiciones de la ejecucion directa (solo se valida sintaxis).",
+      "inventoryIds": ["B2-INV-PY-019"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u10.md" },
+        { "file": "content/block-2/questions/u10.json", "itemId": "B2-Q0181" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": null,
+      "code": "import argparse\n\n\ndef build_parser():\n    parser = argparse.ArgumentParser()\n    parser.add_argument(\"--entrada\", default=\"datos\")\n    return parser\n\n\ndef main(argv=None):\n    args = build_parser().parse_args(argv)\n    return 0 if args.entrada else 1\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+      "expect": {}
+    },
+    {
+      "id": "py-logging-levels",
+      "language": "PYTHON",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "logging con nivel WARNING oculta info y conserva aviso y error, con formato controlado.",
+      "inventoryIds": ["B2-INV-PY-020"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u11.md" },
+        { "file": "content/block-2/questions/u11.json", "itemId": "B2-Q0201" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "import io, json, logging\n\nstream = io.StringIO()\nlogger = logging.getLogger(\"b2-snippet\")\nlogger.handlers.clear()\nlogger.setLevel(logging.WARNING)\nhandler = logging.StreamHandler(stream)\nhandler.setFormatter(logging.Formatter(\"%(levelname)s:%(message)s\"))\nlogger.addHandler(handler)\nlogger.info(\"no aparece\")\nlogger.warning(\"aviso\")\nlogger.error(\"fallo\")\ncaptured = stream.getvalue().strip().splitlines()\nresult = {\n    \"lines\": captured,\n    \"info_hidden\": all(\"no aparece\" not in ln for ln in captured),\n    \"count\": len(captured),\n}\nprint(\"RESULT:\" + json.dumps(result, sort_keys=True))\n",
+      "expect": { "lines": ["WARNING:aviso", "ERROR:fallo"], "info_hidden": true, "count": 2 }
+    },
+    {
+      "id": "py-except-pass-unsafe",
+      "language": "PYTHON",
+      "classification": "UNSAFE_NOT_EXECUTED",
+      "purpose": "Antipatron except: pass: oculta el error real. Se registra para probar que el deny-check lo rechaza; nunca se ejecuta.",
+      "inventoryIds": ["B2-INV-PY-021"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u09.md" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0166" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": null,
+      "code": "try:\n    open(\"datos.json\", encoding=\"utf-8\")\nexcept:\n    pass\n",
+      "expect": {}
+    },
+    {
+      "id": "ps-join-path",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Join-Path compone segmentos con el separador del sistema.",
+      "inventoryIds": ["B2-INV-PS-001"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u02.md" },
+        { "file": "content/block-2/flashcards/u02.json", "itemId": "B2-FC0009" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "$sep = [System.IO.Path]::DirectorySeparatorChar\n$joined = Join-Path \"datos\" \"sub\"\n$nested = Join-Path (Join-Path \"datos\" \"sub\") \"f.txt\"\n$out = [ordered]@{\n  joined = $joined\n  joined_ok = ($joined -eq (\"datos\" + $sep + \"sub\"))\n  nested_ok = ($nested -eq (\"datos\" + $sep + \"sub\" + $sep + \"f.txt\"))\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "joined_ok": true, "nested_ok": true }
+    },
+    {
+      "id": "ps-enumerate-metadata",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "Test-Path/Get-Item/Get-ChildItem (-Recurse -Filter) y New-Item -Force sobre un fixture temporal.",
+      "inventoryIds": ["B2-INV-PS-002"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u02.md" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0027" },
+        { "file": "content/block-2/questions/u02.json", "itemId": "B2-Q0036" }
+      ],
+      "destructive": false,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "$root = $env:B2_SNIPPET_TEMP\nNew-Item -ItemType Directory -Path (Join-Path $root \"sub\") -Force | Out-Null\nSet-Content -LiteralPath (Join-Path $root \"a.txt\") -Value \"hola\" -Encoding utf8\nSet-Content -LiteralPath (Join-Path $root (Join-Path \"sub\" \"b.txt\")) -Value \"abc\" -Encoding utf8\nNew-Item -ItemType Directory -Path (Join-Path $root \"out\") -Force | Out-Null\nNew-Item -ItemType Directory -Path (Join-Path $root \"out\") -Force | Out-Null\n$a = Join-Path $root \"a.txt\"\n$item = Get-Item -LiteralPath $a\n$out = [ordered]@{\n  test_path_true = (Test-Path -LiteralPath $a)\n  test_path_false = (Test-Path -LiteralPath (Join-Path $root \"missing.txt\"))\n  is_container = $item.PSIsContainer\n  suffix = $item.Extension\n  size_matches = ($item.Length -eq ([System.IO.File]::ReadAllBytes($a).Length))\n  size_positive = ($item.Length -gt 0)\n  direct_count = @(Get-ChildItem -LiteralPath $root).Count\n  recursive_txt = @(Get-ChildItem -LiteralPath $root -Recurse -Filter *.txt).Count\n  idempotent_create = (Test-Path -LiteralPath (Join-Path $root \"out\"))\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "test_path_true": true, "test_path_false": false, "is_container": false, "suffix": ".txt", "size_matches": true, "size_positive": true, "direct_count": 3, "recursive_txt": 2, "idempotent_create": true }
+    },
+    {
+      "id": "ps-copy-move-rename",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "Copy-Item conserva el original; Rename-Item y Move-Item cambian nombre/ubicacion dentro del fixture temporal.",
+      "inventoryIds": ["B2-INV-PS-003"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0042" }
+      ],
+      "destructive": false,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "$root = $env:B2_SNIPPET_TEMP\n$src = Join-Path $root \"origen.txt\"\nSet-Content -LiteralPath $src -Value \"contenido\" -Encoding utf8\nCopy-Item -LiteralPath $src -Destination (Join-Path $root \"copia.txt\")\nRename-Item -LiteralPath (Join-Path $root \"copia.txt\") -NewName \"renombrado.txt\"\nMove-Item -LiteralPath (Join-Path $root \"renombrado.txt\") -Destination (Join-Path $root \"destino.txt\")\n$out = [ordered]@{\n  origin_intact = ((Get-Content -LiteralPath $src -Raw).Trim() -eq \"contenido\")\n  copy_path_gone = -not (Test-Path -LiteralPath (Join-Path $root \"copia.txt\"))\n  renamed_path_gone = -not (Test-Path -LiteralPath (Join-Path $root \"renombrado.txt\"))\n  moved_content_ok = ((Get-Content -LiteralPath (Join-Path $root \"destino.txt\") -Raw).Trim() -eq \"contenido\")\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "origin_intact": true, "copy_path_gone": true, "renamed_path_gone": true, "moved_content_ok": true }
+    },
+    {
+      "id": "ps-remove-item-temp",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "Remove-Item con -ErrorAction Stop borra solo el archivo objetivo dentro del fixture temporal.",
+      "inventoryIds": ["B2-INV-PS-004"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0051" }
+      ],
+      "destructive": true,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "$root = $env:B2_SNIPPET_TEMP\n$victim = Join-Path $root \"a_borrar.txt\"\n$keeper = Join-Path $root \"conservar.txt\"\nSet-Content -LiteralPath $victim -Value \"x\" -Encoding utf8\nSet-Content -LiteralPath $keeper -Value \"y\" -Encoding utf8\n$existed = Test-Path -LiteralPath $victim\nRemove-Item -LiteralPath $victim -ErrorAction Stop\n$out = [ordered]@{\n  existed_before = $existed\n  victim_gone = -not (Test-Path -LiteralPath $victim)\n  keeper_still_there = (Test-Path -LiteralPath $keeper)\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "existed_before": true, "victim_gone": true, "keeper_still_there": true }
+    },
+    {
+      "id": "ps-text-content",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "Set-Content/Add-Content escriben y anexan lineas; Get-Content las devuelve como coleccion.",
+      "inventoryIds": ["B2-INV-PS-005"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u04.md" }
+      ],
+      "destructive": false,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "$root = $env:B2_SNIPPET_TEMP\n$p = Join-Path $root \"nota.txt\"\nSet-Content -LiteralPath $p -Value @(\"linea1\", \"\", \"linea2\") -Encoding utf8\nAdd-Content -LiteralPath $p -Value \"linea3\" -Encoding utf8\n$all = @(Get-Content -LiteralPath $p)\n$out = [ordered]@{\n  line_count = $all.Count\n  last_line = $all[-1]\n  has_middle_empty = ($all -contains \"\")\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "line_count": 4, "last_line": "linea3", "has_middle_empty": true }
+    },
+    {
+      "id": "ps-import-csv",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "Import-Csv convierte cada fila en un objeto con propiedades por encabezado; los valores llegan como texto.",
+      "inventoryIds": ["B2-INV-PS-006"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u05.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0084" }
+      ],
+      "destructive": false,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "$root = $env:B2_SNIPPET_TEMP\n$p = Join-Path $root \"datos.csv\"\nSet-Content -LiteralPath $p -Value @(\"id,estado,importe\", \"1,abierto,10\", \"2,cerrado,20\") -Encoding utf8\n$rows = Import-Csv -LiteralPath $p\n$out = [ordered]@{\n  row_count = @($rows).Count\n  first_state = $rows[0].estado\n  importe_is_string = ($rows[0].importe -is [string])\n  property_names = (@($rows[0].PSObject.Properties.Name) -join \",\")\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "row_count": 2, "first_state": "abierto", "importe_is_string": true, "property_names": "id,estado,importe" }
+    },
+    {
+      "id": "ps-export-csv",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_TEMP_MUTATION",
+      "purpose": "Export-Csv con -NoTypeInformation y encoding produce un CSV que se reimporta conservando encabezados y acentos.",
+      "inventoryIds": ["B2-INV-PS-007"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u05.md" },
+        { "file": "content/block-2/questions/u05.json", "itemId": "B2-Q0098" }
+      ],
+      "destructive": false,
+      "tempOnly": true,
+      "mutation": true,
+      "expectExitCode": 0,
+      "code": "$root = $env:B2_SNIPPET_TEMP\n$rows = @(\n  [pscustomobject]@{ id = \"1\"; nombre = \"Añó\" },\n  [pscustomobject]@{ id = \"2\"; nombre = \"Peña\" }\n)\n$p = Join-Path $root \"salida.csv\"\n$rows | Export-Csv -LiteralPath $p -NoTypeInformation -Encoding utf8\n$reread = Import-Csv -LiteralPath $p\n$header = Get-Content -LiteralPath $p -TotalCount 1\n$out = [ordered]@{\n  row_count = @($reread).Count\n  accent_preserved = ($reread[0].nombre -eq \"Añó\")\n  header_kept = ($header -match \"id\")\n  second_name_ok = ($reread[1].nombre -eq \"Peña\")\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "row_count": 2, "accent_preserved": true, "header_kept": true, "second_name_ok": true }
+    },
+    {
+      "id": "ps-convertfrom-json",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "ConvertFrom-Json deserializa texto en objetos PSCustomObject preservando booleanos, numeros, arrays y null.",
+      "inventoryIds": ["B2-INV-PS-008"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u06.md" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0104" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "$raw = '{\"nombre\": \"informe\", \"activo\": true, \"total\": 3, \"items\": [1, 2], \"extra\": null}'\n$data = $raw | ConvertFrom-Json\n$out = [ordered]@{\n  nombre = $data.nombre\n  activo_is_bool = ($data.activo -is [bool])\n  total = $data.total\n  items_len = @($data.items).Count\n  extra_is_null = ($null -eq $data.extra)\n  top_type = $data.GetType().Name\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "nombre": "informe", "activo_is_bool": true, "total": 3, "items_len": 2, "extra_is_null": true, "top_type": "PSCustomObject" }
+    },
+    {
+      "id": "ps-convertto-json-depth",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "ConvertTo-Json -Depth suficiente conserva el anidamiento; una profundidad insuficiente lo trunca.",
+      "inventoryIds": ["B2-INV-PS-009"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u06.md" },
+        { "file": "content/block-2/questions/u06.json", "itemId": "B2-Q0108" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "$nested = [ordered]@{ a = [ordered]@{ b = [ordered]@{ c = [ordered]@{ d = 42 } } } }\n$deep = ($nested | ConvertTo-Json -Depth 5) | ConvertFrom-Json\n$shallow = ($nested | ConvertTo-Json -Depth 1 -WarningAction SilentlyContinue) | ConvertFrom-Json\n$out = [ordered]@{\n  depth5_preserved = ($deep.a.b.c.d -eq 42)\n  depth1_c_is_object = ($shallow.a.b.c -is [System.Management.Automation.PSCustomObject])\n  depth1_deep_value = $(if ($shallow.a.b.c -is [System.Management.Automation.PSCustomObject]) { $shallow.a.b.c.d } else { \"truncated\" })\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "depth5_preserved": true, "depth1_c_is_object": false, "depth1_deep_value": "truncated" }
+    },
+    {
+      "id": "ps-regex-match-replace",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "-match/$Matches extraen grupos y -replace sustituye por patron.",
+      "inventoryIds": ["B2-INV-PS-010"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u07.md" },
+        { "file": "content/block-2/questions/u07.json", "itemId": "B2-Q0136" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "$out = [ordered]@{}\n$out[\"match_ok\"] = (\"INC-2026-00421\" -match \"INC-(\\d{4})-(\\d+)\")\n$out[\"group_year\"] = $Matches[1]\n$out[\"group_code\"] = $Matches[2]\n$out[\"replaced\"] = (\"2026-09\" -replace \"(\\d{4})-(\\d{2})\", '$2/$1')\n$out[\"literal_preferred\"] = (\"INC-2026\" -eq \"INC-2026\")\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "match_ok": true, "group_year": "2026", "group_code": "00421", "replaced": "09/2026", "literal_preferred": true }
+    },
+    {
+      "id": "ps-where-object",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Where-Object conserva los objetos que cumplen la condicion (la pipeline transporta objetos).",
+      "inventoryIds": ["B2-INV-PS-011"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0142" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "$tickets = @(\n  [pscustomobject]@{ id = \"1\"; estado = \"abierto\" },\n  [pscustomobject]@{ id = \"2\"; estado = \"cerrado\" },\n  [pscustomobject]@{ id = \"3\"; estado = \"abierto\" }\n)\n$abiertos = @($tickets | Where-Object { $_.estado -eq \"abierto\" })\n$out = [ordered]@{\n  count = $abiertos.Count\n  ids = ($abiertos.id -join \",\")\n  objects_preserved = ($abiertos[0].PSObject.Properties.Name -contains \"estado\")\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "count": 2, "ids": "1,3", "objects_preserved": true }
+    },
+    {
+      "id": "ps-select-object",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Select-Object -Property proyecta cada objeto dejando solo las propiedades indicadas.",
+      "inventoryIds": ["B2-INV-PS-012"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0145" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "$tickets = @(\n  [pscustomobject]@{ id = \"1\"; prioridad = \"alta\"; secreto = \"x\" },\n  [pscustomobject]@{ id = \"2\"; prioridad = \"baja\"; secreto = \"y\" }\n)\n$projected = @($tickets | Select-Object -Property id, prioridad)\n$names = (@($projected[0].PSObject.Properties.Name) -join \",\")\n$out = [ordered]@{\n  count = $projected.Count\n  names = $names\n  first_id = $projected[0].id\n  has_secreto = ($names -match \"secreto\")\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "count": 2, "names": "id,prioridad", "first_id": "1", "has_secreto": false }
+    },
+    {
+      "id": "ps-sort-unique",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Sort-Object -Unique ordena por la clave y conserva una sola entrada por valor.",
+      "inventoryIds": ["B2-INV-PS-013"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0154" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "$items = @(\n  [pscustomobject]@{ id = \"2\" },\n  [pscustomobject]@{ id = \"1\" },\n  [pscustomobject]@{ id = \"2\" },\n  [pscustomobject]@{ id = \"3\" }\n)\n$sortedUnique = @($items | Sort-Object -Property id -Unique)\n$sortedAll = @($items | Sort-Object -Property id)\n$out = [ordered]@{\n  unique_ids = ($sortedUnique.id -join \",\")\n  unique_count = $sortedUnique.Count\n  all_ids = ($sortedAll.id -join \",\")\n  all_count = $sortedAll.Count\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "unique_ids": "1,2,3", "unique_count": 3, "all_ids": "1,2,2,3", "all_count": 4 }
+    },
+    {
+      "id": "ps-group-object",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Group-Object crea un grupo por cada valor distinto de la propiedad indicada.",
+      "inventoryIds": ["B2-INV-PS-014"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0151" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "$tickets = @(\n  [pscustomobject]@{ id = \"1\"; categoria = \"red\" },\n  [pscustomobject]@{ id = \"2\"; categoria = \"app\" },\n  [pscustomobject]@{ id = \"3\"; categoria = \"red\" }\n)\n$groups = @($tickets | Group-Object -Property categoria)\n$red = @($groups | Where-Object { $_.Name -eq \"red\" })\n$out = [ordered]@{\n  group_count = $groups.Count\n  red_member_count = @($red)[0].Count\n  names = (($groups.Name | Sort-Object) -join \",\")\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "group_count": 2, "red_member_count": 2, "names": "app,red" }
+    },
+    {
+      "id": "ps-measure-sum",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Measure-Object -Property importe -Sum acumula el valor de la propiedad indicada.",
+      "inventoryIds": ["B2-INV-PS-015"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u08.md" },
+        { "file": "content/block-2/questions/u08.json", "itemId": "B2-Q0157" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "$items = @(\n  [pscustomobject]@{ importe = 10 },\n  [pscustomobject]@{ importe = 20 },\n  [pscustomobject]@{ importe = 30 }\n)\n$m = $items | Measure-Object -Property importe -Sum -Average\n$out = [ordered]@{ sum = $m.Sum; count = $m.Count; average = $m.Average }\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "sum": 60, "count": 3, "average": 20 }
+    },
+    {
+      "id": "ps-try-catch-erroraction",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "-ErrorAction Stop hace terminante el error y permite capturarlo; sin el, catch no se ejecuta. finally siempre corre.",
+      "inventoryIds": ["B2-INV-PS-016"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u09.md" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0168" },
+        { "file": "content/block-2/questions/u09.json", "itemId": "B2-Q0169" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "$missing = Join-Path $env:B2_SNIPPET_TEMP \"missing.txt\"\n$withStop = $false\ntry { Get-Item -LiteralPath $missing -ErrorAction Stop | Out-Null } catch { $withStop = $true }\n$withoutStop = $false\ntry { Get-Item -LiteralPath $missing -ErrorAction SilentlyContinue | Out-Null } catch { $withoutStop = $true }\n$finallyRan = $false\ntry { throw \"previsto\" } catch { $finallyRan = $true } finally { $finallyRan = $true }\n$out = [ordered]@{\n  catch_with_stop = $withStop\n  catch_without_stop = $withoutStop\n  finally_ran = $finallyRan\n  planned_exit_code = 3\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "catch_with_stop": true, "catch_without_stop": false, "finally_ran": true, "planned_exit_code": 3 }
+    },
+    {
+      "id": "ps-write-streams",
+      "language": "POWERSHELL",
+      "classification": "EXECUTE_SAFE_PURE",
+      "purpose": "Write-Verbose/Warning/Error escriben en sus flujos respectivos y pueden capturarse de forma explicita.",
+      "inventoryIds": ["B2-INV-PS-017"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u11.md" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": 0,
+      "code": "$captured = (& {\n  Write-Verbose \"b2-verbose\" -Verbose\n  Write-Warning \"b2-warning\"\n  Write-Error \"b2-error\" -ErrorAction Continue\n  Write-Output \"b2-output\"\n} 4>&1 3>&1 2>&1) | ForEach-Object { $_.ToString() }\n$joined = $captured -join \";\"\n$out = [ordered]@{\n  has_verbose = $joined.Contains(\"b2-verbose\")\n  has_warning = $joined.Contains(\"b2-warning\")\n  has_error = $joined.Contains(\"b2-error\")\n  has_output = $joined.Contains(\"b2-output\")\n}\nWrite-Output (\"RESULT:\" + ($out | ConvertTo-Json -Depth 10 -Compress))\n",
+      "expect": { "has_verbose": true, "has_warning": true, "has_error": true, "has_output": true }
+    },
+    {
+      "id": "ps-param-validateset",
+      "language": "POWERSHELL",
+      "classification": "PARSE_ONLY",
+      "purpose": "param(...) con defaults y ValidateSet: se valida la sintaxis, no se ejecuta.",
+      "inventoryIds": ["B2-INV-PS-018"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u10.md" },
+        { "file": "content/block-2/questions/u10.json", "itemId": "B2-Q0184" }
+      ],
+      "destructive": false,
+      "tempOnly": false,
+      "mutation": false,
+      "expectExitCode": null,
+      "code": "param(\n  [Parameter(Mandatory = $false)]\n  [ValidateSet(\"csv\", \"json\")]\n  [string]$Formato = \"csv\",\n  [string]$Entrada = \"datos\"\n)\n\nWrite-Output (\"herramienta B2 ($Formato) sobre $Entrada\")\n",
+      "expect": {}
+    },
+    {
+      "id": "ps-remove-recurse-unsafe",
+      "language": "POWERSHELL",
+      "classification": "UNSAFE_NOT_EXECUTED",
+      "purpose": "Borrado recursivo indiscriminado: prohibido como patron normal. Se registra para probar el deny-check; nunca se ejecuta.",
+      "inventoryIds": ["B2-INV-PS-019"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" }
+      ],
+      "destructive": true,
+      "tempOnly": false,
+      "mutation": true,
+      "expectExitCode": null,
+      "code": "Remove-Item -LiteralPath $ruta -Recurse -Force -ErrorAction SilentlyContinue\n",
+      "expect": {}
+    },
+    {
+      "id": "ps-move-force-unsafe",
+      "language": "POWERSHELL",
+      "classification": "UNSAFE_NOT_EXECUTED",
+      "purpose": "Sobrescritura silenciosa sin politica de colision. Se registra para probar el deny-check; nunca se ejecuta.",
+      "inventoryIds": ["B2-INV-PS-020"],
+      "sourceRefs": [
+        { "file": "content/block-2/canonical/u03.md" },
+        { "file": "content/block-2/questions/u03.json", "itemId": "B2-Q0046" }
+      ],
+      "destructive": true,
+      "tempOnly": false,
+      "mutation": true,
+      "expectExitCode": null,
+      "code": "Move-Item -LiteralPath $origen -Destination $destino -Force\n",
+      "expect": {}
+    }
+  ]
+}

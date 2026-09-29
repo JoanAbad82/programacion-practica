@@ -1,0 +1,707 @@
+[
+  {
+    "id": "B2-Q0001",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-AUTOMATION-SCOPE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué define el alcance de una automatización?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La velocidad a la que se ejecuta el programa."
+      },
+      {
+        "id": "opt_2",
+        "text": "El número máximo de líneas que puede tener el script."
+      },
+      {
+        "id": "opt_3",
+        "text": "Qué rutas y elementos puede leer, crear, modificar o mover, y qué queda fuera de su responsabilidad."
+      },
+      {
+        "id": "opt_4",
+        "text": "El color y el tamaño de la ventana de la consola."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El alcance delimita qué toca el script y qué no; no es una propiedad estética ni de rendimiento.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0002",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-AUTOMATION-SCOPE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Un script debe organizar los archivos de la carpeta datos/, pero además borra registros de la carpeta respaldo/. ¿Qué problema refleja ese comportamiento?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Viola el alcance: modifica elementos que no formaban parte de su responsabilidad."
+      },
+      {
+        "id": "opt_2",
+        "text": "Es correcto, porque aprovecha la ejecución para limpiar archivos antiguos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Es correcto si el script se ejecuta de noche, cuando nadie usa respaldo/."
+      },
+      {
+        "id": "opt_4",
+        "text": "Es un problema de codificación de caracteres."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "La carpeta respaldo/ está fuera del alcance declarado; tocar elementos ajenos rompe la delimitación de responsabilidad.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0003",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-AUTOMATION-SCOPE",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Antes de escribir código, ¿qué acción delimita mejor el alcance de la automatización?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Empezar a programar y ajustar el alcance a medida que aparecen casos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Enumerar explícitamente entradas, salidas y carpetas que el script puede modificar."
+      },
+      {
+        "id": "opt_3",
+        "text": "Permitir que el script toque cualquier ruta para no quedarse corto."
+      },
+      {
+        "id": "opt_4",
+        "text": "Elegir el lenguaje más rápido y dejar el alcance para la documentación final."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Fijar por escrito qué se lee y qué se modifica evita que la herramienta actúe sobre elementos no previstos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0004",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-INPUT-OUTPUT-CONTRACT",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué especifica el contrato de entrada y salida de una automatización?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La marca del ordenador donde se ejecuta."
+      },
+      {
+        "id": "opt_2",
+        "text": "Únicamente el nombre del archivo del script."
+      },
+      {
+        "id": "opt_3",
+        "text": "El lenguaje en el que está escrito el programa."
+      },
+      {
+        "id": "opt_4",
+        "text": "Qué datos o rutas recibe, en qué formato, y qué resultado debe producir."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "El contrato fija entradas, formato de entrada, salida esperada y formato de salida.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0005",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-INPUT-OUTPUT-CONTRACT",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Una herramienta está diseñada para recibir una carpeta y producir un informe.csv, pero el usuario le pasa un archivo .xlsx. ¿Qué parte del diseño falla?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El contrato de salida: el informe no se genera en pantalla."
+      },
+      {
+        "id": "opt_2",
+        "text": "El contrato de entrada: el formato recibido no es el que se había definido."
+      },
+      {
+        "id": "opt_3",
+        "text": "La idempotencia: el script se ejecutó dos veces."
+      },
+      {
+        "id": "opt_4",
+        "text": "El alcance: el script leyó una carpeta."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Se ha roto el contrato de entrada al proporcionar un formato distinto del esperado; debe validarse y rechazarse.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0006",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-INPUT-OUTPUT-CONTRACT",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Un script imprime por pantalla un resumen de los archivos, pero la tarea pedía generar el archivo informe.csv. ¿Qué elemento del diseño falta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La precondición de que el usuario tenga teclado."
+      },
+      {
+        "id": "opt_2",
+        "text": "El contrato de salida: definir el artefacto concreto y su formato."
+      },
+      {
+        "id": "opt_3",
+        "text": "El color de los mensajes por pantalla."
+      },
+      {
+        "id": "opt_4",
+        "text": "La velocidad de impresión del resumen."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "La salida exigida era un archivo, no texto en pantalla; sin contrato de salida el resultado no cumple la tarea.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0007",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-PRECONDITIONS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es una precondición en una automatización?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Una copia de seguridad del código fuente."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un mensaje que se muestra al terminar el script."
+      },
+      {
+        "id": "opt_3",
+        "text": "El resultado final que produce el programa."
+      },
+      {
+        "id": "opt_4",
+        "text": "Una condición que debe cumplirse antes de ejecutar las acciones."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Las precondiciones se comprueban antes de actuar: si no se cumplen, la operación no debe continuar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0008",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-PRECONDITIONS",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Antes de mover archivos a una carpeta de destino, ¿qué comprobación es una precondición razonable?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Confirmar que el archivo de código tiene menos de mil líneas."
+      },
+      {
+        "id": "opt_2",
+        "text": "Comprobar el color del tema del terminal."
+      },
+      {
+        "id": "opt_3",
+        "text": "Contar las líneas del script."
+      },
+      {
+        "id": "opt_4",
+        "text": "Verificar que la carpeta de destino existe y es escribible."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Que el destino exista y admita escritura es una condición necesaria para que el movimiento pueda completarse.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0009",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-PRECONDITIONS",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "¿Cuál es la forma más segura de tratar el destino antes de escribir en él?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comprobar existencia y permisos y, si no se cumplen, abortar con un mensaje claro."
+      },
+      {
+        "id": "opt_2",
+        "text": "Crear el destino con permisos abiertos para evitar cualquier error."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ignorar los errores y continuar aunque el destino no exista."
+      },
+      {
+        "id": "opt_4",
+        "text": "Sobrescribir lo que haya en la ruta para asegurar que se escribe algo."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Verificar primero y abortar de forma explícita evita fallos silenciosos o pérdidas de datos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0010",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-SIDE-EFFECTS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué es un efecto secundario en una automatización?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un comentario que explica el código."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un error de sintaxis que impide ejecutar el script."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una variable temporal usada durante el cálculo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un cambio observable fuera del cálculo interno, como crear o mover archivos."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Los efectos secundarios son cambios externos al cálculo del programa: archivos, carpetas y otros recursos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0011",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-SIDE-EFFECTS",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Cuál de estas acciones produce un efecto secundario sobre el sistema de archivos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Crear un directorio nuevo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Calcular la suma de una lista de números."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir una cadena a mayúsculas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Recorrer en memoria los elementos de un diccionario."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Crear un directorio modifica el estado del disco; las demás operaciones solo actúan en memoria.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0012",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-SIDE-EFFECTS",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Cuál de estas operaciones NO produce un efecto secundario, es decir, es de solo lectura?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Mover una carpeta a otra ubicación."
+      },
+      {
+        "id": "opt_2",
+        "text": "Renombrar un archivo existente."
+      },
+      {
+        "id": "opt_3",
+        "text": "Leer un CSV y contar sus filas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Escribir un informe en un archivo nuevo."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Contar las filas de un CSV solo lee datos; renombrar, mover y escribir modifican el sistema de archivos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0013",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-IDEMPOTENCE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué significa que una automatización sea idempotente?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Que no puede fallar en ningún caso."
+      },
+      {
+        "id": "opt_2",
+        "text": "Que se ejecuta en menos de un segundo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Que ejecutarla de nuevo sobre el mismo estado no duplica ni destruye el trabajo ya hecho."
+      },
+      {
+        "id": "opt_4",
+        "text": "Que siempre modifica los archivos aunque no haga falta."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La idempotencia garantiza que una segunda ejecución deja el mismo resultado, sin duplicar ni dañar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0014",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-IDEMPOTENCE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Una tarea renombra cada archivo añadiendo el sufijo _final. Si se ejecuta dos veces, los nombres quedan como informe_final_final.txt. ¿Qué falta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Codificación: faltaría declarar UTF-8."
+      },
+      {
+        "id": "opt_2",
+        "text": "Idempotencia: el script debería detectar que el renombrado ya se aplicó y omitirlo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Recursión: habría que recorrer subcarpetas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Compresión: los nombres son demasiado largos."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Añadir el sufijo otra vez indica que la operación no es idempotente; debe comprobarse si el cambio ya está hecho.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0015",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-IDEMPOTENCE",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON",
+    "prompt": "Un script copia un CSV a una carpeta de salida. En cada ejecución aparece una copia nueva con el nombre informe (1).csv, informe (2).csv, etc. ¿Cuál es el problema de diseño?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Falta validar el contrato de entrada."
+      },
+      {
+        "id": "opt_2",
+        "text": "La codificación del CSV es incorrecta."
+      },
+      {
+        "id": "opt_3",
+        "text": "La operación no es idempotente: vuelve a copiar aunque el archivo ya esté en su destino."
+      },
+      {
+        "id": "opt_4",
+        "text": "El script se ejecuta demasiado rápido."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Generar copias numeradas en cada ejecución es el síntoma típico de una operación no idempotente.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0016",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-DRY-RUN",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace un modo dry-run en una automatización?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Eliminar los archivos temporales antes de empezar."
+      },
+      {
+        "id": "opt_2",
+        "text": "Ejecutar las acciones dos veces para comprobar que son estables."
+      },
+      {
+        "id": "opt_3",
+        "text": "Calcular y mostrar las acciones previstas sin aplicarlas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Desactivar los mensajes de error del script."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Dry-run muestra el plan de acciones sin modificar el sistema, permitiendo revisarlo antes de aplicar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0017",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-DRY-RUN",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere reorganizar una carpeta por primera vez con bajo riesgo. ¿Qué orden de trabajo es el más prudente?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ejecutar sin argumentos para que el script decida por sí mismo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Aplicar directamente y, si algo sale mal, restaurar después si es posible."
+      },
+      {
+        "id": "opt_3",
+        "text": "Aplicar primero en la carpeta de respaldo para no tocar la original."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ejecutar en modo plan (dry-run), revisar la lista de cambios y, si es correcta, aplicar."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Revisar el plan antes de aplicar reduce el riesgo de mover o renombrar elementos equivocados.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0018",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-DRY-RUN",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Entre estas opciones, ¿cuál describe una decisión segura al automatizar cambios por lotes?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Separar una fase de plan que se muestra al usuario de una fase de aplicación que ejecuta los cambios."
+      },
+      {
+        "id": "opt_2",
+        "text": "Aplicar los cambios y registrar el plan después, para no perder tiempo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Permitir que el script borre lo que ya no encaje en el plan."
+      },
+      {
+        "id": "opt_4",
+        "text": "Fijar la carpeta de destino directamente en el código sin comprobarla."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Separar plan y aplicación es el patrón seguro: el plan se revisa y la aplicación ejecuta solo lo aprobado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0019",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-DRY-RUN",
+    "secondaryConceptIds": [
+      "B2-U01-SIDE-EFFECTS",
+      "B2-U01-PRECONDITIONS"
+    ],
+    "type": "E",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "Un script hace dry-run y, en esa misma pasada, también modifica archivos. ¿Qué problema introduce?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ninguno, porque el dry-run es más rápido si aplica a la vez."
+      },
+      {
+        "id": "opt_2",
+        "text": "El dry-run deja de ser seguro: aplica cambios cuando su función es solo mostrar el plan."
+      },
+      {
+        "id": "opt_3",
+        "text": "Solo afecta al color de los mensajes del terminal."
+      },
+      {
+        "id": "opt_4",
+        "text": "El único problema es que no usa recursión."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Si el modo de simulación modifica el sistema, se pierde la posibilidad de revisar antes de aplicar.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0020",
+    "blockId": "B2",
+    "unitId": "U01",
+    "primaryConceptId": "B2-U01-IDEMPOTENCE",
+    "secondaryConceptIds": [
+      "B2-U01-INPUT-OUTPUT-CONTRACT"
+    ],
+    "type": "D",
+    "difficulty": 3,
+    "language": "COMMON",
+    "prompt": "¿Qué relación es correcta entre el contrato de salida y la idempotencia en una herramienta que genera informes?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Si el contrato define un único archivo de salida, reejecutar debe reemplazarlo sin acumular copias."
+      },
+      {
+        "id": "opt_2",
+        "text": "El contrato de salida obliga a crear un archivo distinto en cada ejecución."
+      },
+      {
+        "id": "opt_3",
+        "text": "La idempotencia impide generar el informe más de una vez."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ambos conceptos son independientes y no influyen entre sí."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Definir una salida única y predecible encaja con la idempotencia: repetir deja el mismo artefacto, no acumula versiones.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

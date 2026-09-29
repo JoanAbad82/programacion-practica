@@ -1,0 +1,707 @@
+[
+  {
+    "id": "B2-Q0101",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-OBJECTS-ARRAYS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué representa un objeto JSON frente a un array JSON?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ambos son exactamente lo mismo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Un objeto es una lista; un array es un par clave-valor."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un objeto asocia claves con valores; un array es una lista ordenada de valores."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un objeto solo admite números; un array solo cadenas."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "El objeto usa pares clave-valor con llaves; el array es una lista ordenada entre corchetes.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0102",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-OBJECTS-ARRAYS",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Qué delimitadores usan respectivamente un objeto y un array en JSON?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comillas dobles \"\" para ambos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Corchetes [] para el objeto y llaves {} para el array."
+      },
+      {
+        "id": "opt_3",
+        "text": "Paréntesis () para ambos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Llaves {} para el objeto y corchetes [] para el array."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Los objetos se escriben entre llaves y los arrays entre corchetes.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0103",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-OBJECTS-ARRAYS",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Ante una lista de registros de configuración, ¿qué estructura JSON es más apropiada?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Un array cuyos elementos son objetos con las propiedades de cada registro."
+      },
+      {
+        "id": "opt_2",
+        "text": "Una única cadena con todos los registros separados por punto y coma."
+      },
+      {
+        "id": "opt_3",
+        "text": "Un objeto sin claves, solo valores."
+      },
+      {
+        "id": "opt_4",
+        "text": "Un número que codifique cada registro."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Una colección de registros se modela como array de objetos; cada objeto representa un registro.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0104",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-PARSE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace json.load() en Python o ConvertFrom-Json en PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Convertir estructuras nativas en texto JSON."
+      },
+      {
+        "id": "opt_2",
+        "text": "Convertir texto JSON válido en estructuras nativas del lenguaje."
+      },
+      {
+        "id": "opt_3",
+        "text": "Comprimir el archivo JSON."
+      },
+      {
+        "id": "opt_4",
+        "text": "Borrar las claves duplicadas del archivo."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Deserializar transforma texto JSON en objetos y listas nativos que el programa puede manipular.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0105",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-PARSE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué diferencia hay entre el texto que contiene JSON y un objeto ya deserializado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Son exactamente lo mismo y se usan igual."
+      },
+      {
+        "id": "opt_2",
+        "text": "El texto es una cadena; el objeto deserializado es una estructura cuyas claves y valores pueden recorrerse."
+      },
+      {
+        "id": "opt_3",
+        "text": "El texto siempre es binario y el objeto es texto."
+      },
+      {
+        "id": "opt_4",
+        "text": "El objeto deserializado no conserva ninguna clave."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Texto JSON y objeto deserializado no son lo mismo: hay que analizar el texto antes de acceder a sus campos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0106",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-PARSE",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script intenta acceder a datos['total'], pero datos es en realidad una cadena JSON sin analizar. ¿Qué error cometió?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Faltó comprimir el archivo."
+      },
+      {
+        "id": "opt_2",
+        "text": "No deserializó el texto; debía convertirlo a estructura con json.loads o ConvertFrom-Json."
+      },
+      {
+        "id": "opt_3",
+        "text": "Usó comillas simples en lugar de dobles."
+      },
+      {
+        "id": "opt_4",
+        "text": "El total no puede ser una clave."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Sin deserializar, el texto no ofrece acceso por clave; primero hay que analizarlo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0107",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-SERIALIZE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace json.dump() en Python o ConvertTo-Json en PowerShell?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comprimir el archivo resultante."
+      },
+      {
+        "id": "opt_2",
+        "text": "Leer texto JSON y convertirlo en objetos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir estructuras nativas en texto JSON válido."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ordenar las claves alfabéticamente siempre."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Serializar transforma estructuras nativas en texto JSON que puede guardarse o enviarse.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0108",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-SERIALIZE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "POWERSHELL",
+    "prompt": "En PowerShell, ¿por qué conviene prestar atención a -Depth al usar ConvertTo-Json?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Porque limita la profundidad de anidamiento que se serializa y puede truncar objetos profundos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Porque cambia la codificación del archivo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Porque ordena las claves del objeto."
+      },
+      {
+        "id": "opt_4",
+        "text": "Porque convierte los números en cadenas."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "-Depth controla cuántos niveles se serializan; un valor insuficiente puede truncar la estructura.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0109",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-SERIALIZE",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la forma más segura de guardar una configuración como JSON?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Escribir la representación interna del lenguaje tal cual."
+      },
+      {
+        "id": "opt_2",
+        "text": "Concatenar manualmente los campos con llaves y comas."
+      },
+      {
+        "id": "opt_3",
+        "text": "Guardarla como CSV para reutilizarla."
+      },
+      {
+        "id": "opt_4",
+        "text": "Serializar la estructura con la profundidad adecuada y escribirla con codificación explícita."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Serializar con la profundidad adecuada y codificación explícita evita JSON inválido o datos truncados.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0110",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-NESTED-ACCESS",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué implica acceder de forma segura a un valor anidado en JSON?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comprobar en cada nivel que la clave existe y que el valor tiene el tipo esperado."
+      },
+      {
+        "id": "opt_2",
+        "text": "Asumir que todas las claves existen siempre."
+      },
+      {
+        "id": "opt_3",
+        "text": "Convertir todo el JSON a texto y buscarlo con includes."
+      },
+      {
+        "id": "opt_4",
+        "text": "Ordenar las claves antes de acceder."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Antes de usar un valor anidado hay que verificar que la ruta de claves existe y que el tipo es el correcto.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0111",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-NESTED-ACCESS",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "Con datos = {'a': {'b': 5}}, ¿qué expresión obtiene el valor 5 en Python?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "datos.a.b"
+      },
+      {
+        "id": "opt_2",
+        "text": "datos['b']['a']"
+      },
+      {
+        "id": "opt_3",
+        "text": "datos['a']['b']"
+      },
+      {
+        "id": "opt_4",
+        "text": "datos('a', 'b')"
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Se accede nivel a nivel con las claves en orden: primero 'a' y luego 'b'.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0112",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-NESTED-ACCESS",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script accede a config['server']['port'] y falla cuando 'server' no existe. ¿Qué conviene hacer?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Cambiar la codificación del archivo a UTF-16."
+      },
+      {
+        "id": "opt_2",
+        "text": "Convertir el JSON a texto y buscar 'port'."
+      },
+      {
+        "id": "opt_3",
+        "text": "Comprobar que 'server' existe y tiene el tipo esperado antes de acceder a 'port'."
+      },
+      {
+        "id": "opt_4",
+        "text": "Renombrar la clave 'port' a 'puerto'."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Validar cada nivel evita errores cuando falta una clave intermedia.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0113",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-TYPES",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Cuáles son tipos de valor válidos en JSON?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Solo cadenas y números."
+      },
+      {
+        "id": "opt_2",
+        "text": "Cadena, número, booleano, null, objeto y array."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cualquier tipo del lenguaje, incluidas funciones."
+      },
+      {
+        "id": "opt_4",
+        "text": "Únicamente booleanos."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "JSON define seis tipos de valor: string, number, boolean, null, object y array.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0114",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-TYPES",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué representa null en JSON?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La ausencia de valor."
+      },
+      {
+        "id": "opt_2",
+        "text": "El número cero."
+      },
+      {
+        "id": "opt_3",
+        "text": "Una cadena vacía."
+      },
+      {
+        "id": "opt_4",
+        "text": "El valor booleano falso."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "null indica ausencia de valor; es distinto de 0, de una cadena vacía o de false.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0115",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-TYPES",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "¿Qué diferencia hay entre false y \"false\" en JSON?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Ambos equivalen a null."
+      },
+      {
+        "id": "opt_2",
+        "text": "Son idénticos en todo contexto."
+      },
+      {
+        "id": "opt_3",
+        "text": "false es una cadena y \"false\" es un número."
+      },
+      {
+        "id": "opt_4",
+        "text": "false es un booleano y \"false\" es una cadena de texto."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Las comillas convierten el valor en cadena; tratarlo como booleano sería un error de tipo.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0116",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-SHAPE-VALIDATION",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es validar la forma (shape) de un JSON?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comprobar que las claves están en mayúsculas."
+      },
+      {
+        "id": "opt_2",
+        "text": "Comprobar que el archivo pesa menos de un megabyte."
+      },
+      {
+        "id": "opt_3",
+        "text": "Comprobar que contiene los campos obligatorios y con los tipos esperados antes de usarlo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Comprobar que el archivo termina con un salto de línea."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La validación de forma comprueba la presencia y el tipo de los campos requeridos antes de consumir los datos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0117",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-SHAPE-VALIDATION",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se lee una configuración JSON y falta el campo obligatorio ruta_salida. ¿Qué debe hacer el script?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Convertir el JSON a CSV."
+      },
+      {
+        "id": "opt_2",
+        "text": "Asumir un valor cualquiera y continuar."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ignorar el problema hasta que falle más tarde."
+      },
+      {
+        "id": "opt_4",
+        "text": "Detectar la ausencia del campo y abortar con un mensaje claro."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Si falta un campo obligatorio, la validación de forma debe detener la ejecución con un mensaje que explique el problema.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0118",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-SHAPE-VALIDATION",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la forma más segura de consumir un JSON de configuración?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Convertir el archivo a CSV antes de leerlo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Deserializar y usar directamente cualquier clave."
+      },
+      {
+        "id": "opt_3",
+        "text": "Leer el archivo como texto y buscar subcadenas."
+      },
+      {
+        "id": "opt_4",
+        "text": "Deserializar, validar los campos y tipos obligatorios y solo entonces usar los valores."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Deserializar y validar la forma antes de consumir evita fallos por campos ausentes o de tipo incorrecto.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0119",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-NESTED-ACCESS",
+    "secondaryConceptIds": [
+      "B2-U06-JSON-TYPES",
+      "B2-U06-JSON-SHAPE-VALIDATION"
+    ],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué precaución permite usar con seguridad un campo anidado que podría faltar?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Comprobar la existencia de cada clave y el tipo esperado antes de leer el valor."
+      },
+      {
+        "id": "opt_2",
+        "text": "Convertir todo el objeto a texto y buscar el nombre del campo."
+      },
+      {
+        "id": "opt_3",
+        "text": "Ordenar las claves de mayor a menor."
+      },
+      {
+        "id": "opt_4",
+        "text": "Duplicar el objeto en un array."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Verificar existencia y tipo en cada nivel evita accesos a claves inexistentes o valores de tipo equivocado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0120",
+    "blockId": "B2",
+    "unitId": "U06",
+    "primaryConceptId": "B2-U06-JSON-PARSE",
+    "secondaryConceptIds": [
+      "B2-U06-JSON-SERIALIZE"
+    ],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un programa guarda un objeto con su representación interna en un archivo .json y luego no puede volver a leerlo. ¿Qué es más probable?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Que el archivo tenía demasiadas claves."
+      },
+      {
+        "id": "opt_2",
+        "text": "Que escribió la representación del lenguaje y no JSON válido; debía serializar con la función JSON adecuada."
+      },
+      {
+        "id": "opt_3",
+        "text": "Que faltó usar recursión para escribirlo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Que el nombre del archivo no tenía extensión."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Serializar con herramientas JSON garantiza texto válido; guardar la representación interna produce un archivo ilegible como JSON.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

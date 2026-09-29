@@ -1,0 +1,708 @@
+[
+  {
+    "id": "B2-Q0041",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-COPY",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué diferencia hay entre copiar y mover un archivo?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Al copiar, el original permanece; al mover, el elemento deja de existir en su ubicación de origen."
+      },
+      {
+        "id": "opt_2",
+        "text": "Al copiar, el original se borra; al mover, se conserva."
+      },
+      {
+        "id": "opt_3",
+        "text": "No hay diferencia: son sinónimos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Copiar cambia el contenido; mover conserva siempre el nombre."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Copiar crea una copia conservando el original; mover cambia de ubicación y retira el elemento del origen.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0042",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-COPY",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON",
+    "prompt": "¿Qué efecto tiene shutil.copy2(origen, destino) sobre el archivo original?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Elimina el archivo original tras copiarlo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Crea una copia en destino e intenta conservar los metadatos del original, que permanece intacto."
+      },
+      {
+        "id": "opt_3",
+        "text": "Renombra el original al nombre de destino."
+      },
+      {
+        "id": "opt_4",
+        "text": "Comprime el original en destino."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "copy2 conserva el original y copia también los metadatos (fechas y permisos donde sea posible).",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0043",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-COPY",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se debe conservar intacto el archivo fuente mientras se genera una versión procesada. ¿Qué operación corresponde?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Eliminar el original y crear uno nuevo con el mismo nombre."
+      },
+      {
+        "id": "opt_2",
+        "text": "Mover el archivo a otra carpeta y procesarlo allí."
+      },
+      {
+        "id": "opt_3",
+        "text": "Renombrar el original antes de procesarlo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Copiar el archivo y procesar la copia, dejando el original sin cambios."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Copiar conserva el origen; procesar la copia evita alterar el archivo original.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0044",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-MOVE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué ocurre al mover un archivo a otra carpeta?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El archivo cambia de ubicación y deja de existir en la ruta original."
+      },
+      {
+        "id": "opt_2",
+        "text": "El archivo se duplica y se conserva en las dos rutas."
+      },
+      {
+        "id": "opt_3",
+        "text": "El archivo se comprime automáticamente."
+      },
+      {
+        "id": "opt_4",
+        "text": "El contenido del archivo se convierte a texto plano."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Mover cambia la ubicación: el elemento ya no está en el origen.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0045",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-MOVE",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script mueve archivos a una carpeta archivo/ y en la segunda ejecución los vuelve a mover. ¿Qué conviene aplicar?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Convertir los archivos a CSV antes de moverlos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Aumentar la velocidad de ejecución del script."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cambiar la codificación de los nombres de archivo."
+      },
+      {
+        "id": "opt_4",
+        "text": "Comprobar antes el estado y usar un comportamiento idempotente para no reprocesar lo ya movido."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Mover repetidamente lo ya movido indica falta de comprobación de estado y de idempotencia.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0046",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-MOVE",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script usa Move-Item con -Force y sobrescribe silenciosamente un archivo que ya existía en el destino. ¿Cuál es el problema principal?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El problema es de codificación de texto."
+      },
+      {
+        "id": "opt_2",
+        "text": "Move-Item no admite el parámetro -Force."
+      },
+      {
+        "id": "opt_3",
+        "text": "Falta una política de colisión: sobrescribir sin haberlo decidido antes puede destruir datos."
+      },
+      {
+        "id": "opt_4",
+        "text": "El script debería usar recursión al mover."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Sobrescribir sin política de colisión es peligroso; debe decidirse de antemano qué hacer si el destino existe.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0047",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-RENAME",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué hace renombrar un archivo?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Eliminar su contenido y dejarlo vacío."
+      },
+      {
+        "id": "opt_2",
+        "text": "Duplicarlo con otro nombre en otra carpeta."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cambiar su nombre dentro de la misma ubicación, sin alterar innecesariamente su contenido."
+      },
+      {
+        "id": "opt_4",
+        "text": "Cambiar su codificación de texto."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Renombrar cambia el nombre; el contenido permanece igual.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0048",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-RENAME",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Se quiere renombrar por lotes mostrando primero nombre_actual → nombre_propuesto. ¿Qué orden es el más seguro?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Renombrar todos los archivos y mostrar el resultado al final."
+      },
+      {
+        "id": "opt_2",
+        "text": "Calcular y mostrar la lista de cambios; renombrar solo después de validarla."
+      },
+      {
+        "id": "opt_3",
+        "text": "Renombrar solo si el usuario adivina los nombres nuevos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Borrar los archivos y volver a crearlos con el nombre nuevo."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Mostrar el plan nombre_actual → nombre_propuesto antes de aplicarlo permite detectar colisiones y errores.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0049",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-RENAME",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la forma más segura de renombrar un grupo de archivos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Cambiar la extensión de todos los archivos a la vez sin revisar."
+      },
+      {
+        "id": "opt_2",
+        "text": "Aplicar todos los renombrados a la vez sin comprobar nada."
+      },
+      {
+        "id": "opt_3",
+        "text": "Sobrescribir cualquier archivo que coincida en el destino."
+      },
+      {
+        "id": "opt_4",
+        "text": "Generar el plan de renombrado, comprobar colisiones y aplicar solo los cambios validados."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Validar el plan y las colisiones antes de renombrar evita perder archivos por nombres repetidos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0050",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-DELETE",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Cuándo es aceptable que una automatización elimine archivos?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Solo cuando el borrado está dentro de su alcance, autorizado y validado explícitamente."
+      },
+      {
+        "id": "opt_2",
+        "text": "Siempre que libere espacio en disco."
+      },
+      {
+        "id": "opt_3",
+        "text": "Cuando el script termina más rápido borrando."
+      },
+      {
+        "id": "opt_4",
+        "text": "Como paso previo obligatorio de cualquier copia."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Eliminar es una operación destructiva: requiere alcance, autorización y validación explícitos.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0051",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-DELETE",
+    "secondaryConceptIds": [],
+    "type": "C",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué función o comando elimina un archivo, y qué precaución exige?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Path.unlink() en Python o Remove-Item en PowerShell; exige validar el objetivo antes de ejecutar."
+      },
+      {
+        "id": "opt_2",
+        "text": "Path.read_text() en Python; no requiere ninguna precaución."
+      },
+      {
+        "id": "opt_3",
+        "text": "Copy-Item en PowerShell; conserva siempre el original."
+      },
+      {
+        "id": "opt_4",
+        "text": "Get-ChildItem en PowerShell; solo lista el contenido."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "unlink y Remove-Item borran; por su carácter destructivo hay que validar el objetivo y el alcance.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0052",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-DELETE",
+    "secondaryConceptIds": [],
+    "type": "D",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál de estas prácticas es la más segura respecto al borrado?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Borrar sin comprobar el objetivo para ahorrar tiempo."
+      },
+      {
+        "id": "opt_2",
+        "text": "Borrar recursivamente toda la carpeta para asegurar la limpieza."
+      },
+      {
+        "id": "opt_3",
+        "text": "Preferir mover a una carpeta de cuarentena antes que borrar directamente cuando sea posible."
+      },
+      {
+        "id": "opt_4",
+        "text": "Borrar como efecto colateral de un renombrado."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Cuando el borrado no es imprescindible, la cuarentena o el respaldo reducen el riesgo; el borrado recursivo indiscriminado no es el patrón normal.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0053",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-COLLISION-POLICY",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué es una política de colisión?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "La velocidad a la que se copian los archivos grandes."
+      },
+      {
+        "id": "opt_2",
+        "text": "El error que aparece cuando dos archivos tienen el mismo tamaño."
+      },
+      {
+        "id": "opt_3",
+        "text": "La decisión definida de antemano sobre qué hacer cuando el destino ya existe."
+      },
+      {
+        "id": "opt_4",
+        "text": "El color con que se muestran los nombres duplicados."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "La política de colisión responde a la pregunta de si se omite, renombra, sobrescribe o aborta cuando el destino existe.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0054",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-COLLISION-POLICY",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Al copiar, el destino ya existe en varios casos. ¿Qué debe hacer la automatización?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Elegir al azar entre sobrescribir y omitir."
+      },
+      {
+        "id": "opt_2",
+        "text": "Aplicar la política de colisión definida y ser consistente con ella en todos los casos."
+      },
+      {
+        "id": "opt_3",
+        "text": "Sobrescribir siempre para no dejar restos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Abortar todo el programa sin ningún mensaje."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Definir y aplicar una política de colisión coherente evita resultados impredecibles.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0055",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-COLLISION-POLICY",
+    "secondaryConceptIds": [],
+    "type": "E",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Un script de copia produce resultados distintos cada vez: a veces sobrescribe y a veces omite. ¿Qué falla?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "El uso de rutas absolutas en lugar de relativas."
+      },
+      {
+        "id": "opt_2",
+        "text": "La codificación de los archivos de texto."
+      },
+      {
+        "id": "opt_3",
+        "text": "No hay una política de colisión clara, por lo que el comportamiento ante destinos existentes es impredecible."
+      },
+      {
+        "id": "opt_4",
+        "text": "La falta de recursión en el recorrido."
+      }
+    ],
+    "correctOptionId": "opt_3",
+    "explanation": "Resultados dispares ante el mismo caso indican que la decisión de colisión no está especificada.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0056",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-BACKUP-ROLLBACK",
+    "secondaryConceptIds": [],
+    "type": "A",
+    "difficulty": 1,
+    "language": "COMMON",
+    "prompt": "¿Para qué sirve prever un respaldo o una vía de reversión en una operación con efectos reales?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Para acelerar la copia de los archivos."
+      },
+      {
+        "id": "opt_2",
+        "text": "Para poder recuperar o auditar el estado si algo sale mal."
+      },
+      {
+        "id": "opt_3",
+        "text": "Para cambiar la codificación de los archivos."
+      },
+      {
+        "id": "opt_4",
+        "text": "Para eliminar la necesidad de comprobar precondiciones."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Un respaldo o un registro de acciones ofrece una vía razonable de recuperación ante cambios equivocados.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0057",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-BACKUP-ROLLBACK",
+    "secondaryConceptIds": [],
+    "type": "B",
+    "difficulty": 2,
+    "language": "COMMON",
+    "prompt": "Antes de aplicar una operación masiva de renombrado, ¿qué práctica aumenta la seguridad?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Borrar el respaldo en cuanto empieza la operación."
+      },
+      {
+        "id": "opt_2",
+        "text": "Desactivar los mensajes de error para ir más rápido."
+      },
+      {
+        "id": "opt_3",
+        "text": "Aplicar los cambios sin registrar nada para no llenar el disco."
+      },
+      {
+        "id": "opt_4",
+        "text": "Registrar el plan y conservar una copia o un diario que permita revertir."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Guardar el plan y un diario de cambios permite revertir o auditar si el resultado no es el esperado.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0058",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-BACKUP-ROLLBACK",
+    "secondaryConceptIds": [],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Cuál es la estrategia más segura para un renombrado masivo que puede fallar a mitad?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Sobrescribir cualquier archivo que se cruce en el camino."
+      },
+      {
+        "id": "opt_2",
+        "text": "Confiar en que el proceso no fallará nunca."
+      },
+      {
+        "id": "opt_3",
+        "text": "Borrar los archivos originales antes de empezar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Guardar el plan de cambios y poder revertir desde un diario o una copia previa."
+      }
+    ],
+    "correctOptionId": "opt_4",
+    "explanation": "Poder revertir desde un plan o diario permite recuperar el estado si la operación se interrumpe.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0059",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-COLLISION-POLICY",
+    "secondaryConceptIds": [
+      "B2-U03-COPY",
+      "B2-U03-BACKUP-ROLLBACK"
+    ],
+    "type": "D",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "¿Qué combinación de decisiones describe mejor una copia segura y repetible?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Definir una política de colisión, comprobar si el destino ya tiene el contenido y conservar respaldo antes de reemplazar."
+      },
+      {
+        "id": "opt_2",
+        "text": "Sobrescribir siempre el destino sin comprobar nada."
+      },
+      {
+        "id": "opt_3",
+        "text": "Copiar creando un nombre nuevo aleatorio en cada ejecución."
+      },
+      {
+        "id": "opt_4",
+        "text": "Eliminar el destino antes de copiar para evitar colisiones."
+      }
+    ],
+    "correctOptionId": "opt_1",
+    "explanation": "Política clara, comprobación de estado y respaldo previo hacen la copia segura ante repeticiones.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "B2-Q0060",
+    "blockId": "B2",
+    "unitId": "U03",
+    "primaryConceptId": "B2-U03-DELETE",
+    "secondaryConceptIds": [
+      "B2-U03-BACKUP-ROLLBACK",
+      "B2-U03-COLLISION-POLICY"
+    ],
+    "type": "F",
+    "difficulty": 3,
+    "language": "PYTHON_POWERSHELL",
+    "prompt": "Una tarea pide vaciar una carpeta de archivos temporales. ¿Cuál es la opción más segura?",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Borrar la carpeta completa con eliminación recursiva."
+      },
+      {
+        "id": "opt_2",
+        "text": "Mover los temporales a una carpeta de cuarentena, registrar la acción y borrar solo lo confirmado."
+      },
+      {
+        "id": "opt_3",
+        "text": "Borrar cada archivo sin registrar y sin confirmar."
+      },
+      {
+        "id": "opt_4",
+        "text": "Sobrescribir los temporales con archivos vacíos."
+      }
+    ],
+    "correctOptionId": "opt_2",
+    "explanation": "Cuarentena más registro permite revisar y recuperar; el borrado recursivo indiscriminado no es un patrón aceptable.",
+    "sourceVersion": "BLOCK2_CANONICAL_V1.0",
+    "conceptBankVersion": "B2_CONCEPT_BANK_V1.0",
+    "testBankVersion": "BLOCK2_TEST_BANK_V1.0",
+    "status": "ACTIVE"
+  }
+]

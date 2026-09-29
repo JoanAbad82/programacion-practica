@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useSyncExternalStore } from "react";
+import { blockIdFromContentId, type BlockId } from "@/types/block";
 import {
   makeInitialQueue,
   scheduleFlashcardRepeat,
@@ -26,6 +27,16 @@ const emptySnapshot: FlashcardHistorySnapshot = {
 
 const emptySerialized = JSON.stringify(emptySnapshot);
 
+function inferBlockId(session: StoredFlashcardSession): BlockId {
+  return (
+    session.blockId ??
+    (session.cardIds ?? [])
+      .map((id) => blockIdFromContentId(id))
+      .find((value): value is BlockId => Boolean(value)) ??
+    "B1"
+  );
+}
+
 function parseSnapshot(raw: string | null): FlashcardHistorySnapshot {
   if (!raw) return emptySnapshot;
 
@@ -42,9 +53,15 @@ function parseSnapshot(raw: string | null): FlashcardHistorySnapshot {
       return emptySnapshot;
     }
 
+    const sessions = parsed.sessions as Record<string, StoredFlashcardSession>;
+    const normalized: Record<string, StoredFlashcardSession> = {};
+    for (const [id, session] of Object.entries(sessions)) {
+      normalized[id] = { ...session, blockId: inferBlockId(session) };
+    }
+
     return {
       schemaVersion: "FLASHCARD_HISTORY_V1",
-      sessions: parsed.sessions as Record<string, StoredFlashcardSession>,
+      sessions: normalized,
       cardStats: parsed.cardStats as Record<string, FlashcardStats>,
     };
   } catch {
