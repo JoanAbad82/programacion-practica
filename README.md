@@ -72,6 +72,8 @@ node scripts/qa-source-inventory.mjs --verify   # inventario SHA-256 del código
 Recuentos canónicos verificados por los validadores: **12 unidades, 56
 conceptos, 200 preguntas y 80 flashcards**.
 
+GitHub Actions ejecuta `npm run check` sobre Node.js 24.13.0 en cada pull request y push a `main`, de modo que los validadores, lint, typecheck, tests, build y QA del export estático quedan visibles como evidencia pública.
+
 ## Publicación en Cloudflare Pages
 
 Este repositorio se publica como **Next.js (Static HTML Export)**. No usa
@@ -118,6 +120,15 @@ schemas/      JSON Schemas del contenido y del progreso
 docs/         informes de QA y publicación
 ```
 
+## Contexto para agentes
+
+`AGENTS.md` define las fuentes canónicas, límites de arquitectura y la definición de terminado para agentes de código. Los JSON Schemas, manifests de contenido y `release/` actúan como superficies machine-readable de verificación.
+
+## Seguridad y contribución
+
+- [SECURITY.md](SECURITY.md)
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+
 ## Licencia
 
-Este repositorio no declara licencia.
+Licenciado bajo [Apache License 2.0](LICENSE).
