@@ -14,6 +14,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 Programación Práctica is a static-export learning platform for practical Python and PowerShell study. The repository contains canonical learning content, validators, schemas, deterministic quiz/session behavior, local progress storage, QA tooling, and release manifests.
 
+`PROJECT_STATUS.json` provides a compact machine-readable snapshot of repository state, validation, architecture and interaction boundaries.
+
 ## Canonical sources
 
 1. `README.md` — product architecture and supported workflows.

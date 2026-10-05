@@ -120,6 +120,10 @@ schemas/      JSON Schemas del contenido y del progreso
 docs/         informes de QA y publicación
 ```
 
+## Estado machine-readable
+
+`PROJECT_STATUS.json` resume estado, arquitectura, fuentes canónicas, validación y límites de interacción para agentes y sistemas de recuperación.
+
 ## Contexto para agentes
 
 `AGENTS.md` define las fuentes canónicas, límites de arquitectura y la definición de terminado para agentes de código. Los JSON Schemas, manifests de contenido y `release/` actúan como superficies machine-readable de verificación.
