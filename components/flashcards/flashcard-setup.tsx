@@ -57,12 +57,19 @@ const typeLabels: Record<FlashcardTypeFilter, string> = {
   PX: "Python ↔ PowerShell",
 };
 
+let fallbackSessionCounter = 0;
+
 function makeSessionId(): string {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
     return crypto.randomUUID();
   }
 
-  return `cards-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  fallbackSessionCounter = (fallbackSessionCounter + 1) >>> 0;
+  const perfPart =
+    typeof performance !== "undefined"
+      ? Math.floor(performance.now() * 1000) >>> 0
+      : 0;
+  return `cards-${Date.now().toString(36)}-${perfPart.toString(36)}-${fallbackSessionCounter.toString(36)}`;
 }
 
 function makeSeed(): number {
@@ -74,7 +81,7 @@ function makeSeed(): number {
 
   // This seed controls study ordering only; it is not a security token.
   // Modern browsers use crypto.getRandomValues above. Keep the compatibility
-  // fallback variable without pretending Math.random is cryptographically safe.
+  // fallback variable without pretending it is cryptographically random.
   const timePart = Date.now() >>> 0;
   const perfPart =
     typeof performance !== "undefined"
