@@ -1,5 +1,8 @@
 # Programación Práctica
 
+[![CI](https://github.com/JoanAbad82/programacion-practica/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/JoanAbad82/programacion-practica/actions/workflows/ci.yml)
+
+
 Plataforma de aprendizaje local para aprender a leer, entender y modificar
 código con Python y PowerShell. Todo el contenido está validado en el
 repositorio y la aplicación no necesita backend: se publica como sitio
