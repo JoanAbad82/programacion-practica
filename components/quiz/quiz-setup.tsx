@@ -83,7 +83,15 @@ function makeSeed(): number {
     return values[0];
   }
 
-  return Math.floor(Math.random() * 4294967295);
+  // This seed controls study ordering only; it is not a security token.
+  // Modern browsers use crypto.getRandomValues above. Keep the compatibility
+  // fallback variable without pretending Math.random is cryptographically safe.
+  const timePart = Date.now() >>> 0;
+  const perfPart =
+    typeof performance !== "undefined"
+      ? Math.floor(performance.now() * 1000) >>> 0
+      : 0;
+  return (timePart ^ perfPart ^ 0x9e3779b9) >>> 0;
 }
 
 function parseModeParam(value: string | null): QuizMode | null {
