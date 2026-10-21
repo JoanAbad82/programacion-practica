@@ -90,8 +90,14 @@ for (const file of await walk(root)) {
 
   const source = await readFile(file, "utf8").catch(() => "");
 
-  if (/rep[aà]s\s*actiu|repasactiu/i.test(source)) {
-    failures.push(`INDEPENDENCE_GUARD reference found in ${rel}`);
+  // Generic repository and site isolation: reject links to sibling projects.
+  // Never embed the identity of a restricted project in a public validator.
+  const otherSite = [...source.matchAll(/https?:\/\/([a-z0-9-]+)\.pages\.dev\b/gi)]
+    .some((match) => match[1].toLowerCase() !== "programacion-practica");
+  const otherRepository = [...source.matchAll(/https?:\/\/github\.com\/JoanAbad82\/([a-z0-9_.-]+)/gi)]
+    .some((match) => match[1].toLowerCase() !== "programacion-practica");
+  if (otherSite || otherRepository) {
+    failures.push("INDEPENDENCE_GUARD external project reference found in " + rel);
   }
 }
 
